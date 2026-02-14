@@ -32,6 +32,8 @@ from model import HamnerModel, HamnerConfig
 
 CHECKPOINT_DIR = "checkpoints/training"
 LOG_FILE = "logs/training.log"
+METRICS_FILE = "logs/metrics.csv"
+SAMPLES_FILE = "logs/samples.jsonl"
 
 # Model config (winner from tournament: v02_dense_medium)
 MODEL_CONFIG = dict(
@@ -82,6 +84,32 @@ def log(msg, log_file=LOG_FILE):
     os.makedirs(os.path.dirname(log_file), exist_ok=True)
     with open(log_file, "a") as f:
         f.write(line + "\n")
+
+
+def log_metrics(step, loss, perplexity, lr, tokens_per_sec, tokens_total, elapsed_hours):
+    """Append a row to the CSV metrics file for graphing."""
+    os.makedirs(os.path.dirname(METRICS_FILE), exist_ok=True)
+    write_header = not os.path.exists(METRICS_FILE)
+    with open(METRICS_FILE, "a") as f:
+        if write_header:
+            f.write("timestamp,step,loss,perplexity,learning_rate,tokens_per_sec,tokens_total,tokens_billions,elapsed_hours,phase\n")
+        ts = datetime.datetime.now().isoformat()
+        tokens_b = tokens_total / 1e9
+        f.write(f"{ts},{step},{loss:.6f},{perplexity:.2f},{lr:.6e},{tokens_per_sec:.0f},{tokens_total},{tokens_b:.4f},{elapsed_hours:.4f},training_v2\n")
+
+
+def log_samples(step, tokens_total, samples_dict):
+    """Append sample generations to JSONL for tracking progress over time."""
+    os.makedirs(os.path.dirname(SAMPLES_FILE), exist_ok=True)
+    entry = {
+        "timestamp": datetime.datetime.now().isoformat(),
+        "step": step,
+        "tokens_total": tokens_total,
+        "tokens_billions": round(tokens_total / 1e9, 4),
+        "samples": samples_dict,
+    }
+    with open(SAMPLES_FILE, "a") as f:
+        f.write(json.dumps(entry) + "\n")
 
 
 # ---------------------------------------------------------------------------
@@ -421,16 +449,19 @@ def train(resume_from=None, fresh=False):
             log(f"step {step+1:>7d} | loss {avg_loss:.4f} | ppl {perplexity:.1f} | "
                 f"lr {current_lr:.2e} | {tps:.0f} tok/s | "
                 f"{tokens_b:.2f}B tokens ({pct:.1f}%) | {hours:.1f}h")
+            log_metrics(step + 1, avg_loss, perplexity, current_lr, tps, tokens_total, hours)
 
         # Generate samples
         if (step + 1) % SAMPLE_EVERY == 0:
             log("--- SAMPLE GENERATIONS ---")
             samples = generate_samples(model, tokenizer, SAMPLE_PROMPTS[:3], device)
+            samples_dict = {}
             for i, sample in enumerate(samples):
-                # Truncate long outputs
                 sample = sample[:300]
                 log(f"  [{i+1}] {sample}")
+                samples_dict[SAMPLE_PROMPTS[i]] = sample
             log("-" * 40)
+            log_samples(step + 1, tokens_total, samples_dict)
 
         # Checkpoint
         if (step + 1) % CHECKPOINT_EVERY == 0:
