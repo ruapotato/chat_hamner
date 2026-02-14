@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual environment
+venv/
+.venv/
+
+# Training data (too large for git)
+data/youtube/*.vtt
+data/youtube/video_list.txt
+
+# Checkpoints (too large for git - we maintain one best checkpoint separately)
+checkpoints/round1/
+checkpoints/round2/
+checkpoints/round3/
+checkpoints/final/
+checkpoints/training/step_*.pt
+
+# Logs
+logs/*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env

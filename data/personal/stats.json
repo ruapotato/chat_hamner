@@ -1,0 +1,10 @@
+{
+  "num_videos": 93,
+  "total_words": 65595,
+  "num_samples": 451,
+  "sample_types": {
+    "youtube_raw": 261,
+    "youtube_topic": 92,
+    "youtube_conversation": 98
+  }
+}

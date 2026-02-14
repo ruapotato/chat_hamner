@@ -1,0 +1,48 @@
+[
+  {
+    "round": 1,
+    "results": {
+      "v04_diffattn_medium": 7.095145101547241,
+      "v02_dense_medium": 7.110831899642944,
+      "v03_diffattn_small": 7.1536534309387205,
+      "v01_dense_small": 7.164077620506287,
+      "v07_hybrid_small": 7.240494618415832,
+      "v09_deep_narrow": 7.268680229187011,
+      "v05_moe_small": 7.286726183891297,
+      "v06_moe_medium": 7.2870372915267945,
+      "v08_hybrid_medium": Infinity,
+      "v10_wide_shallow": Infinity
+    },
+    "advanced": [
+      "v04_diffattn_medium",
+      "v02_dense_medium",
+      "v03_diffattn_small",
+      "v01_dense_small",
+      "v07_hybrid_small"
+    ]
+  },
+  {
+    "round": 2,
+    "results": {
+      "v04_diffattn_medium": 6.846363077163696,
+      "v02_dense_medium": 6.86647294998169,
+      "v03_diffattn_small": 6.930674152374268,
+      "v01_dense_small": 6.943528876304627,
+      "v07_hybrid_small": 6.995762524604797
+    },
+    "advanced": [
+      "v04_diffattn_medium",
+      "v02_dense_medium",
+      "v03_diffattn_small"
+    ]
+  },
+  {
+    "round": 3,
+    "results": {
+      "v02_dense_medium": 6.706379613876343,
+      "v04_diffattn_medium": 6.71201256275177,
+      "v03_diffattn_small": 6.804286260604858
+    },
+    "winner": "v02_dense_medium"
+  }
+]
