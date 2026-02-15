@@ -374,6 +374,11 @@ def train(resume_from=None, fresh=False):
         total_p, _ = model.count_parameters()
         log(f"Model: {total_p:,} params | {total_p*2/1e9:.2f}GB fp16")
 
+    # Compile for speed (PyTorch 2.x)
+    if hasattr(torch, "compile"):
+        log("Compiling model with torch.compile (first step will be slow)...")
+        model = torch.compile(model)
+
     model.train()
 
     # Data stream
