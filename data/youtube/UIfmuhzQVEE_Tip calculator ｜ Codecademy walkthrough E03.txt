@@ -1,0 +1,71 @@
+let's go over the wallet calculator
+project from Codecademy alright
+step 1 set up a variable called meal and
+set it to forty four point five okay 54
+point five zero set up some tax tags
+gets six point seven five divided by 100
+now that's not exactly how I would do
+this calculation so we're gonna do it
+two ways the way that they're trying to
+have us be taught and the most common
+way I'll add and in the crazy way that I
+want to do it so tax one is just gonna
+be six point seven five no divided by
+100 we'll use it later okay and then
+we're gonna set up for two 'ti fifteen
+percent and do note that I purposefully
+put a decimal in there this is Python 2
+we want to force float division instead
+of integer division actually it's not
+Python to base at all it's kind of being
+interpreted to JavaScript on this
+website so it's it's fine but it's kind
+of like Python two in that in the sense
+that it likes to do integer division
+when integers are given okay so now
+we're gonna do it my way
+tip just gets 15
+so then we're going to modify the mule
+variable to include the tax so you'll
+get mule loss the result being plucked
+by text that will adjust the mill
+variable to include d tax then there's
+the way that I'm gonna do it
+that's nothing like the way they would
+have you do it which is all our gets
+forty four point let's just do panel
+divided by all members so break up the
+middle cost into 100 parts and then pull
+out six of those parts makes more sense
+to my brain there's six point seven five
+so then we can do they'll get you know
+plus male part x tax one which is the
+six point seven five value okay and then
+so these two lines is kind of equivalent
+to their one-liner
+so I guess my ways inefficient and bad
+but whatever now for their way they want
+and you'll get what do we put total
+total get meal
+in Pentheus by the way the parentheses
+are just for me I think it's prettier
+order of operations would do the
+multiplication first anyway but it is
+definitely prettier this way and it's
+just going to be you know x tax and we
+don't like that way so yep my way you
+have to update mill part right here then
+we can do me and gets an ax whole gets
+meal loss yeah our x our tip swift a
+print out the total save that and that
+is the value we were hoping for
+so fifty four point six two
+let's go ahead and prove that their way
+works too so comment out this this and
+make that this this and that well this
+is supposed to be a tip so we'll just
+modify that and this is supposed to be
+tip one so well update that it's
+or stress fun
+[Music]
+thanks for watching

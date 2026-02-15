@@ -1,0 +1,77 @@
+let's take a look at the power and heat
+situation of the leave'em five here is
+what the two versions look like while
+charging with a small fan blowing on
+them on the right we have the older
+birch version of the labrum five with
+the newer chestnut on the left both are
+up to date and running pure OS as you
+can see the chestnut is performing much
+better running around five degrees
+cooler than the birch even with the
+birch closer to the fan a more
+real-world test is charging without a
+fan oh my goodness fan goes back on
+let's kill this phone as soon as this
+recording is done based on this test I
+would not recommend charging a birch
+without a fan or at least some sort of
+metal surface for it to rest on to carry
+away some of that heat this really shows
+just how much better the chestnut
+version of the Liebherr 5 is at cooling
+the phone charges safely more than 10
+degrees cooler than the version before
+just as important as heat dissipation is
+battery life without any modification
+running Wi-Fi and with the modem turned
+off the chestnut lasted 2 hours 20
+minutes and 30 seconds this can be
+extended by turning off a few CPU cores
+and limiting the CPU frequency with that
+done the chestnut lasted 2 hours 34
+minutes and 20 seconds which gives us an
+extra 13 minutes and 50 seconds of
+runtime the few CPU tweaks that have
+applied were the only things I could
+think of to do on my own but I went over
+to the matrix channel and asked what
+they might do in order to save some
+battery life Sebastian came back with a
+few extra commands for me to try these
+commands allow us to set the DRAM
+governor to allow the clock speed to
+drop to 25 megahertz warning this does
+cause issues with the display stack at
+the moment but as an extra step let's go
+ahead and turn off the screen by hitting
+that power button once with the CPU and
+DRAM in a minimal state the chestnut
+lasted three hours 41 minutes and 20
+seconds which is a whopping 1 hour and
+20 minutes and 50 seconds extra this
+leads us to the next question can the
+device keep itself cool while under load
+I started stress testing the Leoben 5
+and walked away for about 30 minutes
+when I got back the CPU was hotter than
+I liked but once I stopped the test the
+CPU dropped
+in temperature very fast playing with
+the CPU and DRAM like we did before does
+seem to be an effective way to keep the
+Liebherr 5 cool this is what the Libre 5
+looks like under load but with the DRAM
+and CPU in a minimal state the
+temperature stays between 50 and 52
+degrees not too bad
+this is really good news it means that
+at some point the Libre 5 will be able
+to manage its own temperature simply by
+reducing performance the upcoming
+version dogwood should have even better
+cooling than what we see in chestnut we
+should also keep in mind that the final
+version evergreen will come with a
+bigger battery than what we're testing
+with today thanks for watching bye

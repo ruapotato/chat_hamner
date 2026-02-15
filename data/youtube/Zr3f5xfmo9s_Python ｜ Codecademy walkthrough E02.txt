@@ -1,0 +1,388 @@
+continuing where I left off before let's
+keep learning okay this is going over
+one of the most confusing early concepts
+of coding let's go over it in a console
+though instead let's set the variable
+I'll test one GATS ten now if we want to
+modify what is in test one of people
+starting I don't think this is
+acceptable it's 20 isn't it and you know
+it's it's still 10 if you want to
+increment what's inside of test one you
+have to reassign test one and what does
+that look like looks like this test one
+gets passed one plus ten I think we can
+all agree that test one gets test one
+does nothing right it's the same it says
+store what sinuan already but if we do
+test one mine is that we're actually
+modifying your very cool tada
+oh look they're using syntax I haven't
+gone over yet let's go over some of the
+syntax so they're plus gets syntax here
+which is what we see here plus gets test
+1 plus gets 5 and test 1
+it's shorthand for test 1 it gets test 1
+plus so if you if you don't want to have
+to type out the variable twice one on
+the what we're storing in and one on the
+assignment side of the gets then you can
+simply ignore that and do plus equals 5
+alright instruction of all's we're
+trying to figure out how much it rained
+in the past year update annual rainfall
+variable to include the values from
+September to December
+so annual rainfall cats annual rainfall
+plus plus pop and this plus bluffin this
+and yeah you can just keep adding like
+this although if the line gets too long
+it's gonna be pretty ugly so just be
+aware of how long your lines are getting
+and break this up pretty easily by
+adding another annual rainfall gets
+annual rainfall Plus that and do another
+one that's annual rainfall gets annual
+rainfall plus the next one and so on but
+this one liner should do the trick
+[Music]
+give it run
+oh we have September twice gotta make
+sure we do that right let's take October
+replace this one I'll beat it back mmm
+wrong let's continue they are 100% right
+you do need to comment your code
+commenting your code is super useful for
+anyone who's gonna read it later which
+includes yourself a lot of the times so
+we're gonna do some comments here
+unfortunately I don't think either of
+these things really need commented
+because it's pretty obvious the variable
+names we're getting assigned something
+is is almost a comment in and of itself
+but set name that city
+let's give that a run well it seems to
+not care but yeah you can tell you what
+you can tell what each thing is doing
+you could even do this just set city
+info and then you can move on with the
+program this code anyway um you do
+whatever you want but I usually have
+kind of a comment on top of the blocks
+that do something so this is like
+pretending or this is the block or set
+out the city information and we can have
+a block code that processes all that
+information next numbers you guys I
+already know all of this so integer
+holds something doesn't have a decimal
+including zeroes and negatives floats
+are something to have a decimal so I had
+no idea this was true but yeah you can
+do scientific notation so 1.5 ^ to slide
+that decimal 1 2 you got 150 that's cool
+I've never used that probably cuz I
+don't use that large of numbers that
+often but you can there going grocery
+shopping let's make a grocery list so
+that you can plan your budget so we're
+gonna take cucumbers cucumbers gets let
+me do I want I think I want 42 cute
+compass all right each cucumber is gonna
+cost me want rice per you gets three
+point two five okay before we move on
+any more I'm gonna talk about how much
+it annoys me the way they do their
+variable names
+Codecademy Codecademy Kok Adam II anyway
+I would if I were writing this program
+camelcase
+my variables instead of under like
+underscore them so the difference would
+be rice for you I think it looks better
+and just just as like clean I see both
+pretty commonly but visit just at the
+alternative way of doing it so you pick
+which one looks prettiest to you do note
+though that this code Academy place is
+going to require you to use these
+underscores for the time being because
+it's that's how they check if the
+programs execute it right say check for
+variable names which aren't camel cased
+unfortunately alright we got the third
+part so now we want to set the total
+cost to 42 it's just a cucumber value
+and the price per cucumber that's a plus
+sign David that's multiplication sign so
+we're doing 32 multiplied by three point
+two five and stowing that in total and
+it's gonna parse out what's in total and
+tell us we're doing it right oh it wants
+us to print it print I feel like being
+an ass again that's okay I'm on no I'm
+totally gonna be done time forty two x
+three point two five one thirty six
+point five and because I'm not a lazy
+person
+let's typecast that with all the
+parentheses we need oh it didn't like
+that what if we do this does that let us
+trick their parser yes it does what no
+all right let's do this they're
+going over integer division and regular
+division I kind of did that in the last
+video but let's see how they go over it
+wrong so I don't know if this has
+changed in Python 3 or what let's
+actually test that test that - - oh it
+is a thing that's different in Python 2
+versus Python 3 now that would get a
+little confusing the maths I'm sure but
+yeah what they're saying is back in the
+Python 2 days if you divide an integer
+by a different integer it's going to
+always do intricate division now on the
+Python 3 days if you want that to happen
+you need to typecast the results store
+like that so let's go back to Python 3
+set up 7/2 look at the quotient and you
+see it's 3.5 and less we type past it so
+that definitely is a difference between
+Python 2 and 3 keep it in mind
+all right so integer division is useful
+that does have scenarios but you do need
+to kind of force it in Python 3
+giving you a couple more rundown of how
+to typecast make it a float so that it
+comes out yep yep yeah okay so you have
+come home from the grocery stores with
+100 cucumbers to split amongst yourself
+and five roommates six people total
+create a variable called cucumbers with
+six 100 on people hold six okay so we're
+just gonna do it the Python 3 method
+cucumbers divided by number of people
+and we've been that out thanks all right
+gotta spell everything right David okay
+so let's go over this program real quick
+we're setting up cucumbers at 100 and
+I'm people with six then we're taking
+we're doing some integer division
+figuring out how many whole cucumbers
+there are per person storing it in here
+and then printing that out yes this was
+some pretty ugly variable names okay and
+then it wants us to figure out how many
+leftovers there are so then we're gonna
+take this set it to cucumbers use
+numbers modulus the number of people so
+we're doing in true division here we're
+getting the truncated integer of of how
+many each person could use and then
+we're saying what was left over with
+modulus so it's going to do the division
+and then it since it doesn't go and even
+it'll divide divide divide by to be like
+oh here's left over doesn't divide
+equally and then there's your modulus I
+don't know that makes any sense but it
+makes a lot of sense to me so
+spread that out anyway don't we just
+print out this really long very one I
+don't want Ike wrong so there it is
+number of people some people cool oh it
+doesn't want the remainder of the
+cucumber's of how many's left over it
+just wants one of these to be a float so
+that it's that's superdumb but I've cast
+oops
+give that a run and we're not doing
+modulus anymore so okay they should have
+done the modulus because I don't want to
+reinforce modulus a little but they
+didn't so we're just gonna move on from
+that
+next multi-line strings this is a string
+a pound is a comment a single quote or
+Dipple quotes what's stuck in between
+them is a single line string and then if
+you want a multi-line string you can one
+two three
+but whatever the hell you want to bend
+eight lines as you want one two three to
+end back you can set this up like test
+gets this and then test would print out
+that garbage plop that on into here yeah
+you can see it it just does that but if
+you know if we print this it'll look a
+little better there we go backslash n is
+the new line character is equivalent to
+the Enter key without actually having an
+Enter key
+yep interesting tidbit there are a
+couple of use cases from multi-line
+strings one is this you want to assign a
+variable of something that's more than
+one line alternative to this would be
+with the backslash ends backside and so
+that's the same as well with the single
+quote or the single set of double quotes
+and then the other use case is if you
+want to comment something that's
+multiple lines as I went over last video
+you can have a floating string in your
+program it just doesn't do anything so
+if you have any really long comment you
+want to say and don't want to want to
+put a pound beginning of each line a
+multi-line comment is pretty common to
+use lots
+I don't know but you can just put in as
+much comment as you want there and then
+continue with it so the downside to
+having a long floating string in your
+program is it isn't overly efficient you
+are just arbitrarily wasting memory to
+have a string there but they didn't ever
+implement a multi-line string besides
+that's their multi-line comment besides
+that so it is what it is yeah let's see
+what they want us to make those do
+create a variable like you get
+in highlighting this I've noticed that
+mine has a space here while theirs does
+not have a space here
+I find that immensely frustrating and I
+think early users would find that pretty
+frustrating too ok Codecademy you
+shouldn't give a crap if there are empty
+spaces in here at all so I wouldn't I
+would make your parser a smidge bit
+better it wouldn't be that hard you
+would just need to look through each
+line and do a strip statement you could
+write it in like 15 lines of code I
+don't know how many people would get
+stuck here with little spaces and weird
+places but it's a waste of everyone's
+time so moving on bullying's are another
+variable type and there's also something
+called boolean logic that we can go into
+a smidge bit as well so let's pop over
+into this console and do true/false all
+right those are the two boolean
+expressions that exist we can store them
+true get true/false s-pulse
+so I have a variable name true that
+holds the boolean value of true I hope
+that's not too confusing they are just
+arbitrary by variable names I could just
+put false to here as well it's not a
+problem but something I couldn't do or
+something you shouldn't do is put a
+capital F there because that's just
+weird
+don't use there are certain things you
+should just not use as variable names
+and true and false is one of them all
+right one of the most common things
+you're gonna use boolean's for our if
+statements so you say if some boolean
+statement so let's just do true
+hi okay
+of course it printed hi because if true
+is true but we could also have done if
+false or true still sets hi so it's
+saying if this is set to true or if this
+is set to true and no it will check both
+but it will short-circuit so if this was
+true it wouldn't ever check this because
+it's looking for one or the other it can
+be both but it doesn't give a damn it if
+it's both so if we wanted it to be if
+you want true and true we'd have to do
+it false and and that does nothing oh
+let's do something cooler if I was do
+test cats
+well if test is greater than six Flint
+and since 12 is greater than six this
+boolean expression is evaluated as true
+so it comes out with saying if true
+print hi but if we set test to four and
+rerun the above expression it doesn't do
+anything I'm sure it's gonna go a little
+bit deeper into boolean expressions so
+let's just keep eating up whatever they
+say this is a really weird example
+they're asking us to read this and see
+that this person is 21 and then because
+they're 21 gauge is 12
+balls that all we're doing here okay
+very loose touch on bullying expressions
+there this slide is almost exactly what
+I've done before playing in a console
+it's talking about typecasting so in
+this line age is 13 I am at the age a
+string of five years old
+that's super ironic that they use that
+example - okay um let's just skip down
+to whatever it's making us do create a
+variable called product that contains a
+result of multiplying the float value of
+float one and two how was that heart
+multiply is a star plus as a plus really
+ought to get that right David okay now
+it wants us to create a large string
+that has the data this
+but where that is a string like this
+and because I want to see that run that
+well it's 10 and since I'm terribly
+interested to see their parsing
+abilities it seems to not care about
+that pretty cool let's just move on
+though all right so we've looked at a
+bunch of stuff let's just do their test
+why not create a variable called skill
+completed set it equal to some Python
+syntax and then run and then stage to
+create a variable called exercise is
+completed and set it equal to 13 13
+don't forget to delete this backslash
+points per exercise gets 5 sub - okay
+create variable called point total and
+set it to 100
+update total point to be what it was
+before plus the result what update total
+point to be what it was before plus the
+result of multiplying exercise completed
+and points per exercise
+we initialize the total points here to
+100 update total points to be what it
+was before not initialized plus the
+and per points per day I'll be honest
+their directions here are pretty bad
+pretty bad I don't even know if this is
+what it's looking for yeah okay it wants
+a face total of the points just totally
+gonna fudge this and just because I like
+cleanliness I like to put parentheses
+around the things I want to execute
+first rather than letting it happen
+automatically so we're going to multiply
+these two and then add 100
+points per exercise we're gonna add a
+comment here that says this oh
+there's your comment happy with that
+print a string to the console that says
+I got whatever points okay
+rinse I should show you some of the cool
+ass Python 3 syntax for printing out
+variable names and level of strings it's
+pretty awesome do that another time
+though print alright dot plus and a
+space points exclamation mark I should
+do it 165 points all right well that
+sounds like a very good stopping thanks
+for watching bye

@@ -1,0 +1,101 @@
+hello this is janna from first show
+legit your credit score has skipped to a
+dangerous level
+robocalls have been an issue for a long
+time now with new user-empowered linux
+phones on the market
+i thought it was time that we had a set
+of tools to fight against all these
+scams
+google voice lowers the number of
+robotic calls by asking for the name of
+the person calling
+then providing that name when the call
+comes in this is a good system but it
+still requires user input on both sides
+of the call
+a better system would simply ask the
+unknown caller for input to prove that
+they're human
+with that as my goal i set out to create
+an interactive voice response system for
+the libra 5.
+the core of this had a few parts the
+first part was finding a way to read
+dtmf tones
+[Music]
+fortunately this is something i solved a
+long time ago you can dump a bunch of
+audio data to standard out
+then pipe that data to socks to change
+the audio format a bit if this is not a
+live audio stream
+pv can be used to control just how fast
+standard out is
+and finally we can pipe that into
+multimod ng
+cool so we can read dtmf codes out of a
+the next step is to figure out how to
+pull live audio data from a phone call
+ba control and pa command are quite
+helpful in finding a list of pulse audio
+syncs
+from there it's just a matter of getting
+the right command line options
+this raw audio data comes from the phone
+call it's not the right rate to be read
+by multimod ng so it needs to be
+converted a bit with socks
+this data is just what multimod ng needs
+to read our dtmf codes
+just like that we can see the keys the
+caller has entered while in a phone call
+playing audio to a phone call is not
+difficult
+pa play is the simplest way next up on
+the to-do list is automation
+for the moment i'm using this really
+hacky way to auto answer a phone call
+this is watching the modem directly and
+sending it a command to connect at the
+right time
+it then also runs a script called ivr.pi
+in the script i've exposed a few helpful
+functions that can be used
+say we'll use espeak to send audio to an
+active phone call
+by default it will repeat every 4
+seconds but that's easy to override
+dtmf will listen for a given number of
+dmf codes
+it will return a list once the right
+number of keys have been entered
+record call dumps audio into the calls
+and waits for the user to enter a pound
+i still need to implement ring phone but
+the idea is it'll allow the phone to
+ring like normal
+this is where the project is today
+welcome to my phone
+press one if you're human press do to
+leave a message
+welcome to my phone press one if you're
+human
+press two to leave a message
+press hash when you are done i'm
+planning to keep this running on my
+phone once ring phone is implemented
+and once i solve the issue where the
+feedback system gets grumpy
+with multiple calls answered behind
+modem manager's back
+the potential here is nuts you could
+easily plop together a script that asks
+for a password or blocks a certain
+number
+you can set up a script that with the
+right pin texts your gps location
+or sets off an alarm anyway feel free to
+contribute over on bitbucket
+thanks for watching bye
+mode

@@ -1,0 +1,180 @@
+hello Internet openSUSE leap 15 has been
+released let me sell you on it
+[Music]
+so far it's nothing very hard man their
+servers are bogged down the heads not
+wedding frame Oh bitchin openSUSE 15 I
+heard some good about this one I
+have a very fast internet connection so
+we'll have a fairly good idea of what
+their servers were like under load hey
+five minutes really for four point seven
+gigabytes impressive so they recommend
+image writer I would rather use DD
+let's prepare I'm gonna use this thumb
+drive small tutorial tell us the SD tap
+tab gives me there's an SD a and an SD
+be I'm gonna insert my thumb drive tap
+tab SDC so clearly my thumb drive is dev
+SDC so the command should be DD if for
+input file gets tilde slash screw that
+home potato downloads
+what is this download openSUSE leap just
+that openSUSE I have so many of these
+week 15 dot ISO okay then it's just of
+equals slash dev slash SD and we decided
+because that's the new device when I
+plugged in my thumb drive see ya don't
+dad up
+oh but there's more nonsense that they
+want me to add equals or
+megabytes dude you need a diuretic
+status equals progress
+and first ampersand that's a dollar sign
+Dave Dave
+hey cat no and and sink you know if we
+all just remember to run the sink
+command before we ripped out our USB
+drives we would have a lot less weird
+data corruption can I run this command
+yet yeah it's downloaded and same thing
+okay so now we just get to wait until
+the ISO is written Godot key so 3.9
+gigabytes copied and it ran the sink
+command no it didn't but now we're
+running the sink command cuz you should
+ring you should you should definitely
+run that sink command bro it's useful
+whoa yep
+geez look how much need sunk all
+right now that sink has been run I'm
+actually gonna reboot and install OBS
+over there on this fresh install of this
+okay here's the grub screen for the
+Installer we'll just go down to the
+installation option okay we are
+initializing let's go ahead and just
+spam the next key for a little bit next
+I'm gonna go ahead and just go with
+default KDE plasma for now you could
+also go to configure online repositories
+hit next a bunch of times go to custom
+and you can select xfce or matei if you
+so desire but for now I'm just gonna go
+ahead and go to next all right so the
+partitioner is gonna do btrfs by default
+that's cool if you want transactional
+upgrades which allows you to like roll
+back and have a read read only root
+filesystem but I don't even to that
+expert practitioner will do with
+existing disks so for me it's really
+easy I'm just going to replace one of
+the OSS I have on my fast drive which is
+one of these with with this openSUSE so
+all I'm gonna do is go in here or the
+bottom here and edit and we're gonna say
+do format this drive mount this drive as
+root next
+okay so now we're going to be using this
+as my root filesystem we need to set up
+s DB to be my home drive this is where
+my home data is and I don't want to have
+to move that around or do anything
+special so we're gonna this do not
+format mount slash home next except and
+it's just next a bunch of times the
+install went just fine
+I just finished installing OBS and
+adding my pac-man repos and I should
+talk about the pac-man repos these are
+the biggest gotcha in the openSUSE
+community in my personal opinion you
+forget to add these you're gonna
+probably have a bad experience and talk
+about how bad openSUSE is so note that
+if you use openSUSE please do this next
+step immediately after you install and
+what is that step go to a browser type
+in open Supes pac-man open Susa pac-man
+just like that first link additional
+repository and look here's the command
+notice that it changes the priority to
+90 this is very useful so go ahead and
+add this I'm on 15 you were on a
+different version it would have it then
+run zipper refresh when it asks you if
+you want to trust the repository enter a
+four always and then your your system
+will have a lot more packages available
+and you'll have a just an easier time
+playing things like mp4s
+and you won't like rip your hair out
+it's also sometimes useful and by
+sometimes useful I mean like almost
+always useful to after you add the
+pac-man rabe repository to dupe from it
+distribution upgrade so run this command
+it's root
+I guess just run this command you run
+this command it'll say this package is
+broken do you want to bla bla bla you
+always enter one first which vendor
+until it installs everything and then
+you'll have a great time on openSUSE
+then I just installed OBS and Here I am
+so everything's working pretty good
+except I'm on the open drivers let's go
+ahead and switch to the Nvidia
+proprietary driver because I I like
+better acceleration just in general okay
+so I'll be honest I was trying to do the
+open Susu drivers easy way and it just
+wasn't working for me so I'm gonna go
+ahead and follow the hard directions
+which is Nvidia the hard way it's easy
+you just Google and do the hard way with
+Syria so it's the first link now we're
+gonna go ahead and give these commands
+or run install some patterns go for it
+and this is gonna install like the
+source code for my kernel and
+development crap needed to compile the
+kernel driver that will come with the
+Nvidia installer so while that's going
+we're gonna go ahead and keep reading
+these download the driver
+okay let's download the driver
+mine's a Geforce 1060 GeForce GTX 1060
+for the Linux 64-bit operating system
+English yes looks like this is the right
+one for me
+download save file ok so now we have the
+Nvidia driver it's just a matter of
+getting the right dependencies installed
+and dot slashing that file with no GUI
+running oh yeah we need to do it without
+this so we're going to open them yost
+yes boot loader all right this is the
+bootloader config we can add kernel
+parameters in here this one okay
+so we're gonna add that option right
+here just like so okay it's gonna go
+ahead and regenerate my integer RT looks
+like we're fairly well installed here
+and I'm gonna go ahead and reboot to run
+level 3 ok post reboot I did for the
+source node the sympathies was installed
+at the right version so I updated my
+kernel as well with zipper top and then
+it was simple dot slash the Installer I
+had it regenerate my X config files and
+it worked really well it's running right
+now pretty anyway I hope you enjoyed
+openSUSE it's a great operating system
+there's a couple pickups you have to
+like know about if Dad pac-man
+depository and sometimes adding the
+proprietary drivers a bit tricky but
+overall I think you'll have a great time
+thanks for watching

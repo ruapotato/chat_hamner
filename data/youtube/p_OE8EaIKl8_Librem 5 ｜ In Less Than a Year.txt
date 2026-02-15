@@ -1,0 +1,157 @@
+it is not easy to build a smartphone it
+is even harder if you plan to ditch iOS
+and Android altogether in fact it has
+been tried and failed a number of times
+so much is needed in order to create a
+successful project of this type you need
+hardware software and just as
+importantly a community of dedicated
+developers peer ISM is just now solving
+the hardware problem by releasing the
+labrum 5 a crowd of hungry Linux
+developers and enthusiasts eagerly await
+this device and the software has
+direction and the solid base of Debian
+we know what we want we know what it
+will run on and we have a growing
+community to do it the importance of
+software direction cannot be understated
+this is a genome stack running on a
+standard display protocol it focuses on
+convergence and security this is in
+stark contrast with what lubuntu toj
+tried to pull off they wanted to
+reinvent a new display protocol called
+mirror they also focused on unity as the
+base GUI at the end of the day the Libre
+5 advances the mobile Linux story while
+a bone to touch mostly advanced
+deprecated a boon to software however
+time will tell if Obi ports can rise
+from the ashes having dedicated in-house
+hardware is a huge advantage Pearson has
+chosen every chip that will go into the
+labrum 5 which gives them an edge for
+driver support and it would seem that
+peer ISM is dedicated to improve and
+upstream the hardware drivers this means
+that other distributions that want to
+use the Libre 5 hardware can take
+advantage of a lot of the hard work that
+peer ISM is doing replacing a mature
+platform like iOS and Android does not
+happen overnight much still needs done
+first but the progress has been
+incredible to follow in this perfect
+storm of hardware direction and a
+growing community let's see what peers
+and managed to pull off this year so far
+from horrifyingly ugly to pretty ok to
+completely standard the keyboard has
+seen a lot of revisions
+when I first got a test out the keyboard
+it was this ugly white disaster thing
+but as a positive it did have a way to
+press control-c escape and those other
+terminal friendly keys then later we had
+a much nicer themed version of this
+keyboard no usability changes just a
+nicer look and feel this keyboard was
+eventually replaced and now we have
+something that looks quite standard the
+alignment is much improved and feels way
+more on par with a standard smartphone
+experience the only downside is the
+terminal inputs are not there so no
+arrow keys ctrl C or tab I'm guessing at
+some point will have a way to switch
+between these two different keyboards so
+that we'll be able to interface with GUI
+applications and terminal applications
+just fine the web browser is one of the
+fastest moving pieces of software
+improvements and changes are common
+after every update or reflash one of the
+biggest changes is the improved
+rendering on the small screen originally
+a lot of the web pages had content cut
+off this has been very much improved
+where now every web site I've tested
+looks very good in the mobile form
+factor another big change is the
+performance which continues to improve
+day by day
+the UI has also seen some love it is
+very touch friendly and you can also
+make web app shortcuts the app drawer
+has also seen some incremental changes
+originally the app drawer did not have
+X's to close out applications and
+originally it didn't display all of the
+dot desktop files only displaying a
+couple pre installed applications now it
+displays all regular desktop files like
+you would expect any menu to and of
+course the performance is miles better
+than it used to be here we can take a
+look at the almost default gnome
+settings even with this odd form factor
+you can see much of the content is still
+cut off on the right this is true on
+most if not all of the screens somewhere
+around July I was able to test on the
+dev kit and they had fixed a lot of the
+display issues it was still pretty
+common though to get stuck with some
+unadapted screen requiring like escape
+on the keyboard or some touch input
+that's rendered off screen as of just
+about a week ago just about everything
+is working fine
+you
+there are still a few small UI bugs but
+they aren't out breaking like they used
+to be
+they have also added a cellular category
+but I won't be able to play with this
+much until I have a Libra 5 with a
+working base band a lot of small yet
+critical bugs have also been fixed
+rotating the display with the keyboard
+open used to force you to have to reboot
+the device due to the keyboard being in
+full screen with none of the other UI
+elements being present this is no longer
+the case the file selection dialog used
+to be completely unusable Pearson has
+done a great job porting this and it
+does look right now the scrolling
+framerate went from well this to a bit
+more manageable speed I expect the
+overall smoothness of this device to be
+considerably improved over the lifetime
+of the Libra 5 stability has also
+improved quite a lot when I first got
+the dev kit it was common for the UI to
+lock up or the phone to completely power
+cycle I have seen the keyboard get
+messed up a random cursor appear out of
+nowhere and of course that weird
+keyboard bug while it does still crash
+from time to time I can now develop for
+hours without a crash this is a big
+difference compared to how it used to be
+where it would crash at least every hour
+it still has a way to go but this is a
+great start I also made a bit of
+progress on ad box after copying and
+hacking a few libraries into place we
+can now see that it complains about
+matching Gio lacks visuals not really
+sure what that means but hey it's
+progress all that in less than a year
+which puts to shame the glacier like
+progress of something like the Gemini
+PDA I for one cannot wait to contribute
+to the next modern smartphone experience
+thanks for watching bye

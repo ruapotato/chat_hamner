@@ -1,0 +1,206 @@
+Hello and welcome. Today we're going to
+talk about hardware kill switches.
+They've been shipping on more and more
+alternative devices and they do things
+like cut power to various devices like
+the microphone, camera, Wi-Fi, or even
+the modem. The pitch is pretty
+straightforward. You flip the switch and
+you know on a physical level that the
+device is off. Like if you switch off
+the microphone, it's physically not
+listening. My phone lives in my pocket
+90% of the time. So having a physical
+hardware kill switch that blocks the
+camera or the front camera is
+about as useful as my pocket. U very
+rarely am I walking my phone around
+pointing it at things that I don't want
+recorded. It begs the question, are
+these actually useful or just privacy
+theater? The argument goes that software
+can lie and therefore hardware is always
+more secure. When you tap disable
+microphone on Android, you're trusting
+there's no bug, back door, or
+vulnerability in the software stack.
+That's actually all a pretty fair point,
+but let's see if the FLX1S
+implementation is actually any good.
+Flipping the camera switch triggers a
+GPIO pin. The colonel sees it and stops
+the hardware abstraction layer. When
+off, the I squared C bus just fails. And
+the GPIO is input only, meaning you
+can't spoof this with software. When
+you're in the camera app and you flip
+the switch, you can see the feed drops
+instantly.
+You do have to restart the app in order
+to get the feed back. The modem switch
+has a similar pattern. GPIO triggers the
+kernel. Wireless gets killed. Input only
+pin can't be faked. But for the mic
+switch, this is actually a really good
+one. No GPIO events, no kernel logs, no
+ALSA changes. Nothing in software even
+knows it flipped. There's literally no
+software bypass for this. signal gets
+cut in the analog domain. Okay, now
+here's where things get interesting.
+None of these switches can disable the
+accelerometer. And can accelerometers be
+used to capture audio data? Yes, they
+can. So, here's the microphone kill
+switch, and I'm flipping it off. I'll go
+ahead and play some tones through the
+speaker and record the accelerometer
+data.
+Here's the basic tones I played.
+And here's what I was able to recover
+from the accelerometer.
+So yeah, that worked. Frequency stuff
+came through pretty clean. Let's go
+ahead and try some speech. This is the
+original audio clip. I'm going to go
+ahead and play. But private drive had
+hardly changed at all. The sun rose on
+the same tidy front gardens and lit up
+the brass number four on the Derslley's
+front door. It crept into and here's
+what the accelerometer was able to
+capture.
+Not really intelligible. You can tell
+that there's a rhythm there, but the
+actual words are gone. So, what's going
+on? The FLX1S accelerometer has a max
+frequency of about 380 hertz. That's a
+hardware limit on this particular sensor
+and there's no way to bypass it, which
+should put you in about 190 hertz as far
+as maximum recoverable frequency. Here's
+what that normal speech sounds like if I
+reample at this 380 Hz.
+&gt;&gt; Nearly 10 years had
+&gt;&gt; not much there. Human speech needs much
+higher frequencies around 2500 hertz to
+be intelligible. So really in the end,
+this isn't a particular attack vector.
+The microphone switches off and you can
+be pretty sure that your phone's not
+recording audio. Let's say you're in a
+sensitive meeting and you flip off the
+network switch. Secure, right? Cuz no
+data out. Well, if your phone's infected
+with sophisticated malware, it can just
+wait. Record data when it has access to
+the microphone and send that data when
+it has access to the network. Airplane
+mode has the same limitations, by the
+way. It's not just a hardware kill
+switch thing. One thing that can happen
+pretty easily if you do use the hardware
+kill switches is you can forget what
+state they're in. The user interface
+doesn't always update or doesn't update
+quickly. For example, if you use the
+hardware kill switch for the microphone
+and forget to turn it on, you might take
+video that doesn't have audio,
+completely forgetting about that
+feature. So, here's where I land. This
+stuff is legit. It does work and it does
+protect you. I just don't have a
+particular need in my daily life for it
+to be useful. The accelerometer side
+channel does exist, but isn't really
+practical for any real attack.
+Potentially, you could use AI to
+reconstruct more of the voice, but you'd
+have to train individual AIs per
+speaker, and I don't think that's ever
+been tested at 380 Hz before. The cash
+and weight problem is definitely the
+biggest defeater of hardbo switches. If
+you're flipping them on and off
+constantly, you'll eventually forget to
+flip them off when you need a sensitive
+meeting blocked, and you'll have network
+connectivity eventually, still leaving
+room for softwarebased attacks. At the
+end of the day, I wish this wasn't the
+angle we were pushing. I understand that
+it's a good marketing angle and that it
+does attract a certain type of user base
+to these very niche devices, but I'd
+honestly rather see a HDMI port or a USB
+port, potentially even a full-sized
+Ethernet port. that would be much more
+useful for my daily life than a hardware
+kill switch. So yeah, these hardware
+kill switches will remain in their on
+state for probably the remainder of the
+phone life. But uh if you guys have an
+interesting use case for the hardware
+kill switches or if you think they're
+more valuable than I think they are,
+please leave a comment below. I'd love
+to have my mind changed on this. Thanks
+for watching. Bye.
+Sit on the side. Three flippity toggles
+of privacy pride. You flip and you flop
+and the mic goes to sleep. The camera
+goes dark. Not a pixel will peep.
+Them goes poof.
+No signal gets out.
+is through. But flip it again and it all
+comes right back. It's not a brick
+phone, just a privacy hack.
+&gt;&gt; But what's your use case?
+&gt;&gt; I can't find mine.
+&gt;&gt; What's your use case?
+&gt;&gt; The phone works just fine.
+&gt;&gt; Oh, tell me. Oh, do I got no use?
+&gt;&gt; So, how about you?
+Are you a journalist running from spies?
+A diplomat hiding from government eyes?
+An activist tweeting from some secret
+place? Well, those are some very
+legitimate cases. But me, I'm just me
+with my phone in my jeans. The camera
+points down and sees nothing but me. I
+tested the switches. They work. Yes,
+they do. But do I go flip them? I
+haven't a clue.
+&gt;&gt; So, what's your use case?
+&gt;&gt; The batteries fine.
+&gt;&gt; Come on, let me know. Just drop your
+case
+&gt;&gt; in the comments below.
+Just drop your use case.
+&gt;&gt; Now a use case is better than a used
+case. You see that's the squishy
+silicone thing.
+That joke was quite free and I gave it
+to you. You're welcome. You're welcome.
+Now back to the
+No flippity switchy floppity free. You
+bobby and two and three.
+&gt;&gt; The modem goes by, the camera goes fly.
+But that is just up. It does nothing.
+That's
+&gt;&gt; the mic is the best when it's pure AND
+IT'S TRUE.
+&gt;&gt; NO SOFTWARE CAN SPY. THERE'S NO DIGITAL.
+&gt;&gt; IT CUTS in the analog. Isn't that
+&gt;&gt; the CPU doesn't know what that switch
+even means?
+&gt;&gt; So what's your use case?
+&gt;&gt; WHAT'S YOUR USE CASE?
+&gt;&gt; I REALLY DO want to know. Help me solve
+this case. Drop a comment. Change my
+mind. Prove me wrong. And thank you for
+listening to this silly song.
+la
+me
+know.

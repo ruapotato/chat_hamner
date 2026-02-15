@@ -1,0 +1,62 @@
+if this hasn't scared you away yet then
+I've got some useful tricks for you to
+correct those mistyped commands
+[Music]
+so let's say you type in something
+that's supposed to be pseudo but it's
+not pseudo you can go ahead and put a
+carrot the long coat onco thing and the
+right thing so that's a search and
+replace as in search for replace and
+specifically the last run command ok
+great you get how that works
+now let's say you did the exact same
+damn thing but you don't want to have to
+type that in because who wants to
+practice a muscle memory for that nobody
+does so the right answer is pseudo and
+an exclamation mark and a star that says
+run sudo with the arguments of the
+previous command previous command
+arguments of the previous command ok but
+there's actually a lot of these like
+exclamation mark and then symbol things
+I'm gonna go ahead and show you all of
+those but do that I'm not going to show
+you all of those I'm gonna show you some
+of them geez there's a lot of them umm
+echo AVCHD if you want the first element
+we can do exclamation mark and then a
+character that's the element a if we
+want the last one is its echo
+exclamation mark and a dollar sign okay
+if we want the third element the syntax
+is echo exclamation mark colon three and
+do note that's not zero-based it's
+literally going to be the third element
+and that's because there is no third
+element so it's rerun this and then
+rerun
+parent :
+the third okay last example and it's
+probably the best one or maybe most
+useful ones so if you remember any of
+these just carry this out with you let's
+let's pretend you're looking for a final
+oh there's those jar files you want a CD
+to this directory now you don't have to
+re-type out that path that's silly and
+you don't have to like Barrow control a
+delete Eevee I mean you can control a
+over there and do that but I would
+recommend that you just type in CD and
+then you hold the alt or the escape key
+and hit period that will do a very
+similar thing to have the exclamation
+mark dollar sign behaved in our previous
+example now but you can continue to
+press a note toggle through more of the
+arguments it's very useful and should
+save you a lot of typing thanks for
+watching bye
+you

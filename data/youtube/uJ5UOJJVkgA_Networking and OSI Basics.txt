@@ -1,0 +1,152 @@
+computers send and receive data all
+around the world but just how does that
+work let's dive in
+let's start with two computers computer
+a and computer b cable together with an
+ethernet cable
+the ethernet cable itself is just a long
+run of wires
+it connects to the computer with a
+network interface controller most
+commonly referred to as a nic
+most computers come with a built-in nick
+but you can add in an extra if you have
+available pci lanes
+nics come with a completely unique id
+called a mac address
+and the mac address is similar to a
+shipping address but for your neck
+usually you only have one mac address in
+used by the computer but if you have
+multiple network interfaces like wi-fi
+and ethernet a second mac address could
+be in use
+the nic itself is able to make and
+receive signals across the ethernet
+cable
+keep in mind this is just a cable where
+sending down electricity in a specific
+way
+sending electricity down a line for some
+amount of time could indicate a one
+while the absence of electricity could
+indicate a zero
+here's an example computer a sends eight
+ones or zeros indicating a letter of the
+alphabet
+computer b responds back with a message
+if the letter was received correctly
+or responds with a different message if
+the letter needs repeated due to an
+error
+what we have defined here is a super
+basic protocol in reality your nic
+receives something called frames but in
+a similar light it has its own protocol
+defining the meaning in order of the
+ones and zeros
+we won't dig in this too much today but
+your neck card sends small chunks of
+data over a frame
+similar to a shipping label the frame
+has a destination mac and a source mac
+when a frame is received by your neck it
+checks to see if the destination mac
+matches your unique id
+if it does the data is processed by your
+computer to the user this process data
+could look like a web browser loading a
+bit or a download continuing however
+these processes could take thousands of
+frames to complete
+using macs to address computers works
+perfectly well if all the computers are
+directly attached
+but the internet is made up of a bunch
+of smaller networks that can all talk to
+one another
+computer applications also don't use mac
+addresses to directly transfer data
+between each other and said
+ip addresses are used when a net card
+receives a frame the data inside usually
+contains something called a packet
+similar to the frame protocol the ip
+protocol defines the order and meaning
+of the raw ones and zeros coming across
+the ethernet
+these packets contain a source and a
+destination ip as well as a data payload
+normally each computer has one ip
+address but each nic attached to a dhcp
+server will be assigned an ip
+this is done by the router in most home
+networks if computer a wants to talk to
+computer b
+but computer a only knows the ip address
+of computer b computer a can use
+our address resolution protocol to
+resolve the destination mac
+this is where a frame is sent to all
+computers on the network the computer
+with the matching mac
+replies back while all other computers
+ignore the request
+most home networks use an ip range of
+192 168
+1 something and have a subnet mask of
+255 255 255
+0 which is often referred to as a slash
+24 network
+let's look at one of these ips in this
+example all ips in your network will
+start with 192 168 1 something
+dot 11 is unique to this computer on
+this network slash 24 is the subnet mask
+the subnet mask more or less defines
+which part of the ip is common to your
+network and which part changes per
+computer
+in this example all ips starting with
+192 1681 are part of your network
+any ip outside that range needs your
+router to forward your packet to the
+proper router
+if your running table is set up
+correctly then the next hop or router
+should be able to resolve the ip into a
+local mac address
+or at least be able to forward it on to
+a router that can there could be any
+number of these network hops in between
+you and just about anywhere on the
+internet
+of course we don't type in ip addresses
+to our favorite websites
+even though we can instead we rely on
+dns servers
+if you send a dns server a domain name
+it will reply back with the ip address
+tied to the domain name
+this lets anyone set up a web server
+then pay for a domain name
+next they can point that domain name at
+that ip address people that browse to
+the site will end up talking to a dns
+server to find your ip
+then your data will be hopped across
+various routers to its end destination
+at this point computers can route data
+to various networks using the ip
+protocol
+the data in the ip packet usually
+contain something like tcp
+which is short for transmission control
+protocol these protocols often have air
+correction built in
+these tcp packets are the basis of how a
+lot of fundamental applications work
+including http and https which is how
+web pages send and receive data
+head on over to hackers-game.com to find
+out more thanks for watching bye

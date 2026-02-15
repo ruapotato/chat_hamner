@@ -1,0 +1,129 @@
+screen-capture keyboard input and a
+hacky way to install stuff stick around
+to the end to hear about the robot I'm
+working on out of the box the Liebherr 5
+has an on-screen keyboard that looks and
+feels good you do have the option to
+switch out the default for some
+alternatives at the moment this is the
+only alternative that I know about the
+default is a bit better-looking
+Bluetooth is also a good option to
+connect a keyboard using this mini
+keyboard mouse thing I'm able to enter
+text in x11 windows as well as native
+Weiland windows
+now simpler also fills
+home on the labrum five
+you
+let's see how many firefox tabs
+five can open
+okay
+not bad
+something that really took me by
+surprise is when I press the key combo
+ctrl alt f1 on a desktop computer I
+would expect that to take you to the
+first virtual terminal and that's
+precisely what the Libra 5 did
+after I was done poking around ctrl alt
+f7 takes you back to the GUI session
+also just like a normal Enix computer if
+you want to use your desktop keyboard a
+USB hub will be supported at some point
+but it's not working just yet you can
+however use a program called X 2x which
+by default will allow you to use your
+Linux computer mouse and keyboard on any
+x11 app running on the libra 5
+I wrote this small hack around script
+that allows x2x to work with the native
+Weiland windows it does need a bug fix
+for x11 windows though but it does work
+pretty well for most use cases after
+messing around with a few screen capture
+tools I managed to find one that works
+on the labrum 5 it takes a few minutes
+to setup but once it's done
+you can record video natively on the
+labor 5
+you can see it does drop a few frames
+when the workload is high but it does
+get the point across nicely
+community apps have seen an update it
+now allows you to install flat hub
+packages that are listed on this wiki
+it's not hard to create apps for the
+Leoben five and it's not hard to get on
+this wiki you just need to post at this
+user forum pointing everyone at your
+code it's also a good idea to package is
+flat pack or Deb I prefer packaging is
+Deb but flat pack is well-documented and
+much more popular at the moment I should
+also mention the key that open repos
+uses is too old for POS because of this
+I force app to ignore the bad key and
+install anyway this is fine for the
+initial installation but it breaks
+updating from the software store the
+simplest solution is to remove the
+offending package before you run updates
+I'm also working on a free and
+open-source cat toy it's a robot I'm
+building with my roommate the goal here
+is to entertain cats and dogs or
+whatever is willing to chase a laser the
+robot is built from a few parts an x86
+powerhouse is used for image processing
+it pulls its images from a USB webcam
+this is where things get interesting the
+x86 machine is also attached to a
+Raspberry Pi over a serial USB
+connection when the Raspberry Pi starts
+up it otto runs a program called laser
+control module or LCM for short its job
+is to listen for commands over serial
+and manage two servo motors the servo
+motors take PWM frequencies as input in
+turn the servos move to an angle based
+on the frequency which is why I have a
+pre-configured Max and min PWM value
+more or less and the harder might pop
+off a servo the hardware limits are
+further restraint to things only in
+frame by the x86 machine here are some
+example commands that the controller
+takes it's how much we want to change
+the PWM frequency for X&amp;Y it also has a
+value for how bright the laser is but
+this isn't hooked up in hardware yet
+this is the command the x86 computer
+uses to limit the hardware restraints to
+things only in camera the main program
+running on the x86 machine has three
+main threads this thread is spun off to
+update the video this thread updates a
+laser position based on an AI routine
+and the main loop is processing the
+video into something the AI function can
+understand the AI is very simple and
+needs a bit of work the pink dot is
+where the software thinks the laser is
+the green dot indicates the center of
+movement I had it configured to use the
+mouse location as extra input for the
+laser this was a lot of fun to play with
+but for some reason this line of code
+leaked memory like mad so I ended up
+disabling mouse input and added arrow
+keys to move the laser around
+I didn't account for the dog's tail
+wagging so much it is definitely
+throwing off the center of movement I
+might have to toss that idea or maybe
+taking longer average I know this
+content is a bit different than my norm
+but everything I made here is free
+software and can be found in my bit
+bucket thanks for watching bye

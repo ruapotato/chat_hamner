@@ -1,0 +1,148 @@
+hardware changes from birch to chestnut
+are small but have a nice usability
+improvement on the outside the two
+models of the Libre 5 looked the same
+but you'll notice a difference when you
+plug in the leap from fives on the birch
+batch it doesn't enter a charging State
+when you plug it in while off at least
+not automatically this is fixed in
+Chestnut when I first plugged in the
+chestnut it auto powered on this new
+model can and does charge just fine
+while in an off state the chestnut also
+seems to have a bit better heat
+dissipation but both devices still get
+pretty hot
+I've a thermal camera coming next week
+that should better be able to tell if
+there are improvements calling on the
+Libre 5 is spotty it will work one
+moment and then the next not at all but
+when it does work it has a few issues
+the proximity sensor doesn't lock the
+screen so your face is pretty likely to
+mess with the UI holding the phone like
+a normal person seems to result in no
+audio getting across I ended up holding
+the phone like an old person in order to
+get the audio to work right I'm guessing
+this has something to do with the echo
+reduction and should be fixable in
+software this is a test of the call
+audio quality on a leap and by texting
+can be inconsistent but I found it to be
+much more reliable than calling it
+basically always works if you toggle the
+hardware baseband switch the mobile-data
+works really well while I'm out and
+about but when I'm in my apartment
+the Liebherr 5 thinks I'm attached to 4G
+and even gets an IP address from
+t-mobile but no data works on the phone
+including Wi-Fi I have to disable mobile
+data for the Wi-Fi to work stability was
+also an issue when I first got the Libra
+5 Chestnut I think this was because the
+power status is not always reported
+correctly this means that the OS might
+think that a phone is charging when it
+is actually unplugged and vice-versa the
+auto suspend feature in conjunction with
+the improper reported battery state is
+causing the instability but that's just
+a guess after I disable automatic
+suspend the Libra 5 will work as long as
+it's powered and not too hot during this
+week I hadn't
+time of three days but with updates
+coming in as often as they do it's best
+practice just to reboot daily headphones
+on both the birch and chestnut only kind
+of work you can get sound to play over
+them but they will be accompanied with
+heavy static
+Bluetooth is working very well I have
+struggled with Bluetooth on lots of
+phones but this was the best experience
+I've had so far I turned on the headset
+went into settings and connected it the
+hardest part was I had to remember to
+switch my output device to be the
+Bluetooth headset Firefox can now be
+used on the labrum 5 you'll need to use
+the alternative keyboard though check
+out my last video for directions
+you'll also need to set up an
+environment variable which can be done
+by editing this dot desktop file with
+that done the web browser works
+amazingly well the scrolling works
+pretty quick and you can even watch
+things like mV
+phonic the audiobook player I've been
+working on now it looks much better and
+is even packaged as a dot Deb but this
+leads me to another issue the package
+war of the labrum v is somewhat
+unsettled some are packaging as flat
+pack while others like myself are
+packaging as dot M getting your dot dab
+into the Debian repository is one way to
+publish for the labrum v but that is not
+a simple process the labrum 5 is now
+using the mainline version of Mesa which
+should eventually enable 3d acceleration
+for flat packs which will be a supported
+way to publish at some point if you
+don't want to wait for flat pack and you
+don't want to work directly with Debian
+developers you'll need to have your own
+Debian repo which provides updates and
+dependencies for your app this is where
+open repos dotnet steps in I have been
+working with basil to get pure OS
+support added this will act as a
+unofficial community app store for the
+labor 5 giving developers a repo to
+upload packages and whatever
+dependencies they might need and
+exposing a simple-to-use
+store to install and update apps the
+same thing was done on the Nokia my mo
+tablets and phones and is being done on
+sailfish OS open repos does have
+existing clients but both are programmed
+in C++ and QT and may include UI
+elements which aren't open and need
+removed so I started work on community
+apps which is a simple gtk Python
+interface for open repos right now I'm
+the only thing in the store but I'm
+hoping that will change fast if the
+store did have apps this is what it
+would look like this is actually the
+sailfish OS apps but but it should be
+pretty close to what this will look like
+in the future the API calls do take a
+bit of time to return which is why the
+store is a bit slow a few things are
+missing from the app view page I want to
+add the gallery button and the comments
+button next the install button doesn't
+actually work at the moment due to a
+signing issue but basil is working on
+this I'm expecting that it will be fixed
+soonish I know it's rather simple
+looking but he'll it's the first verse
+and it's GPL so help us all out and send
+me a poll request
+big thanks to Basel for doing all the
+hard work here and thanks to the peers
+and devs who help troubleshoot the
+signature error P resume we'll need to
+focus on saving every drop of power and
+touching up the core phone functions the
+community is now receiving hardware and
+can do whatever the hell they want to
+thanks for watching bye

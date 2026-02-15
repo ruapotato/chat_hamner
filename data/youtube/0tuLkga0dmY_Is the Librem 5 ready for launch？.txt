@@ -1,0 +1,150 @@
+progress on the deaf kit has been
+absolutely crazy at the moment
+September 15th was the last time I had
+to flash the deaf kid this leap Spears
+on just nine days before the initial
+launch of the Libre five after flashing
+it was clear that this version was not
+ready for the public for example on the
+lockscreen
+when you enter your PIN code the key
+presses remain highlighted a bit of a
+security fail we can also see the
+unfinished app lineup including gnome
+tweaks women vim and the non final icons
+if you recall in my last video the web
+browser performance is basically
+unusable in certain situations there was
+also no initial user setup dialog so it
+didn't ask you which language you wanted
+or if you want to connect any accounts
+etc something newly included though is
+the Software Center which had a few
+glaring bugs the app section never
+loaded meaning a terminal was still the
+only way to install new applications
+anything that prompted a user for a
+password the keyboard would simply not
+pop up you could copy and paste your
+password and though that has its own
+issues these all sound like pretty nasty
+bugs right well I'm sure purism thought
+so as well I did not have to reflash the
+dev kit all I did was run over to the
+update menu within the software Center
+and hit that update button
+all in all this is way cooler and much
+simpler than what Android has to do in
+order to modify its root filesystem
+after the reboot completed the
+lockscreen has seen an update key
+presses are now more circular and do not
+remain highlighted array once logged in
+we can see one of the first versions of
+the setup dialog it has some interesting
+defaults
+I never thought about switching to
+Dvorak on a phone I doubt very much that
+it would be more convenient or any
+faster but I mean if you're already
+accustomed to Dvorak this could be a
+nice option okay cool
+DoubleTap to continue or hit the next
+button these gtk switches are
+interesting they don't respond to
+tapping you actually need to flip them
+with a drag motion I did try to add a
+Google account here but I don't think
+that's working just yet
+the moment I loaded up the Software
+Center I could tell there were some
+massive improvements applications and
+categories are now populating just fine
+let's test out installing something
+k minds is not something I've tried
+before so let's give it a go
+they clearly fixed the password dialogue
+issue where the keyboard wouldn't pop up
+that's definitely good
+while we wait for this to install let's
+install another package I happen to know
+that frozen bubble almost works so let's
+go ahead and try that one
+cool
+it installed just fine going back to K
+minds it also installed fine it also it
+looks like the icons are showing up in
+the menu but they don't work let's try
+something that isn't a game
+you
+once again the icon and lodge button
+don't work but running the newly
+installed package from command-line
+seems to function fine I really did not
+expect this to run smoothly but it does
+if you plug this device into a monitor
+keyboard and mouse this would be a very
+usable workstation to create simple
+graphics this thing is running like a
+champ even dragging in the menus feels
+very smooth which used to jitter
+sometimes
+you can also do
+repo management from within the software
+Center
+and you can even use the GUI to remove
+installed packages which does seem to
+function just fine okay let's take a
+look at the clocks app
+creating a morning alarm is very simple
+and looks very nice very cool the
+keyboard now supports a numpad only
+layout
+the stopwatch app is smooth and very
+likewise the timer is perfectly usable
+I'm a bit nervous to test this one the
+browser
+to give it the best chance let's close
+everything else
+the goal is to download my own
+phonic
+dragging around feels completely
+different it's much smoother but also
+stops quickly after the scroll speed
+drops too low
+I'll just append my username
+[Music]
+and here it is
+I'm not sure if I can just download the
+dot dev without cloning the repo so I
+guess I'll just copy that and plop that
+into Kings Cross
+now we can just apt-get install that
+package
+that was not too bad but I would love to
+see a community repository that is
+simple to upload to and simple to add to
+the phone to get phonic into Debian is
+not a simple process and would be very
+time consuming okay okay
+what about heavy pages well it just
+works the scrolling seems just fine even
+on the heavy pages
+video playback is also much improved
+I cannot believe they have got out
+working to this level before shipping
+way to be amazing purism it's also nice
+to see that there's just one text editor
+now
+the last big glaring issue I see is
+newly installed applications don't have
+working icons this seems like a simple
+dot desktop issue and I bet Pearson will
+have it fixed before the first customer
+sees a Libra five phone of course this
+is all still non-final software and
+stuff is definitely going to change but
+this gives you a pretty good idea of
+what people will be using in the very
+near future
+thanks for watching bye

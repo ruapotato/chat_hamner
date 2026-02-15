@@ -1,0 +1,87 @@
+hello and welcome Mecca just had a live
+stream covering a bunch of updates
+they're putting in their mobile Linux
+device and now it's a phone and it's got
+an npu let's cover the highlights the
+biggest news is a complete platform
+upgrade they're moving from the imx8
+mini to the imx8 plus it's still a quad
+core CPU but it has some nice upgrades
+with this platform Improvement the GPU
+gets a nice boost this GPU supports
+openg glees 3.1 and Vulcan kind of right
+now the open source drivers support
+openg glees 2.0 and Mecca is actively
+working with the open source Community
+to get Vulcan and a newer version of
+openg running memory and storage is
+getting a nice upgrade too from 4 gigs
+of RAM to 8 gigs of RAM and from 32 gigs
+of onboard storage to 64 pretty nice
+they also have support for an SD card in
+case you want to Chuck in a couple extra
+terabytes but here's where things get
+really interesting they've upgraded
+their pcie slot to 3.0 and changed the
+keying to b key this means you can plug
+in a proper modem and there's more space
+around the modem meaning the support for
+modem should be better than the libram 5
+okay now for the display technology
+they've switched to AMOLED which looks
+gorgeous but does potentially suffer
+from Burnin so you got to be careful not
+to like leave a terminal up for hours on
+end they managed to make the device
+thinner going from 16 mm down to 14 mm
+but they had to cut the ethernet port
+they also changed the USB ports to USBC
+ports on the front front they removed
+the male Pogo pins and replac them with
+female pins which will be much more
+durable on the device itself this way
+the modules will have mail pins and if
+there's any damage to those mail pins
+it'll be on the module and not the phone
+protecting the phone from potential wear
+to handle all this amazing new hardware
+they manage to squeeze in a battery
+that's 30% bigger they're projecting
+that this will take the battery life
+from 4 to 5 hours to 6 to 7 hours now
+here's the catch this is going to drag
+out the timeline sum they're projecting
+first prototypes will land in May and
+they're being smart about their
+Kickstarter launch they want to wait
+until they can demonstrate working
+Hardware the price will also be
+increased compared to what they
+originally projected I think they said
+something like 30% potentially this has
+truly become a successor to the libr 5
+outperforming its processor and adding
+in additional capabilities like the
+modular hardware and an npu not to
+mention that it has extra space around
+the modem so additional modems will be
+easier to drop in the first iteration of
+the developer dock are live and it takes
+you all the way through building their
+kernels and flashing their device CAD
+files are published and source code is
+available on their GitHub they are going
+to send out some of their prototype
+devices the same version that was at CES
+but they don't have that many as it is a
+prototype build still I'm hoping I'll be
+one of the ones they send a device to
+this is much more than just a spec bump
+they've completely redesigned their
+device around Community feedback while
+I'm a bit bummed about the timeline I'd
+rather they take their time rather than
+rush out a half-baked product what do
+you think about all these upgrades let
+me know in the comments below thanks for
+watching bye

@@ -1,0 +1,99 @@
+hello and welcome today we're looking at
+Magi OS 0.4 it's a Linux distribution
+focused around AI for now it's a live
+USB that you can test out on your
+computer if you've got a GTX 1080 or
+better let's take a
+look when you boot up your computer
+you'll be greeted with this wonderful
+interface and you'll see your model
+loading status wait for that to complete
+before you really use any of the tools
+or you'll just be waiting for them to
+return down here is a llm interface you
+can chat with it uses the AMA model
+that's loaded in this case that's Midol
+hey so you can see it's Contex aware
+knowing that I have um Kate select at
+the
+moment here's my K
+window on different screen aside from
+just chatting with your llm you can
+click this little audio icon to have any
+of its replies read back to you
+assistant hello how can I assist you
+today with Untitled Ma
+wonderful you can also use voice
+transcription hey how's it going
+assistant
+bam outside of clicking the audio button
+here there's also the same icon here
+which uh does a similar thing anywhere
+in any
+app for example I can click and hold
+this voice transcription button here and
+I can type in various things into this
+search
+box bam also similarly I can highlight
+something and have it read back to me by
+clicking
+this speaker icon this means that you
+can use a dedicated voice Dr oh well
+another AI helping us out out of the box
+there's also some configuration settings
+you can change your panel settings and
+your workspace importantly you can open
+up audio settings and configure your
+input
+you will need working mic input for the
+voice
+transcription here you can select which
+AI model you want to use note that this
+is just pulling from AMA and you can
+download additional AMA models and
+select it here under appearance you can
+select which gtk themes you're using as
+well as which Magi theme you're using
+and these themes do affect the whole
+system at the top panel you'll see your
+CPU your RAM use and your GPU use as
+well as your vram usage vram gives you a
+good indication on how maxed out you are
+on loading AI models new in this release
+is this terminal icon if you select it
+you can chat with your computer voice
+assistant style this is a smart bash
+terminal
+hello hello you currently have no
+network local connections being added to
+the access control list and it seems
+like thear //
+that's because I have some
+misconfigurations in my bash RC file I
+believe anyway uh it is contact to where
+so if I just simply type in clear I can
+ask it other things without having it
+talk about my
+misconfigurations
+hello hello how can I help you
+today I'm demoing you as a voice
+assistant I'm delighted to be demoed as
+a voice if you have any questions or
+need assistance feel free to ask what's
+5 *
+5 5 * 5 is
+25 of course this is a regular terminal
+you can just type commands
+into what does this
+mean the fre command shows the memory
+usage of your system it's basically just
+a friendly terminal you can talk to
+correct the all of this is open source
+links are in the description and I
+encourage you to download and try it out
+as I've recently just picked up a day
+job I will be developing on this much
+less if you want to see this developed
+further like share and subscribe there's
+also ways to support me financially on
+my GitHub thanks for watching bye

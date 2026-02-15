@@ -1,0 +1,167 @@
+recently I decided to invest in the
+purism libram five phone and I'm
+ridiculously excited for this device I
+decided to check out the software stock
+they've created so far instead of using
+the default gnome shell like originally
+planned they've they've created this
+shell called polish which by default is
+packaged for Debian but I also found
+packages in the openSUSE repository it
+looks like they use Jenkins to build
+nightly builds whatever the latest stuff
+is so go ahead and download whatever the
+latest is run this command to convert it
+to something VirtualBox can read or use
+KBM or whatever the hell they want you
+to do VirtualBox is just easy though but
+do note that VirtualBox has this weird
+resolution issue where everything is not
+quite a phone screen size my guess is
+that is what's causing a lot of these
+rendering issues starting up it looks
+like any other grub x86 distribution of
+course the phone's gonna look different
+on startup it's gonna have some other
+bootloader on the actual Lee brim 5 this
+is the swipe lockscreen and the default
+pin is one two three four five six seems
+pretty basic
+oh hell there's a rotate option switch
+to normal perfect alright so the top
+panel is just that basic drop down on
+the phone I'm assuming it's just gonna
+take up most of the top there so do note
+that this is gonna be a much smaller
+screen so I'm assuming you'll click on
+one of these things and it'll switch to
+a whole new display the back button or
+something like that
+but since it's this weird resolution
+that hasn't been tested much it's kind
+of screwing up the format I'm assuming
+but you can definitely get the idea of
+what they've created and added it's very
+gnome like gnome settings spread out in
+almost a Android interface way it's cool
+to see this high contrast is holy but I
+mean legible large text I'm actually
+pretty impressed with these usability
+tools if you have a hard time seeing you
+can definitely turn these up
+however the cursor size is not super
+relative for a phone I'm curious to know
+what the screen reader does I couldn't
+get it to function but that could be
+interesting text-to-speech possibly now
+I couldn't get the zoom options to work
+either I don't know if that's a
+VirtualBox issue or what so we'll just
+have to wait and see on that but my
+guess is that you can get like a fisheye
+lens zoom effect which would be pretty
+cool especially if you can add like a
+tap and hold fisheye effect also do note
+that the Libra my phone is
+be 5.7 inches which if you look at other
+5.7 inch phones that's gonna be pretty
+pretty hefty so theoretically this could
+be a godsend to someone who needs a
+phone with large text high contrast zoom
+effects screen readers so it's got some
+really interesting promise here
+holy actual hell that keyboard is ugly
+please please PLEASE infest time on
+theming the keyboard that is definitely
+the ugliest thing I've seen in a while I
+really have no idea what all these
+typing assistant and options do or are
+for they didn't seem to change much once
+again I don't think a cursor is gonna
+really be that important once we get to
+the actual labrum 5 phone touch
+interface I don't know about this are we
+gonna be double tapping to right-click
+essentially on our phone what are we
+gonna be doing hover click that could be
+interesting you know for a phone focused
+on privacy it's kind of hilarious to see
+Google at the top of this
+screen lock interesting locations off by
+default usage and history on ooh trash
+files interesting now these sound
+settings look just like the gnome ones
+which to be honest is kind of awesome
+friend okay
+yeah audio is working Oh
+these power settings seem way more
+fitting on a desktop than a phone you're
+gonna have my phone screen on for five
+minutes and then turn off please no
+suspend the phone suspend quote-on-quote
+I don't think so I hope they had some
+standby options and like ooh promise of
+a VPN very good now if only I could
+change the resolution to an arbitrary
+number and get it close to the EEPROM
+five sighs this is an interesting
+feature theoretically we can make the
+screen more orange or blue depending on
+the time of day keyboard shortcuts again
+this seems more fitting for a desktop
+class desktop instead a phone that has
+no physical keyboard
+how about touch screen settings no okay
+this will be much more complex in the
+future I'm sure Thunderbolts interesting
+and I'm assuming this is all of the apps
+at the moment I wasn't able to find an
+app drawer so these are the only ones I
+was able to find the ones under
+favorites maybe I'm doing something
+wrong but it does give us a good test
+sample anyway
+let's create a bob
+arbitrary data great data how about some
+arbitrary data oh okay the thing is at
+the top he's my favorite okay well I'm
+assuming it'll be easy to call this
+person eventually phone dialer looks
+like a phone dialer no complaints there
+huh
+on
+I'm not really sure what that's gonna
+look like here's the calendar looks
+pretty good event okay that's pretty
+easy straightforward and I like it
+okay file browser feels just like the
+gnome one perfect
+okay don't open the FS tab with document
+viewer I don't really know any PDFs are
+so moving on okay let's take a look at
+the browser not bad good default I mean
+it looks solid so far oh I don't know
+phone and click on any of these let's
+play this video
+oh that video hello everyone over the
+thousands of years our planet has been
+invaded
+okay
+it's smooth enough now that doesn't tell
+us anything about how good it's gonna
+perform on the actual phone but looks
+like a good base looks pretty solid
+check out the terminal all right we got
+ourselves nice debian-based distribution
+terminal is obviously the gnome one and
+because of that it's a solid terminal
+okay the root password is one two three
+four five six
+just like the pin I'm curious to know if
+they keep those synced on purpose
+alright the repository seemed to
+function so solid terminal yep that's
+about all I could find in this build I'm
+sure they'll be more every day thanks
+for watching
+[Music]

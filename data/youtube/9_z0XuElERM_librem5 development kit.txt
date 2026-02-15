@@ -1,0 +1,174 @@
+now that we have a working screen plus a
+dev kit and the ribbon cable is finally
+attached properly we can play with the
+leaver v dev kit properly before we get
+into this let's talk about the elephant
+in the room the graphics are not that
+smooth and this is because the open
+source GPU driver needs some work
+looking past the slow GPU drivers we can
+look at the GUI and how it will be like
+to use the keyboard is defaulting to a
+opened position and definitely looks
+nicer than it did in the early VN build
+I think a lot of you guys are going to
+be interested in seeing the web browser
+so let's pop around that for a bit so
+I'm loading up YouTube here just because
+it's super heavy and I want to stress
+the hell out of this device to see what
+it might be capable of when it actually
+releases it definitely is chunking along
+here scrolling is sluggish let's pick a
+random video to play wow it's almost
+smooth it's definitely a video there are
+definitely some rendering issues where
+the right side of the display is kind of
+cut off and not really accessible okay
+well let's take a look at something else
+it looks like DuckDuckGo is the default
+search engine so props on that it's just
+a simple web page but hey it looks like
+multi-touch is working and that's pretty
+cool and we can save things ctrl S on
+the keyboard alright they have a file
+selection screen this will be elite
+reminiscent to how the file browser will
+eventually look as you can see here the
+image did save successfully oh I
+randomly selected a bit of text at least
+we can check out the copy-paste menu
+that looks pretty snazzy simple right
+there barely not all right let's run a
+speed test on the browser cuz that's an
+html5 app and html5 apps seem to be
+working pretty well so run that up of
+course the right sides cut off but the
+app is functioning it is testing my
+speed clicking on an audio file results
+in a web browser trying to display the
+audio files contents not quite right and
+the video files do seem to work so
+click on a raw video file and it opens
+up in its own little tab all right well
+let's download this and try to play it
+on something else other than the browser
+cuz it's chunking along and cuts off a
+little early video downloaded all in all
+the web browsers not doing so bad the
+multi-touch support is there so it has a
+lot of promise and once the GPU driver
+is sorted out it's gonna be just a
+little bit of rendering issues that need
+to be resolved specifically with that
+right side being chopped the hell off
+and some random chat window popped up
+looks like a cool feature though if I
+could pop up the chat window
+purposefully with chats in it I would
+kept running into this now and then
+definitely a GPU driver thing at this
+point we SSH in and use systemctl
+restart Fache to recover the Foss shell
+and due to the lack of a file browser we
+can't really attempt to open our saved
+file just by clicking on it so we're
+gonna go ahead and open up document
+viewer ok document reviewers interface
+is particularly unstable moving on I'm
+really not sure how to close apps for
+this app drawer ok we'll have to install
+em player easy enough because it's you
+know based on Debian apt-get install and
+player so playing the video seems to
+crash the interface but playing with
+just audio works great next let's take a
+look at the calendar UI adding a new
+appointment is pretty simple you just
+kind of tap it and type in details and
+you can edit those details
+repeat reminders how long it's gonna be
+and again the right side of the screen
+is cut off we are looking at you Lib
+handy we'll talk more about that a bit
+next we pull out the SIM card from my
+phone shove it in an adapter and shove
+it in the dev kit I blame the adapter
+but this was a very tight fit and I
+actually had to use pliers to pull out
+the SIM card when we were done testing
+so we reboot the device with the SIM
+card in the cellular icon did change to
+well that
+and we did try to make a couple calls
+the result of every call though was
+either a hung interface a completely
+crashed Fache or in one case we got a
+timed out error and some interesting V
+messages talking about the modem
+registration state I'll definitely need
+to pop into the dev forum and see if
+there's some extra steps that I'm
+missing to get this hooked up properly
+to t-mobile at some point we had to
+reboot and we tried it with the
+interface just clicking on the power
+button there it didn't give us any
+indications that it was rebooting except
+that it became unresponsive and
+eventually just did reboot there's a
+valid way to reboot but I would
+definitely push for a menu that says are
+you sure you want to reboot popping in
+an SD card formatted with ext4 worked
+just fine
+LS BLK shows that the SD card was
+detected and is mountable we didn't test
+with any Windows formats like fat or
+NTFS but I don't really need access to
+those formats I'd rather just use the
+Linux ext4 format okay everybody loves 2
+X 4 word their desktop but now you can
+export your phone's desktop purism has
+some pretty simple directions to follow
+if you want to X forward over ssh your
+FASTA splay this headless setup works
+pretty well for me at home and maybe my
+preferred way to run the GUI but does
+add some extra lag as it is dumping a
+lot of the display over the network
+although I was surprised to see there
+were fewer graphical glitches running
+this way my guess is this means live
+handy is just not quite tuned right at
+the display resolution of the libra 5 so
+it might not even be very hard for them
+to resolve all of these settings issues
+and where little glitches where the
+display is cut off too far right so if
+you want to tweak your settings just set
+up SSH and X for word year display some
+of the funny issues we ran into rotation
+actually worked better in the VM than it
+did on the actual phone with the
+keyboard defaulting to an upstate if you
+just hit the rotation button end up with
+the keyboard in full screen and no
+weight to make it novel screen the next
+funny thing we did was audio recording
+the result
+this was a success kind of we couldn't
+get anything to record shy of outright
+screaming at the deaf kid so turns out
+it can record if you scream at it we
+also saw a weird crash where the
+keyboard ended up on top and it looked
+like the application space was on bottom
+pretty weird crash as you can see
+fighting against the GPU bugs were the
+biggest issue the graphical glitches all
+the time and locked up GPU states that
+it was causing but if you can look past
+all of that you can see this is coming
+along and will be quite an interesting
+device thank you all for watching bye

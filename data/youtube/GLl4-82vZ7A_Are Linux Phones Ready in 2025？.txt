@@ -1,0 +1,139 @@
+hello and welcome many of you wanted to
+know what it's like to daily Drive
+Mobile Linux on a phone so I installed
+postmarket OS on my pixel 3A here's my
+experience of what it's like daily
+driving mobile Linux let's start with
+the good stuff postmarket OS has some
+really cool build scripts that lets you
+build a custom image for your device
+with your packages pre-installed also
+with a customized username and password
+definitely an interesting approach that
+gives you a tailored image just for you
+once the image was built the actual
+process to flash the 3A was pretty
+straightforward and easy out of the box
+there were some useful apps as well as a
+lot of customization ability the
+interface is actually pretty decent it's
+clean mostly responsive and feels
+natural if you're coming from the gome
+desktop this whole ecosystem is evolving
+with things like plasma mobile also
+being available for developers and power
+users postmarket OS is truly magical
+offering a full Linux experience in your
+pocket need to SSH into a server no
+problem want to build a python or rust
+application go for it it you get the
+full flexibility of the Linux ecosystem
+all in your pocket okay now for the
+tough part actually using this as a
+phone with postmarket OS is really rough
+the phone modem randomly disappears call
+Quality is incredibly questionable and
+the battery life is much worse than it
+was with Android I even had an
+experience where I was waiting for an
+important phone call and during the
+phone call the modem dropped requiring a
+full reboot to bring it back up this was
+brutal completely unacceptable cable and
+ended up being the reason I flashed back
+to
+Android now I hate my phone this
+operating system is completely rubbish
+I'll never write a program for it but it
+gets calls really reliably and I only
+charge it like maybe twice a week
+another big issue with a pixel 3A
+running post Marco OS is you have to
+select between 2G which can receive
+calls and 4G which can use data but not
+receive calls so you have the option of
+using 4G data or being able to receive
+and send calls so if you're actually
+trying to use your phone as a phone it
+can't use mobile data camera quality
+took a huge hit it went from looking
+absolutely gorgeous to looking like it
+was shot in
+480p with postmarket OS you can expect
+about a day of battery life which is
+usable but without postmarket OS running
+Android it can last up to a week GPS fun
+fun ality was also broken on my 3A I
+couldn't get a fix on my position with
+gnome Maps or pure Maps so don't get
+lost with this device the best you can
+do is pull up a map of your area if you
+know where you
+are the app situation on postmarket OS
+is actually pretty impressive pretty
+much every app I wanted to install was
+there in their store one notable
+exception was God dot here's the bottom
+line as a telephone it's terrible as a
+cool Linux device it's amazing if you're
+if you're in the market for a cool Linux
+device absolutely give it a look but if
+you're looking for something that can
+reliably pick up a call this is not it
+it was a lot of fun daily driving
+postmarket OS on my pixel 3A and I plan
+on testing out other Linux devices in
+the future if that kind of thing
+interests you hit like And subscribe
+thanks for watching
+[Music]
+bye on the screen let me tell you how it
+goes I dream of freedom in the palm of
+my hand but is this Linux phone really
+ready to stand terminal XX SSH my
+fingertips
+finger full Linux power whenever I need
+it make a sandwi cleaning a face that
+feels just like
+home for developers there's magic in
+this phone Das my social life but our L
+pH ready in
+2025 the modem's disappearing call CR
+is a mess battery draining fast camera
+quality alone 640 by 4 that's luxury
+Linux phone reality check here's what I
+know choose between your calls or your
+mobile beta switch to 2G reboot what
+bother have you tried it off and on
+again GPS is broken navigation gone
+cansas
+multiple devices to get your jobs done
+pocket full of G just like Batman the
+community is building Working Day and
+Night privacy and freedom that's worth
+the fight but honesty is needed if we
+want to grow get commit fix bugs create
+new ones here's the truth about Linux
+pharms let's go Linux PHS ready in
+2025 The moems Disappearing call
+qualities a mess can you heit me down
+know face battery training fast camera
+quity
+low lenux phone reality check here's
+what I
+know for tinker and hackers it's a
+playground
+true if privacy your focus this might
+work for you n hates this one simple
+trick but for calls and photos
+navigation too hello hello I think we're
+breaking up you might want to wait for a
+version Colonel Panic at the Disco Linux
+are coming they're just not quite there
+a glimpse into the future if you really
+care
+777 my patience drop a comment below
+share what works for you together we'll
+build something tried and
+true sh it off the
+retion coming just you wait and see

@@ -1,0 +1,80 @@
+so what is the difference between a
+desktop environment and a Linux
+distribution
+[Music]
+a desktop environment is the interface
+to your Linux distribution for example
+genome or gnome is a desktop environment
+KDE similarly is a desktop environment
+very very very popular gnome and KDE are
+probably the most popular and have very
+different workflows KDE you kind of used
+this start bar at the bottom kind of
+Windows retro style and have your
+application at the bottom highly
+customizable though where as known you
+have kind of this side panel or sidebar
+panel and you throw your mouse in the
+corner every time you want to switch
+applications so it's a little bit
+different workflow but it's very
+effective I'm gonna tase another desktop
+environment this is my favorite it's
+also kind of the old style menu launcher
+it's very customizable one uses the gtk
+stack which is just what it uses to
+display its menus and stuff I three is
+one of the more simple one of the more
+complex simple environments style and
+window manager so you use lots of
+keystrokes and stuff for that one XFC
+ease really performance light you can
+put this on a Raspberry Pi or anything
+that's like low-end and you just want it
+menu to click on things so as you can
+tell there's a lot of them cinnamon is
+based on GT k3 just cool it's kind of
+like gnome in that case but it's like
+more retro style II like the matei and
+Xfce guys and unity is kind of the
+deprecated one from boom - you can still
+use it if you're so inclined so great
+there's sheilas of these but they're not
+Linux distributions
+no in fact you can have one distribution
+install all of these on a single box
+in fact my box right now has KDE
+installed matei installed black box
+installed and I believe xfce installed
+so I have quite a few to choose from my
+login manager or a display manager so
+what exactly is a distribution well it's
+a bundle of packages including the
+desktop environment that is shipped
+together for example the Susa guys they
+use zipper as their package management
+they let you choose between KDE and
+genome in their installer or you if
+you're an advanced user you can install
+others as well you'll find that most
+distributions are shipping with with
+gnome at this point Linux Mint has their
+own cinnamon but they also have flavors
+flavors of their distribution which just
+come with different pre-installed
+desktop environments do note that you
+could install any one of their flavors
+and install whatever desktop environment
+you want after the fact if you pay
+Kubuntu you're gonna end up with a
+default of gnome or you can install like
+Caban - or various other flavors and
+that's actually can't cross the board
+you can get flavors of any major
+distribution each distribution is just
+doing things slightly differently
+including which desktop environment is
+default and how that desktop environment
+comes pre-configured so I hope that
+clears it up a little bit
+watching

@@ -1,0 +1,139 @@
+look what peer ISM just sent me in the
+mail it's a birch version of the leap
+from five this is a rather small batch
+and it's the first batch that was
+shipped customers first things first
+audio if you're an owner of the Libre
+five you'll notice that the phone is
+rather silent if you fiddle around with
+the gnome settings it still won't help
+this is because the volume controls
+aren't linked to any hardware mixers yet
+to get audio output working in general
+you'll need to install and use also a
+mixer so hop on the phone via SSH and
+install also util then run also mixer
+and you can adjust the sound level
+freely
+but alarms do go off as long as the
+device is powered on and audio is
+enabled the date time was messed up when
+I first got the device but after adding
+a SIM card the clock self corrected and
+picked the right time zone all right so
+the biggest issue with the Libre five is
+definitely the power in my experience
+the Libre five can't hold or maintain a
+charge while powered on and plugged in
+however this will not charge the device
+at least not within a few weeks powered
+off this is not an issue although it
+will get warm to the touch just charging
+with a Libre five fully charged and also
+connected to a charger it ended up
+pulling about 205 milliamp hours in just
+a half hour which is the total capacity
+of the phone so now if you're okay with
+a bit less Pepe Ness you can force the
+CPU to stay at 1 gigahertz ed of
+boosting to 1.5 when the phone is busy
+doing things
+it won't help standby time as in standby
+oh it never boosts to 1.5 anyway but it
+should increase the duration that you
+can actively use the device although
+more testing is needed to know for sure
+while working with a device over SSH I
+found this command rather helpful to
+check on the battery status here's what
+the phone looks like while idling
+the keyboard feels like a proper
+smartphone keyboard although I did see
+it repeat keys when I forced the CPU to
+stay at 1 gigahertz EPU is allowed to
+boost to 1.5 this does not seem to be an
+issue I do miss having input predictions
+though one feature I've seen added and
+removed from Android countless times is
+the ability to search through your own
+applications which is now working just
+fine on the Liebherr 5 big thanks to
+Nicole and Pierre ISM for getting me a
+working deaf kid the extra time they
+took to solder on the serial connections
+was a nice touch on the Libre 5 birch
+you can receive calls and even hear what
+the other person is saying but they
+cannot hear you I was also able to make
+a phone call using the dev kit but the
+audio quality was very poor sadly I
+didn't get a recording of it as far as
+reception it's better than what I'm
+already getting with my sailfish OS
+device with my Sony I have to step
+outside my apartment to receive calls or
+texts although I've only tested the
+device where I live and where I work I'm
+sure results will vary depending on what
+bans are available where you are
+arguably one of the most important
+features is texting which works for the
+most part when you go to text somebody
+new the known contacts app never opens
+if you open them contacts manually and
+add someone it will show up as an option
+to text but selecting them won't work
+but if somebody else texts you it's
+trivial to reply to them it works as
+expected
+another issue is there's no audio played
+when you receive a text overall the
+device is a joy to use it's becoming
+more and more dependable I mean just
+look at this uptime they definitely like
+to keep their kernels up to date as well
+just for fun I messed around and
+installed a couple file browsers but
+none of them really seemed usable so if
+you want to look at what files you have
+the best way is command line fortunately
+tinkering with apps is simple you can
+cleanly install whatever you want and
+simply remove it if it doesn't work
+messing around in this manner I found a
+few games already that it worked really
+well
+lights-off is working just fine and this
+one has multi-touch input working pretty
+cool
+the built-in browser works just fine for
+basic tasks if you need to search for
+command or research and air this browser
+will do just fine if you want to consume
+videos this is not the browser you're
+looking for at least not yet
+inevitably an app will eventually Hank
+and when they do you can pop open the
+usage app and simply kill whatever is
+broken this will even let you kill Fache
+itself although doing so is not
+recommended one of the bigger issues is
+the power button it will lock the screen
+once the libre v is powered on but in
+order to turn on the labor v you have to
+pop in and out the battery a software
+solution should be coming down the road
+i also saw a few less critical bugs
+the first tab after you unlock a screen
+brings up the top menu thing if you
+disconnect and reconnect from Wi-Fi
+sometimes internet takes a while to come
+back up also the reboot acts like a
+shutdown the only thing keeping me from
+using this is my daily driver is the
+poor battery performance I'm sure the
+bigger battery coming in just not will
+help but software improvements will also
+be needed in order to get this phone
+through a day thanks for watching bye
+you

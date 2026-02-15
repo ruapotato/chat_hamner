@@ -1,0 +1,126 @@
+I tested three open- Source game engines
+here's what I learned from the fastest
+option to the option with the best
+graphics in Armory 3D up Blender Game
+engine and gdau I created roughly the
+same 3D game based on the gameplay of
+Boulder 2D Boulder 2D is a simple Zerg
+game where you can grab walls jump off
+walls and shoot ironically Boulder was
+originally going to be 3D before the dev
+scaled it down to be a 2d game Armory 3D
+was the first game engine I really took
+the time to learn as a developer who
+writes mostly python code the node-based
+logic was a big turnoff for me I always
+considered any graphical language to be
+less powerful or not worth my time after
+learning Armory I was proved wrong it's
+actually a very powerful if a bit clumsy
+programming format once you understand
+what the nodes do wiping out a bit of
+game logic with just a few nodes can be
+very fun what ultimately drove me away
+from Armory was the bugs one such bug is
+is I can't seem to get sound workking
+without resorting to building a full
+release of the game but when you do
+build the game the performance is
+excellent I mean just look at this game
+playay here's 100 enemies and Armory has
+no issue with all those Ai and Laser
+balls 200 is too much but I bet you
+could get even more with a bit of tuning
+the graphics are okay but they're not as
+good as other engines I tested models
+inside of blender tended to look a lot
+different in game resulting in a lot of
+time tuning
+Armory 3D has the best set of exportable
+platforms from the web to console to
+mobile this has you set up next I gave
+the up Blender Game engine a go I
+decided to use logic nodes inside of up
+Blender Game engine because they were
+similar to Armory with one massive
+Advantage these nodes can execute Python
+scripts that can do anything within your
+game one downside to the up Blender Game
+engine nodes is logic seems to be forced
+to be handled per frame rather than add
+a trigger compared to Armory 3D the
+nodes are clumsy and a bit harder to use
+but they're still
+effective another big advantage to up
+Blender Game engine is the ability to
+use geometry nodes these can come in
+handy for things like terrain
+generation performance seems to be
+completely usable for smaller numbers
+but at around 30 AIS the game really
+starts to struggle though bits could be
+redone in a more efficient way the
+performance is what drove me to look for
+something else because this is built
+directly into blender and utilizes the
+blender rendering framework the games
+look just how you made them modeling the
+graphics in up Blender Game engine is
+the best of all three game engines I
+tested the big downside is the complete
+lack of 2D tools like basic buttons and
+menus in other words you have to use 3D
+assets to build out your menus exporting
+is limited you can run your games on Mac
+windows and Linux next I tested gdau my
+main reason for avoiding gdau was
+because of the use of GD script
+I wanted to write python codee or No
+Deal fortunately working with the other
+game engines broke me of my stubbornness
+so I swallowed the GD script shaped pill
+after using GD script I realized why the
+developers of gdau made it instead of
+using a pre-built option like python or
+Lua GD script is built for games vectors
+colors and game objects are first class
+while everything is still objectoriented
+the keyword self is nowhere to be seen
+as it's implied by being attached to a
+game object GD script is just like
+python if python were Rewritten for
+gamedev gdau was the fastest of all the
+engines I tested buttery smooth gameplay
+with normal numbers of AIS and it can
+handle 100 AIS just
+[Music]
+fine like with Armory 200 was about the
+limit I already have a few ideas on how
+to limit the number of active script
+which could increase the AI count a lot
+Graphics are on par with up Blender Game
+engine but with a disadvantage of things
+looking slightly different when imported
+from other other tools like blender gdau
+lets you export to Mac Windows Linux
+mobile and the web better than up
+Blender Game engine but not as good as
+Armory 3D overall I had a lot of fun
+learning these engines Armory is a good
+starting place and has excellent node
+logic perfect for someone hesitant to
+dive into programming but still wanting
+to learn Game Dev Armory also has a very
+good set of export platforms the up
+Blender Game engine has all the power of
+blender and python at your fingertips
+perfect for a python fanatic like I used
+to
+be gdau is well-rounded with decent
+performance perfect for making bigger
+games gdau also has a lot of community
+plugins some of which are crazy amazing
+like always this is free software and
+you can find the links in the
+description below thanks for watching
+bye

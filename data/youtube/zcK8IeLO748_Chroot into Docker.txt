@@ -1,0 +1,57 @@
+hello and welcome back everyone I'm
+going to show you how to use docker to
+to root into any operating system you
+desire pull up a computer and let's get
+started
+docker images will show you which base
+images are currently installed on the
+system I have a couple that I'm using
+for some neural nets we're gonna go
+ahead and just do a boon to you so first
+step we're gonna make a directory called
+the boon to and as you can see right now
+I'm running Debian so my goal is to be
+running it boom to you by the end of
+this inside of a tree root so darker
+pull preventing that's this is an
+official tag so it's pretty easy to
+download and it's supported and
+maintained by those docker folks now I
+need to start an instance of the base
+docker image talk along kicked in boom -
+alright so this is down inside of the
+docker image and you can see it is
+Ubuntu 16 point oh four oh four LCS but
+that's just using the regular docker
+method how do we get in here via two
+routing well we're gonna leave this bash
+session open come into a new route
+terminal doctor yes shows us that this
+is the container ID of that running
+instance so this is where the magic
+happens and we can dump the root
+filesystem it dumps by default to STD
+out which is literally the screen output
+but you need to redirect that to a file
+with the redirect thing so docker export
+and the container angey then the
+redirect to a file root dot are what we
+just did there as we wrote in our
+archive of the entire root directory
+into that root our file our dash X evita
+roots dot R this will extract to my
+current working directory which is
+fortunately a temp directory i've made
+LS again and have a root filesystem from
+here it's a standard to root so before I
+do - - by dollar sign I slash dot slash
+dollar sign I Chi root current working
+directory that we're going to mount up
+the thing then we're going to ask myself
+instead of root environment variables
+and we're gonna make sure we're running
+the right operating system and just like
+that with two rooted into a docker image
+anything in a docker repositories is a 2
+root potentially so that's pretty cool
+thanks for watching

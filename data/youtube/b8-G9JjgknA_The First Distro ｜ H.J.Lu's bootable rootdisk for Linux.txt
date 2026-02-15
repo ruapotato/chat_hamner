@@ -1,0 +1,122 @@
+back in the early days of computing the
+logic that runs computers was hidden
+away and sold only to those that had
+enough money this kind of works if you
+have a business use case for every
+computer but it rightly pissed off a
+large number of computer programmers
+just wanting to understand modify or
+reuse some locked away secret program
+[Music]
+Richard Stallman was known for fighting
+against software patents and in 1985
+started the canoe project by releasing
+his call to action now with a fearless
+leader chosen we the people started work
+towards rewriting what was largely
+inaccessible to the general public
+while applications make up a large
+amount of what computers can do it gets
+nowhere without a kernel at the end of
+the day the kernel is exposing hardware
+to the software the sled software
+developers target kernels instead of
+individual hardware platforms while the
+freedom respecting OS called canoe
+started developing its own kernel in
+1990 shortly after linus torvalds
+started developing his own OS called
+freaks which then was renamed to Linux
+Linux and canoe merged forces once Linux
+took on the GPL license in 1992 anyway
+let's take a look at where this all
+started to come together HJ loos
+bootable root disk for Linux is widely
+considered the first distribution this
+puppy was built for an AI 386 computer
+with a 5.2 inch floppy drive I don't own
+any hardware that can run this but we
+can emulate this with PC eeehm
+you
+okay P CEM is not that good at reading
+floppies did you know that DOSBox is an
+AI 386 emulator I wonder if we can get
+this to handle Linux
+oh wow Lila I didn't expect that this
+brings me back to the days when Celeste
+10 was still supported and I worked for
+Novell doing SUSE Linux technical
+support
+I think grub was a lot easier to work
+with although I only got a handful of
+calls with people using lie low
+so it seems DOSBox does not like booting
+Linux I'm not sure how motivated those
+devs were when it came to hard drive
+controllers but it's cool to see the
+different error messages from the very
+old versions of Linux to the still very
+old versions of Linux
+I'm not sure why I didn't try qemu first
+but this has been installed in my system
+for a long time
+QEMU had no issue running at all once I
+figured out this command
+this early operating system looks a lot
+like the modern operating system that
+powers most of the internet pretty cool
+for the earliest thing that you can call
+a distro on login you agreed with an
+ASCII Bart Simpson this was distributed
+on floppies as a bootable root disk you
+could install it to a hard drive but
+that was targeted towards the more
+technically minded this early version of
+Linux is a cool sandbox you can play
+around in it's interesting to see how
+many of the core ideas are already in
+place /bin has a bunch of binary
+programs these are all command line
+based
+/hz is full of system settings like FS
+tab which contains a list of disks that
+need e mounted on boot that's the issue
+seems to be the closest thing to a
+release file that I'm going to find /dev
+looks very similar to how it does today
+except the device names aren't as
+dynamic they seem to show placeholders
+that don't point at real Hardware a lot
+of the block devices don't actually seem
+to be real devices I'm not sure why I'm
+using tty 0 &amp; tty 1
+but you can see that computer magic here
+is working you can even take notes with
+VI just like a lot of modern Linux users
+do today
+some commands don't work 100% the way I
+expected them to tab autocomplete is not
+implemented in this shell which does
+slow things down quite a bit
+Wow proc is empty
+switching over to a newer version of
+this project we can see there are more
+of the files we'd expect to see in slash
+Brock the kernels virtual memory map k
+core is rather small
+I think that's around 64 megabytes in
+total this newer version also includes a
+few more programs and a few fragmented
+help pages
+shut down didn't act quite as I was
+expecting leaving me with this message
+all in all it's very interesting to see
+where this minimalistic OS started the
+tools included are rather limited but it
+seems the only way to install additional
+software back in 1992 was to copy source
+files and build it yourself the
+important takeaway here is this was the
+first freedom respecting operating
+system made by people for people thanks
+for watching bye

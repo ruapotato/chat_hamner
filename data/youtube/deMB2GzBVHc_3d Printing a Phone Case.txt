@@ -1,0 +1,60 @@
+it's a good idea to keep your valuables
+safe and your phone is no different
+let's go over how i slap together a
+libra 5 case
+when it comes to 3d printing multiple
+iterations are just about always needed
+this is my first attempt to make a lever
+5 case it's too small
+not very thick and the holes are in the
+wrong place clearly i would need to make
+a few adjustments
+in blender i ended up applying the
+solidify modifier to add thickness to
+the case
+this worked well except that it added a
+triangle artifact the solution was to
+apply the solidify modifier then select
+the top faces around the issue
+and then scale the z-axis to zero more
+fine adjustments and it was time to add
+a top lip
+as bit worried about adding the lip
+without support material but it seems to
+have printed okay without it
+with the case designed and working on
+the dogwood release i expect this to be
+completely trivial to update for the
+evergreen mass production run
+as a bonus the skills i learned in this
+project let me print a perfectly usable
+replacement toilet handle
+for those looking to get into 3d
+printing with open source software head
+on over to the 3d printing professor
+part of animation here's a fantastic
+tutorial on how to set up blender 2.8
+for 3d printing
+has a powerful set of tools for doing
+that
+phonic the audiobook player i've been
+building for mobile linux has seen a lot
+of bug fixes
+to name a few chapter skipping bugs have
+been resolved and moving the audiobook's
+location no longer breaks the bookmarks
+i also added in a few new features the
+chapter names are now displayed
+and i've added in a basic sleep timer to
+auto pause the player after so many
+minutes
+the latest version is available on my
+bitbucket as a dot dev contributions as
+code or feedback are more than welcome
+and since the dot dev just contains
+python this should run on just about any
+debian or ubuntu-based system
+including across architectures like arm
+and x86
+head on over to hackers-game to find out
+more thanks for watching bye

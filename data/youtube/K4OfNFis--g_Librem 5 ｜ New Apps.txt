@@ -1,0 +1,66 @@
+some really exciting software is making
+its way over to the Libra 5 Android apps
+can now be run but it's still early days
+I have not found a simple way to
+duplicate the setup so I don't recommend
+trying just yet
+but this is amazing news it means once a
+pipeline is in place Android apps will
+be installable on the leave room 5 I'll
+report back once I can get this set up
+here working local voice-to-text is now
+a thing you can do on the Libra 5 big
+thanks to Mozilla's deep speech and this
+guy over on github i built a simple UI
+that wraps around it all and helps you
+set it up it can be frustrating to
+download the models cuz they're very
+large if this gives you any trouble I
+recommend you just download them on a
+computer and SCP them over to the phone
+and you can extract them to this
+directory with the setup out of the way
+it's rather simple to use you just hit
+the start button say something and then
+hit the stop button this will run the
+really long Mozilla deep speech command
+in the background and then report back
+what the text is do note that it takes
+about two seconds to process one second
+of audio with a two to one ratio it's
+best to talk clearly and quickly it does
+work pretty well it can definitely be
+used to spell that tricky word or send a
+small text message
+it's not as accurate as Google and it
+doesn't do swear words but it is usable
+once translated you can edit the text
+here or just copied out for you
+somewhere else
+Peterson has added a new default app to
+the preinstalled lineup we now have a
+dedicated document viewer
+this will make looking at PDFs a cinch
+thermals are also much more manageable
+especially while you're out and about
+with the screen locked the DRAM now
+reduces speed and we're seeing
+temperatures we needed a hack around to
+achieve before a couple of channel
+updates to go over I purchased myself a
+4k camera and I'm testing out a few new
+logos let me know what you guys think of
+the one in this video but do note it's
+probably going to change here in the
+near future I apologize for the long
+break between videos I've been very busy
+getting up to speed at my new job while
+I'm definitely gonna miss something
+inside I'm happy to announce that I took
+a job working for the morale leaders in
+technology we're in other words I'm a
+new technical marketer over at Pier ISM
+this means peer ISM does pay me but they
+don't pay for this channel and my
+dedication to the truth as it stands
+will not change thanks for watching bye

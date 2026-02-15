@@ -1,0 +1,52 @@
+while recently learning about cube's os
+i was amazed at how containerization of
+apps files and workflows could add in so
+much extra security if you don't know
+cubezos is an os where a vm called dom0
+runs a gui and can start apps from other
+vms you control which vms have access to
+the internet and they all have their own
+files
+anyway it's a cool os that uses lots of
+vms just because i like messing around
+with containers and graphical
+environments i set out to create a
+similar setup for the library 5. cubes
+os uses a base os of fedora but i'll
+just use pure os as a base and build on
+top of that this script checks you're
+running his root then runs a debian
+build script this builds a debian 11
+chew root and installs fosh it's then
+copied to far lib container the script
+finishes by setting up the system d and
+spawn files with all that set up we can
+start our half-baked dom zero as an app
+in our normal fosh session this kind of
+nesting is super cool
+it seems to be using the x wayland
+window to display the second fast
+session
+okay but the base os isn't really meant
+to do anything except run vms the gui is
+supposed to be run inside of dom0 while
+this is kind of cheating it was pretty
+simple just to edit the user bin phos
+script
+with a simple edit and the system ctl
+command the gui is off but fock is
+running from within the dom zero
+container this is all that's needed to
+start the foss session it does display a
+mouse cursor and you have to disable
+docked mode in order to get the
+on-screen keyboard icon to appear still
+this is really cool while this is a far
+cry from the advanced cubes os dom0 it's
+a start that could be built up on to add
+a similar security model that cubesos
+has all of this is gpl and simple code
+if you have use of setting up an nspawn
+container or if you need a debian build
+script this is a decent project to dig
+into thanks for watching bye

@@ -1,0 +1,115 @@
+I made some non final software of my own
+it plays audio books but before that
+let's talk about retro gaming on Linux
+emulation has been something Linux has
+been very good at for a long time on the
+desktop side of Linux we can emulate we
+GameCube PlayStation 2 PlayStation 1
+Sega Dreamcast n64 game boy advance Game
+Boy Color Game Boy the lowest hanging
+fruit here was obviously retroarch as it
+comes with a crap ton of different
+emulation engines called cores after
+installing retro arch and loading it up
+it's beautiful
+it's very reminiscent of a PlayStation 3
+background many animations are smooth
+can't really capture that super well I
+installed a couple emulation cores but I
+couldn't get any of them working
+including NES and n64 although getting
+n64 on this would be badass I wasn't
+able to get that working but held this
+is based on Debian there's bound to be
+something in a repository I was able to
+get one of the NES emulators to work
+called magnif in I think it doesn't
+quite load right in Fache but in plasma
+it loads fine
+looks like plasma got hit with a wrench
+moving on
+yes that sound that beautiful sound is
+coming from the devkit everybody dance
+Frick Frick frickin Frick I don't know
+how to bring up the keyboard and back 2x
+do tool a swd seems to let me move
+around but I don't know what the jump
+key is to enter levels or jump about oh
+let's script this so it's gotta be one
+of the keys in the alphabet and go okay
+so it's gotta be one of the keys in the
+alphabet - a few go okay it's got to be
+one of the special keys on the keyboard
+and go they don't get points for
+intuitive key layout but it doesn't work
+quite well the bad news is I wasn't
+really able to fix this during our hack
+session where I have access to a fully
+working deaf kid so I had to use my
+personal deaf kit which unfortunately
+has a broken screen so exporting is the
+only way to display the video game and
+it seems like 3d acceleration is broken
+when you ex forward or maybe there's
+just a big performance hit in any case
+you can see it's way more laggy than it
+was on the dev kit screen itself so bear
+in mind that there is a pretty big
+performance hit X forwarding but using
+exporting I was able to set up the key
+combinations properly and play Super
+Mario Brothers 3 pretty cool
+and I can sort of play this
+I did test a few other games over X
+forwarding as you can see here hedge
+Wars does load up and you can get into
+the game but it's not particularly
+playable and it's a similar story for T
+worlds I also tried liquid war which
+while it doesn't perform quickly does
+technically work flawlessly
+I also wanted to say thank you to
+Gardner the Linux gamer my subscriber
+count' was growing at a steady rate and
+then it wasn't
+thanks to Gardner who decided to put a
+link to one of my videos in one of his
+so here's his channel running on the dev
+kit over exporting thanks to getting a
+Gardner I listen to audiobooks
+constantly so I went to the Libra five
+dogs took a peek about and it was
+obvious that gtk was the way to go and I
+already know Python so I went with
+Python gtk as the stack loading gtk was
+not so bad
+I found a really useful tutorial series
+by the New Boston link below it walks
+you through the basics of everything you
+need to know to program Python gtk apps
+after learning a bit of gtk and
+successfully making a clickable
+interface it looks like this on a dev
+kit big thanks to David who helped me
+fix and clean up the interface it does
+look quite nice now here's where it
+stands at the moment I haven't created a
+desktop file so command-line is the only
+way to launch it at the moment
+selecting an audiobook looks a lot
+better on the desktop I'm thinking I
+might replace this entire file selection
+dialog with a in window file selection
+thingy
+I don't have audio setup with exporting
+so I'll have to wait for the next hack
+session to have a fully working def get
+to test audio output but here's the same
+app running on my desktop
+taps you saw and young people he's about
+a laughter thought better of it it was a
+few seconds has done at last he said in
+a stand where among just outside fear
+flood chapter two the vanishing chapter
+three the letters pretty cool right as
+always thank you to my patrons by

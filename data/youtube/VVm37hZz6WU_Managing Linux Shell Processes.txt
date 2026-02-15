@@ -1,0 +1,47 @@
+hello and welcome back everybody I'm
+going to show you how to manage
+processes in a Linux terminal all right
+so let's say you started a process that
+blocks your terminal for example here's
+my text editor cases use it nice but
+you'll notice my terminal is locked out
+now there's a way I could have prevented
+that I'm gonna use control-c to kill it
+that killed Kate it's gone but if I
+wanted to still be able to use this
+terminal I couldn't I can type in the
+command and an ampersand that says put
+this in the background on startup so
+there it is I still have shell access
+and Kate is running i'm telling some
+file and i want to put this in the
+background but i've argued on the
+command you can press ctrl-z
+which will freeze or stop the program
+then BG will put that into the
+background so yeah I can type in
+commands and I have two jobs running in
+the background right now if I type in a
+foreground it will foreground the last
+process which basically just means it's
+in its broken state it was in just
+before I had press ctrl-z in the first
+place
+so as if I were up here just having run
+tail so tel is in the foreground still
+waiting for tell to exit so control Z +
+BG we're back to two jobs in in in this
+show to see those jobs we can run jobs
+first job is Kate second job is tell we
+can kill those by typing in to kill and
+then % one for Kate and % to foretell in
+this case referenced here or if we want
+to foreground one of them we can do so
+simply by going like this or this
+depending if you want Kate or towel
+right here we've foreground Kate we can
+control see kill it and I killed it
+baking foreground again that will
+foreground tell kill its and job control
+thanks for watching
+[Music]

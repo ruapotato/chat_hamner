@@ -1,0 +1,43 @@
+this is the first working version of
+Magi OS it takes the desktop environment
+Magi which integrates a bunch of AI
+tools and packages it into a Debian ISO
+it has the NVIDIA drivers preloaded and
+everything's open source let's take a
+look with the image freshly DD I'm going
+to go ahead and plug it in on this
+computer it's f11 to get to the BIOS but
+that does depend on the manufacturer
+simply select the USB as the boot device
+and try the live system
+default password is
+Magi okay and it's loaded for a complete
+demonstration I recommend you look at
+the previous video I made goes over all
+of the features a couple notes voice
+translation service will take a while to
+start up as well as this olama interface
+it's actively copying this AMA model
+into
+vram demonstrated of whisper working out
+of the box keep in mind the first
+transcription May Fail as it's still
+loading the whisper model from the USB
+vram this is a really handy tool and can
+be used anywhere in the
+OS when you highlight something you can
+have it be read to you by pressing this
+little speaker button
+the bottom menu works as
+well tell me about my
+selection this is mitro replying for us
+it is context towar noticing which app
+is highlighted and what is
+selected as you can see a good chunk of
+my vram is being used this operating
+system is open source and you can try it
+out today provided you have enough
+Hardware you can find that link for the
+download in the description below and
+feedback is welcome thanks for watching
+bye

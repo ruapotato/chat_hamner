@@ -1,0 +1,232 @@
+if you're interested in learning Python
+I'm gonna start from the first lesson on
+codecademy let's get started so if you
+want to teach a computer to talk you use
+the print statement no no no no if you
+want to tell the computer to print text
+you use the print statement and it's
+procedural and what I mean by that is if
+I do fish and I do read that it's going
+to start at the top of my file and print
+this and then it's going to print that
+so the output of this looks looks like
+this the fish and cat so I mean it's
+statement is print which is a function
+and that's why there are parentheses and
+it takes the argument whatever you want
+to say
+pretty swifty I think we all get this
+yeah print it's kind of like the
+statement but it's it's called a
+function and that's why there are these
+parentheses and then it takes the
+argument of a string that's why we have
+in quotes something if it's in quotes
+it's a string so we could also do print
+like one but I strongly recommend you
+don't do that because print supposed to
+take string arguments not integer
+arguments but it works it would be
+better though the typecast and say it is
+a string technically that's the clean
+way to do it but don't worry about that
+just yet
+this green they're trying to tell you
+that there's a difference between Python
+two and three and they're correct but
+the difference is really small and
+really not that noticeable except for
+the print statement back in the day if
+you were writing on Python 2 which I
+discourage at this point right on Python
+3 but if you were to write on Python 2
+you could do Lin high and that would run
+fine but these days if you were to try
+that it would barf out saying you forgot
+your parentheses so it's a function
+treat it like a function
+yeah yeah yeah and then and there there
+are definitely other differences in
+Python 2 &amp; 3 but especially starting out
+and you're not gonna notice any of them
+except for print next okay so we're
+going over strings in this screen which
+I kind of already did but let's go over
+it a little bit more that's that's a
+statement it's a function because it has
+these parentheses and in quotes as a
+string in Python it's totally valid to
+have a floating string like this you
+could just have that as a line it
+doesn't do anything but it's valid you
+can also combine strings with the plus
+symbol so hello plus space and let's do
+it let's go ahead and print this to run
+it so yeah you can do that and there are
+reasons you would want to add strings
+like this so you're gonna want to use
+this every time you use variables and
+you want to combine them together for
+example let's go over a little bit of
+variables so in Python you can store
+anything basically in a variable a
+variable looks like this test gets and
+then something input so now test will
+reference info
+what does that mean it means if I put
+tests right here it's the equivalent of
+me putting info right here so that line
+and that line are equally worthless to
+the program it's like here's a floating
+stream that does nothing
+here's another floating stream that does
+nothing print hello and then print this
+let's say you want to store something
+else you could store a integer like 1 or
+2 or 7.3 which is now a float or a
+double because it's got a decimal it's
+no longer an integer or whatever
+whatever you really want here you can
+have a string of symbols you could name
+gets David then we'll do hello plus name
+this line is worthless on that that's
+the most common use case for the Plus
+setup the variable use it later in the
+program and let's move on
+okay so debugging is actually pretty
+important and python has pretty good
+error messages so let's go ahead and run
+this
+barfs this has actually happened to me
+maybe a couple thousand times it's
+complaining because this character and
+this character the start and stop string
+have to be the same so a valid way to do
+this would either be single quote and
+any single quote or start double quotes
+and double quote
+and the reason you'd want to do this is
+if you want to have a single quote
+inside of your text you can do it just
+like that or if you want to have double
+quotes inside your text you can do it
+just like that now if you want to have
+both you'll have to use an escape
+character which is the backslash
+basically that means treat the following
+character differently and then you can
+use the same single or double quote
+inside of your text now it's going to
+run this you can see the single quote is
+right there so yeah you can do either of
+those things
+next all right so let's do a bit more on
+variables named X a X 24 and then let's
+do print name David is I got the
+standard print statement which we're all
+accustomed to and the argument we're
+gonna give it is actually this and this
+is gonna be executed and turned into a
+single string before it's passed into
+print so this is the string logic for
+saying the name plus is plus the string
+Erised version of page plus years old
+now the reason you have to do the STR
+around this it's because it's an integer
+and you can't say here's this string
+plus here's this integer plus here's
+this string you have to say string
+plucks string plucks string or integer
+plus integer plus integer which is gonna
+be totally different maths for example
+two plus two is not four if it's a
+string but if it's an integer it comes
+out as four so typecasting is important
+let's say we have strings and want to
+treat them like integers we can just by
+wrapping them with the int just like we
+can wrap with a the STR if you want
+strings so int 2 plus and 2 is 4 or we
+can do the vice-versa where we have STR
+2 plus STR of 2 is 22 that's that's
+typecasting and variables yeah we did
+better than this this one slide so let's
+go to next oh why did you pop up that's
+oh I actually have to do something
+create a very both calls today's date
+and assign a value that will represent
+today's date to that variable okay date
+and let's go to Linux for a second
+there's my console x here it is
+it's gotta say that huh Bay pissed wrong
+well seem to like that so moving off
+it's just an arbitrary string we could
+have put potato in there and it would
+have moved on but that's okay okay so
+this is kind of interesting it's going
+over how you can do addition here and
+store the result of Python 3 and we can
+do some subtraction on results and we
+can do multiplication store that we can
+do some division and store that we could
+do really long nasty looking things
+store that now interesting thing on the
+command line Python which is the real
+version if you were doing this on
+command line if you run a variable with
+no arguments it's going to print back
+what's in that variable it's very useful
+and it doesn't really do anything but
+here's what I mean if I if I just type
+in a variable name it's gonna spit that
+out you can store that into a new one
+just like that so now how do you move
+are there there's equal I can even do
+one gets new bar / that old one oh and
+what I did did just there is tab
+completion command-line does have tap
+completion of variable names and
+function names so I could do 1 we get 1
+so yeah you can do that in their
+examples they're just storing results oh
+they're going over modulus module this
+is pretty cool I guess that means we got
+to go over integer division versus
+regular divisions so let's do that now
+it's where you divide something and you
+get a integer back but an integer
+doesn't have decimals so instead of
+returning 1.6
+if you typecast it to an int it's going
+to concatenate set the right word no
+it's going to truncate your variable so
+if it's 1.9 it's still gonna be just 1
+but if it's 2.1 it's gonna be to where's
+this 0.6 blah blah blah blah blah
+well it's you can find that with modulus
+kind of so oh don't do that
+if we do let's do their example 15
+modulus 2 which will print 1 so you
+divide 15 by 2 you're gonna have a left
+over 1 because 15 is not divisible by 2
+14 is divisible by 2 or any number and
+then the remainder is 0 so if you want
+remainders you use modulus and that's
+actually pretty useful in certain
+scenarios okay instructions multiply two
+numbers together and assign the result
+to a variable called product okay
+well copy product there gets how does it
+even know if I'm doing anything that it
+asks it says 1 times 2 or 3 is an
+acceptable like Bank look what's just
+does this work does this count I just
+try to be nice basically I have to do
+the second part too so it wants these
+numbers specifically
+because that's a lame program that's a
+cooler program Hey look there's actually
+data cool I'm bored and tired so let's
+do this another day
+fun though right
+[Music]

@@ -1,0 +1,97 @@
+in today's duopoly we have Android and
+iOS in this ecosystem it is pretty easy
+for me to predict how your next phone
+experience is going to go you buy a new
+phone it's really fast and really pretty
+within a year and a half of installing
+updates the phone is slow and
+aggravating as hell to use the problem
+is phones have been really fast for
+years now and a phone with a octa-core
+processor running at 2.3 gigahertz has
+no business being slow so you might
+think what if I never install updates on
+my phone will it stay faster well yeah
+maybe but you also might hand your
+banking details over to Bob the hacker
+who stares at the CVE thread watching
+for vulnerabilities to get into your
+phone so not installing updates probably
+a bad pick is there any way to take
+control of your own phone well to some
+extent and depending on the phone you
+have you can install roms roms our user
+modified versions of Android that are
+usually much slimmer than the main
+branch of Android but still can suffer
+from some of the additional bloatware
+being put into mainline Android this
+makes installing Proms a good crutch but
+not a good solution so back to how a
+couple year old phone can still have an
+octa-core processor and four gigs of ram
+these things are computers they're just
+computers with really broken operating
+systems that don't have administrative
+rights it should be criminal to lock out
+root access from your own hardware where
+the hell is the right to modify what you
+buy
+do we even own our own phones think
+about who is selling you the devices or
+who is even making the os's for the
+devices Google is an ad company they
+want to know everything and anything
+about you and they want to know it
+frequently which means your phone will
+be sending location data application
+usage search terms all sorts of
+different statistics gathered from
+random places that are all googly all in
+the hopes of better providing targeted
+advertisement you gotta ask yourself is
+there a alternative to this
+self-deprecating targeted ad calculator
+well to create such a device it's gonna
+take a different type of company one
+who's not so much interested in money
+but fundamental rights and people
+fortunately such a company has existed
+for a while now peer ISM has been making
+freedom respecting hardware and software
+for years and is now working on the
+Liebherr 5 device which is a phone that
+runs proper Linux not no lockdown
+Android version of Linux but Linux that
+you have administrative access to a
+bootloader that you can write to
+instructions to build your own operating
+system even this is a truly open phone
+from the hardware to the software to
+your pocket they're not going to be
+selling advertisement data that they
+claimed from your GPS location they're
+not going to be sending software updates
+that make the phone's slower
+quite the contrary in fact as time goes
+on and the community builds more and
+more packages around the labrum 5 the
+device will in fact become more usable
+and as hardware support increases in
+fact faster to use more snappy more
+features it's literally the opposite of
+iOS or Android while this phone is set
+to release this year there is a ways to
+go
+development kits have already shipped
+and a large number of operating systems
+has already started being ported to the
+device including Ubuntu touch
+post-market OS and of course the default
+PR OS and I'll be honest I would be
+shocked if this is the only three
+options this just might be the first
+three options in a world where your
+phone is your computer and you have
+administrative right what does that even
+look like thanks for watching bye

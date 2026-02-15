@@ -1,0 +1,207 @@
+how to install and configure openSUSE
+for the GPD win or rather the GPD then
+maybe not anyway you need a pretty large
+USB Drive recommend at least eight
+gigabytes x86 alright just have to let
+this download let's open the image
+writer
+so I'm gonna install my thumb drive in
+my main computer it was automatically
+detected my 8 gigabyte thumb drive and
+we've selected the latest snapshot go
+ahead and write that it will destroy any
+data on the thumb drive it just will
+post word now we just wait for this
+magic box to complete now's a good time
+to shout out to the guy who did actually
+most of the work and did like all the
+kernel coding and whatnot
+this guy's a badass just saying I've
+compiled his kernel and I'll link to
+where you can download the RPM it is
+ideal if you downgrade your bios in
+Windows before you do this if you didn't
+you'll still be ok but it is ideal if
+you do because there's a couple BIOS
+changes that we can change if we have an
+older BIOS and it's actually pretty easy
+to install this older BIOS I'll link to
+the zip folder all you do is in Windows
+extract the zip folder double-click the
+batch file and it just installs the BIOS
+and it's pretty easy
+I have heard there's a way to install a
+BIOS in Linux I've never done that and I
+will never do that because I'm already
+on the write BIOS so good luck with that
+our image is done writing go ahead and
+pull out my thumb drive and insert it
+into the back of my GPU with all right
+let's spam delete
+oh boy notice their BIOS is like weirdly
+sideways it's okay it's not too hard to
+use if you don't have this many options
+you have the wrong BIOS or rather the
+less ideal BIOS but if you install this
+kernel you'll still be okay
+I've changed my boot option to the UEFI
+USB disk so theoretically that's gonna
+allow me to go to the USB device now
+save and exit save changing settings so
+let's boot it up expecting it to use the
+USB device great it detected it I hit
+down arrow really quick there so that it
+wouldn't continue booting into the
+Installer I'm gonna hit eetu edit this
+and scroll down to my Linux line at the
+end of my Linux line I'm going to append
+this argument and this argument with a
+space in between so I'll do that now
+once that's typed in I'm gonna hold down
+the thing key and 0 which will be f10
+and that'll boot me into my system if
+you have a USB hub and could be booting
+from a USB hub and you can put a USB
+mouse in or if you could plug into a
+HDMI monitor you're way better off then
+I'm about to be because I'm gonna have
+to use a joystick that's that up is not
+up and it's rotated 90 degrees
+because the contest of how well can you
+install using a 90 degree rotated Mouse
+I'm just gonna go to next all the way to
+the partitioner screen
+I feel adventurous so I'm gonna go to
+expert partitioner you can partition it
+however you want but so I went with a
+really simple partition scheme here I
+have a half gig fat32 partition very
+beginning for my EFI boot then I have a
+4 gigabyte swap partition and then I
+have the rest allocated for my Roo
+partition make sure that you have boo-ki
+fi set for your mount point for the
+fat32 filesystem the rest of this is
+going to be pretty standard I'm gonna
+install with gnome but I'm gonna install
+mattei after I'm done I just prefer
+matei at the end of the day and now we
+just wait for it to install let's get
+another thumb drive or you can
+repartition your old thumb drive we're
+done with it now and copy over the
+wireless config file alright so we've
+got the file copied over to our thumb
+drive go ahead and eject this I'm going
+to open a terminal CD to my drive so CP
+your local copy slash firmware BR CM
+permission denied yeah okay sudo once
+that file has been copied over go ahead
+and reboot and you should have wireless
+connectivity so if you're still having
+wireless issues it could be because of
+this BIOS bug it can be worked around if
+you have this older version of the BIOS
+just by going to this chipset
+Southbridge etc etc and setting it to
+disabled I recommend that you do this if
+you have the ability to alright so this
+is just iceweasel I'm just gonna use
+this temporarily to install Mattei so
+then I'm just gonna go to software
+management go to view patterns and
+mattei and then accept and wait for your
+matei packages to install and i have an
+Matei option now all right so now we
+have Mattei installed a couple things
+are messed up one the screen is sideways
+but we can use the touchscreen while
+it's sideways that will cause a bug once
+we rotate the display so I'll go ahead
+and rotate this plane now just by going
+to the menu typing a display just blue
+settings right all right so now the
+things are rotated right I'll keep this
+configuration Oh
+touchscreen is no longer working all
+right
+another thing that drives me crazy is
+the mouse
+I feel like setting this to left-handed
+Mouse makes more sense that way you can
+control your computer with this most of
+the times if I want to go to folders I
+can
+etc etc rather than having to use two
+hands to control the device always I
+have a fancy script I'll put on my
+website settle rotate the touch input so
+it's no longer off like this already got
+a copy of it on here touch write down SH
+execute that and your touch input should
+be aligned something to know is it's
+hard-coded to expect that you booted
+with this mouse option in the middle not
+in gamepad mode if you were in gamepad
+mode this touch script would need to be
+slightly different so Mickey use this
+script just make sure you boot with the
+mouse mouse pad mode or you'll be
+confused why doesn't work now let's go
+to my website and download those kernel
+rpms all right it might not look like
+this considering there's not much here
+but I'm gonna go ahead and download my
+rpms that I need I have all the kernel
+packages downloaded I'm gonna go ahead
+and
+pseudo zipper in dot slash colonel
+asterisk all right now that the kernel
+is installed let's go into yeah so yes
+then we want the bootloader in the
+bootloader can fit in our kernel
+parameters whatever you have in here
+just append the same things we've been
+appending so this command line or this
+kernel option and this kernel option as
+well as the DMI product name equals GPD
+win all right so a couple things we need
+to do here hit ye and then scroll down
+to your Linux line again so it should
+say something like lineage EFI boot VM
+lineage and then a bunch of options if
+you don't have the GPD win plus the end
+then it's it's not the right colonel you
+need to specify which colonel in your
+your grub config file assuming that that
+did work and your command-line options
+are in that mess of options you can
+select f10 again to boot alright so
+another thing that I had to do in order
+to get the headphone jack working
+properly
+I had to blacklist this HDMI audio
+assuming you're not going to need to
+have sound through HDMI your headphone
+jack just won't work right unless you do
+this so let's go ahead and edit this
+file on my GPD win and add this line ok
+nothing too fancy I'm gonna go ahead and
+reboot again so my touch screen is still
+off aligned every time I restart that's
+a easy fix I'm just gonna add that
+script to my startup config so in here
+startup startup applications then add
+I'll type in the name of fix
+and then command I'm going to go to
+browse select they touch right Sh script
+which will be on my website make sure
+that it has execute permissions so it
+can run as a program hit ok add close
+and let's restart again ctrl backspace
+just restarts your x11 session so
+that'll allow me to log in without
+having to reboot entirely hooray things
+are working touchscreens working
+Internet's working sound is working
+Firefox is working thanks for watching

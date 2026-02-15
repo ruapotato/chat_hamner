@@ -1,0 +1,106 @@
+I wanted to briefly talk about the video
+purism posted last night the video is
+just one and a half images but the
+images say a lot first off this seems to
+be a rendering of what the phone will
+look like but more importantly the top
+overlay implies that they have completed
+at the hardware schematic for the labrum
+5 phone plus the video still says
+shipping q3 which gives them more or
+less three months to start shipping I
+personally wouldn't be sad if they
+delayed but I'm crazy excited for the
+device so if it does ship soon awesome
+if not I think people be happy if it
+ships this year period shifting gears a
+little bit so looking back at 2017 some
+of the early articles that got me
+excited for the dev kit said that it
+would be able to run a variety of
+different distributions as everybody
+knows openSUSE is the shiny green star
+of linux distros it has the best battery
+performance and the coolest package
+manager' okay it's pronounced zipper but
+I had a customer once call it that back
+when I did SUSE Linux support at Novell
+so it's not hard to tell that I prefer
+openSUSE it's not that I don't like
+Debian in fact I would say Debian is my
+second favorite distro PR OS being
+Debian based is actually a good thing in
+my eyes that doesn't mean though that I
+don't want to see openSUSE running on
+the Libre 5 first off this is a prime
+example of hacking together this is
+not a way to start an official port of
+openSUSE step 1 solder some to your
+dev board big shout-out to my roommate
+thank you for doing the soldering for me
+you only need to solder rx TX and ground
+next we flash the dev kit with whatever
+the latest image is but including the
+options - - dirt and - - skip cleanup
+this leaves behind the dev kit image
+file next go to open SUSE website and
+download the latest arm 64 build of
+tumbleweed I went with the just enough
+OS root file system then we mount our
+dev kit image
+not the second
+petition on the Deaf get image CD to our
+mount point delete all the Debian
+that we're not gonna need anymore
+then we can extract our openSUSE tar
+file directly to Mt
+next we just flashed that modified dev
+kit image and we can use Pico comm to
+attach that serial device we soldered on
+this is pretty cool we can see the
+boot-up messages
+as you can see not all of this
+start up well it does get stuck on the
+network but do note my deaf kit has a
+broken Ethernet port so that could be
+the issue here
+it eventually did reach the login screen
+and I was able to log in after I entered
+the password it kind of just sat there
+looking foolish for a second kind of
+freaked me out the first time I was like
+oh crap
+what's not working but it did login
+eventually and I did get a prompt
+here's openSUSE tumbleweed running on
+the Lieberman v def kit it's using the
+pure OS kernel but it has the root
+filesystem of Susa one of the things to
+note was the root file system was
+read-only which was a simple fix
+after remounting the root filesystem he
+asked opens up fine
+the partitioner opens up and you can
+look around your disks
+here's a quick look at the sir
+manager a lot of stuff is dead but
+that's to be expected with this kind of
+hack job
+back to PR OS I managed to compile and
+run the powder to a this is a classic
+falling sand game but with an absolute
+crapload of options and materials after
+loading it up it's obvious that the
+resolution is weird I started with scale
+2 just so I can access the menus a
+little bit better unfortunately a lot of
+the screen is cut off doing it this way
+I thought about changing the resolution
+in the code but that would result in
+none of the online levels loading before
+anybody complains that it's slow do you
+know that this is running over X
+forwarding via a USB C cable so I don't
+see Android doing that anytime soon or
+ever
+anyway thanks for watching bye

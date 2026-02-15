@@ -1,0 +1,141 @@
+it seems clear that around March 2020
+anyone that wants to pick up a Linux
+powered smartphone will have two options
+the pine phone is a hell of a bargain
+coming in at only a hundred and fifty
+dollars while the Lieberman five is
+expected to have higher build quality
+performance and security both companies
+clearly love Linux but they went about
+developing a Linux powered device a bit
+differently peers incent deaf kids to
+anyone that paid for one plus a few
+given out to the community eventually
+Pyne 64 on the other hand gave
+development kits to people with proven
+OS development backgrounds they were not
+available for people in the media or
+Linux enthusiasts it appears a model was
+nice because it allowed me to follow
+nearly the entire process of bringing
+pure OS to the deaf kit while early Pyne
+phone videos are few and far between but
+providing hardware to open-source
+developers is a proven model people
+donate hardware to open-source projects
+all the time
+Pyne 64 is now solving the lack of
+exposure by releasing the Braveheart
+edition of the pine phone which is
+available for order at the moment the OS
+is that run on the device are still beta
+and it will not come pre-installed with
+any OS this is amazing for people like
+me I can check out a number of os's that
+are coming to the pine phone even before
+one is fully usable Pearson on the other
+hand is sending the early versions of
+their device to the backers who ordered
+first there is nothing wrong with this
+except I likely won't have good access
+to peers and hardware until our dish
+if you live near Portland Oregon and are
+in an early batch feel free to contact
+me I would love to record your phone and
+get your impressions of what it's like
+to use like Apple Pearson has complete
+control of the hardware and software on
+the labrum v this puts a lot on their
+plate they have to design and build
+working hardware as well as port PR OS
+to the phone this allows them to create
+a new ecosystem around peer OS and the
+Libra meone services that has to be good
+for business
+while behind 64 has largely handed off
+the software side of things to the
+community which lets them focus on
+building good hardware but it also means
+that they will be adopting a current or
+upcoming mobile Linux ecosystem the
+Libra 5 wins the freedom contest they
+are shooting for the respects your
+freedom certification which no phone has
+today while the Libra 5 still has some
+binary blobs that need removed the pine
+phone is going to be relying on these
+proprietary blobs in the kernel for you
+boot for DRAM initialization power
+management Wi-Fi and baseband the Libra
+5 takes another step towards freedom and
+security they separate that baseband
+from the main CPU and RAM that way the
+baseband on your phone can't poke around
+your running app data is a great idea
+why are we writing desktop applications
+and phone apps the Libra 5 and lip handy
+is the first to try to merge what runs
+on the Linux desktop 2 what runs on the
+Linux phone if this ends up being even
+slightly popular in the open source
+world a massive collection of ported
+software and new software will spring up
+on the phone and on the desktop it's not
+like I pull up my sailfish OS app on my
+desktop ever not because I don't want
+you either
+it's because they haven't freaking open
+sourced all the UI components shame plus
+they aren't adaptive so they wouldn't
+look quite right on a desktop anyway
+however I could see myself pulling open
+a app designed for the leap from 5 on my
+desktop or even plugging in my labrum 5
+into a monitor and using it as a desktop
+using leap from five apps on a standard
+Linux desktop might be a bit challenging
+up until lip handy being up streamed
+then it'll be entirely trivial come q2
+2020
+I expect the pine phone will have more
+OS options while the leap from five will
+have an officially supported Debian
+based pure OS and a growing list of
+alternative os's I have to say though
+the list of OS is that already run on
+the pine phone is impressive if you left
+your Nokia Linux device Maemo less toe
+can be installed you should totally
+check out mammal éstos channel
+it makes me miss my n900
+there is also an actor
+sailfish OS the webOS successor loon OS
+is also installable check out Kristof's
+channel for more on that
+one of the best
+options is definitely post-market OS
+check out Martin Brahms channel for more
+on that he also has videos on ubi ports
+on a pint phone death kit more videos
+are definitely needed I would love to
+see a video of kte nyan Debbie and bass
+on this device for example over the past
+two weekends I've been working on an
+automation app called triggers the idea
+is to create a app like Tasker but fork
+and new Linux phones I'm trying to keep
+the dependencies down so that it can be
+easily ported or installed on just about
+any Linux OS add a trigger and at least
+one action
+then you create an event which group
+one trigger and one or many actions
+at the moment trigger scripts and action
+scripts are working and I'm working on
+mock-ups for the time-based triggers
+compared to making the same app on
+Android I would say it's about a
+thousand times better writing in Python
+gtk than Java so yeah I cannot wait for
+my brave heart pine phone and my Libra 5
+to arrive thanks for watching bye

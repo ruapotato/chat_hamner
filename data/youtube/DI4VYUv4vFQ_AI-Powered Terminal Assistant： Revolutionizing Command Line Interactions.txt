@@ -1,0 +1,65 @@
+welcome Tech enthusiasts David Hamner
+here and today I want to show you a
+project that's set to change the way we
+interact with our command line
+interfaces say hello to the AI powered
+terminal assistant this intelligent
+assistant interprets natural language
+queries and executes commands making
+terminal interactions more intuitive and
+userfriendly let's take this thing for a
+spin first let's see what's in our
+current directory notice how we didn't
+have to type in the ls command the
+assistant understood the natural
+language query and executed the
+appropriate create command next we ask
+it to display the license file the
+assistant correctly used the cat command
+to show us the content now let's create
+a directory and navigate into it notice
+how seamlessly the AI was able to
+understand the natural language queries
+and understand the context of the
+previous command you can also ask it to
+create multiple files at once without
+the need for complex syntax navigating
+back to the previous folder and
+searching for text files is just as easy
+the assistant translated our queries
+into the correct CD and find commands
+but it's not just about file management
+our AI assistant can also retrieve
+system
+information oops looks like we hadit a
+small snag here it interpreted our query
+a bit too literally but don't worry
+that's the beauty of natural language
+processing we can simply rephrase our
+Command there we go by asking how big is
+the dis we got the information we were
+looking for this shows the flexibility
+of our AI assistant in handling
+different
+phrasings the assistant can even help
+with simple coding tasks look how easily
+it creates a python script and executes
+it when we encounter an error the AI
+assistant doesn't just give up but
+instead it provides debugging
+information and alternative commands
+That's The Power of AI in action as you
+can see this AI power terminal assistant
+makes command line interfaces more
+accessible and efficient it's perfect
+for beginners learning the ropes of
+terminal commands and it can speed up
+workflows for experienced users too
+whether you're managing files retrieving
+system information or even coding this
+AI assistant's got your back it's not
+just about executing commands it's about
+understanding your intent and providing
+helpful feedback as always this is open
+source and the links are in the
+description thanks for watching bye

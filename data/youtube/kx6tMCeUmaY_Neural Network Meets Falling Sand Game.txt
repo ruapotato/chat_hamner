@@ -1,0 +1,92 @@
+hi everyone today I'm excited to share
+the progress of a Falling Sand game
+powered by neural Nets let's dive into
+the evolution of this project and the
+fasinating challenges I've encountered
+along the way my journey begins with an
+ambitious idea inspired by a paper about
+using stable diffusion to run Doom
+intrigued I thought I might be able to
+do something similar but scaled down
+with my RTX
+3090 after trying stable diffusion for
+myself the results were interesting
+while I'm sure you could Coke something
+meaningful out of this approach doing so
+with 24 gigs of vram proved to be quite
+the challenge undeterred I decided to
+Pivot and use a more tailored approach
+enter our first convolutional neural
+network model
+B this model uses convolutional layers
+with batch normalization it takes in
+seven channels one for each element and
+outputs predictions for the next state
+of each cell this version showed great
+promise it had a basic set of elements
+sand water plant wood acid and fire and
+acted somewhat realistically however it
+did have its quirks liquids were a bit
+chunky shall we say with a working proof
+of concept I decided to up the ante
+enter the improved sand
+model this model introduces several
+improvements increased input channels to
+14 as we added more element types used a
+larger initial kernel size of 5x5 to
+capture more context implemented a
+bottleneck architecture expanding and
+then Contracting the number of channels
+the results we hit a smooth 60 frames
+per second and saw improved interaction
+between elements however we Face some
+challenges with time dependent
+phenomenon like fire fading over time
+there's also this strange waterfall
+effect that's been happening where the
+bottom part of your drawings fall faster
+than the top part sometimes less is more
+and our next iteration simple sand model
+took that to
+heart this only uses three convolutional
+layers keep a consistent hidden size
+throughout removes batch normalization
+layers but the big kicker is it only
+uses the training set data that has the
+highest movement and wow did that
+deliver we're still getting our 60
+frames per second and we're seeing much
+improved Behavior with temporal elements
+like fire fire now Fades naturally over
+time creating a much more realistic
+effect overall this version feels much
+more natural and responsive capturing
+the dynamic nature of our Falling Sand
+world but we still have the waterfalling
+issue and some elements don't work right
+looking into the future I'm excited to
+try out curriculum learning the plan is
+to gather data for each element
+individually then in pairs and then
+finally all together we'll also use
+three frames to try to give the model
+more time context during training we'll
+start with the simple scenarios and work
+our way up it's a work in progress but I
+have high hopes for this version the
+most exciting takeaway for this journey
+is that we've basically created an
+accelerator for a Falling Sand game
+traditional versions of the Falling Sand
+game tend to slow slow down the more
+elements and more interactions that are
+on screen but the AI version doesn't
+have this drawback you can have a full
+or empty screen with as many
+interactions as you want and it will run
+at the same frame rate all the source
+code for each of these versions is
+available on my GitHub feel free to play
+with each versions or mess around with
+the model architecture thanks for
+watching bye

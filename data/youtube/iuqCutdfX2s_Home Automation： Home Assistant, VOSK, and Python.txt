@@ -1,0 +1,107 @@
+i've always wanted a star trek like
+interface to my computer
+red alert there's just something really
+cool about barking orders at your
+computer just to have them executed
+all clear
+the way i went about setting up my smart
+home was with home assistant there's a
+bit more to learn than with the other
+hubs but nothing comes close to the
+flexibility and coolness you get with
+home assistant
+to get started i found it best to
+install an x86 computer you'll want to
+install the full os or the dot devs as
+this will allow you to install add-ons
+for the libre mini i went with a dab
+install as the full os requires a uefi
+bios after you have the base install of
+home assistant you can add your devices
+i'm still undecided which protocol
+standard is best but for now i'm using
+zigbee devices with a zigbee hub
+attached to my computer
+as for wi-fi devices connecting
+proprietary small computers to your home
+network that's controlled by software
+hardware and people outside your network
+is dumb especially if you have unsecured
+api calls bouncing around your home
+network all the time i've yet to test
+z-wave devices but i think it has the
+same licensing issues as zigbee
+all three of the common smart home
+standards suck and need free software
+badly
+if someone can point out a wi-fi smart
+device that uses open source software
+please let me know i think wi-fi will be
+the way forward just not this privacy
+nightmare that we have going on right
+now another issue with zigbee is it's
+kinda slow this is one of my wake up
+automations you can see each light
+change color and brightness i bet if
+these were wi-fi bulbs the change would
+be much more in sync with each other and
+much less one at a time just because
+wi-fi is faster the next part my home
+automation is the listening part
+i use a simple vosk script constantly
+listening for any words it can make out
+the script then uses curl to send these
+words to my core home program i'm
+calling home butler home butler is a
+flask program that takes these words and
+builds them into a sentence each time
+looking for a trigger phrase or word if
+a trigger word is found it runs the
+automation program for the trigger word
+to make a new voice automation you add a
+script with the trigger word as the name
+in the voice commands folder
+if the command needs multiple voice
+triggers you can add an underscore
+between the voice commands the scripts
+themselves can import a few really handy
+functions if they need it this makes it
+really simple to call a home assistant
+command just look up the device entity
+id and find the json data you want to
+send you will need to set up your api
+key in settings.pi the api key can be
+found here in home assistant
+this means home assistant connects to
+all the devices vosk listens for words
+and sends them to home butler home
+butler executes scripts when trigger
+words are spotted
+i've also added basic api triggers for
+making it easy to call scripts from home
+assistant this is handy if you need to
+trigger an automation in-home butler
+from home assistant to add a new api
+call you'll want to install this file
+editor plugin
+then edit the config file with a new
+command to call your home butler url
+ending with the script you want to run
+then you just need to add a script with
+that name in the api folder
+while my food replicator is still an
+early prototype this model can already
+print nice looking inedible items
+the store sensor can tell when i close
+the door which triggers a home assistant
+automation that calls a url running on
+home butler
+which then sends a command to my
+octoprint server to reprint the last
+print in case you want to push a button
+instead of talking i started work on a
+web interface for home butler it's early
+days but i want to make this look
+somewhat star trekky like always my code
+is gpl and can be found below thanks for
+watching bye

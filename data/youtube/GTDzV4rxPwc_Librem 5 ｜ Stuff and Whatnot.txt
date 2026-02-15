@@ -1,0 +1,159 @@
+this is what the early version of the
+launcher slash app drawer looked like it
+only loaded the primary apps and left
+all other dot desktop files on display
+what this meant was if you installed
+something new the desktop launcher would
+be missing after flashing the nude FK
+image this is all changed now the
+launcher displays all installed desktop
+files so for the first time we can see
+what is pre-installed on the dev kit and
+I must say some of this stuff was not
+expected the first thing I thought a
+little odd was there was a few redundant
+applications we now have to turn elapse
+Kings Cross which I'm sure will be the
+default one at launch and what looks to
+be the default gnome terminal when
+testing with Kings Cross I noticed
+something really interesting the top bar
+turns red when you use sudo or switch to
+the root user it also has two VIMS
+surprisingly no Emacs the vim launcher
+simply opens a terminal with them
+running
+I cannot say that's a remarkably
+intuitive interface for a text editor on
+your phone
+Shivam is definitely a step closer but
+isn't loading at the moment he calls
+messaging web and contact apps are
+appearing twice at the very top like
+before but also down below with all the
+other app launchers I was also surprised
+to see known tweaks installed the menu
+is clearly not using Lib handy and need
+some heavy work to be usable in the
+leave room 5 but it's interesting to see
+it pre-installed no Maps is also
+pre-installed playing with that on my
+desktop has surprised me how functional
+it is it can create old-school
+turn-by-turn directions using
+OpenStreetMaps as its data set it is a
+good bet this will become the navigation
+app on the Libra 5 however it does not
+run on the dev kit at the moment barking
+out this message
+the calendar app is not perfect lots of
+dates are cut off however adding an
+event is very simple making it redundant
+with just this little menu thing cool
+chess is also included by default now
+like the calendar gtk needs a little bit
+of work here
+ya can't really control half the board
+but the AI does seem to work well and is
+thoroughly kicking my ass
+man I hope my old chess club buddies
+don't see this it also looks like a lot
+of hard work went into the background
+settings here we can set the primary
+background and lock screen background as
+you can see setting the primary
+background works very well
+let's test setting a custom desktop
+background just for fun we pop open a
+web browser and search for whatever this
+penguin with the phone looks appropriate
+long tap to right-click does nothing The
+View image button gives us a simple web
+page with only this image loaded from
+here a long tap acts as expected and
+right clicks from this menu we can just
+save the image as whatever we want
+now that it's saved off somewhere let's
+head back to the image background
+settings
+at the top we can hit select picture and
+just navigate to where we saved off the
+image the file selection dialog is
+missing the select button or it's being
+rendered off screen double tap does not
+seem to select the image either
+fortunately the keyboard saves us hit
+the enter key and that selects the
+picture for us I'm not sure if we have a
+way to get back to an empty desktop and
+show off that image without closing all
+of these applications but we'll go ahead
+and just close them for now and there we
+go a custom background image on the leap
+from 5 dev kit it still needs a little
+bit of work they still need to add a few
+options like tile background or stretch
+background or even add black edges to
+display the entire image it also seems
+like the lock screen background is not
+yet implemented showing just a black
+screen at the moment if you saw my last
+video you would know that video playback
+in the web browser is not amazing at the
+moment if left untouched it can have
+some smooth playback but it's best just
+to use em player and download the video
+directly let's see how hard it is to
+download a YouTube video all we need to
+do is navigate to a YouTube video copy
+the URL with a long tap to right click
+and then we pop open to a terminal
+install youtube-dl if you haven't
+already then type in YouTube do space
+long tap and paste that URL right back
+in there so YouTube deal has no problem
+running and if we type in M player in a
+file name the playback is quite smooth
+I'm sure in the future we'll have native
+gtk applications for searching and
+downloading YouTube content I also
+downloaded the HD version of Nicole's
+talk about the leap from v it's not only
+a very good talk but it plays back on
+the labrum v just fine
+although I should have set the
+dimensions better
+in the talk we see our first glimpse of
+what the PCB of the labrum 5 will look
+like oh boy I hope it's that green in
+the final product
+this guy online took a stab at labeling
+stuff on the PCB I'm pretty sure both
+the headphone and the m2 Jack's are
+correct pretty interesting
+I installed super tux which after
+installed it did appear in the menu the
+game did load just fine and with the W I
+could reload the in-game menu I was even
+able to tap around to the application
+no other normal key does anything though
+if you press the key that switches
+between numbers and letters it acts as
+valid input in this game somehow so I
+can select things in the menu and hit
+the number or ABC key and it selects
+that menu item anyway using this odd
+input method I was able to try to start
+a game
+however on start the app and/or the
+phone crashed every time I also loaded
+up mine tests which appeared in the menu
+but failed to load utterly here's a bit
+of debug output I did install a few
+other little games but my camera just
+died so darn liked this video q3 is
+almost at an end with it we can expect a
+phone or delay let me know in the
+comments below which you'll think it'll
+be at the end of this month thanks for
+watching bye

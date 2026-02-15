@@ -1,0 +1,63 @@
+Okay, quick demo of the Flick shell I've
+been working on. You can use a pattern
+or a PIN, and you can always fall back
+to your systems password. Here's the
+settings app as it is. Now, you can
+toggle things like the touch effect.
+The core idea of the shell here is that
+there are categories and you can select
+a default for each category. For
+example, the browser. You can long press
+on it and select which browser you want
+to open. When you click the browser,
+a swipe down from the top edge closes an
+application.
+Swipe from the right edge goes to the
+open app drawer.
+A swipe up goes back to the home grid.
+A swipe from the bottom edge just a
+little bit will open the keyboard. A
+swipe all the way from the bottom edge
+to the top will minimize the application
+and bring you back to the home grid.
+You can also swipe from the left edge to
+get to a quick settings. Let's demo it
+on the phone.
+This is a Pine phone, so excuse the
+insanely bad frame rates. That's pretty
+much the basic workflow.
+The keyboard is built into the
+compositor layer as well as all of the
+swiping.
+The shell and compositor share the same
+code base, so it's very unified.
+Anyway, thanks for watching. Bye.
+phones have tried for years
+down through blood and tears. A fully
+[music] on a tiny screen,
+but what we need is something.
+Swipe up, swipe down, swipe left, swipe
+[music] right. The N9 had it, they got
+it right. It's early days, a mountain to
+climb. The flick's going to get there
+one commit at a time.
+going to get there at a time.
+FPS. [music]
+Watching Windows move is quite the test.
+Is that an app or a sideshow friend?
+I fell asleep before the [music] anim.
+Swipe up, SWIPE DOWN, SWIPE LEFT, SWIPE
+RIGHT. Something [music] tailored,
+something light. No more chain squeezed
+into a bone. Flick's building is
+something of its own. But hey now, hold
+[music] up. Don't get too hype. This
+code is fresh. It's not yet ripe. Don't
+test it yet. I'm warning you. Wait till
+I talk food on my X1.
+When I can daily drive without the pain,
+then maybe
+maybe
+you can try this thing.
+Until then,
+thanks for watching.

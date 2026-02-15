@@ -1,0 +1,136 @@
+when i worked at novell in the early
+2010s we used this nifty tool called
+support config to gather up system logs
+for debugging its counterpart was called
+sca which ran patterns against these
+system logs to look for known issues
+it then creates a nice looking html
+report all
+credit for these ideas go to my once
+mentor from my novel days jason record
+here's what the reports looked like back
+in the day support config plus these
+reports created a straightforward way
+for us
+in soos technical support to know the
+basic health of a server
+if we needed any logs or we had no idea
+where to start asking customers for a
+support config would make them feel
+heard and almost always give us some
+hint of what to try next
+in many cases the end report would link
+to a rewarded version of the customer's
+issue for example someone might call in
+saying that their network is down
+where in the report you might see an
+error about dns not resolving
+now that my day job is at purism i want
+to see these tools in the hands of power
+users and hopefully once matured a bit
+in use to help debug pure os or any
+other debian based device
+when it came to porting support config
+to debian i had a really hard time
+locating the source
+when i eventually did find support
+config source it was written in about 4
+000 lines of bash code and collects way
+too much customer data
+with a bit of python i wrote a simple
+replacement for support config called
+the bug logs
+while not as advanced as support config
+yet this has one feature at its heart
+the support config largely ignores
+debug logs removes personal data from
+its logs by default if it does capture
+unwanted data it's a bug that should be
+filed and a filter created
+this user protecting feature goes back
+to the core ideal of how purism handles
+user data
+the other needed parts were also made
+available by jason record
+this included many patterns the core
+libraries used to analyze the configs
+and one of my very first python projects
+sca tool
+sca tool does what sca server does but
+locally
+it runs patterns against the support
+config and pops out an html report
+now that we can generate pretty much a
+support config on debian based distros
+it's time to get the pattern's core
+library up and running
+this library lets patterns pull sections
+as text or compare version strings to
+find which is newer
+the biggest issue with the python
+library is it's written in python 2
+with some questionable variable handling
+after a lot of search and replace and a
+bit of editing i managed to get this
+partially working
+i also added a new function to replace
+the old way of pulling section text
+this is just much cleaner i'm not sure
+how many of the python patterns from the
+seuss side can be pulled over but if
+they're applicable only small changes
+would be needed
+while i've only worked on the python
+part of this the pattern's core library
+is written in a few languages and would
+only need a few small changes to be
+useful on debian based distros
+to get things going i started with a few
+basic patterns scripts in the local
+directory get applied to all systems
+while patterns in byzantium only apply
+to debian 10 based systems
+this is what a pattern looks like pretty
+much all patterns are based on one
+another so they all inherit the gpl2
+license
+at the top we import core which knows
+how to deal with an extracted support
+config directory
+next we set up info about the pattern
+like what os this is for and any links
+that might be helpful
+next this info is used to initialize the
+pattern next is almost always the
+function that does the heavy lifting
+in this example we're reading
+hardware.text and getting the output of
+df-h
+slash we store that in a variable like
+you should then look through it line by
+line
+while sca is already open source i
+already understand the inner workings of
+so that seemed like a good place to
+start i gave it a quick python 3 update
+and patched it to work with the new
+debug log archives
+debug tool can now run patterns on
+already run archives or generate new
+archives and create reports on that
+i haven't tested all the command line
+options but i'm sure they could be made
+to work with just a few line changes
+i've always enjoyed the process of
+debugging an issue comes up that is
+certainly solvable with a bit of this or
+that debugging a component or problem is
+quickly found
+with this fancy workflow once an issue
+is identified an article and pattern can
+be written
+with that done the next time the problem
+comes up it will likely be identified
+and solved faster
+wanna help out i bet you'll love the gpl
+license and the handy links below

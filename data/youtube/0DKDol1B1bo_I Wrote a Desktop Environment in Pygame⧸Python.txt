@@ -1,0 +1,63 @@
+this is lavender lavender has this mode
+this is window management mode when
+you're not in window management mode you
+can drag out windows with right-click
+inside your new window is janet
+janet is a terminal based menuing system
+janet lets you set targets like files or
+ip addresses
+and then from there run functions
+against it like add repository tell me
+how big it is
+etc etc
+it also has a built-in menuing system so
+you can type in a category here and see
+what's inside the category
+if i type in the name of the application
+it runs
+and
+here's this
+we can go back into window management
+mode and move it around if we touch the
+corner
+it will resize the window
+and here's the game
+works just fine
+back to the menu system
+and internet
+and web browser
+firefox hooray
+cool back to window management mode zoom
+out with the mouse will
+and you can see all of my windows that
+are open
+i'm going to drag my firefox window over
+here and zoom way in because we want our
+windows to be around the same size
+and never get too far off from the same
+size
+and let's load up a random youtube video
+huzzah
+things are working
+janet's still a work in progress and a
+lot of functions need added but as far
+as basic menuing goes it works pretty
+okay
+and lavender while not entirely stable
+yet
+works pretty okay too
+see i don't even know what office
+equipment i have on here but uh
+because this nice menu i can run
+document viewer which god knows what the
+actual command is for that but i'm able
+to run it hooray and resize it
+and we can rearrange all these windows
+so we can see them side by side
+all right well basic window manager
+consider subscribing if you found this
+interesting
+anyway thanks for watching
+bye
+[Music]
+you

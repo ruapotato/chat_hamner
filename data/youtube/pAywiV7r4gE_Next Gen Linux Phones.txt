@@ -1,0 +1,89 @@
+it's no secret that the libram 5 and
+pine Fones have been the best hardware
+to run mobile Linux on for the last few
+years but that's quickly changing let's
+take a look at what new devices are
+coming down the pipeline to kick things
+off let's start with things you can
+already buy Fury Labs has the flx1 which
+is an Android handset that's been
+reshaped into a Linux device this uses
+helium to bridge the driver Gap but that
+also means that you're stuck running
+Android kernels which will in turn limit
+the overall lifespan this device is
+capable of even stuck on a single kernel
+this could last a very long time given
+the proper software support its specs
+are no joke running 6 gigs of RAM 128
+gigs of storage and a uh octe
+processor okay now for the big caveat of
+this device if you're in the United
+States it probably won't have the best
+cell reception while not exactly a phone
+the U console from clock work is a
+mobile Linux device that can have a
+modem so in theory you could turn this
+into a mobile Linux device albe it a
+chunky one this puppy is powered by a
+Raspberry Pi compute module so you have
+an option for what CPU and RAM you want
+to install with this kind of modularity
+it is possible that later down the road
+you could upgrade the compute module
+with something even
+better pretty cool the next few phones
+we're going to talk about are pre-
+crowdfunding so keep in mind that these
+may never come to fruition although
+although I hope they do the lick next is
+a true successor to the libram 5 it
+Sports a very similar look and feel
+including Hardware kill switches but the
+specs are completely Next Generation
+this baby has an octacore processor 32
+gigs of RAM and
+256 gigs of onboard storage
+awesome very similar to the libram 5
+this will be using a Debian based
+distribution and running the fos user
+interface this company seems to be
+taking open source and Hardware design
+seriously I truly wish these guys
+success in their crowdfunding Venture
+the Mecha Comet takes a leaf out of the
+libram 5's Playbook and uses an nxp
+processor in this guy it's a 1.8 GHz
+processor which should be a nice stepped
+upgrade to the libram 5 what makes this
+guy truly interesting is the full-size
+USB as well as the modular front
+connection with this device you can have
+a dedicated controller thumb keyboard or
+even build a robot keep keep in mind
+though this device will not be thin
+especially with its attachments while
+this would be a nice upgrade to the
+libram 5 it wouldn't be a dramatic
+Improvement like the next saish OS by
+Yola is one of the best mobile Linux
+distributions to date you can run it on
+a variety of Sony devices if you're
+willing to flash it yourself under the
+hood it's very similar to what Fury Labs
+is doing but instead of with a Debian
+based distribution with a RPM libzip
+based distribution while not not fully
+open source it's still a really good
+alternative so where does that put us I
+predict that in 2025 some company will
+outdo purism in mobile phone
+contributions it should be really
+interesting to see which company treats
+the developers the best and provides the
+most support for the longest I
+personally can't wait to see where the
+next and comment go and I'll get my
+hands on the hardware as soon as I can
+to put them through their Paces thanks
+for watching bye

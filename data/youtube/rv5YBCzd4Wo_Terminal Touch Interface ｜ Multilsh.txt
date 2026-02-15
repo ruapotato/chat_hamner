@@ -1,0 +1,125 @@
+gnu linux is not unix but it is a hell
+of an open re-implementation of an
+operating system originally designed for
+the pdp-11
+all i mean is gnu linux takes the ideas
+of standard input and output as well as
+inter-program piping and a hierarch of
+files and folders from unix but this
+time using a gpl license to allow users
+and developers their software freedoms
+on the labrum 5 the gui stack uses
+weyland and a shiny ui called fosh built
+by purism
+but press ctrl alt f1 and you'll be
+looking at software that largely
+resembles code from the 80s and early
+90s
+instead of a mainframe i have this
+general purpose phone instead of weyland
+and this nice looking ui
+i want to use this terminal instead of
+interfacing with a keyboard
+i want to interface with the touch
+screen looking at projects that already
+exist
+we have this nice looking keyboard
+program after building a baker's dozen
+debs i managed to get this keyboard
+running
+nice for whatever reason i can't get
+this to respond anything except
+extern style mouse input which is not
+available as far as i know in this basic
+terminal
+past experience has taught me to stay
+far away from n curses
+it's just not as hackable as i'd like it
+to be so instead i built this small
+library called uicon
+this is a basic tool that offers
+keyboard and mouse input and exposes
+commands to move the cursor and write in
+any color
+first up is getting basic touch input in
+the console
+looking around gpm the ancient general
+purpose mouse was looking like a good
+option
+i did try using this and it does report
+touch data as if it was a mouse but the
+issue is when you touch two different
+parts of the screen it randomly jumps
+so gpm is not going to work for me next
+i tested accessing the screen with the
+dev device directly
+i could read events from python but
+turning this into usable touch
+coordinates was not going to work
+just to see what command line solutions
+there might be i dug into command line
+tools and found ev
+test this spits out clear text x and y
+coordinates when you touch the screen as
+well as the type of event
+this feels very old school let's pipe
+that data into a python process and rip
+out what we need
+with this really hacky touch input
+working i need a way of drawing one or
+more terminals as well as a way to pass
+keyboard and touch data onto those
+terminals
+as far as i know the closest project is
+something like demux which is just not
+built for what i'm trying to do
+so i built composite term because it's a
+compositor for terminal windows
+this sucker is really where the magic's
+at it lets you open a terminal of any
+size at any place
+running any command within the bigger
+terminal i can start a new bash
+session or two or use it to render
+small parts of a new terminal desktop
+environment this is kind of the first
+version of what i'm calling moultish
+a multi-shell touchscreen driven
+interface for non-x11
+or wayland terminals the top menu is its
+own terminal
+as well as the bottom menu all open
+terminals show up as apps on the bottom
+and can be minimized and unminimized
+this bottom bar is just a program
+reading composite terms running file
+as well as using its hook commands
+tapping start will open a menu terminal
+for now the program just waits for a
+mouse event and starts bash
+but i'm hoping to add a calls app basic
+messaging app and simple things like a
+calculator and tic-tac-toe
+the on-screen keyboard can be toggled by
+clicking the top bar
+this is yet another terminal it also
+shows up in the menu bar
+which would benefit from some nice auto
+refresh with a terminal open you need to
+make sure it's in focus
+this is done when you tap any app except
+the keyboard you can see it still sends
+click data to every app
+it really shouldn't do that with a new
+terminal in focus the on-screen keyboard
+can send basic characters
+as well as the enter key the other keys
+still need some work
+keyboard events are passed to whatever
+terminal is in focus which makes using
+an external keyboard and option
+if anyone takes a liking to this project
+or if you want to dig into how it works
+you can find all the source code online
+under the gpl3 license
+thanks for watching bye

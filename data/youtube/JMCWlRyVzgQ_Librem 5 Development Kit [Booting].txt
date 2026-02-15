@@ -1,0 +1,20 @@
+I'm gonna start with the best footage
+here is the labrum 5bo dink
+after we got it to boot we had problem
+after problem getting user input into
+the development kit after trying a USB
+to USB C adapter and even a powered USB
+hub it doesn't work I hopped on the
+development forums and it turns out we
+need a USB C powered hub and at this
+point without the screen working with
+touch input a USB C hub is the only way
+to go unfortunately this means I need to
+run to the store and grab myself a USB C
+hub I'm planning to play with the
+development kit again on Sunday and
+hopefully with the USB C hub we'll be
+able to play with the interface on the
+device as well as test the GSM module
+for call and text thanks for watching
+bye

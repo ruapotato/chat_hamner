@@ -1,0 +1,175 @@
+hello and welcome back everybody I'm
+gonna go ahead and show you how to build
+your own linux distribution using kiwi
+and using kiwi you can build yourself
+scent you can build yourself debian
+fedora soos boom - a lot of the big name
+brand e Linux is
+[Music]
+there is a very large use case for this
+ever since they turned off Susa studio
+it's been a little bit rough to build
+your own version of Susa
+however Kiwi has always been the backend
+of Susa studio and is actually very easy
+to use step 1 let's download the
+packages and install Kiwi I strongly
+recommend you do this from an open
+source of distribution already so if you
+need to run a VM you can build an OS and
+a VM but that's silly
+so you should do a boot or install
+openSUSE on one of your machines and go
+ahead and install Kiwi and download this
+repository which will be in the
+description through him on my desktop
+here we are okay
+let's pop open a terminal CD to y'all ok
+just to show you in what packages I
+already have installed go ahead and
+duplicate similar setup to this so that
+you'll have a Kiwi tools and for those
+that are curious this is openSUSE 15
+total so let's drill down into this
+openSUSE one you have different
+architectures you can build for and
+various versions of soups that you can
+build let's start with the just enough
+OS of Susa 15 you'll see a couple files
+inside there's a config dot XML if you
+take a look at this it's mostly a
+package list of which packages are
+installed so I could copy this line here
+paste it here
+delete
+data and put in let's say if I wanted it
+to come with Kiwi tools
+I could put Kiwi tools right in there
+and you know what let's go ahead and
+leave it just like that so that it will
+add the Kiwi tools there's a couple
+other pieces of data that are important
+in this file like our target is gonna be
+ISO and it's gonna support UEFI boot
+also has a name so here you could name
+your distribution or your modified
+distribution and then the config dot SH
+file is an incredibly important file
+after the Installer installs the
+packages from your config dot XML file
+it's going to call your config Don SH
+script and then here you can set up user
+accounts or do any like Linux e things
+you can turn on services for automatic
+startup in this file you can really do
+anything you want so step one is it's
+going to parse out this XML file and
+install all of these packages inside of
+essentially a Chu root it's gonna give
+it a certain name and stuff but once
+it's done creating the basic root
+filesystem for your distribution it will
+call this configuration script and this
+configuration script can turn off
+services it can RM directories make
+users do any Linux any things that you
+want done to your distribution before
+the user ever sees it let's say you
+wanted to add a file automatically to
+the root filesystem of your distribution
+well it's it's just an overlay right
+here anything you put in here will end
+up in your distro so if you wanted to
+include some system D configs we could
+add a system D folder and then a system
+folder and add some system D config
+files that way you can include like Etsy
+skeleton and have a default user home
+directory structure that gets added
+two new users there's really a lot you
+can do it's this is the root filesystem
+of your distribution but yeah so that's
+kind of the main tools you've got a file
+that contains which packages are
+included you've got this directory
+structure which contains all the files
+that you want to include that aren't
+part of RPM packages and you've got your
+config script that will be called and
+modify everything by a command line so
+you put all those together and you end
+up with distro so building is the next
+important stage after you've tweaked the
+config file the XML file and you've got
+your stuff in place how do you actually
+build the thing well I'm gonna look at
+the documentation and just show you the
+documentation because that's pretty
+lengthy commands all right so here's the
+actual command so let's go back one
+directory and then from here we'll run
+Kiwi and G - - type I so that means we
+want an ISO image not like a VirtualBox
+disk image or the like it's gonna be an
+actual ISO and install ISO system build
+so there's actually three options here
+there's the build to create and there's
+another one basically one creates the
+distros root filesystem and the other
+will actually create the ISO built does
+both so we're gonna I almost always use
+just build so - - this rib
+Yui kiwisuze uh x86 Susa bleep oh wait
+we don't leave we want you know we do
+want leap 15 okay there we go
+then we want - -
+Karkat directory gets /tmp slash my
+distro okay so very lengthy command but
+once we run that command it's literally
+going to download rpms and install our
+PMS and achoo rude and copy over my root
+filesystem think all that config script
+in the end it's going to yield a dot I
+so that we can play with oh yes so there
+was this small bug that I had to correct
+when I was working on my distro as well
+can't find GFX boot to fix this we just
+need to include the right GFX boot stuff
+so here's the issue with the default
+repository at the moment it's set up to
+use GFX branding openSUSE we want to get
+rid of this the downside to this is
+you'll have a slightly ugly boot screen
+I don't see that as a big issue
+personally so default grub is fine
+it needs a unique path every time so
+since you've already used my distro we
+need my best road to and we wait again
+it has created the live ISO for us to
+test out I'm gonna go ahead and copy
+this to my desktops CP this ISO 2 right
+here okay
+let's open up Oracle we're going to add
+the ISO image to a VM just to make sure
+that it works alright and this is the
+ugly screen I was talking about the
+openSUSE branded screen isn't there or
+isn't working by default for whatever
+reason but I thought the ugly blue grub
+screen was actually sort of cute in its
+own way and there you have it your very
+own custom Linux ISO if you're in the
+user camp of sad that openSUSE studio
+has closed down don't be so sad it's
+pretty easy to use kiwi to build your
+custom distributions via the command
+line so if you're a Linux user who's not
+afraid of the command line but misses
+Susa studio Kiwi is amazing I use it to
+build my distribution called chimera and
+that's kind of in pre-alpha East stage
+right now but you can download the Kiwi
+files today and build if you want so
+take a look at the description if you
+want to see my distribution also built
+with Kiwi happy Kiwi Inc bye

@@ -1,0 +1,36 @@
+the quad-core CPU and powerful GPU can
+play SNES games easily after tweaking
+the graphics settings and sound settings
+to not use vsync snes9x seems to use G
+TK 3 which is natively displayed in
+Weiland this is cool because you can use
+the on-screen keyboard to interact with
+the game in this demo I'll be using this
+Bluetooth keyboard this Auto connects
+quite quickly after the first pairing
+Super Mario World plays very well I'll
+test attaching a controller at some
+point this would also be a good
+opportunity for someone to make an
+onscreen controller for squeak board
+directions to get started could be found
+on this blog and 64 emulation works very
+well on the leapin 5 a few frames are
+dropped now and then but for the most
+part it plays at full speed for some
+reason the pause menu is rather slow but
+it does eventually pop up a few times
+while is messing around with other
+applications the graphics ended up
+becoming corrupt quite simple to fix
+just restart the app a bug with a
+default keyboard makes it so that the
+keys mismatch in ex Wayland windows
+while that bug is being worked on
+you can simply swap out virtual
+keyboards or use a Bluetooth keyboard
+like I am here overall I'm really
+impressed with what this computer shaped
+phone can do as time goes on this kind
+of thing will become simple to set up
+and enjoy thanks for watching bye

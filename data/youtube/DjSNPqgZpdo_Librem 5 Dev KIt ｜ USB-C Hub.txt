@@ -1,0 +1,40 @@
+this week we're gonna do a short
+development update on the labrum 5
+device me and my development buddies
+picked up a USBC powered hub now this
+hub is interesting you plug in the phone
+charger on one side and the charge goes
+through the up and also exposes USB
+ports you get it all hooked together it
+looks great and we're ready to boot it
+up we boot it up and it's boot looping
+yes we see Penguins over and over and
+over but only through the USBC hub and
+again crafty guy comes to my rescue
+turns out we don't want the power brake
+that came with the dev kit we want a
+power brake that can provide 4.8 amps at
+5 volts now I don't know how many people
+have looked at all of their power brakes
+but that's not common and so we're back
+to needing go shopping again
+to pick up a power brick that can
+provide the needed amperage to power the
+USBC hub as well as the Libra 5 dev kit
+so that it might not boot loop haha some
+of you are thinking well why not use the
+battery as well that did not help we can
+powered from the battery we can even
+have the battery in while we power it
+from the hub that will result in a
+successful boot and a useless USB C hub
+for some reason booting this way
+nothing powers up over the USBC hub no
+mouse no keyboard very frustrating in
+addition to the power brick we're gonna
+need a SIM card adapter as well it looks
+like to me that my mini Sam micro Sam
+whatever the hell's in most smartphones
+now is gonna need one of the adapters to
+make the SIM card readable anyway thanks
+for watching bye

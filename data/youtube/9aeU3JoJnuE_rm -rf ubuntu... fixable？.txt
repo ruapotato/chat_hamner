@@ -1,0 +1,240 @@
+hello and welcome back everybody I'm
+kind of screw with Ubuntu for fun not to
+do anything productive um - or / -
+stress this command says remove
+recursively and forcefully everything
+underneath of the hard drive and away a
+lot of [&nbsp;__&nbsp;] in proc and sis is not
+getting deleted oh wow Wow icons
+disappeared it's pretty interesting I
+think our YouTube video struggling still
+move things so the window manager is at
+least in memory that's pretty cool oh
+it's just lost its JPEG still functional
+well command line returned well that's
+not found huh huh huh huh ooh boom - how
+well did you delete yourself let's spin
+you up in a live disc Wow
+a surprising amount of [&nbsp;__&nbsp;] is left I
+was expecting a empty filesystem maybe
+even a corrupted file system but there's
+actually [&nbsp;__&nbsp;] left now here's the
+question can you fix this
+if you can apt-get install by setting a
+root
+I think this is probably the right way
+to do it we're gonna have to download
+the packages one at a time and the dpkg
+install them into our really [&nbsp;__&nbsp;] up
+don't - I have to get download - okay
+look at this form it's got the answer
+okay now we're gonna dpkg
+install or not root - - root equals /mnt
+dot slash - whatever the [&nbsp;__&nbsp;] that area
+is is that really the file that's
+complaining about is this file if that's
+the case maybe work we got to make der -
+parent I know you can run that
+touchscreen then maybe we can run the
+dpkg got us a little bit closer and it
+wants this directory so mkdir - karent
+that directory tract in wants this
+directory - no it wants a file so me sir
+[Music]
+- parent
+they had a dpkg again
+yeah aerozine happened but it tried it
+means this ain't - clapping - go back up
+here put it out / - on there okay we got
+another error this is gonna take a
+minute I think lube - six star dot Deb
+it's a smart way to do that I think cuz
+now we just have to download whatever
+dependency is missing some reason that
+one doesn't want to install so here's
+the files that we have at the moment
+um I think things are getting a bit
+screwed up cuz there's not very many of
+them this is what my root filesystem of
+my live CD looks like okay
+you could do this manually but I'm just
+feeling lazy these are the files that I
+want this should make all the missing
+ones plus some let's do a note an LS and
+hey we have directories now LS in seeing
+a notice it's empty so it's more whole
+than it was before
+hooray put that do PKG command again
+okay so things are pretty [&nbsp;__&nbsp;] up and
+it doesn't want to install anything in
+that [&nbsp;__&nbsp;] up mess so we're gonna go
+ahead and patch a few things by CP - AR
+/y live PKG gotta copy these files over
+can I check make sure we got the files
+copied okay yep they look right cool
+so maybe the PP kg will still no no damn
+dammit dammit dammit
+so yeah dpkg doesn't want to install
+[&nbsp;__&nbsp;] for us and you know what I'm done
+[&nbsp;__&nbsp;] with it so we're gonna just copy
+over we're just gonna copy the route
+live CD [&nbsp;__&nbsp;] over the route CD [&nbsp;__&nbsp;] and
+see what happens
+highlight everything and deselect whoops
+dev sis and prop with control also we
+don't want to copy our M and T file so
+we'll deselect that as well
+copy paste alright so we're going to
+merge all of the folders as far as
+replacing files I'm not going to cuz
+it's a repair right so yeah we're gonna
+go ahead and skip those okay so I
+downloaded the the kernel let's try to
+install it okay another package needs to
+be downloaded go back to the download
+download
+that too how many of them are there
+going to be - - force
+damnit CP food fingers and then T good
+the first things first as I need to do
+an L o of dev discs by UID find SDA 1 so
+this is the UUID of SDA one OPI se FS
+tab hurry look at this syntax cuz I knew
+you I D good D slash EXT for a co I
+don't have an esse Cerie
+just gonna go 1 1 think that should be
+fine probably maybe let's try that again
+remake the RAM disk ok theoretically we
+have a kernel and a ram disk let's
+reboot actually verify first boot well
+we've got we even have a grub file we've
+got ourselves in it our D and we got
+ourselves kernel let's check out the
+brother file in here
+yeah it's not configured at all right
+the grub files just screwed the hell up
+I'll just do it manually so when I
+restart this and we're going to
+okay so here's our broken grub install
+Linux boot and there it is let's try it
+so it half booted we're stuck in the RAM
+disk meaning it failed to boot
+fully I think I'm supposed to now our
+rail route under root so I'm out dev SDA
+it doesn't have disk drivers really X
+we've been to your ram disk utensils
+suck balls if I were to do that on Susa
+it would include disk drivers I think
+that's kind of the idea
+it could include disk trevor's without
+me having to put a fudge load of options
+that I don't want to figure out I wonder
+what if I have Susa help out a little
+bit here and we'll just use the Susa
+tools to recover the rest of this
+because Ubuntu's tools
+okay so there's half working Lubuntu
+from the RM is about to turn into
+something else something else
+we added openSUSE repositories to our
+boon to route now we're going to try to
+install zipper thanks you always trust
+that repository always trust this
+repository oh it's a typo okay so here
+is our repositories some of them work
+some of them don't
+this one's broken for sure s - oops
+G we add that and we'll do a refresh
+hey hey hey he's downloading our new
+repository all our posit orys are update
+in a zipper
+oh whoops
+okay now we're installing the base of
+Seuss on top of the boom - which is a
+recovery from broken RM dash RF we're
+gonna go ahead and ignore that that's
+definitely a conflict from installing a
+bunch of RPMs on top of a bunch of Deb's
+this is stupid okay so
+I'm curious to know what what operating
+system it thinks it is still thinks it's
+Ubuntu so that's something but right
+here zipper wall and apps get on the
+same system array
+it still doesn't boot though so yeah
+zipper
+let's see if rpm works cuz apt-get
+doesn't whole thing is all screwed up
+alright definitely gonna ignore that
+just install around the Debian system
+should probably also install grub while
+we're here grab the Susa version m'kay
+in it Rd is the Susa command this should
+make a valid in an RD we hope
+how it failed I think the ramdisk
+generated but it didn't zip properly
+all right we're a link - ask that to the
+boom - Luke location and we're going to
+RM the old file ok ok
+RAM disk please make yourself yeah that
+did it alright so that was definitely a
+weird aboon to crossover Susa issue but
+it made a ram disk we now have boot in
+it are these [&nbsp;__&nbsp;] yeah let's reboot
+actually making big boot grub grub CFG
+I've got the - OH give that a try ok
+let's try that why not leave that's not
+gonna work running shoe hey it booted
+sort of we're in a round disk so dev SD
+a hey you have SD devices great slash
+routes
+oh boy oh boy some more weird crossover
+[&nbsp;__&nbsp;] I'm sure Ellen - soft live [&nbsp;__&nbsp;]
+live 64's where Susa put [&nbsp;__&nbsp;] and it
+wants with Mount okay
+our random disk is missing a library
+let's reboot so we transferred the host
+operating system in and RD files over to
+this computer because it seems to be
+incapable of generating its own but yeah
+let's give it a shot why not okay man
+line the next case boot VM run is - for
+for its nine it's the one we're gonna
+have and Rd for for nine boots
+something might be wrong with my FS tab
+so okay let's try this syntax instead
+okay that might be valid okay well if
+that works great if that doesn't work it
+doesn't work
+Wow okay okay so our catastrophe of
+operating systems doesn't technically
+boot but Grubbs installed and you can't
+insure the system so I was thinking at
+this point I might as well see what the
+hell it looks like as an actual running
+system so I'm gonna go ahead and use a
+recovery method to boot this system
+essentially I'm gonna boot my key : x
+and qu Roden and start up the graphical
+environment to see what the hell it
+looks like this could be interesting I
+think I'm supposed to mount our rail
+route under root so mount dev SDA
+okay xhose plus beautiful now we can
+cure NT okay so this is our weirdest
+operating system we do a cat pet sea
+star re out star it's been recovered
+sort of from an RM dash RF sort of there
+are more files in route than there used
+to be but here's the weird zipper get
+yes it does have both commands one is
+not functional
+and look at this our desktop environment
+doesn't fully work but the comp is
+component and the window manager works
+so I still think that's a win
+it's an alt all around wing Akira
+Firefox probably yep can't even run
+Firefox okay well thanks for watching I
+hope you had a good time I had a great
+time

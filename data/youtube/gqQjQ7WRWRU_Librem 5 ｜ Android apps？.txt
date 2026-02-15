@@ -1,0 +1,104 @@
+I came across an interesting post on the
+pier ISM user forum this user was able
+to run an Box from within the x86 64 VM
+build of POS Plus Vash for those that
+don't know and box is a way of running
+android applications from standard gönül
+innings it uses snap for isolation
+although security is still
+work-in-progress for an box arm 64 and
+of course the desire to run android
+applications on the dev kit is quite
+high even I would love to run my bank
+app and I'm sure others would love
+what's happened some other messaging
+clients I went ahead and started
+researching what it would take to run an
+box on a Libra 5 it looks like a lot of
+work to bring an Box to arm 64 is
+already done which is very good news and
+I was able to find a compiled version of
+and box for arm 64 so I tried installing
+snap unfortunately this gave me a squash
+FS error I went over to the matrix
+channel and complained to the devs and
+they have a pretty good idea what's
+going on they enabled squash FS XE in
+the kernel and all I had to do was
+update my dev kit and I was able to pull
+down this change the error message was
+completely different this time
+complaining about cgroups
+freezer I was able to find this crappy
+hack round which involved copying
+assists FS c groups from a running
+desktop and using mount - - r bind which
+did work but was quite ugly and clearly
+not the right solution DPA had a much
+better plan to fix this and also gave me
+updated kernel build directions so I
+built a colonel with config C group
+freezer enabled and installed it to the
+dev kit with working snaps I took a stab
+at installing the precompiled and box I
+did manage to build an box in an armed
+64 emulator but it worked less well than
+the one I found here
+now that an box is installed all I
+needed to do is install the kernel
+modules
+unfortunately building the kernel
+modules failed it turns out this was
+because the kernel was built on my x86
+64 computer which built some of the
+items as x86 so that they could be used
+to build the rest of the kernel I was
+able to rebuild the kernel scripts on
+the dev kit and the kernel modules did
+compile after that but they wouldn't
+load the only thing I could think to do
+was build the kernel on something arm 64
+like the dev kit
+you
+that did seem to fix the issue I can now
+install the modules without issue and I
+can even access an Android show
+when I click on the icon I get this
+pretty interface but it does eventually
+air out saying session manager failed to
+become ready running the session manager
+from the serial connections seg faults
+when you run the session manager from
+within the GUI you can see it complains
+about the egl and some other graphic
+stuff if you leave this session manager
+running in this way and box still airs
+out with session manager failed to
+become ready that's all the progress I
+have been able to make so far on an Box
+at the very least snaps will soon work
+by default on the labrum 5 phone with
+the community soon to receive hardware
+I'm sure will have this up and running
+very soon just for fun I installed a few
+extra applications the usage app looks
+quite beautiful it gives you a CPU
+utilization graph as well as which
+applications are using RAM and the most
+processing power it also gives you a
+simple way to track down which folders
+are using up all your disk space very
+handy if you're running low on space the
+only critique I have is the CPU graph
+itself is quite CPU intensive as soon as
+you scroll down past that graph it drops
+considerably as far as total power to
+run the usage application not much has
+changed for the update GUI but they did
+add a cool reboot fade out effect also
+after the reboot I did get a
+notification tapping on it brought me to
+an update report
+very cool the disk utility app also
+looks very good on a small form-factor
+thanks for watching bye

@@ -1,0 +1,50 @@
+hello and welcome back everybody I'm
+gonna show you how to chew root into a
+different Linux operating system so I've
+got a dual booted Linux system here I've
+got Seuss's my host operating system
+i've debian on a different partition I'm
+gonna mount the root filesystem of
+Debian into slash Deb
+so Victor Deb if you need to all right
+once that's done you can do Alice div
+and you should be able to see the root
+filesystem cool the simplest version of
+this is for I am sis rock and then du
+and then mount and you're done but um if
+you want a to root the x11 works in the
+commands a little bit more complicated
+you need to do for I and dev dev pts
+dead of SH M proc sis temp and run so
+that's the first line do our bind splash
+mount point slash I done alright let's
+do an LS of slash deb-deb good we see
+ that's good at this point we can
+run to boot /r mount then from here we
+can do an su - that just sets up the
+root users and violent variables um you
+can screw around in here and it's a
+mostly working environment I can do
+things anyway when you're done screwing
+around with a terminal um you want x11
+exit out of this and type
+XOS plus and that'll allow basically
+anything to connect to your x11 session
+it's not super secure but it's way less
+complicated for sure
+anyway back into our Debian system let's
+run
+mate panel how about that okey-dokey
+that doesn't work all the time but I
+have openSUSE running down here and
+Debian running up here and it's running
+its route though do note it's a
+different user right but to prove it
+I'll go down here to system open up a
+terminal and type in the cat slash
+that's seized rrdl star and you can see
+this is a Debian and I can even go in
+here and open out in advance something
+something here's Inkscape from Debian
+anyway thanks for watching
+[Music]

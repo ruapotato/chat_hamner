@@ -1,0 +1,68 @@
+hello everyone after my last deep dive
+into Linux mobile phones you all shared
+some amazing feedback let's cover some
+of the devices I missed and some updates
+about the devices I covered last time
+the shift Phone 8 is easily one of the
+most interesting devices I forgot to
+mention in my last video they're
+building a modular device with
+repairability in mind with over 13 user
+replaceable modules and Hardware kill
+switches these guys are taking Hardware
+repairability to the next level the
+device runs an Android 14 based
+operating system but it does promise
+good ROM support for Linux enthusiasts
+out there this device is just begging to
+have different operating systems loaded
+onto it the Mecha com seems to be taking
+a completely different approach their
+Hardware already exists instead of
+crowdfunding a device that might exist
+their crowdfunding is more of a way of
+gauging interest I'm not saying
+crowdfunding ideas is bad but having a
+phone shipped quickly after a crowdfund
+would be a huge benefit people are tired
+of waiting years for their device I've
+also started looking into the software
+stack that Mecca is building their build
+scripts are written in New Shell their
+desktop environment ditches gtk entirely
+and is written in Rust really
+interesting software stack that's
+completely different than fos just a
+quick correction from my last video the
+flx1 by Fury Labs does apparently have
+good T-Mobile support in the USA while I
+can't independently verify this I can
+say the developers at Fury labs are easy
+to get a hold of and more than happy to
+answer your questions as long as you're
+okay with an Android boot bootstrap
+approach to get modern Linux up and
+going this is a fantastic option if I
+had $550 spare I'd certainly pick up one
+of these devices to play with for those
+willing to flash their own devices
+postmarket OS works really well on the
+OnePlus 6 OnePlus 6t and Google pixel 3A
+while these aren't out of the- boox
+solutions with a little knowhow they
+make for a great daily driver Yola
+announced a new community phone pretty
+exciting for those who are selfish OS
+fans out of the box it runs selfish 5
+with Android app support it's C by an
+octacore arm processor with 8 gigs of
+RAM and 128 gigs of storage this is
+pretty decently speced for its price if
+you're in the USA it's always smart to
+check the LTE bands to make sure that
+it'll actually work on your cell carrier
+from the modular design of the shift
+Phone 8 to Yola's new community device
+the mobile Linux landscape is really
+heating up in 2025 thanks for watching
+bye

@@ -1,0 +1,61 @@
+hello and welcome back everybody I'm
+gonna show you how to do some cool
+things with x11 while they're still
+relevant yep anyway I spam escape trying
+to boot this boot to VM got to my grub
+screen from here I'm gonna go to eat
+edit scroll then to the Linux line you
+know the Linux lineup had a three I was
+taught that that means booting to run
+level three
+um that's more or less emulated these
+days and you boot - something like run
+level 3 which is networking but no GUI
+so if you don't want to start the GUI
+putting a three here it's a good place
+to put a three by the way 5 would be
+default graphical one is recovery 3
+non-graphical from here you can just
+simply press f10 to boot so the reason
+I'm booting in to run level 3 is so that
+I can start x11 manually I've set myself
+a root password so I can login directly
+as root and the command here is simple
+attacks in it you can simply run that
+command by itself with no arguments and
+it will start on display 0 max 11 runs
+with different display numbers display 0
+is default display 1 is the next one and
+so on but let's say you already have an
+X 11 session running on : 0 it's fairly
+easy to give it a different display
+number so you can do - - space : and
+then whatever you want your display
+number to be one would be the most
+useful I think because if you already
+have on running you can start another
+one
+I'm gonna go ahead and leave off the
+arguments and start on to the default
+display zero shrift day okay you should
+be greeted with this fancy dancy
+terminal X term that's default you can
+also pass in a command to run to X in it
+but this will do just fine we can start
+whatever you want from here for example
+I can type in Firefox and here's Firefox
+notice you can't really interact with
+the Firefox because it doesn't have a
+window manager running and Firefox gets
+kind of pissy with no window manager
+Benjy doesn't have a really good one you
+can start easily by itself that you can
+start unity that's probably gonna change
+when known comes around cool unity
+running as root not a great idea but
+here it is anyway
+and once unity is running you can move
+your windows around and do that fancy
+window nonsense
+[Music]
+you

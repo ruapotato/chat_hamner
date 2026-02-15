@@ -1,0 +1,182 @@
+free as in freedom not free beer is a
+common saying amongst the computer elite
+it's an idea at the very heart of the
+computer revolution that is copyleft
+software a copyleft world looks very
+different than what has flourished
+around ios and android even though the
+core of Android is open the way we make
+Android handsets is not the
+manufacturers often have no idea how the
+drivers that empower their smartphone
+actually work which is kind of scary
+this force is supposed to come out with
+similar specs and just about the same
+Android based OS it makes you wonder
+what a world would look like if those
+proprietary it locked away pieces of
+code got pushed out and treated like the
+untrustworthy crapfest that they are
+after all it's your computer you should
+be able to study and understand what is
+happening but you can't because
+companies are worried that they won't be
+able to make as much money if you can
+modify your own device these companies
+are protecting their IP in a way that
+makes it illegal to distribute modified
+copies of their driver so even if you
+could be compiled a driver and add
+something interesting you wouldn't be
+able to share it with a community that's
+in the same boat as you are with every
+company defending its own IP to this
+extreme we the customers suffer it
+limits what we can do with the devices
+we already own there's a lot that
+Android phones can do that Pearson to
+leave in five cannot do just yet but the
+Liebherr five is liberated in a way that
+has never been seen before
+tourism has picked Hardware that while
+not easy to use it a phone is much more
+open than the alternatives for example
+the leader of five uses an amx which is
+a grouping of important chips like the
+GPU and CPU NXP the company responsible
+for the IMX is dedicated to open-source
+this means NXP has to spend a lot of
+time developing drivers they also have
+to spend a lot of development time
+getting those drivers into the mainline
+version of Linux paying for all that dev
+work is costly it makes NXP chips more
+expensive compared to other chips with
+similar specs the result of developing
+in the open like this
+is undeniable people passionate about
+computers can use and improve
+Pease drivers those same developers
+would lightly feel encumbered by the
+numerous proprietary barriers floating
+around Android I myself cannot stand it
+even using a hack to hell and back wrong
+you can only get so much customization
+out of Android at the end of the day an
+Android smartphone is hardware running
+proprietary drivers and an old heavily
+modified version of Linux plus 80 cool
+apps and 3 million ad written mostly
+proprietary useless apps and you've got
+Android elite from five is hardware
+running on open drivers at least on the
+main CPU and is capable of running
+mainline Linux peers and is dedicated to
+getting all of its changes pushed into
+the projects that they are based from
+where other companies would just for
+clinics and use their Fork of Linux
+peers and pushes their changes back into
+the mainline kernel for everyone to take
+advantage of instead of demanding new
+apps be built for the liter 5 Pearson is
+building tools to adopt the Linux
+ecosystem of apps which is mostly made
+up of open source software it's all
+stuff made and used by the developers or
+the developers and to benefit the
+community of users instead of building
+tooling to help spam users with ads or
+pop-up chat bubbles P Rossum is enabling
+you to pick your favorite toolset and go
+nuts while the end user story is still
+getting better
+as absent features are added the
+developer story is unparalleled already
+let's take a look at Android the most
+common programming language is Java the
+other official language for Android is
+dump-down Java or Clayton you can read a
+low-level C or C++ program but you'll
+still need to use the Android tooling
+and Android UI elements which means
+you'll have to write an Android specific
+app it also means you'll have to write a
+different app if you want to support
+anything else other than Android there
+are other options like unity if you want
+to drop some cash but at the end of the
+day you'll be writing the Android way on
+an Android device let's see what it
+would take to build a simple application
+on Android it seems Android studio is
+just about required to do anything
+[Music]
+you'll want to pick between Java and
+kind of Java wonderful it's the simplest
+example app that could come up with and
+it's pointlessly opted oriented I don't
+know about you but I wouldn't be
+teaching oo P as a hello world example
+but whatever it's Java you'll also have
+to deal with some XML that describes the
+UI cool you got your example code pulled
+up and it's time to run here you'll need
+an Android phone to test with or you can
+follow these directions to set up an
+emulator
+finally you can test your app and start
+writing some real code
+now let's take a look at the Libra five
+livre five developers are mostly running
+in Python rust C and Vala
+but the leap from five is just Desktop
+Linux which is arguably one of the best
+development environments around
+so really the sky's the limit if you're
+feeling really zesty write your own
+programming language package it up and
+use that there's nothing stopping you
+print hello world echo hello world
+display hello world program hello world
+so many options here it's crazy
+any good new Linux OS can act as your
+development playground I write my code
+in VI and K running on openSUSE which
+works great for writing apps on the
+leave and fun better still if you're
+comfortable with the command line you
+can install SSH on a labourer v to just
+develop directly on the phone in a pinch
+you can even write programs using the
+touch keyboard Android has a set in
+stone way of doing things
+while the Liebherr v gives you
+suggestions and challenges you to find a
+better way to implement whatever you're
+doing the last thing I want to talk
+about today was the kind of developers
+these platforms are attracting Android
+is built in a way that is boring to
+write code for but any developer that
+can read a dock can do it since the user
+base is so big it's profitable to pay
+for random developers to work on
+whatever app but you end up with
+developers that put in the minimum
+amount of effort which in turn leads to
+apps that look nice but don't work quite
+right the labor v is still building its
+user base but it's the dream device many
+passionate developers have been waiting
+for because of its insane flexibility
+and its policy to copyleft so they
+private rack people who love writing
+code while there is still lots left to
+right I think the end result will be
+much better than what we see in the Play
+Store today
+I love the idea of software written by
+the community for the community because
+we want to thanks for watching right
+you

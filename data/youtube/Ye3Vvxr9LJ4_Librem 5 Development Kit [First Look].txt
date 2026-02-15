@@ -1,0 +1,71 @@
+I managed to get my hands on the labrum
+v development kit and boy does it look
+great right out of the gate I noticed a
+couple of interesting things first the
+USB cable is purple not to be alone in
+the strange colors the power brick is
+orange so you get a purple USB in an
+orange power brick nice the power brick
+does have something interesting it can
+change to various different voltages
+like 12 volts or 5 volts and that's kind
+of interesting I've not seen that on a
+whole lot of power breaks and the next
+thing that blew my mind is it's not
+actually like a phone board and a libra
+my board it's just one board you can
+flip it over one side to screen one
+sides like a bunch of things processor
+eat zinc really one more on that
+later
+once we were satisfied gawking in it all
+of the included hardware we went ahead
+and plugged the device into a computer
+in short order a device called TTY ACM 0
+showed up we used Pico comm to connect
+to this device and we were greeted with
+a wonderful purism login screen I used
+route route to login cat up the release
+file kind of poked about a bit and it
+seemed good to go from here it was time
+to upgrade so we went ahead downloaded
+the latest development scripts from
+purism and as well we needed to install
+something called you-you-you which I
+guess is required for the flashing
+process I wasn't able to find this in
+the openSUSE repositories but I believe
+it is at least in the Debian
+repositories in my case I had to compile
+from source and there was like three or
+four library dependencies as well as
+things like GCC and GCC EE C++ that
+needed to be installed in order for me
+to compile once compiled I linked the
+file to slash user bin
+switch the boot mode switch into USB and
+then I rebooted the device ran the
+script and it downloaded the latest
+build from their Jenkins server and
+flashed the device just fine after that
+we switched the device back into emmc
+mode and rebooted it grabbed my micro
+HDMI to HDMI adapter unfortunately it
+had a right bend in it which then
+blocked the USB C port which powers the
+device so we were stuck with serial for
+the moment and needed to pick up
+additional parts but from serial console
+we were able to tell that it did install
+the new OS so naturally we checked the
+temperature and notice it's getting
+really really hot once it hit up around
+56 degrees we figured we should probably
+wait and put a fan on this especially if
+you want to do anything a little bit
+more intensive on the device so we put
+this on hold for the moment we need to
+go ahead and get ourselves a mini HDMI
+to HDMI adaptor that doesn't have a band
+as well as a fan and a few other bits
+and bobs anyway thanks for watching bye

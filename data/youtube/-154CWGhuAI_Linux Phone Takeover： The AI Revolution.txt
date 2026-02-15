@@ -1,0 +1,61 @@
+phone agent build me an app so I can use
+my phone as a keyboard and have an
+option to select an ISO and do USB Mass
+Storage emulation you'll need to buy a
+Linux phone before we can proceed shall
+I order one for you yes please the app
+bottleneck for mobile Linux is coming to
+an end but not in the way you might
+expect instead of downloading apps from
+a store imagine asking your phone to
+track your Garden's growth and to
+suggest watering based off of weather
+data seconds later you get that exact
+app tailored to your particular needs
+this isn't Science Fiction it's the near
+future of mobile Computing AI systems
+already understand Linux development
+Having learned deeply from millions of
+open-source projects now they're ready
+to put that knowledge to work by
+generating apps on demand AI you have
+just read all of the internet you can
+code in any language in any
+language now it's finally time for your
+user prompt
+right IOS
+app initially these app generators will
+need to be run on powerful servers
+similar to how chat GPT works today even
+so there are already open-source models
+that are powerful enough to get the job
+done today here's looking at you R1
+you'll describe what you need AI will
+generate the app and deploy it to your
+phone and Linux phones are perfectly
+positioned for this because they can run
+any code the AI generates without
+artificial platform restrictions
+as AI models become more efficient and
+mobile processors more powerful this
+generation process will move directly
+onto the phone your Linux phone will
+become its own development environment
+able to create and modify apps on the
+Fly IOS and Android were not designed
+for this sort of flexible on device
+development but Linux phones are mobile
+computers with full development
+capability the same tools that work on
+Linux desktop work on Linux phones
+giving AI a complete Workshop to create
+what you need right when you need it
+I expect this shift to On Demand app
+generation will make Linux phones
+incredibly attractive an AI assistant is
+only as good as the tools it has access
+to and Linux has a lot of tools if you'd
+like to see me try to build such a
+system leave a comment below and I'll
+see what I can do thanks for watching
+bye okie dokie

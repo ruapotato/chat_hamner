@@ -1,0 +1,86 @@
+after purism put together the first
+libram 5 death kit they ran into an
+unexpected issue the on board displays
+did not function properly
+waiting for the on-board displays to
+function would have resulted in some
+very lengthy delays but the amazing
+people over appear is 'm managed to
+verify the issue was in software and not
+in hardware and in fact was the
+initialization sequence of the hardware
+that was the underlying cause so they
+felt pretty ok with shipping the
+hardware despite this initialization
+issue meaning we had to all go out and
+buy a stuff needed to hook up a dev kit
+to a monitor mouse and keyboard it turns
+out hooking all of these things up is
+non-trivial due to the fact that USB
+roll switching is not fully implemented
+at the moment the folks over appear ISM
+did manage to figure out how to one time
+program the screens which was use a
+special black box to send the
+initialization sequence to the screen
+directly once this was done you never
+had to resend that initialization
+sequence and the displays just
+functioned that's great for the people
+at Pearson who can just get that done
+anytime but for the developers who
+didn't have access to the special black
+box required for the one time
+programming didn't really have that many
+options but it was offered at FOSDEM so
+in early february you could bring your
+dev kit and have the purism folks one
+time program it which resulted in new
+having ain't working screen to test with
+everyone else didn't have to wait that
+long though because on February 20th a
+full software patch was created this
+allowed the kernel to send that special
+meaning all we had to do was reflash
+with the latest peers and builds and our
+screen should just magically work we
+flashed the new latest image from purism
+give it a reboot and it's still a black
+screen turns out we have one of the dev
+kits that have a boost display cable
+this teeny little ribbon cable here has
+loose in shipping or while we had it or
+I don't really know
+probably a while ago and try as we might
+we just can't get this teeny ass or Ivan
+cable back in its hole
+so before we mangle this any more than
+we've already mangled it it's time to
+take this guy over to a board repair
+shop
+fortunately crafty guy also has a def
+kit and lives near me
+crafty guy is working hard on
+post-market OS which is sure to be one
+of the more interesting operating
+systems available for the leap from five
+this build of post-market OS is
+defaulting to KDE plasma mobile which
+does look very nice it's got the
+standard Android slide down from the top
+just like Fache the phone application
+does not have any data so we'll just
+move on you can see your open
+applications from here as well as close
+them and slide up for your apps kind of
+just like Bosh and so far it's looking
+like KDE is winning as far as things
+implemented even though Fache is coming
+along quite quickly okay I'm sure you've
+noticed the slow framerate this is
+caused by the open source GPU driver it
+still needs work however I do have high
+hopes for smooth graphics on the dev kit
+because using Linux frame buffer allows
+for some pretty smooth graphics anyway
+thanks for watching bye

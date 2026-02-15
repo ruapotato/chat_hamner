@@ -1,0 +1,111 @@
+we think of phones as a way to consume
+services they pull data from across the
+world wide web or in some cases your
+land in the Android and iOS world a web
+connection and in most cases a
+proprietary app like YouTube or Netflix
+is required to enjoy streaming media but
+what if it was the other way around
+what if instead of consuming services
+your phone instead offered app services
+to your land the idea of a personal
+cloud is intriguing to me and since the
+cloud is largely made up of Linux the
+library of software is big these days
+it's pretty common to spin up a small
+cloud instance and set up a service like
+Plex or own cloud or MB and having a
+static IP address is definitely a big
+plus but this idea of having a mobile
+cloud is something I've never really
+considered as interesting until now the
+Libra 5 is running an OS based on Debian
+which is a very good server OS let's
+test out running some server-side
+software on this phone first up jelly
+fan I like the licensing of jelly fan
+more than I like MB but I wasn't able to
+get jelly fin running on the def kit
+fortunately it was rather trivial to get
+M be running it was a matter of W
+getting the dev file and then simply apt
+installing that file
+that's it we are now running a server
+program on a phone without modification
+let's see Android do that the next step
+is to connect to the dev kit any device
+on the same network will be able to
+reach the MB instance here I'm using the
+labrum 13 running openSUSE the URL is
+simply the phone's IP address colon 80
+96 cool we can see the MB initial setup
+dialog we're gonna need some kind of
+matey to test with so I went ahead and
+copied seasons 1 through 3 of next-gen
+to an SD card and just a note this is
+100% legally owned I'll go ahead and
+mount that under /mnt we'll just add the
+media folder and let it scan away
+turns out it's Kentucky as we try to
+play anything
+to test I downloaded a dot mp4 file
+after rescanning the library it plays
+without issue so for whatever reason the
+mkv files don't seem to play well or
+possibly it was a bad copy but this is a
+Debian computer I might as well fix the
+issue
+locally one small script in a few hours
+later all the files are converted
+locally to mp4 and they play without
+for fun let's stress test this a little
+bit here's what it looks like streaming
+one connection it did have an initial
+hiccup but I didn't see it hiccup ever
+again and here's to not much of a
+difference
+[Music]
+and here's three streams running from
+the dev kit there is a bit of delay when
+you click to a part of the video that
+you haven't played yet
+it has no problem with three streams
+running on the dev kit plus running VLC
+locally that is completely nutso for
+people can enjoy this phone at the same
+time being able to host your own Netflix
+like interface plus two terabytes of
+micro SD card support this phone can
+certainly pack in the entertainment if
+you want to be able to upload and
+download files Google Drive style Aurora
+files is simple to get installed modify
+source lists not a repo key apt update
+and apt install Aurora files you'll need
+to enable a rewire for this to work here
+you can enter a new super admin password
+and you should create a new user once
+logged in as the new user this is a very
+basic interface to upload and download
+files from your phone pretty cool I
+might give ownCloud a try sometime I
+think it would be pretty cool to have a
+mobile interface to my own Libre meone
+email this demonstrates a clear
+advantage fork and new Linux / Android
+Linux while both can host content the
+implementation details looks rather
+shitty on Android compared to canoe
+Linux I also played a bit with a mobile
+hotspot even when I had the death kit
+plugged in via ethernet I wasn't able to
+connect to the mobile hotspot but it did
+show up when I was scanning for Wi-Fi
+connections I think a hotspot would be
+epic in conjunction with a mobile server
+that way you wouldn't need to connect
+two devices to the same Wi-Fi you could
+potentially share a Wi-Fi connection and
+expose your locally running services on
+that
+thanks for watching bye

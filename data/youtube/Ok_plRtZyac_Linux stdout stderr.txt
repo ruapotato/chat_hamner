@@ -1,0 +1,82 @@
+if you run a terminal command the output
+has to go somewhere right for example LS
+is how you look around on a terminal the
+output is printed to your terminal
+screen so in this case standard out is
+printed to our terminal window right
+here now we can also make an error
+message come up by doing slash not here
+and that's not a directory that exists
+so it gives me this error message now
+this error message is actually printed
+to standard error which in this case is
+also the terminal window but they are
+actually separate pipes you can separate
+them I'll only show you we have printed
+the screen a standard message and print
+it to the screen a standard error
+message let's go ahead and manipulate
+them a little so LS now greater than
+this is redirect character is how we put
+stuff into a file so LS redirect to a
+arbitrary file let's do a file in this
+directory called out dot txt and you'll
+notice there's no output cuz the program
+LS instead of printing its standard
+output to the screen it printed its
+standard output to this file I'm gonna
+cat that file which just prints out its
+content it just says whatever LS said
+let's go back to our not here example if
+we redirect that to the same file you'll
+see it still prints the error message
+because we only redirected standard out
+to the file not standard error and all
+the messages were to standard error so
+if we want to redirect both you put and
+in front of the greater-than sign and
+that says redirect both standard air and
+standard out okay so if you just want to
+redirect standard air we can replace
+that with it too and since everything is
+an error everything still went to out
+text yeah that's kind of the main ways
+to print to a file but what if we want
+to make the output of one program the
+input of another that's done with a pipe
+so let's do something about it like LS
+dot slash just LS is simpler whatever LS
+and then we're going to pipe that into
+another program
+let's do prep and since grep is a
+searching tool let's search for
+something and we have how about RPM so
+we run LS which prints this stuff to
+standard out but that stops redirected
+into grab which searches for RPM in this
+case and we get a nice filtered output
+of these files so that's one of the use
+cases for redirecting to a program you
+could also redirect it to let's say cut
+let's say all of these have a period who
+is ready we can do grep for any period
+so anything that has an extension okay
+how to put a backslash in front of that
+because it was doing regular expressions
+and in regular expressions dots one dot
+means match any character so here is LS
+filtered down to all of things that have
+a dot or an extension now we can pipe
+that stuff over to cut tell it to cut on
+[Music]
+if it's gonna do the same thing but
+let's try the delimiter of period and we
+want the field to so the last part okay
+cool so this runs at last which gives us
+all of the files we pipe that to graph
+which searches for anything that has an
+extension then we pipe that to cut which
+cuts off that extension there are a
+couple product files and a couple text
+files in this directory about it thanks
+for watching bye

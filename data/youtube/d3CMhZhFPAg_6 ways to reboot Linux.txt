@@ -1,0 +1,36 @@
+hello and welcome back everybody I'm
+gonna give you the best ways to reboot a
+Linux server so starting with the most
+obvious reboot halt power all of those
+do the same thing but also shut down -
+ash are those are the clean ways to shut
+down a server you can also use the init
+system like init 6 that says switch to
+the run level reboot that will also
+reboot your server but let's say shits
+broken I hope you have magic keys
+enabled because those are really useful
+in a system like this you just have to
+remember reboot
+even if system entirely broken and to
+execute these all you do is you hold
+down alt sis RQ and you press each of
+these keys but here's what it does it
+takes control of your keyboard back from
+x11
+useful to capture the rest of your
+keystrokes then it sends the please shut
+down to your processes then it says shut
+down not so nicely and then it syncs
+your data to your disk this is the real
+important one you want this to happen
+and in fact you could honestly just do s
+U and B instead but it's better to do
+all of them it announced the system
+read-only and then it forced reboots the
+server immediately you could also do a C
+here instead which would just shut down
+the server instead of reboot that's the
+ways I know how to shut down a Linux
+server thanks for watching
+you

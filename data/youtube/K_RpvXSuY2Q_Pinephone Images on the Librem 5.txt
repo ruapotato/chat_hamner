@@ -1,0 +1,112 @@
+this guy is one of my favorite devs at
+the moment he has done a lot of the
+heavy lifting porting the software
+piercings writing over to my favorite
+distro
+this sent me down a path to get opensuse
+running on the labrum 5. and in the end
+has created a simple way to run lots of
+different distributions
+big thanks to crafty guy and sebastian
+who helped me work out a lot of the show
+stopping bugs
+[Music]
+i didn't start this project to be able
+to run arch or debian or any other
+distribution other than sueset so i
+tried starting out with kiwi which is
+one of the most powerful distro building
+tools out there
+but since setting up an arm 64
+environment on opensuse was proving
+harder than it should be
+i went with a much more hackerish
+approach grab the latest pure os image
+gut it and replace most of its parts
+with the root file system of some other
+by hand this process looks a lot cooler
+but this handy script i slapped together
+does that job nicely
+copy your arm 64 file system into this
+directory
+copy the latest library 5 image into
+this directory and run the build script
+this copies the library 5 image mounts
+it backs up the fstab and kernel modules
+deletes everything else then copies the
+root file system from the other distro
+runs a small bug fix and then unmounts
+everything
+in the end this is a simple way to mess
+around with any distro that builds for
+arm on the libra 5.
+mobian runs fairly well the root file
+system is out of storage which is
+causing a bug with a display brightness
+continually darkening
+without disk space we cannot edit any
+user settings the fix for this is
+running resize 2fs
+on the root file system with that done
+we can now edit the user settings and
+reboot the device safely
+it comes with a few games 2048 which
+works perfectly
+and you can also play a bit of chess
+files seems to work very well
+but the text is a bit hard to read at
+this scale
+firefox comes pre-configured to work out
+of the box on wayland
+this does a good job while browsing on
+this image you can connect to 4g
+but it seems like that might have some
+routing issues preventing it from
+actually working right
+don't push the power button if you do
+the whole screen locks up and you have
+to reboot
+text messages work and you can make
+phone calls but the speaker and
+microphone don't work so you can't say
+much past
+the default lineup seems to work for the
+most part all in all not a bad image on
+the library 5.
+arch linux boots i don't really know if
+this version came with a gui
+or if that part's broken i might play
+with this a bit on the dev kit to see if
+i can get some console access
+nemo also boots it leaves you with this
+nice looking screen
+but it is rather broken at the moment
+opensuse takes a minute or two to boot
+but the os works well
+wi-fi is broken but booting this on the
+dev kit gives you access to an rj45 port
+which works out of the box
+just like mobian we have a lot of user
+settings to mess around with
+the 4g connection dialog was not what i
+was expecting
+and it didn't seem to work
+the terminal font is a bit ugly and the
+home directory is a bit bare
+pressing the power button doesn't seem
+to do anything i can't wait for this to
+follow in the footsteps of pure os
+plasma mobile memo ubuntu touch and
+fedora all ended up at this screen a
+workaround for this could likely be
+found with a bit of effort
+the fact that any of this works at all
+is a testament to how robust and
+interchangeable the software and
+hardware purism is building
+i'm happy with opensuse starting to work
+if you fill up to porting to the library
+5 i encourage you to take a look at this
+project and chat with people on the
+matrix channel
+thanks for watching bye

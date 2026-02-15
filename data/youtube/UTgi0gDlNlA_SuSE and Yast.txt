@@ -1,0 +1,127 @@
+so yes tis getting a lot of kind of
+sick of it it's a powerful tool if you
+know how to use it and more importantly
+when to use it
+[Music]
+first off we've got our software
+repositories this is wonderful please
+don't remove this tool you can hit add
+community repository and here you can
+add your nvidia driver repository your
+pac-man repository which if you don't
+know is incredibly useful I've added it
+through other means so it doesn't show
+up here but you can absolutely add it
+through here I wouldn't say it's ugly or
+bad another time to use you asses if you
+want to install patterns or search for
+patterns so software management you can
+search for packages in here but I mean
+that's a good way to find like one-off
+packages but not big packages like matei
+if you want that go go to view patterns
+once you're in here you can go ahead and
+just select which desktop environment
+she wants if I wanted to install KDE
+plasma 5 I would select this and it
+would go ahead and select a shitload of
+packages for me then I go to accept and
+I'm done or of course you can do the one
+off by going to search and then let's
+say I wanted to install is on top of
+everything which I've clearly already
+done but yeah you can just select things
+in here it's oddly reminiscent of the
+synaptic package manager' back in the
+aboon two days so honestly I can't give
+it any this is a very robust
+graphical interface to your repositories
+however I just use it for most of the
+time another really useful tool is the
+boot loader this works really well in a
+two route if you break your system and
+in fact I would definitely not recommend
+taking this out of the system it's a
+powerful tool that I wish RedHat would
+have something like rather than just a
+command-line install grub which works
+most of the time but this will
+regenerate all the config files for me
+as well as install grub so if I have a
+broken grub I would chew root my system
+come into here and
+just just hit okay and it's gonna just
+gonna configure my bootloader for me
+that's beautiful that's useful it also
+has an okay partition er um it's like
+the Installer partitioner it'll get the
+job done but G part it's better the sis
+config editor might be a little bit
+weird if you're not used to Susa but it
+is actually really useful so yeah sis
+config this is where you can change
+things like your display manager your
+window manager see what I'm using light
+DM okay if the other day it's just an
+easy way to set up your config for su
+say another time this can be useful is
+if you want to set up a file share I
+mean you can do that with config files
+and yes it will overwrite config files
+if you configure it manually and then
+try to use yes that would be a bad plan
+but hey it makes things simple if you
+don't want to dick around in a config
+file forever so a lot of people say it's
+ugly that's kind of true it's really
+ugly in a terminal but what and curses
+application isn't a little ugly so when
+you first open yes in a terminal this is
+what you're greeted with it's actually
+pretty easy to navigate and you can do
+all the same things you can do with the
+graphical version with the end curses
+version so arrow keys to navigate tab to
+switch between areas shift tab to go the
+opposite direction to any area so this
+goes back where shift tap goes backwards
+tab goes forwards backwards forwards and
+it all just loops around so tab to the
+area you want then select down to
+whatever let's say I want to do some
+software management I've got a software
+management software management alright
+from here if I wanted to go to patterns
+I would hit shift tab
+and that takes me to the filter down
+arrow lets me select in this menu and I
+just simply arrow up to patterns enter
+and then I select whatever I want if I
+wanted to install and Lichtman I could I
+just hit enter on that and that and then
+I could hit tab a bunch of times all the
+way to accept and hit enter that's valid
+but notice that some of the menu items
+have a yellow letter like this one and
+this one this one if you hold down the
+Alt key and then press whatever a key is
+in yellow it will trigger that so alt a
+auto selects the accept and if I do alt
+oh it auto selects okay but I don't want
+to so I'm going to alt see this and then
+I'll see again and then all T Y so as
+you can see it's actually pretty
+intuitive and easy once you know what
+you're doing when not to use last well
+honestly yes will get in the way more
+often than not if you're just installing
+simple things so if you can get away
+with just using zipper on the command
+line you should if you really want to
+probe around your repositories or if you
+want to add a community repository or
+install an application that's part of a
+larger package group then yes tis
+definitely the thing you're gonna want
+to use and if you're wrong
+upon its watching

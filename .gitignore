@@ -21,6 +21,7 @@ checkpoints/round2/
 checkpoints/round3/
 checkpoints/final/
 checkpoints/training/step_*.pt
+checkpoints/training/latest.pt
 
 # Logs
 logs/*.log

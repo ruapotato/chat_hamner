@@ -1,0 +1,83 @@
+the library 5 was always meant to be an
+ip native phone from the start
+while the focus is clearly making the
+core utilities of the libra 5 work
+the beginnings of what will be can
+already be played with thanks to the
+amazing work of oss guy on jump dot chat
+this is an incredible service that
+provides calling and texting over an
+internet connection
+just like with t-mobile or verizon
+you'll get your own phone number or you
+can transfer your current number without
+any physical towers the closest
+comparison is something like google
+voice
+but this brings a game-changing
+difference instead of being locked into
+google apis and google only tools
+jump uses open standards to accomplish
+the same thing
+one of the open standards it utilizes is
+called xmpp
+for those that don't know much about
+xmpp it's used for communication kind of
+like messenger or snapchat
+most im clients support xmpp as it's
+more or less the go-to open source im
+protocol
+you can host your own server or send up
+a number of websites and use their
+servers
+the labrum 5 makes xmpp messaging simple
+just plop in the server
+user and password and you're on your way
+once you have a client connected to the
+xmpp server not only can you message via
+xmpp directly but you can attach the
+account with a phone number using the
+jump services
+simply pick a phone number and enter
+your xmpp server and username
+if you're using a library 5 you'll get
+an ion like this make sure to click the
+message part
+if you select the wrong part simply
+refresh the jump website
+with my new phone number attached people
+that text me will appear like this
+text with attachments like images or
+videos get uploaded to the server
+group messaging is also handled well the
+only thing really missing here is a list
+of who else the message was sent to
+texting numbers is also simple add an
+xmpp user with whatever phone number at
+geogram.com
+then send a message calling uses sip and
+like xmpp
+there are a lot of clients that support
+sip from the few clients i've tested out
+on the library 5
+twinkle works the best so far the ui is
+not perfect you'll have to flip the ui
+to landscape or scale the screen in a
+few places
+these settings could probably be
+improved on with just a bit of tweaking
+if you miss a call you'll receive a
+message over xmpp with a link to the
+audio as well as a text transcription
+so can a libra 5 take two phone calls at
+the same time
+yes yes it can one call over sip and one
+call over t-mobile
+not useful but cool instead of paying
+for unlimited calling
+texting and data why not just pay for
+data and subscribe to jump.chat
+paired with the library 5 this offers
+very similar availability but at half
+the cost of a traditional phone plan
+thanks for watching bye

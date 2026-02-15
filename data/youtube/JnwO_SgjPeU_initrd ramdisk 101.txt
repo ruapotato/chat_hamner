@@ -1,0 +1,58 @@
+hello and welcome back I'm gonna show
+off the in and Ardie what exactly is
+this thing well it turns out it's a
+little root filesystem that's loaded
+before your regular root filesystem it's
+an intermediate boot stage where your
+disc drivers and other hardware drivers
+are loaded once that's complete it
+mounts your root filesystem over itself
+and launches your run level system so in
+order to break this I'm just going to go
+to my Linux line find this root equals
+bit and we're going to set it to SDA one
+in my scenario which is actually my swap
+space I'm on purpose braking the boot so
+here we go it's loaded the initial Ram
+disk and it's not succeeded in mounting
+root if you see this prompt this type of
+output your systems broken for the most
+part and you've got to do recovery
+fortunately you can chew roots from an
+environment like this so if I wanted to
+chew root into my Susa install and
+regenerate the grub files I would do
+something like this
+all right so from here I've got a mostly
+booted system but with the caveat of my
+run level system isn't working
+so even so this is not a properly booted
+system but it's good enough to pop open
+yes to go to boot loader and make it
+regenerate all of those config files now
+most of the time when you end up in the
+RAM disk you're gonna take a look at dev
+and SD whatever won't show up that's
+probably the most common scenario and
+that means that your RAM disk is lacking
+whatever driver is necessary to read
+your disk in my scenario
+it was just a grub configuration issue
+and regenerating the grub file was
+enough it cannot read your hard drive
+properly you want to regenerate your in
+and RD file which can be done by simply
+reinstalling the kernel or on Susa
+running m'kay in a tardy both should
+work and if if you still run into issues
+at that point you're gonna have to
+research which module is necessary to
+include in your in and rd in order for
+it to boot properly which is usually a
+bit of research it's not too hard to do
+but each distribution will have you will
+include it slightly differently and
+generate the energy slightly differently
+so have fun Google about
+[Applause]
+[Music]

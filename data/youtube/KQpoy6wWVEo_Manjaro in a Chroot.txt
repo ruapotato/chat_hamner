@@ -1,0 +1,194 @@
+for no reason I've decided that I'm
+going to try to switch to me and djaro
+in the hardest way that I can imagine I
+switch I mean not really switch I mean
+like use Manjaro and my favorite
+operating system at the same time so I'm
+gonna build a Chu root of Manjaro
+try to use its tools learn its ways of
+doing things and even install like OBS
+and all the [&nbsp;__&nbsp;] I need inside of
+Manjaro and use that
+[Music]
+we want the smallest one what's the
+smallest one xfce is fine we're gonna go
+with the xfce official branch minimal
+for sure the minimal one
+oh that's great all right let's take a
+look at this file and see if we can't
+find a root filesystem inside of it
+that's it this is what we got
+well this looks promising who we have
+here
+Oh what do we have here
+are these it's gotta be this [&nbsp;__&nbsp;] I'll
+be is s directory
+we need to know what the SF s file is q2
+that's not how I open it how do I
+extract one shower light
+what did that just do Oh [&nbsp;__&nbsp;] we just
+got some she again yeah nothing so we're
+gonna have to do that for all of those
+squashes I think so see me dubbed opt CD
+x86 that's the swash command that a
+squash command worked really well slash
+which we got we got fruit FS we've got I
+don't know what that is okay
+do that too and we'll do the desktop s
+FS okay so theoretically theoretically
+we just built the live install
+environment in the side of downloads
+temp yeah let's see if we did I guess
+sudo su temp cat at C star star Oh
+bitchin well tell you what
+it didn't not work it seemed to have
+worked did that make sense no it worked
+it did work we have a qu root of Manjaro
+here oh you know what we mean it's right
+thank you past me for all your help
+first things first MV temp to man djaro
+MV Manjaro
+çb Manjaro okay here are two routes and
+djaro routes baby shoe routes okay we
+got a man jar oh that's pretty okay or I
+and sis and now the scripts not
+beautiful but it certainly functions
+slash Manjaro dollar sign I done what
+Duff just happened yeah Manjaro now has
+things in it let's cheer it into this
+now and see what the Frick happens
+X Oh bus run that as a regular user
+open terminal goes boss thank you
+now we just need to choo-choo root su
+tech ask at Etsy store yeah
+Skaar good CD
+there's nobody in home um empty one I
+think
+it was a bad idea I meant a full one
+there it is
+it's at a launcher
+oh okay I didn't work at all at this hey
+that's the one remove remove hey just
+kind of fun workspace switcher okay
+terminal okay just make sure we're not
+like felicitating cat that's the star
+who needs an installer
+yeah that's pretty schwifty
+but I need another like manager or a
+user what's the live user in Anjar oh um
+I can't believe we're running Manjaro
+right here oh [&nbsp;__&nbsp;] it even has like that
+rat background a little hybrid operating
+system what rather I read oh let's make
+a user David with the user ID of
+whatever my user ID is and let's mount
+my home folder inside the Manjaro
+oh [&nbsp;__&nbsp;] inside the Manjaro home folder
+so to do that we just need to look at my
+password file okay so this is the line
+for my user fortunately it's ID 1000
+more than a hundred I think it's a
+thousand anyway it should be the default
+I'm hoping it's gonna be the default on
+that jar Oh as well yeah
+Stucky can we just go ahead and pop that
+I quit
+s you David okay trying to change
+directories I think but that's BB David
+great so I don't know if that's that
+actually works okay let's go ahead and
+mount so with mouth - - are behind slash
+slash David Chiu roots in jar oh okay
+then we can just come here I see David
+tick CD bus cave we're now proper user
+let's go ahead
+excellent where's the source [&nbsp;__&nbsp;] you
+the one running everything go away okay
+SC David tick xfce for subtract panel we
+use a default one oh wow uh-huh now I
+can do it this one around awesome sweet
+so now we're running as a proper user
+well it's this one yeah that's just way
+better remove this
+no no about okay
+now we're talking
+um this we can remove a little move
+all right now we're running pretty okay
+we've got like border effects nice
+compositing going on my mattei is still
+functioning that's still working pretty
+good terminal and here get a default
+directory is a route that's pretty weird
+I'm gonna fix that via the happiest way
+I can think of yeah I know I know it's a
+horrible fix is it now if we go to file
+browser so unfortunately thinks it
+soundtrack trees root so no it's not a
+good fix I would say the biggest problem
+is half the icons are missing I don't
+really know what the icons are located
+but my guess is it some permissions
+issue simple shown arch mod would fix it
+we're gonna rebuild smite Batman repos
+are totally totally screwed up
+it's reading everything wrong your Chi
+root is malformed and has no slash mount
+point oh I understand
+I think now that our our find slash
+slash I did that off-camera so mount are
+buying slash slash is my idea based on
+this input let's try it again
+yes thank you bro so yeah I wants you to
+our bind root to root so now that that's
+complete we should be able to install
+get with Pak Pak man - Apple s get
+proceed with installation that's what
+I'm talking about
+um where we want to install next cattle
+ass oh yes it's a - broadcasting
+they have a direction - studio kit no
+it's probably just - studio - oh okay
+very good if this works you get some you
+get some points you get some points bro
+I don't buy it
+that was it oh yes failed to initialize
+video your GPU may not be supported or
+your graphics driver may be updated okay
+you think about that we needed to
+install geo lacks gears okay yeah well
+it definitely didn't work so getting 3d
+acceleration inside of Chiru
+might be a [&nbsp;__&nbsp;] well I'm gonna just
+wing it and try to install 3d
+acceleration sheet inside reroute why
+not did ya see how all you do see how
+well you can do install and video
+drivers just run this I guess
+I'm a lot of Route one Wow
+it's gonna do everything for me well I
+mean it's gonna try
+okay well it's successfully installed so
+what's the equivalent of rebooting a to
+root nothing I don't I guess I'll just
+exit reach you root it
+that's weird Dave let's not open it via
+that method let's open a via this method
+I know all right
+su to me and then s su David NGO that
+scares export display that's : 0 J locks
+cares hey it's got further failed to
+request some things some [&nbsp;__&nbsp;] didn't
+work
+[&nbsp;__&nbsp;] system teacher
+let's try it out system D - and s bond
+Ashley - Cathy until the
+don't slash actually oh my dev is
+pre-mounted and pre-populated alright it
+really wants to emulate Devyn run so I'm
+not going to mount in Devon run she
+sucks because a reboots almost
+definitely required to unmount death and
+run for this to route yeah it's gonna be
+a reboot and maybe even a death
+different episode Manjaro hybrid
+operating system thanks for watching bye

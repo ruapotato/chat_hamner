@@ -1,0 +1,148 @@
+the first Libra five prototypes have
+started shipping if you're just dying to
+have an early badge phone take a deep
+breath and relax they're pretty rare for
+one and the software is now just
+becoming usable evergreen or q2 2020 is
+when they'll be available in mass stick
+around to the end of the video to find
+out how you can get a freely broom 5
+that's right I'm doing a giveaway thing
+[Music]
+it's still early days for the lead from
+five it looks like the camera video
+output and call routing will need more
+development before it's fully working
+and integrated into the OS but I don't
+see how this is any different than when
+they shipped the dev kits with
+non-functional screens that turned out
+just fine plus the labrum file has a
+much better upgrade mechanic than
+Android once peer ISM fixes something
+they can push the fix directly to a repo
+and you can upgrade just the needed
+components whereas Android would have to
+do a full system upgrade to change
+anything core
+I don't think calling will take long to
+fix and I bet it has something to do
+with this bug but I'm only guessing that
+the two are related if they are then
+perhaps they've disabled the audio until
+they can correct for some Distortion
+okay so calls is a work in progress but
+what about a software solution after
+installing mumble and Qt Weyland five
+which might be useful to include by
+default the mumble you I started up it
+could definitely use a bit of
+optimization though
+but I was able to successfully connect
+to a surfer
+unfortunately the audio quality was oops
+you'll want to make sure that hardware
+switch is enabled what yes I can hear
+you can you hear me I'm recording this
+conversation just so you know officer
+and it is working and we have voice chat
+over tcp/ip actually it may be UDP IP
+but we have voice chat over a mumble not
+telephony right now so at the very least
+you'll be able to chat with anyone you
+can convince to connect to a mumble
+server when it came time to flash the
+deaf kit we found the old version of you
+you you no longer worked this force us
+to recompile a new version of uuu if
+you're on Debian you might be able to
+get away with just upgrading that uuu
+package post reflash it's nice to see
+that the usage app is included by
+default I quite like the way that it
+visualizes which directories are eating
+up all your data
+connecting to Wi-Fi works without issue
+as long as that hardware switch is
+enabled and it eliminates the need for
+me to have to run on Ethernet court so
+that's quite convenient
+taking a look at the browser it seems
+usable you can get around and find
+whatever you might want to look up for
+example this is a Libre five hack
+session from Wade's point of view I
+really do appreciate his work and he's
+been hosting the Libre five hack
+sessions which is where I've been
+getting most of my footage and takes
+place every two weeks so big shout out
+and thanks to Wade on the heavier pages
+you might be better off with a dedicated
+gtk application but possibly more
+development time will make this smooth
+in the browser I also gave Firefox ago
+it installed just fine and scrolling
+works if you can manage to hit that tiny
+scrollbar a simple config tweak in
+Firefox would allow for touch scrolling
+but unfortunately the input doesn't map
+correctly so the keyboard is just like
+inputting random crap
+up until now the power or lock button
+didn't do much unless you held it down
+but now it locks the screen unlocking
+the screen seems to struggle I messed
+around with this for a bit just because
+it was entertaining I was kind of hoping
+that if I locked and unlocked it enough
+times that the screen would eventually
+realign up but this does not seem to be
+the case a reboot or restarting Fache
+was needed in order to correct the issue
+talk about a colorful bug it'd be
+interesting to know if this affects a
+Libra 5 phone as well as the dev kit the
+keyboard has more options you can add
+other languages in the settings and then
+switch between them in the keyboard I
+think a USA Terminal layout would be
+nice
+something with tab and control initially
+the store page did not populate but once
+I ran apt-get update in a terminal it
+did populate just fine I also ran into a
+weird bug where if you've told it to
+install an app and then you hit cancel
+it assumes that the package is installed
+but cannot uninstall or reinstalled
+package but if it does get in this weird
+state you can just app to install
+whatever in a terminal as for app
+development I did see an interesting
+behavior in Fache if your window size
+becomes too big parts of the screen will
+get cut off but once the screen can be
+resized back down it does
+on the desktop if it becomes too big the
+app will stay big until manually resized
+I just thought this was some cool
+self-correcting behavior so when
+shipping batches got announced
+impatience got the better of me and I
+bought a second labrum five from handle
+turns out both of the devices will be in
+evergreen so I'm giving one away to this
+fine community to enter the labor 5
+giveaway leave a comment below of how
+you would use the labrum 5 if you had
+one then I'll assign a number of entries
+based on how cool the idea is as long as
+you plan to use the labrum 5 you'll get
+at least one entry in the giveaway in
+the end I'll use some sort of random
+program to pull a winner
+come Q to 2020 I expect the device will
+fill a lot smoother and finally be ready
+to take its place as a primary device
+thanks for watching bye

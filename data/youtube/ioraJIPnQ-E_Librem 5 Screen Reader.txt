@@ -1,0 +1,98 @@
+back when i owned a samsung galaxy note
+edge i was really impressed with the
+optical character recognition built into
+the operating system
+simply pull out the stylus click the
+button and drag out a box
+samsung's version of android would then
+take a picture of that part of the
+screen and do optical character
+recognition on the image and pull out
+any recognizable text
+this was really handy for text
+everywhere including newly taken photos
+then one day after running software
+updates this feature was nowhere to be
+found
+in any case i set out to duplicate the
+optical character recognition feature
+for the leapfrom five
+since the lever 5 doesn't have a
+built-in stylus i went with a gesture
+based interface
+this part of the script listens for a
+three finger tab from the leaproom 5
+screen
+when the app detects a trigger tap it
+prompts you with two options the most
+important part lets you draw out a box
+and run optical recognition on that part
+of the screen
+what this is actually doing is waiting
+for you to drag out a box then taking a
+screenshot and cropping it down to the
+selected part
+the cropped image is then fed into
+tesseract and then the output is put
+into the weyland clipboard
+or rather it reads the selected part of
+the screen the second main feature is
+the clipboard reader
+if you tap with three fingers then tap
+once calculator
+the script checks to see if anything is
+highlighted and reads that if nothing is
+highlighted it reads from the copy and
+paste buffer
+text to voice is done by selling out to
+google and playing the audio files that
+come back
+now that this app at least kind of works
+it can really come in handy if you're
+not sure how to pronounce a word or if
+you need to copy text out of an image
+because this uses optical recognition
+it's not always perfect at reading
+what's on screen
+but it allows you to copy from just
+about anywhere well except the middle of
+web pages
+clearly it was a bad idea to make the
+selection before taking the screenshot
+to give this some sort of ui
+pie game seemed like the lowest hanging
+fruit to display an image in a basic
+interface to drag out a selection
+this is mostly the same but with a bit
+of nice wrapping around it
+once this is opened it takes a
+screenshot then displays the screenshot
+for you to select out an area
+you can cancel and reselect or you can
+have it run the image to text part of
+the program
+at any time you can also have this app
+read what's in your clipboard
+by default it now uses e-speak but it
+can still use google voice if you
+configure it some
+the biggest issue is this program has no
+trigger now to fix this i strip down the
+original script to just a two finger tap
+detector
+sadly this didn't work as sometimes it
+ends up thinking that every tap is a two
+finger tap
+fortunately looking for a three finger
+tap seems to work a lot better
+this is what i ended up with for a
+detection script to kick off everything
+automatically
+this desktop file can be placed in the
+right place to start everything up after
+every reboot
+feel free to poke around or help out on
+this gpo3 project
+thanks for watching bye
+project name equals read it on touch
+generic name

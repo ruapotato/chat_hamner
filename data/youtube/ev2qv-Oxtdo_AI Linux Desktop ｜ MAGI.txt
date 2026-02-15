@@ -1,0 +1,67 @@
+hello and welcome today I want to
+introduce you to Magi it's this open-
+source desktop environment focused
+around AI for Linux it's all open source
+and available on my GitHub let's take a
+look in the D janga puzzle that is Linux
+this sits right on top of Marco and
+replaces the M panels for the most part
+this uses the M desktop environment
+tools to open an app you'll just click
+this top menu I haven't finished writing
+that bit so here's a placeholder type in
+the name of the app you want and just
+hit enter Bang
+bam if you notice at the bottom here it
+says ask anything about Kate if you
+select that it pops open a little menu
+that allows you to have an a chat with
+an llm you can just click this little
+microphone in order to ask it a question
+what is this app used
+for send it off and we get a reply
+everything from the whisper server to
+the language model is fully local and it
+is contact aware for contact awareness
+it passes in what app is selected or if
+you want something more precise you can
+select something with the
+mouse summarize the
+selection you can also hit this button
+to use ese at any point Untitled Kate
+appears to be a text editor of course
+this is a language model so you can just
+hit this microphone and ask it questions
+what's 5 Time
+5 tell me a joke about
+Linux the most convenient thing about it
+is it's all just built in let's say you
+want to type into an application come
+down to this microphone and click and
+hold it while you talk this is a test to
+see if the voice transcription
+works and it
+does uh if you wanted to read it you
+simply just highlight it and then click
+this speaker icon this is a test to see
+if the voice transcription
+works not too Snappy as far as basic
+desktop elements you can switch desktops
+you have four of them by default but it
+is
+configurable um when you select
+applications it changes focus on what
+you're working on down here uh for the
+AI and the AI is context aware and can
+help you out with things like what are
+basic application
+or what have I selected and creating
+summaries it also has the voice uh
+transcription and um the ese built-in uh
+by default I plan on adding in even more
+AI features for now this is my desktop
+environment that I use on a daily basis
+so I expect to add in whatever is fun
+for me it's all open source it's
+available in my GitHub thanks for
+watching bye

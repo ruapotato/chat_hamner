@@ -1,0 +1,110 @@
+hello and welcome back everybody so I
+ran into an issue I need to upgrade my
+system to
+openSUSE tumbleweed in order to try out
+the Weiland stuff and I desperately want
+to try out the Weiland stuff so
+upgrading they've made this beautiful
+duck you can see the link down below
+we're really just gonna follow this doc
+procedure goes pretty simply you can
+download the DVD and do a down server
+upgrade I strongly recommend you do this
+offline style it's it's safer it's
+better it's easier you literally just
+follow these steps but we're gonna do an
+online upgrade which is more dangerous
+and there's more things that can go
+wrong especially if you're trying to use
+x11 to record it x11 can crash during
+this and if x11 is running your upgrade
+well that sucks
+but we're gonna risk it I think we'll be
+okay here's my current repositories it's
+gonna have me just copy all of these
+into it back backup directory and add
+the new ones on top of it you could also
+modify these but that's a lot more work
+and I'm just gonna go with its
+recommended way of doing it okay step 1
+make that directory and the Etsy od2
+Etsy zip repos Dee old so that's that's
+just copying all of a repository data
+into a backup directory if we do an LL
+on these repos Dee old yeah we see a
+bunch of
+hooray successfully backed up also if we
+do a zipper list repositories no
+repositories to find but that's not a
+big problem we're about to define them
+all let's do this one time make sure
+that
+they run properly execute and this one
+added this one
+okay so we've run all the ad repository
+things we're gonna go ahead and do the
+recommended optional bit here - lets do
+a zipper list repositories - - you are I
+on a bigger screen than that we'll
+compare that to this output four and
+five being to say bolt yep yep looks
+good to me
+OBS has some useful documentation to add
+pac-man here - see look at this
+there's my pac-man repository and it
+sets the priority for me thank you very
+much
+so we're gonna add the pac-man one as
+well notice that it's a priority is
+lower than the other priorities that
+means that packages are gonna come from
+here before anywhere else and that's a
+good thing it'll make that'll make VLC
+work right as well as my other
+multimedia packages it's good to do that
+alright here's the warning it's telling
+me that I should not do this on an X 11
+screen I should definitely not be
+recording it I'm going to do it anyway I
+think it's fine zipper doop let's see
+how this goes all right there okay so
+reading us pretty carefully it's trying
+to install the new version of this
+package and one of my options is to D
+install the previous version of the
+package so I'm gonna go with that option
+or place it okay that seemed to fix all
+of
+package issues it's gonna cost me not
+that much it's really not gonna cost me
+that much go for it
+cute quit yes to continue
+cute quit yes to continue I didn't read
+those alright so it looks like it has
+completed successfully it's telling me a
+bunch of is loaded Ram it needs to
+be reloaded so it's time to reboot okay
+so it didn't quite work my graphics
+drivers were clearly broken when I
+rebooted I didn't get a graphical
+environment I logged into the
+non-graphical terminal and went into
+YaST then software management I hit
+shift tab to go up to filter down arrow
+to get to this menu arrow up to go to
+repositories great then select Nvidia
+then I just marked these for removal a
+lot of things will complain break things
+you don't want to uninstall anything
+else because we're gonna immediately
+reinstall these again then I had except
+I uninstall this stuff then you come
+back in here and you simply reinstall
+these same ones you hit except it'll
+reinstall your graphics drivers I
+rebooted and everything came up really
+well to prove that here we go here's a
+cat of my Etsy release file and as you
+can see we were running temple bead
+thanks for watching
+[Music]

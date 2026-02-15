@@ -1,0 +1,67 @@
+hello and welcome back everybody I'm
+gonna give you a quick rundown on how to
+kill those pesky processes that just
+don't want to die so for example let's
+have Kate here's just a simple text
+editor and it closes fancy-dancy
+but let's go ahead and stop Kate with
+ctrl Z okay so longer working properly
+it's pretty much frozen there's a couple
+ways we can try killing this process way
+one is kill all kill all and the process
+name that'll kill all instances of Kate
+I only have one so that would be a valid
+way to do it
+now notice Kate's not dead what do you
+do if kill all has failed well you can
+pass in a signal to kill and kill all -
+9 is the most nasty signal you can pass
+in if - 9 doesn't work you're better off
+rebooting than trying to continue to
+kill the process but we'll go ahead and
+kill - 9 that and you can see that it
+did kill the process and you you know
+notice when I hit enter my job control
+tells me you done killed Kate another
+way to do this is with just plain old
+kill will do the same thing freeze Kate
+but this time we're gonna find the pig
+probably the easiest way to find the pig
+is with top um if you've got a if you're
+trying to find something that uses a lot
+of CPU definitely tops the easiest way
+but for us Kate's not taking very much
+CPU so PS will do what we want
+so PSU ax is what I always pass in I
+grep so this is printing out a process
+table and we're piping that process
+table into grep and we're gonna search
+for whatever so in this case Kate
+obviously both of these lines are
+irrelevant
+the one we're looking for is this top
+one it's almost always gonna be the top
+one so this is our pit we can now type
+in kill and that pit and this is the
+same thing as kill all at this point and
+look it did the same thing and we can
+also because it didn't work passed in a
+- 9 and we get we done killed it all
+right and another useful way to kill a
+process especially a graphical process
+is with ex kill so we'll go ahead and do
+the same thing put him in the background
+but this time we're gonna actually make
+him run and we'll just pretend he's
+broken it was Kate broken we're gonna go
+to the a console make sure you can still
+see Kate when you run this command and
+type in X kill you'll notice your cursor
+changes to a little crossbones
+careful what you click on anyway click
+on your broken application and it will
+kill it
+that's the last way I'm going to show
+you how to kill process thanks for
+watching
+you

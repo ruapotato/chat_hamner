@@ -1,0 +1,100 @@
+sebastien one of the badass devs over at
+piers him messed around with some common
+open-source games on the labrum 5 let's
+check out what he got running and go
+over some of the useful tweaks he used
+in order to get these games up and going
+all credit for this goes to Sebastian it
+is truly amazing what an experienced
+developer can do in such a short amount
+of time
+do note applying some of these tweaks
+have side effects it is good practice to
+have a valid backup and it's not a bad
+idea to check out the steps to reflash
+the phone if something does go wrong if
+you're not feeling that adventurous
+don't worry some games do work out of
+the box for example scummvm this gives
+you the ability to run a large amount of
+classic old point and click games
+there's also a handful of gnome games
+that just work 2048
+Ches
+lights off
+you
+and this slighty game
+you can also run boiled corn which does
+look like some fun on the go you can
+even play some web browser-based games
+if you're looking to get your dance on
+non-competitive singing potatoes is the
+app you're looking for
+it's rather creative and funny if
+spiders don't freak you out
+spider disco also works without
+modification the first useful hack is
+messing with the hid pie scaling this
+can be done by creating a folder copying
+a file to that folder then editing that
+file a bit I'm not really sure which of
+these need edited so I'll just do them
+all then you can simply reboot the phone
+or to save time just restart Fache and
+everything is small the login screens
+hilariously small and once logged in all
+the icons are small so yeah if you're
+not too afraid of a small UI this does
+help a number of games for example Vegas
+the UI is small but it still looks like
+fun the battle for wesnoth also looks
+pretty good on the labrum five in small
+desktop mode the menus in never ball
+look absolutely perfect on a touchscreen
+but the ball controls themselves barely
+function I would love to see gyro
+controls implemented in this game edge
+Wars is also playable but it did take a
+bit of extra work to get that touch
+input working nicely done sometimes the
+issues aren't graphical or even touch
+related but the game is instead built
+for a keyboard for those games you can
+swap out the default keyboard for vert
+board which offers arrow keys and a few
+other useful keyboard inputs to swap out
+the keyboard simply install vert board
+then just edit this file a bit this is a
+super simple script and it could be a
+lot of fun to hack in a joypad with a
+couple buttons you can also run frozen
+bubble it helps to set a chai dpi to 1
+and of course use this alternative
+keyboard super tux is also playable with
+hid PI plus vert board enabled Mesa 19.3
+is not included by default in pls just
+yet but if you're feeling adventurous
+you can try building a root filesystem
+of some other distro and simply change
+route into the new environment here's
+what I did
+apt installed a bootstrap then build a
+chi root of debian CID then do the
+nominal G root stuff
+I'm actually not positive how to install
+Mesa 19.3 but it should be possible from
+this environment but with Mesa 19.3 you
+can play a few more games for example
+super tux cart the UI is very usable and
+gameplay is not just passable but you
+can actually play and win a match
+I can't wait for this to be easily
+installable I'll totally be playing this
+on the go any match also benefits from
+some of the 19.3 Mesa it's nice to see
+such a polished game running so early
+into the release of the Libra 5 as you
+can see the state of gaming on the Libra
+5 is improving day by day what games do
+you want to see port up to the leap from
+5 thanks for watching bye

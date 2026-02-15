@@ -1,0 +1,136 @@
+one of my growing passions is old
+computer hardware
+getting linux running on a 386 and unix
+running on something older than that
+are my ultimate goals at the moment
+sadly my 386 board that boots has a real
+potato for a bios
+it won't boot anything i've tried so far
+earning it this place of shame on the
+wall
+i'm also building this monster i got
+this sucker to power on
+just once right after this picture was
+taken i reset to factory settings
+i don't know why i did this as the board
+was likely already as reset as it needed
+to be by being powered off for countless
+years
+this is the screen i'm stuck at now i've
+tried to replace all the crazy old ram
+and i've even tried different
+arrangements of ram but without any luck
+i have a feeling that i've nuked this
+bios and it will need to be reflashed
+trouble is i don't have a chip flasher
+and even if i did i don't know if i
+could find a bios for this really old
+board
+my 286 luggable has a decent bios for
+its age
+the most i've managed to get this to do
+is to print e repetitively
+until i powered down the system this is
+when i attempted to boot a copy of xenix
+looking up in the manual this means
+error booting
+not super helpful i do plan to test out
+a bunch of other os's and to retry a few
+os's over a 5.2 inch floppy drive
+just to see if that helps booting
+anything i also have a number of old
+motherboards
+this one powers on and has a bunch of
+built-in ethernet
+cool i've also picked up a few of these
+guys so far
+no signs of life any advice on getting
+os's running on these old computers is
+welcome
+this beauty is my favorite at the moment
+it has a 100 megahertz pentium processor
+the bios seems to like booting floppies
+and even that is pretty picky
+the best way i've found to boot this
+machine is with this really epic boot
+floppy
+this floppy boots and lets you select a
+number of tools one of which allows you
+to start up cds
+very handy the best os i have found so
+far is called basic linux
+it takes just two floppies to boot and
+install the first image gets dd directly
+to the floppy
+this is a really sensitive process make
+sure to let the floppy indication light
+turn off after you've run
+and see the sync command return if even
+a bit is out of place this won't boot
+the other file is a bit more challenging
+to write
+in my opinion you need to format a
+floppy by running this command
+i find it kind of odd that you don't
+have to put down a partition table first
+then mount the floppy and copy over the
+compressed archive
+with the install media made booting the
+first disk starts up lilo and eventually
+asks for the second flopping
+once fully booted you'll have access to
+a fully featured shell
+this os has no issue seeing my hard
+drive which means i can install it
+the process to install is more or less
+use fdisk to lay down a partition table
+and add at least one partition next
+format with an ext2 file system and
+mount it under
+hd he will ask you to swap to floppy
+disk 1 after it's completed copying disk
+2.
+with that done we can reboot to our new
+install of basic linux
+i've tested two different network cards
+one isa and the other pci
+and neither of them show up but getting
+this computer online is really not
+needed for its primary purpose
+using this computer i can take a 1.2
+megabyte floppy image
+held on a bigger 1.44 megabyte floppy i
+did that directly to the 5.2 inch floppy
+drive
+yeah i think she's dead it's not a super
+elegant solution to writing old floppy
+disks but it opens up a bunch more
+testing i can do with my 286
+which might not be able to boot from
+these newer floppies using a boot floppy
+you can also boot the latest version of
+dsl linux on this computer i can't get
+this to install but it's a much more
+advanced gui than basic linux
+basic linux also ships with a gui it's
+really just a way of running commands
+but i like it
+surplus gizmos is just too close to
+where i live i could not help but pick
+up this oddity
+this old spaceball is a serial mouse not
+exactly common in 2021 but actually not
+super hard to make work in linux simply
+plug it into a serial to usb
+and run this command this will make the
+spaceball show up as a joystick
+using a tool like huge joypad you can
+program its behavior
+this is actually pretty cool you can
+twist the ball in any direction
+you can push the ball in any direction
+and you can pull up and down on it
+i can't say i'm switching anytime soon
+but i could see how this would be fun
+for some games
+thanks for watching bye

@@ -1,0 +1,127 @@
+in March 2018 peer ISM announced the
+initial support for plasma mobile on
+their Libre m-- imx6 test boards the
+predecessor to the dev kit as many of
+you know the Libra 5 will work with two
+options for your desktop environment you
+have the genome based phone shell or
+Fache for short and plasma mobile if
+you're feeling crazy and want to run
+your desktop UI on your phone it's not
+difficult and you can see my last video
+on what it looks like today and of
+course whatever the community decides is
+important we'll also get ported to this
+device here is what plasma mobile used
+to look like running on the imx6 test
+board first off the icons are rather
+small and the graphics are kind of
+jittery and slow however the biggest
+issue is the cursor is outright missing
+this is forcing the developer to hold
+ctrl and super which draws that little
+rotating circle around the missing Mouse
+kind of a funny hack workaround that is
+no longer needed here is the built-in
+chess application it seems to work fine
+hmm
+but a little bit slow now that we've
+seen it run on the old iMac 6 test board
+let's go ahead and put the latest image
+on the dev kit and see what improvements
+have been made step 2 we need to resize
+the root filesystem a little bit of repo
+magic modify a couple system files and
+reboot thank goodness they had good
+documentation the first thing that
+strikes me is the icons are now too
+large and overlap slightly I'd still
+argue that's better than too small the
+KDE calendar app does seem to work just
+fine but the color scheme does kind of
+make it hard to see and washed out on
+the recording so my apologies the
+built-in chess app works so much better
+on this latest build just as a direct
+comparison you can see how many frames
+there are before and how many frames are
+now it is noticeably smoother as you
+move the characters around the board you
+can slide from the bottom of the screen
+or hit the left-hand squared to bring up
+after from here you can close or select
+which application you want in focus they
+also have the classic KDE widgets that
+you can add and this just gets put right
+in the space above your app drawer clock
+widget works great not really doing much
+but being there the system tray widget
+works fine as well showing off available
+disk space and presumably showing off
+other notifications as well like most
+standard smartphones a slide from the
+top will bring up the notifications and
+quick system settings you can get a
+pretty good idea of what this is gonna
+be like to use on a daily basis you can
+easily turn off your wireless you can
+modify your sound your location or if
+you just need a quick flashlight the
+notifications area does work here's a
+crash report and I'm assuming things
+like text messages and voicemails and
+things of that nature will also end up
+in the notification area the file
+manager is not optimized the icons are
+teeny and very tiny alright great so if
+you're looking forward to using KDE
+plasma mobile it's looking pretty
+promising there have been some pretty
+large improvements specifically to the
+graphic stack let's talk about gaming
+while purism has said they will be
+working on the basic features of the
+device like calling and texting in the
+base browser they have not said they
+were gonna be working on any games at
+all for the device so I've decided to
+test three different open-source games
+and see where they are at the moment
+with no human effort to make them
+actually run on the dev kit I installed
+mine test a minecraft clone T worlds and
+super tux cart starting with mine test
+it installs just fine but the icon
+doesn't show up in Fache running it from
+command line and Fache doesn't work
+either in yielding just a black screen
+but if you run it in KDE plasma mobile
+tada it runs just fine ish kind of I'm
+amazed at this point that I've never
+figured out how to open a keyboard in
+KDE plasma mobile if somebody knows how
+to open a keyboard let me know cuz this
+was kind of a big issue as I'm not sure
+how to open the on-screen keyboard
+I used X due tool in order to input a
+world name but after inputting a world
+name I was able to click create world
+and see a wonderful green bar load up it
+didn't do anything past that unless you
+count crashing the entire device as
+something T worlds does seem to load
+fine in all of the different desktop
+environments however in Fache once again
+the icon was missing and I had to use a
+terminal to launch the application the
+biggest issue with T worlds was the
+input and the resolution so this is the
+best candidate for low-hanging fruit in
+my opinion especially if you want to
+plug in a mouse and keyboard but like
+super tux cart was an utter fail post
+install I know desktop environment with
+load so reflash the fact that some open
+source games even partially work is
+amazing all in all not a bad improvement
+thanks for watching bye

@@ -1,0 +1,267 @@
+so you've heard about Linux and you
+might want to try installing it here's
+everything you need to know to get going
+so the first step is to figure out where
+you're gonna install I strongly
+recommend you do not install on your
+primary production machine either a
+separate hard drive to install on or an
+entirely separate machine to install on
+I do not recommend dual booting for a
+beginner run on over to DistroWatch see
+which distribution looks the most
+appealing to you because at the end of
+the day they're basically all the same
+to install this is the workflow pick the
+OS go to that OSS website download that
+OSS ISO the ISO is the special
+installation image the legacy way of
+using this would be to physically burn
+it to a DVD and then install from the
+DVD as you may have noticed though
+computers don't ship with CD drives
+anymore so we put ISO images on USBs
+these days and install from a USB or
+what we call a live USB to create a live
+USB there are a few options for those
+Windows users out there I recommend you
+use a piece of software called Rufus for
+the Linux users out there you can use
+unetbootin dd or a piece of software
+called Janet and that's not the only
+options but those are the ones I'm gonna
+go ahead and cover real quick
+Rufus it's pretty easy to download once
+you download it you put your drive in
+you run it you select your ISO image you
+hit start select DD mode that's it
+here's unetbootin make sure USB is shown
+upon opening it if not you need to put a
+USB in and close it reopen it select
+your ISO and hit the Go button it's
+pretty simple janna is a fancy command
+line environment that has a bunch of
+cool built-in commands to help you do
+Linux tasks one of which is to create a
+live USB you simply type in the path to
+the ISO and type in make USB it asks you
+which devices your thumb drive and it
+does what it needs to do and of course
+this is really just a DD command you
+could literally just run this DD
+demand on any distro and that'll usually
+work on Windows after the drive has been
+made you can pull out the drive and
+you're good to go
+on Linux after the drive has been
+created I always recommend you type in
+the sync command and you're ready to go
+we have your ID USB now the next step is
+to put that USB into the computer and
+then tell that machine to boot from the
+USB device to get to the BIOS boot
+options is a little different on every
+machine it could be F 6 f 8 f 9 F one
+escape delete and it really depends on a
+manufacturer of your machine most
+computers will tell you which button to
+press one it boots up if it doesn't try
+F one try escape try delete and keep
+your booting until you figure it out
+once you do find the boot menu scroll
+down to the name-brand of your USB and
+hit enter and you should see a grub
+screen with whatever distribution you
+chose partitioning is probably the
+trickiest thing to get your head around
+but once you get partitioning down and
+there's not much more to learn before
+you can install every distribution you
+want at the lowest level a hard disk is
+a bunch of ones and zeros in order to
+make those ones and zeros useful we have
+to lay down a partition table a
+partition table simply keep track of all
+of the partitions on a disk and they do
+this by using specific locations at the
+beginning of your disk to reference
+where the rest of the partitions are and
+then of course you have partitions they
+are the thing that holds files there are
+two primary partition table types you
+have MBR which is the old one and not
+really needed if you have a UEFI BIOS
+and you've got the new one which is
+called GPT but does require a UEFI BIOS
+to boot from as most bios's our UEFI at
+this point I strongly recommend you use
+GPT GPT allows for more than four
+primary partitions which means you can
+turn your physical hard disk into as
+many drives as you want okay now we have
+a partition table let's talk about
+partition types you have fat32 which is
+going to be
+the one you use on small thumb drives in
+Windows but it's also what you use for
+UEFI boot partitions NTFS is the newer
+windows file system it is better than
+faculty - as it can support more than 4
+gigabyte files and very large partition
+sizes the extent is my recommended Linux
+file system use the newest version in
+this case extent for btrfs is similar to
+extent except it it supports
+snapshotting so you can snapshot your
+filesystem break it and then revert it
+back to how it was before XFS is similar
+to extent and NTFS and of course there's
+the swap partition type swap is cool
+what it does is it uses part of your
+hard disk as a virtualized Ram so if
+your computer runs out of RAM it starts
+using your hard disk for RAM but Ram is
+way faster than your hard disk so it's
+kind of like slow Ram
+for a simple Linux install we're going
+to use three partitions the first
+partition we need is a fat32 partition
+with a boot flag it needs to be about a
+gig the next partition we need can be
+most of the remaining disk this will be
+where the OS and your home directory
+will go and we'll call this one root
+I recommend ext for this and the last
+partition we're going to add is this
+swap partition stick to around 4
+gigabytes
+all right so quick recap we're gonna
+download an ISO put that ISO on a USB
+using Rufus or unetbootin or DD then
+we're gonna put that USB in a machine
+get to the boot menu in the machine go
+to the usb go to the Installer partition
+a UEFI bios partition 8 root filesystem
+and n partition swap that's the gist
+alright let's download some dish gross
+download a new boot ooh
+downloading mint
+you
+downloading pop OS
+downloading fedora
+downloading open soos
+let's install a blue to nice-looking
+installer it's pretty simple you just
+hit next a bunch of times well install
+the third-party software because
+graphics are great and everyone likes
+mp3 files for partitioning you could do
+automatic partitioning for basically any
+distribution you want especially if
+you're not afraid of losing any data on
+the disk but as this is getting to know
+Linux let's do manual partitioning for
+everything we're going to create a new
+partition table
+add on here our efi partition we're
+going add a one gigabyte UEFI system
+partition we're going to add as big as
+we want root partition for all our files
+and then we're gonna add some swap with
+whatever we got left
+good enough
+and that's that's it it installs and it
+stalled cool
+alright let's install mint so we put the
+drive an of mint the Installer looks
+more or less the same as a boon to
+actually
+we're going to install third party stuff
+we're going to do something else for the
+partitioner and add a new partition
+table let's add our EFI boot partition
+if I system partition excuse me let's
+add our root partition and let's add our
+swap partition we'll select your time
+zone enter our username or password and
+that's it pretty simple install all
+right let's install pop Linux boot to
+the thumb drive okay that installer is
+not based on the Ubuntu one looks very
+nice kind of reminiscent of Mac OS X
+we'll go for the advanced installer oh
+this is a weird partitioner it opens up
+gparted for us to create the primary
+partitions i'll just format things
+because it's already there and Oh weird
+then you select which partitions do what
+I actually kind of like this it's
+different than any of the other ones
+looks like this is a two-stage installer
+we have to reboot okay so it asks for
+things like Wi-Fi and time song and user
+creation cool installed let's install
+Fedora there installer lets you go in
+any direction you want
+let's do disk partitioning select which
+disk you want we'll remove things and
+things back system let's add an EFI boot
+partition it's at a real partition
+let's add a swap partition
+we'll just make all these standard we
+don't need to use LBM
+make sure your time and dates right and
+you hit install it's pretty cool it also
+has a two-stage installer where we
+reboot and add our name after the after
+the actual primary install cool next up
+is openSUSE boot to the drive select
+installation accept the User Agreement I
+go to configure online repositories
+because I prefer mat a let's go ahead
+and select mat a partitioning we're
+going to start with an existing
+just delete that stuff let's create a
+UEFI boot partition let's create a root
+partition
+and a swap partition okay cool next we
+select our time zone then the username
+we can make sure everything looks right
+or install additional software and hit
+install
+all right and that's installed let's go
+ahead and install VLC and all the
+different distributions and see how hard
+it is to get up and running all right
+you know Boone - if you type in VLC in
+the menu it'll drop you right off to the
+Ubuntu store and let you install VLC
+from there pretty convenient
+Linux Mint there was no post
+installation it literally just came with
+the LC working so that's that's pretty
+easy top OS let's go to the store in pop
+OS okay and then type in VLC and install
+so it's pretty similar to be a boon to
+install path where you go to their store
+and install VLC
+Fedora
+in fedora they've separated a lot of the
+non-free software into a separate
+repository you actually have to add this
+repository in order to install VLC
+and let's do Susa post-install in a
+similar vein to fedora you need to add a
+multimedia kodak repository as well when
+you have the multimedia codec you're
+gonna run into these conflicts all you
+do is make sure you select vendor change
+[Music]
+some distributions are focused on
+advanced configuration and some
+distributions are focused on ease of use
+but really it's it's a matter of what
+you like so give a couple of try and see
+what sticks
+install some stuff by get out of here
+begone

@@ -1,0 +1,190 @@
+selfish OS is the best mobile Linux
+operating system to date let's compare
+it to the Libra 5 development kit of
+course the Libra 5 has yet to ship so
+this comparison is a little bit unfair
+and of course I'll post updates once
+they become relevant let's talk about
+hardware the most spec - plus this
+device has 6 gigabytes of RAM and an
+octa-core 2.2 gigahertz cortex a53
+processor compared to the leap from 5
+dev kit which has 3 gigabytes of RAM and
+a quad-core 1.5 gigahertz cortex a53
+processor and of course Pierrot s is a
+Debian based system and sailfish OS is
+an RPM based distribution when using lip
+zip under the hood to install packages
+and one using dpkg
+under the hood as far as battery
+capacity these two devices are more or
+less equal so it'll be really
+interesting to compare battery life once
+the actual libre mon releases now that
+we have the specs out of the way let's
+compare boot time
+[Music]
+there it is with literally half the
+specs the Libre five dev kits still
+booted a few seconds faster of course
+these are Linux devices we're going to
+want to see what the terminal is like to
+use peer ISM has recently switched to
+Kings Cross for the terminal application
+and selfish OS has been using finger
+term for quite a while the biggest
+difference is the keyboard finger term
+has a built-in keyboard that's unique to
+just finger term it doesn't appear
+anywhere else on the device and has lots
+of very useful terminal input on the
+other hand Kings Cross uses a standard
+application keyboard I'm hoping that
+peer ISM will do something like sailfish
+OS here and include a dedicated keyboard
+just for the terminal or perhaps a way
+to switch between different keyboard
+layouts one useful for desktop commands
+and control and all that jazz and one
+useful for applications I want to type a
+text message to my mom
+type thing here's a close-up of the
+application keyboard these things are
+identical one of the new added features
+of this keyboard is the ability to enter
+a slash this enables you to use regular
+IRC and a terminal
+let's go ahead and compare the browsers
+on simple pages scrolling seems to work
+fine on both browsers
+Wikipedia no issue at all I guess there
+is this weird bug in the Li from five
+browser where if you're over some
+elements you can't flick around to
+scroll quite as well
+let's take a look at some images that
+seem to have loaded just a tad bit
+faster on the dev kit but we can start
+singing the scrolling joke a bit it
+seems like the Libra 5 is really fast at
+the initial rendering of the page but if
+there's too much content on the actual
+page scrolling can get choppy
+video playback isn't exactly smooth on
+the labrum five but it does seem to work
+just fine on the selfish OS device
+also fullscreen seems to not function as
+well
+closing the web browser
+possible on the labrum five so we can
+take a look at how to do that on each of
+them
+the dialer app they are nearly identical
+they have three basic categories a
+dialer category history / recent
+category and a people / contacts
+category
+let's take a look at what the labrum v
+has to uniquely offer the phone will
+offer three hardware kill switches and a
+lockdown mode one of the switches will
+control the camera and microphone one
+for the Wi-Fi and Bluetooth and one for
+the cellular baseband if you activate
+all three switches it puts the phone in
+a lockdown mode
+this disables not only the camera
+microphone Wi-Fi Bluetooth cellular
+baseband but also disables the GPS
+accelerometer ambient light and
+proximity sensors it's also important to
+note this is done on a hardware level
+power is literally cut from these
+devices this leaves you with a still
+working phone
+well portable Linux dinging with a
+screen that can talk to anything the
+Libra 5 can also natively run X 11 and
+Wayland while selfish OS relies on a
+compatibility layer called Hybris Hybris
+loads Android libraries and overrides
+some symbols from Bionic with G live sea
+calls making it possible for Bionic
+based software such as Android only
+binary blobs to be loaded on G live sea
+based Linux distributions in addition to
+that Hybris can also translate android
+egl calls into Wayland eg o calls
+allowing Android graphic drivers those
+stupid blobs to be loaded on Wayland
+based systems
+that's where sailfish OS steps in it
+uses this Wayland based system to
+display all of its graphics this Hybris
+stack has been the most popular mobile
+linux platform for a long time now and
+I'm very happy to see it go
+so without the need to use Hybris we can
+ditch a lot of the complex crappy stack
+that sailfish OS is forced to use along
+with so many other mobile Linux
+distributions this is a massive shift in
+how mobile Linux is handled allowing for
+much easier porting of OSS
+a potentially interesting upcoming
+feature of the labrum 5 is this
+so-called no carrier phone of course the
+labrum 5 like any phone will be able to
+use a SIM card and make normal calls and
+text messages however this is likely not
+the only way you can make calls on the
+labrum 5 combined with libra mile a
+future part of the labrum 1 bundle the
+basic idea is you transfer your phone
+number to leave room dial the service
+will provide calling an SMS over a
+network connection this can take a
+couple of forms a Wi-Fi only phone or a
+Wi-Fi + cellular data phone of course to
+use cellular data you're gonna go need
+to pick up a data only phone plan from
+t-mobile or AT&amp;T which is actually
+fairly cheap like 20 bucks a month at 8
+bucks on top of that for the libra one
+service and you're good to go you can
+make calls anywhere that you can receive
+a data connection plus 28 bucks a month
+is not bad for a phone bill I should
+also mention purism is very good at up
+streaming what I mean by this is the
+work that peer ISM does is less work for
+everyone else wanting to build a Linux
+phone the peers own price tag represents
+a shift in the Linux phone community if
+the price is too high great weight and
+pick up a pine phone after the community
+has finished developing a lot of
+packages around mobile Linux or you can
+go ahead and buy a labrum 5 and support
+the mobile Linux software stack and be
+one of the first on this new kind of
+phone as a side note frozen bubble
+almost works on the dev kit a few small
+changes to the UI and it would work
+great touchscreen input isn't working
+and if you wanted to control with the
+keyboard the arrow keys are missing
+while the physics engine seems to work
+flawlessly the game is technically
+unplayable due to the lack of input kind
+of a cool distraction I was also able to
+test my audiobook player on the Libra 5
+dev kit and of course it's working great
+playing things fast or slow hooray
+so there's $700 worth it should you buy
+a Libra 5 well I think that comes down
+to how much you want to see mobile Linux
+succeed if the Leiberman 5 is a success
+than the pine phone and many other Linux
+devices will likely also succeed thanks
+for watching bye

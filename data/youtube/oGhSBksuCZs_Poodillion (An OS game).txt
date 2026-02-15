@@ -1,0 +1,55 @@
+i spent the last few weekends mixing two
+of my favorite things rpg games and the
+command line
+while some games have a limited command
+line this game has a built-in operating
+system and bash as its interface
+i would split it first if i wanted ascii
+art or 2d graphics but i settled on 2d
+graphics using pie game for now
+this is the game poodlion this game is
+named after my dog whose nickname falls
+apart at the fact that she's not a
+poodle directories in the pajillion file
+system show up as rooms like bob says
+you can use cd to switch which room
+you're in every npc has a life file in
+the game's present working directory you
+can use the rm command to shoot lasers
+at most npcs simply by attacking their
+wi-fi
+killing this enemy has unlocked a door
+you can move the player around by
+tapping the screen or you can set a
+course with the arrow keys
+[Music]
+the first level takes place in depths
+deeper
+once you find your way over the
+directories in this room are
+procedurally generated
+try not to get lost as you find your way
+to the boss fight
+much of the player's statistics are
+controlled in the player's sis directory
+while the user has limited access to the
+sys folder the commands the player uses
+can manipulate the sys files this lets
+the commands edit the player's health
+power or even leave on-screen messages
+in-game once you defeat the first level
+you'll have a new command to play around
+with any file you touch starting with
+frog will become an npc with the life
+file you just created do note that this
+takes player power to spawn in when you
+first run the game it builds a chew root
+of debian 11 and copies in all the game
+files this way you don't have to worry
+about deleting the wrong files or having
+your personal data get in the way if
+this sounds like a fun game give it a
+download and test it out this is gpl3
+and should work on most gnu linux
+desktops or phones thanks for watching
+bye

@@ -1,0 +1,41 @@
+hello and welcome back everybody so
+we've all had that time where we log
+into our computers and the root
+filesystem is freaking full well here's
+a trick on how you can find which file
+is using up that data command is D you d
+you by itself is ugly very ugly D you -
+s gives you a much cleaner output it
+gives you a summary of the directory I
+didn't pass in anything so it gave me a
+summary of my current working directory
+only I could also say asterisk and it
+would give me a summary of all of the
+file slash directories in my working
+directory since I have no idea where I'm
+looking I'm gonna start with root
+everything underneath root so this by
+itself is fairly useful but I'm still
+not even really sure what that's in so
+I'm gonna put a dash cam here so I'm
+positive this isn't megabytes okay so
+here we have megabytes but this is still
+really ugly output I mean you can
+probably muddle through this and figure
+out just based on this this data here
+that far is pretty big and it shouldn't
+be but even so I'm gonna pipe this to
+sort dash n which stands for number so
+sort on the number and yeah here we can
+see we have to really large directories
+one is pretty normal to be this big if
+I'm honest this one though this is
+really abnormal var is too big so let's
+modify our above command and put the bar
+so D you summarized in megabytes
+everything underneath bar and then sort
+that so we have negligible data and far
+log is full of stuff so modify the
+command again and here's the culprit
+thanks for watching bye
+[Music]

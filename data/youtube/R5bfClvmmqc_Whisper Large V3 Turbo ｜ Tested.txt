@@ -1,0 +1,40 @@
+hello and welcome today we're taking a
+look at whisper large version 3 Turbo
+it's open source and you can run it
+locally let's take a look this is the
+server script it lets me use other
+client scripts to connect and use the
+whisper model pretty easily here's my
+client code it lets me use this handy
+little device to push a button uh it's
+just a Ada fruit feather and when I push
+the button it it uh Records that I've
+done that this is a
+test okay okay so you can see it's
+already pretty fast and it's uh pretty
+handy I'm going to go ahead and demo
+what it's like to use whisper 3 Turbo
+large uh it's a very powerful opsource
+local voice translation
+system as you can see it's incredibly
+powerful and lets me translate my voice
+in a live
+manner every time I end a sentence I
+simply just let go of this
+button it makes it really easy for me to
+get a perfect voice
+translation you can use ASR to do this
+sort of uh voice clipping automatically
+but it's a little bit more buggy than if
+I hold a
+button all in all this is crazy
+impressive and one of the best most
+accurate and speediest voice translation
+systems on the
+market and it's fully open source check
+that out it's only using 12% of my vram
+all in all I'm crazy impressed and I'm
+sure you could build this out into a
+really impressive AI system by attaching
+a large language model on the back end
+anyway thanks for watching bye

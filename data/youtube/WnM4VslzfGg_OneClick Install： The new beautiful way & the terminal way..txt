@@ -1,0 +1,60 @@
+installing packages on openSUSE just got
+a lot prettier here's what I mean
+web browser okay so I want to install T
+Worlds that's just a Linux video game
+that I happen to like but it could be
+any package it could be a lib it could
+be any Linux dependency or regular
+open-source package so T worlds then I
+just come here and click on the Susa
+lizard icon which then goes to software
+openSUSE org and does a package search
+and as you can see it looks really good
+now the workflow isn't really that
+different but it does look nicer
+one-click install open yes
+next a bunch of times one password later
+installation successful it really is
+that easy
+oh I want to install docker then I just
+select get
+direct install it's so pretty it's very
+versatile but what is it really doing
+let me show ya alright so on top this
+file open with Kate and this is what the
+ymp file looks like so this file is
+pretty simple you've got two parts in
+the repository part it just has a bunch
+of definitions and summaries but most
+importantly has a URL in the software
+area the most important one is the name
+docker so if I wanted to not use yes to
+install this I could just open up a
+terminal switch over to root and zipper
+add repository that URL and then space
+the name we want to call this so the
+name is actually right here it's
+openSUSE factory so boom then we would
+do a zipper rough
+once our repositories are refreshed we
+can go ahead and and install the package
+name so it's already been done on this
+system with the GUI just a minute ago so
+if you were paying attention I did add a
+repository I already had that's kind of
+a no-no I should clean that up it's
+pretty easy zipper list repository and
+we still don't know - - URI okay great
+it's gonna be one of these that we just
+added so let's grep for the URL just
+this guy whoops forgot my grep we're up
+okay so from this output you can see we
+have two repositories the fourth
+repository and the sixth repository are
+duplicates honestly this one's uglier so
+I'm gonna delete that one zipper remove
+repository Arar and then for to be safe
+I'm going to refresh my repositories and
+now my computer's not screwed up
+[Music]
+you

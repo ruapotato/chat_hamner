@@ -1,0 +1,100 @@
+the official interface for the Liam five
+phone will be Fache however purism has
+sent several devices out to the KDE
+community to help get KDE plasma mobile
+working shout out to crafty guy who is
+doing a lot of the work towards plasma
+mobile on the labrum 5 phone he has
+compiled it and even tested it on the
+device there are several things that are
+not working under Weiland at this point
+so not only is it in pre-alpha on the
+device but the VM I'll be testing is
+also in pre-alpha and very crashy
+I had to reboot the VM several times in
+order to get this footage but let's go
+ahead and take a look we're gonna ahead
+and try without installing it doesn't
+seem like they have Calamari's working
+yet so you can't install this image but
+you can certainly test it out it's
+clearly based on Ubuntu 1604 and let's
+look at the interface so a lot of these
+panels are not working if I click
+anywhere on the top panel everything
+crashes there's phone app and install
+our app that's not implemented camera
+and an app store these squares will let
+you switch between already open apps
+that crashes often and the exit button
+exits whatever is open well I do like
+that when you open an application it
+lights up the exit button letting you
+know that there is an application ready
+to be closed this doesn't seem to be
+loading that well let's go ahead and
+retry that okay and we crashed the panel
+but the phone popped up so hey that's
+cool umm quick overview what the phone
+screens gonna look like here's the Rana
+pop-up of broken connections dialog well
+with the blacked out menus
+I can't exit this application or really
+do anything so I'm gonna have to reboot
+okay now that we're rebooted let's go
+ahead and try the discover store
+it definitely has a lot of packages in
+it so I'm assuming this has got a lot of
+what is in the aboon to 16.04 store I'm
+not sure if all of these have been
+modified specifically to work on a phone
+but they are at least easily installable
+problem is I have no idea what the root
+password is so the settings looks quite
+nice much simpler than that in Fache and
+I like some of the defaults a bit more
+alright so developer mode that's pretty
+cool
+writable filesystem I wish Android had a
+button like that and allow remote SSH
+isn't letting me click it but I'm
+assuming will eventually work and is
+also a great feature
+and here's random wireless pop-up and
+here's where we can just screen
+brightness lock screen sleep turn off
+screen I do like that these features are
+off by default but do allow you to turn
+them on and Fache it felt more like they
+were just kind of already on by default
+now can't give them too much
+because no device is actually shipped
+with either of these two interfaces
+working this I have to give them credit
+for and is probably much better than it
+will ever be in
+Fache the theming it looks like they
+have good QT theming working so you can
+change this up I'm assuming and you'll
+also be able to download additional
+themes online once this has a community
+behind it time and date does seem kind
+of barebone but we'll give it some time
+to grow V player
+I wonder what V player is well got
+ourselves this nice little blue thing up
+okay
+so home directory I can't seem to find
+any videos to play in here so just
+imagine that this can play videos let's
+go up up up up
+that's past route or above route okay
+well good game I don't think I can close
+this so yep that's a quick overview of
+KDE plasma mobile it is not super stable
+but it is getting there and it is a good
+alternative to the Fache shell we
+reviewed a couple weeks back I'll be
+playing with the development kits more
+this week and we'll be releasing another
+purism video hopefully on Tuesday

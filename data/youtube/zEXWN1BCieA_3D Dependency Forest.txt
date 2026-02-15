@@ -1,0 +1,67 @@
+why is it so hard to upgrade or
+downgrade just one package what is a
+package dependency and just what would
+it look like to visualize all of
+debian's package requirements in 3d
+space
+debian is a robust distro of gnu linux
+based on the dot deb package format
+these packages are made of files that
+get extracted to the system and scripts
+that can be run if needed
+debs are convenient and proven way to
+install the base os new applications and
+required libraries in just about every
+case an application packaged as a dot
+deb will have dependencies a dependency
+is another package your package relies
+on a good example is the graphical gtk 3
+application which needs lib gtk to
+function
+in many cases your dependencies will
+also have dependencies
+which could also have dependencies and
+so on the connections between these
+interdependent packages make up what's
+known as a dependency tree this
+dependency tree is a very common image
+used to depict basic package
+relationships digging into the origin it
+seems this image was created with apt-r
+depends it turns out apt-r-depends is a
+really handy way of outputting dot graph
+data which can be piped into a few
+different programs to create cool
+looking graphs asking spring graph to
+graph my entire debian system
+really didn't work but i was able to
+create this cool looking guy with sfdp
+which is part of the package graphis
+sfdp put everything in a nice circle and
+can also output data in detail.graph
+format so i used sfdp to create detailed
+graph data from the output of appt
+autopins run on the whole system
+next i built a handy blender script to
+render that dot graph data in 2d
+to give it a third dimension i
+calculated the height based on the
+number of other packages using it as a
+dependency
+so the most dependent on packages ended
+up the highest on the z-axis
+this makes lip c6 the top tree in this
+cool visualization i'm calling it
+dependency forest as this is a tight
+grouping of trees in 3d space the links
+between packages are really just a list
+of the package names and the needed
+versions here's an example from the also
+utils package by removing or changing
+any of these packages you could break
+also utils as well as any other packages
+that depend on the changed package i bet
+you could guess why messing with any of
+these higher depended on packages could
+cause a problem for the lower parts of
+the tree thanks for watching bye

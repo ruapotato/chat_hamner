@@ -1,0 +1,43 @@
+UEFI is not scary it's not difficult
+it's not that hard let's go over it so
+you can actually start using it I'm
+gonna install Lubuntu
+this VM is being forced to boot via UEFI
+we're going to will detect if you start
+the installer with UEFI and fortunately
+you can automatically install for you
+but let's say you have another
+computer's operating system on there and
+you want to actually understand how to
+partition UEFI yourself it's not hard
+I'm gonna go ahead and manually
+partition this just so you can see
+exactly how it's done
+new politician table okay
+so the first thing you want the very
+first partition is the EFI boot
+partition we want to find efi system and
+what that will do is it will format it
+with fat32 and it will also make it have
+a mount point of slash boots slash efi
+on a lot of different distros and make
+it about half a gig
+now I'm gonna add my root partition I
+want it to be I want to leave about a
+gig so I can have some swap space and
+then swap space and that's a really
+basic efi partition scheme you got your
+boot route and swap now there are actual
+reasons to set up efi and not be lazy
+yeah it is an extra partition but you
+gain the ability to use GPT partition
+tables that's cool because now you can
+use disks that are larger than 2
+terabytes as well as set up more than 4
+primary partitions very useful if you
+want to have a crapload of operating
+systems on a single drive plus I hear
+they're adding more features to UEFI and
+they'll be more recent than the future
+to use it so might as well learn it now
+thanks for watching
