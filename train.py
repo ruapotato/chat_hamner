@@ -45,13 +45,13 @@ MODEL_CONFIG = dict(
     num_active_experts=1,
     expert_intermediate_size=2048,
     use_differential_attention=False,
-    gradient_checkpointing=True,
+    gradient_checkpointing=False,
     max_seq_len=1024,
     # vocab_size set from tokenizer
 )
 
 # Training hyperparameters
-BATCH_SIZE = 16
+BATCH_SIZE = 48
 SEQ_LEN = 1024
 LR = 3e-4
 WARMUP_STEPS = 2000

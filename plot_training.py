@@ -31,6 +31,36 @@ TOURNAMENT_FILE = "logs/tournament_metrics.csv"
 SAMPLES_FILE = "logs/samples.jsonl"
 PLOT_DIR = "logs/plots"
 
+# Notable training events to annotate on plots
+# (step, short_label, description)
+TRAINING_EVENTS = [
+    (49000, "batch 16\u219248, grad ckpt off",
+     "Batch size 16\u219248, disabled gradient checkpointing.\n"
+     "Doubled VRAM usage (65%\u219292%), ~2x throughput.\n"
+     "Loss spike is expected and recovers quickly."),
+]
+
+
+def annotate_events(ax, metrics, x_key="step"):
+    """Add vertical lines and labels for notable training events."""
+    if not metrics or not TRAINING_EVENTS:
+        return
+    x_vals = [m[x_key] for m in metrics]
+    x_min, x_max = min(x_vals), max(x_vals)
+    for step, label, _ in TRAINING_EVENTS:
+        # Map step to the appropriate x-axis value
+        if x_key == "step":
+            x = step
+        else:
+            # Find the closest metric entry to this step
+            closest = min(metrics, key=lambda m: abs(m["step"] - step))
+            x = closest[x_key]
+        if x < x_min or x > x_max:
+            continue
+        ax.axvline(x=x, color="#FF9800", linestyle="--", alpha=0.7, linewidth=1.2)
+        ax.text(x, ax.get_ylim()[1], f" {label}", rotation=45, fontsize=7,
+                color="#E65100", ha="left", va="top")
+
 
 def load_metrics(path):
     """Load metrics CSV into list of dicts."""
@@ -107,6 +137,7 @@ def plot_training_loss(metrics, save_dir=None):
     ax1.legend()
     ax1.grid(True, alpha=0.3)
     ax1.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f"{x/1000:.0f}k"))
+    annotate_events(ax1, metrics, x_key="step")
 
     # Loss vs tokens
     ax2.plot(tokens_b, losses, color="#2196F3", linewidth=0.8, alpha=0.5, label="Raw")
@@ -117,6 +148,7 @@ def plot_training_loss(metrics, save_dir=None):
     ax2.set_title("Training Loss vs Tokens Processed")
     ax2.legend()
     ax2.grid(True, alpha=0.3)
+    annotate_events(ax2, metrics, x_key="tokens_billions")
 
     plt.suptitle("Hamner Training Progress", fontsize=14, fontweight="bold")
     plt.tight_layout()
@@ -154,6 +186,7 @@ def plot_perplexity(metrics, save_dir=None):
     ax.legend()
     ax.grid(True, alpha=0.3)
     ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f"{x/1000:.0f}k"))
+    annotate_events(ax, metrics, x_key="step")
 
     plt.tight_layout()
     if save_dir:
@@ -212,6 +245,7 @@ def plot_throughput(metrics, save_dir=None):
     ax.legend()
     ax.grid(True, alpha=0.3)
     ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f"{x/1000:.0f}k"))
+    annotate_events(ax, metrics, x_key="step")
 
     plt.tight_layout()
     if save_dir:
@@ -394,6 +428,7 @@ def plot_all_dashboard(metrics, tournament_data, samples_data, save_dir=None):
     ax1.set_ylabel("Loss")
     ax1.set_title("Training Loss")
     ax1.grid(True, alpha=0.3)
+    annotate_events(ax1, metrics, x_key="tokens_billions")
 
     # 2. Perplexity (top right)
     ax2 = fig.add_subplot(2, 2, 2)
@@ -405,6 +440,7 @@ def plot_all_dashboard(metrics, tournament_data, samples_data, save_dir=None):
     ax2.set_title("Perplexity")
     ax2.set_yscale("log")
     ax2.grid(True, alpha=0.3)
+    annotate_events(ax2, metrics, x_key="tokens_billions")
 
     # 3. Throughput (bottom left)
     ax3 = fig.add_subplot(2, 2, 3)
@@ -418,6 +454,7 @@ def plot_all_dashboard(metrics, tournament_data, samples_data, save_dir=None):
     ax3.set_title(f"Throughput (avg: {avg_tps:.0f} tok/s)")
     ax3.grid(True, alpha=0.3)
     ax3.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f"{x/1000:.0f}k"))
+    annotate_events(ax3, metrics, x_key="step")
 
     # 4. Stats summary (bottom right)
     ax4 = fig.add_subplot(2, 2, 4)
