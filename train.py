@@ -225,7 +225,7 @@ def find_latest_checkpoint(checkpoint_dir):
     return None
 
 
-def save_checkpoint(model, optimizer, scaler, config, step, loss, checkpoint_dir, is_milestone=False):
+def save_checkpoint(model, optimizer, scaler, config, step, loss, checkpoint_dir, is_milestone=False, tokens_total=0):
     """Save checkpoint and clean up old ones."""
     os.makedirs(checkpoint_dir, exist_ok=True)
 
@@ -236,6 +236,7 @@ def save_checkpoint(model, optimizer, scaler, config, step, loss, checkpoint_dir
         "config": config.__dict__,
         "step": step,
         "avg_loss": loss,
+        "tokens_total": tokens_total,
         "timestamp": datetime.datetime.now().isoformat(),
     }
 
@@ -290,11 +291,12 @@ def load_checkpoint(path, device="cuda"):
 
     step = ckpt.get("step", 0)
     loss = ckpt.get("avg_loss", float("inf"))
+    tokens_total = ckpt.get("tokens_total", None)
 
     total_p, _ = model.count_parameters()
     log(f"Resumed: {total_p:,} params | step {step} | loss {loss:.4f}")
 
-    return model, optimizer, scaler, config, step
+    return model, optimizer, scaler, config, step, tokens_total
 
 
 # ---------------------------------------------------------------------------
@@ -358,8 +360,9 @@ def train(resume_from=None, fresh=False):
             log(f"Found existing checkpoint: {resume_from}")
 
     # Initialize or resume
+    saved_tokens = None
     if resume_from:
-        model, optimizer, scaler, config, start_step = load_checkpoint(resume_from, device)
+        model, optimizer, scaler, config, start_step, saved_tokens = load_checkpoint(resume_from, device)
         config.vocab_size = tokenizer.vocab_size  # ensure consistency
     else:
         log("Starting fresh training...")
@@ -390,7 +393,15 @@ def train(resume_from=None, fresh=False):
 
     # Training state
     losses = []
-    tokens_total = start_step * BATCH_SIZE * SEQ_LEN
+    if saved_tokens is not None:
+        tokens_total = saved_tokens
+    else:
+        # Fallback for old checkpoints without tokens_total:
+        # steps before 49000 used batch_size=16, after used 48
+        ORIGINAL_BATCH_SIZE = 16
+        tokens_total = min(start_step, 49000) * ORIGINAL_BATCH_SIZE * SEQ_LEN
+        if start_step > 49000:
+            tokens_total += (start_step - 49000) * BATCH_SIZE * SEQ_LEN
     start_time = time.time()
 
     # Graceful shutdown
@@ -474,6 +485,7 @@ def train(resume_from=None, fresh=False):
             save_checkpoint(
                 model, optimizer, scaler, config, step + 1, avg_loss,
                 CHECKPOINT_DIR, is_milestone=((step + 1) % 10000 == 0),
+                tokens_total=tokens_total,
             )
 
         if shutdown_requested:
@@ -481,7 +493,7 @@ def train(resume_from=None, fresh=False):
 
     # Final save
     avg_loss = sum(losses[-100:]) / len(losses[-100:]) if losses else float("inf")
-    save_checkpoint(model, optimizer, scaler, config, step + 1, avg_loss, CHECKPOINT_DIR)
+    save_checkpoint(model, optimizer, scaler, config, step + 1, avg_loss, CHECKPOINT_DIR, tokens_total=tokens_total)
 
     elapsed = time.time() - start_time
     log("=" * 70)
