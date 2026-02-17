@@ -229,8 +229,12 @@ def save_checkpoint(model, optimizer, scaler, config, step, loss, checkpoint_dir
     """Save checkpoint and clean up old ones."""
     os.makedirs(checkpoint_dir, exist_ok=True)
 
+    # Strip _orig_mod. prefix from torch.compile'd models for clean checkpoints
+    raw_state = model.state_dict()
+    clean_state = {k.replace("_orig_mod.", ""): v for k, v in raw_state.items()}
+
     ckpt_data = {
-        "model_state_dict": model.state_dict(),
+        "model_state_dict": clean_state,
         "optimizer_state_dict": optimizer.state_dict(),
         "scaler_state_dict": scaler.state_dict(),
         "config": config.__dict__,
@@ -277,7 +281,11 @@ def load_checkpoint(path, device="cuda"):
 
     config = HamnerConfig(**ckpt["config"])
     model = HamnerModel(config).to(device)
-    model.load_state_dict(ckpt["model_state_dict"], strict=False)
+
+    # Strip _orig_mod. prefix from torch.compile'd checkpoints
+    state_dict = ckpt["model_state_dict"]
+    cleaned = {k.replace("_orig_mod.", ""): v for k, v in state_dict.items()}
+    model.load_state_dict(cleaned, strict=True)
 
     optimizer = torch.optim.AdamW(
         model.parameters(), lr=LR, betas=(0.9, 0.95), weight_decay=0.1
