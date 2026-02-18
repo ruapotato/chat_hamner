@@ -30,12 +30,14 @@ from model import HamnerModel, HamnerConfig
 # Config
 # ---------------------------------------------------------------------------
 
-CHECKPOINT_DIR = "checkpoints/training"
-LOG_FILE = "logs/training.log"
-METRICS_FILE = "logs/metrics.csv"
-SAMPLES_FILE = "logs/samples.jsonl"
+CHECKPOINT_DIR = "checkpoints/pretrain_v2"
+LOG_FILE = "logs/pretrain_v2.log"
+METRICS_FILE = "logs/pretrain_v2_metrics.csv"
+SAMPLES_FILE = "logs/pretrain_v2_samples.jsonl"
 
-# Model config (winner from tournament: v02_dense_medium)
+# Model config — 164M params, same as validated in concept experiments
+# v2: CORRECT label handling (model.forward shifts internally, no pre-shifting)
+# v1 was trained with double-shift bug for 122k steps (predicted 2-ahead!)
 MODEL_CONFIG = dict(
     hidden_size=768,
     num_layers=20,
@@ -45,17 +47,17 @@ MODEL_CONFIG = dict(
     num_active_experts=1,
     expert_intermediate_size=2048,
     use_differential_attention=False,
-    gradient_checkpointing=False,
+    gradient_checkpointing=True,
     max_seq_len=1024,
     # vocab_size set from tokenizer
 )
 
 # Training hyperparameters
-BATCH_SIZE = 48
+BATCH_SIZE = 24            # 24GB GPU with grad checkpointing
 SEQ_LEN = 1024
-LR = 3e-4
+LR = 2e-4
 WARMUP_STEPS = 2000
-MAX_STEPS = 300_000       # ~5B tokens
+MAX_STEPS = 400_000       # ~10B tokens (24 * 1024 * 400k = 9.8B)
 CHECKPOINT_EVERY = 1000
 SAMPLE_EVERY = 500        # generate sample text every N steps
 LOG_EVERY = 50
@@ -186,18 +188,19 @@ class InfiniteStreamDataset:
 
         for _ in range(batch_size):
             # Fill buffer until we have enough
-            while len(self.token_buffer) < self.seq_len + 1:
+            while len(self.token_buffer) < self.seq_len:
                 text = self._get_text()
                 tokens = self.tokenizer.encode(text, add_special_tokens=False)
                 tokens.append(self.tokenizer.eos_token_id or 0)
                 self.token_buffer.extend(tokens)
 
             # Extract chunk
-            chunk = self.token_buffer[:self.seq_len + 1]
+            chunk = self.token_buffer[:self.seq_len]
             self.token_buffer = self.token_buffer[self.seq_len:]
 
-            input_ids.append(torch.tensor(chunk[:-1], dtype=torch.long))
-            labels.append(torch.tensor(chunk[1:], dtype=torch.long))
+            # NO pre-shifting — model.forward() handles shift internally
+            input_ids.append(torch.tensor(chunk, dtype=torch.long))
+            labels.append(torch.tensor(chunk, dtype=torch.long))
 
         return torch.stack(input_ids), torch.stack(labels)
 
@@ -361,9 +364,6 @@ def train(resume_from=None, fresh=False):
     # Check for existing checkpoint
     if resume_from is None and not fresh:
         resume_from = find_latest_checkpoint(CHECKPOINT_DIR)
-        # Also check the old tournament checkpoint dir
-        if resume_from is None:
-            resume_from = find_latest_checkpoint("checkpoints/final")
         if resume_from:
             log(f"Found existing checkpoint: {resume_from}")
 
@@ -404,12 +404,7 @@ def train(resume_from=None, fresh=False):
     if saved_tokens is not None:
         tokens_total = saved_tokens
     else:
-        # Fallback for old checkpoints without tokens_total:
-        # steps before 49000 used batch_size=16, after used 48
-        ORIGINAL_BATCH_SIZE = 16
-        tokens_total = min(start_step, 49000) * ORIGINAL_BATCH_SIZE * SEQ_LEN
-        if start_step > 49000:
-            tokens_total += (start_step - 49000) * BATCH_SIZE * SEQ_LEN
+        tokens_total = start_step * BATCH_SIZE * SEQ_LEN
     start_time = time.time()
 
     # Graceful shutdown

@@ -15,13 +15,8 @@ venv/
 data/youtube/*.vtt
 data/youtube/video_list.txt
 
-# Checkpoints (too large for git - we maintain one best checkpoint separately)
-checkpoints/round1/
-checkpoints/round2/
-checkpoints/round3/
-checkpoints/final/
-checkpoints/training/step_*.pt
-checkpoints/training/latest.pt
+# Checkpoints (too large for git)
+checkpoints/
 
 # Logs
 logs/*.log

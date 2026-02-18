@@ -13,6 +13,7 @@ import math
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import torch.utils.checkpoint
 from dataclasses import dataclass
 from typing import Optional, Tuple
 
@@ -35,6 +36,22 @@ class HamnerConfig:
     tie_word_embeddings: bool = True
     gradient_checkpointing: bool = False
     use_differential_attention: bool = True  # toggle attention type
+
+    # Architecture selector: transformer, mamba, rwkv, xlstm, hawk, griffin,
+    #                        retnet, liquid, emotional, mamba_attn
+    architecture: str = "transformer"
+
+    # SSM / recurrent architecture settings
+    d_state: int = 16           # state dimension for SSM models
+    d_conv: int = 4             # conv width for Mamba
+    expand_factor: int = 2      # expansion ratio for Mamba inner dim
+
+    # Griffin / hybrid settings
+    attn_every_n: int = 6       # insert attention layer every N blocks
+
+    # Emotional transformer settings
+    emotional_layers: int = 0   # number of middle layers with slower LR
+    emotional_lr_scale: float = 0.2  # LR multiplier for emotional layers
 
     @property
     def is_moe(self):
@@ -383,3 +400,119 @@ class HamnerModel(nn.Module):
             if next_token.item() == eos_token_id:
                 break
         return input_ids
+
+
+# ---------------------------------------------------------------------------
+# Base class for non-transformer language models
+# ---------------------------------------------------------------------------
+
+class BaseLanguageModel(nn.Module):
+    """Shared skeleton: embedding -> blocks -> norm -> lm_head.
+
+    Subclasses set self.blocks in __init__ then call self._post_init().
+    """
+
+    def __init__(self, config: HamnerConfig):
+        super().__init__()
+        self.config = config
+        self.embed_tokens = nn.Embedding(config.vocab_size, config.hidden_size)
+        self.final_norm = RMSNorm(config.hidden_size, eps=config.rms_norm_eps)
+        self.lm_head = nn.Linear(config.hidden_size, config.vocab_size, bias=False)
+        if config.tie_word_embeddings:
+            self.lm_head.weight = self.embed_tokens.weight
+        self.blocks = nn.ModuleList()  # set by subclass before _post_init()
+        self._gradient_checkpointing = config.gradient_checkpointing
+
+    def _post_init(self):
+        """Call after subclass has set self.blocks."""
+        self.apply(self._init_weights)
+
+    def _init_weights(self, module):
+        if isinstance(module, nn.Linear):
+            module.weight.data.normal_(mean=0.0, std=0.02)
+            if module.bias is not None:
+                module.bias.data.zero_()
+        elif isinstance(module, nn.Embedding):
+            module.weight.data.normal_(mean=0.0, std=0.02)
+
+    def forward(self, input_ids, labels=None, attention_mask=None):
+        x = self.embed_tokens(input_ids)
+        for block in self.blocks:
+            if self._gradient_checkpointing and self.training:
+                x = torch.utils.checkpoint.checkpoint(block, x, use_reentrant=False)
+            else:
+                x = block(x)
+        logits = self.lm_head(self.final_norm(x))
+
+        loss = None
+        if labels is not None:
+            loss = F.cross_entropy(
+                logits[..., :-1, :].contiguous().view(-1, self.config.vocab_size),
+                labels[..., 1:].contiguous().view(-1),
+                ignore_index=-100,
+            )
+        return {"loss": loss, "logits": logits,
+                "aux_loss": torch.tensor(0.0, device=input_ids.device)}
+
+    def count_parameters(self):
+        total = sum(p.numel() for p in self.parameters())
+        trainable = sum(p.numel() for p in self.parameters() if p.requires_grad)
+        return total, trainable
+
+    @torch.no_grad()
+    def generate(self, input_ids, max_new_tokens=256, temperature=0.8,
+                 top_k=50, top_p=0.9, repetition_penalty=1.1, eos_token_id=2):
+        self.eval()
+        for _ in range(max_new_tokens):
+            idx_cond = input_ids[:, -self.config.max_seq_len:]
+            logits = self(idx_cond)["logits"][:, -1, :]
+            if repetition_penalty != 1.0:
+                for tid in set(input_ids[0].tolist()):
+                    logits[0, tid] /= repetition_penalty
+            logits = logits / temperature
+            if top_k > 0:
+                v, _ = torch.topk(logits, min(top_k, logits.size(-1)))
+                logits[logits < v[:, [-1]]] = float("-inf")
+            if top_p < 1.0:
+                sl, si = torch.sort(logits, descending=True)
+                cp = torch.cumsum(F.softmax(sl, dim=-1), dim=-1)
+                rm = cp > top_p
+                rm[..., 1:] = rm[..., :-1].clone()
+                rm[..., 0] = False
+                logits[rm.scatter(1, si, rm)] = float("-inf")
+            next_token = torch.multinomial(F.softmax(logits, dim=-1), num_samples=1)
+            input_ids = torch.cat([input_ids, next_token], dim=1)
+            if next_token.item() == eos_token_id:
+                break
+        return input_ids
+
+
+# ---------------------------------------------------------------------------
+# Model factory
+# ---------------------------------------------------------------------------
+
+def create_model(config: HamnerConfig):
+    """Create the appropriate model for the given architecture config."""
+    arch = config.architecture
+    if arch in ("transformer", "emotional"):
+        return HamnerModel(config)
+
+    # Import alternative architectures (keeps model.py clean)
+    from architectures import (
+        MambaModel, RWKVModel, XLSTMModel, HawkModel,
+        GriffinModel, RetNetModel, LiquidModel, MambaAttentionModel,
+    )
+    registry = {
+        "mamba": MambaModel,
+        "rwkv": RWKVModel,
+        "xlstm": XLSTMModel,
+        "hawk": HawkModel,
+        "griffin": GriffinModel,
+        "retnet": RetNetModel,
+        "liquid": LiquidModel,
+        "mamba_attn": MambaAttentionModel,
+    }
+    if arch not in registry:
+        raise ValueError(f"Unknown architecture: {arch}. "
+                         f"Choose from: {list(registry.keys())}")
+    return registry[arch](config)

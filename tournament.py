@@ -17,6 +17,7 @@ import json
 import time
 import math
 import datetime
+import traceback
 import numpy as np
 import torch
 import torch.nn.functional as F
@@ -27,10 +28,23 @@ from rich.table import Table
 from rich.progress import Progress, TextColumn, BarColumn, TimeRemainingColumn, MofNCompleteColumn
 from rich import print as rprint
 
-from model import HamnerModel, HamnerConfig
-from variants import get_variant_configs, describe_variant
+from model import create_model
+from variants import get_variant_configs, describe_variant, VariantInfo
 
 console = Console()
+
+
+def _strip_prefix(state_dict, prefix="_orig_mod."):
+    """Strip torch.compile prefix from state_dict keys."""
+    return {k.removeprefix(prefix): v for k, v in state_dict.items()}
+
+
+def _move_optimizer(optimizer, device):
+    """Move all optimizer state tensors to the given device."""
+    for state in optimizer.state.values():
+        for k, v in state.items():
+            if isinstance(v, torch.Tensor):
+                state[k] = v.to(device)
 
 # ---------------------------------------------------------------------------
 # Simple streaming dataset that pulls from HuggingFace on-the-fly
@@ -130,9 +144,10 @@ class PreTokenizedDataset(Dataset):
 
 def train_variant(
     name: str,
-    config: HamnerConfig,
+    variant: VariantInfo,
     dataset: Dataset,
     num_steps: int,
+    seq_len: int = 512,
     batch_size: int = 4,
     lr: float = 3e-4,
     warmup_steps: int = 100,
@@ -140,9 +155,13 @@ def train_variant(
     existing_model: torch.nn.Module = None,
     existing_optimizer=None,
     existing_step: int = 0,
+    vocab_size: int = 49152,
     device: str = "cuda",
 ):
-    """Train a single variant for a given number of steps. Returns (model, optimizer, final_loss, step)."""
+    """Train a single variant for a given number of steps.
+
+    Returns (model, optimizer, final_loss, step).
+    """
 
     os.makedirs(checkpoint_dir, exist_ok=True)
 
@@ -152,11 +171,19 @@ def train_variant(
         optimizer = existing_optimizer
         start_step = existing_step
     else:
-        model = HamnerModel(config).to(device)
+        config = variant.config
+        config.vocab_size = vocab_size
+        config.max_seq_len = seq_len
+        model = create_model(config).to(device)
         total_params, _ = model.count_parameters()
         console.print(f"  [cyan]{name}[/cyan]: {total_params:,} params, {total_params*2/1e6:.1f}MB (fp16)")
 
-        optimizer = torch.optim.AdamW(model.parameters(), lr=lr, betas=(0.9, 0.95), weight_decay=0.1)
+        # Use custom param groups if available (e.g., emotional transformer)
+        if variant.param_group_fn is not None:
+            param_groups = variant.param_group_fn(model, lr)
+            optimizer = torch.optim.AdamW(param_groups, betas=(0.9, 0.95), weight_decay=0.1)
+        else:
+            optimizer = torch.optim.AdamW(model.parameters(), lr=lr, betas=(0.9, 0.95), weight_decay=0.1)
         start_step = 0
 
     model.train()
@@ -187,8 +214,16 @@ def train_variant(
         else:
             progress = (step - warmup_steps) / max(1, total_steps - warmup_steps)
             current_lr = lr * 0.5 * (1.0 + math.cos(math.pi * progress))
+
         for pg in optimizer.param_groups:
-            pg["lr"] = current_lr
+            # Scale LR proportionally for each group (preserves emotional LR ratio)
+            if variant.param_group_fn is not None and "_base_lr" not in pg:
+                pg["_base_lr"] = pg["lr"]
+            if variant.param_group_fn is not None:
+                base = pg["_base_lr"]
+                pg["lr"] = base * (current_lr / lr) if lr > 0 else 0
+            else:
+                pg["lr"] = current_lr
 
         # Forward pass with AMP
         optimizer.zero_grad(set_to_none=True)
@@ -209,7 +244,7 @@ def train_variant(
         # Log every 50 steps
         if (step + 1) % 50 == 0 or step == start_step:
             elapsed = time.time() - start_time
-            tokens_per_sec = (step - start_step + 1) * batch_size * config.max_seq_len / elapsed
+            tokens_per_sec = (step - start_step + 1) * batch_size * seq_len / elapsed
             avg_loss = sum(losses[-50:]) / len(losses[-50:])
             console.print(
                 f"  [{name}] step {step+1}/{start_step+num_steps} | "
@@ -217,15 +252,15 @@ def train_variant(
                 f"{tokens_per_sec:.0f} tok/s"
             )
 
-    # Save checkpoint
+    # Save checkpoint (strip torch.compile prefix from keys)
     ckpt_path = os.path.join(checkpoint_dir, f"{name}_step{start_step+num_steps}.pt")
     torch.save({
-        "model_state_dict": model.state_dict(),
+        "model_state_dict": _strip_prefix(model.state_dict()),
         "optimizer_state_dict": optimizer.state_dict(),
-        "config": config.__dict__,
         "step": start_step + num_steps,
         "loss": losses[-1] if losses else float("inf"),
         "avg_loss_last_100": sum(losses[-100:]) / len(losses[-100:]) if losses else float("inf"),
+        "variant_name": name,
     }, ckpt_path)
     console.print(f"  [green]Saved checkpoint: {ckpt_path}[/green]")
 
@@ -284,7 +319,8 @@ def run_tournament(
     """Run the full tournament."""
 
     console.print("\n[bold magenta]" + "=" * 70 + "[/bold magenta]")
-    console.print("[bold magenta]  HAMNER ARCHITECTURE TOURNAMENT[/bold magenta]")
+    console.print("[bold magenta]  HAMNER ARCHITECTURE TOURNAMENT v2[/bold magenta]")
+    console.print("[bold magenta]  10 Diverse Architectures Compete[/bold magenta]")
     console.print("[bold magenta]" + "=" * 70 + "[/bold magenta]\n")
 
     # Load tokenizer
@@ -293,12 +329,10 @@ def run_tournament(
     tokenizer = AutoTokenizer.from_pretrained("HuggingFaceTB/cosmo2-tokenizer")
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
+    vocab_size = tokenizer.vocab_size
 
-    # Update all configs with correct vocab size
+    # Get all variant definitions
     variants = get_variant_configs()
-    for name, config in variants.items():
-        config.vocab_size = tokenizer.vocab_size
-        config.max_seq_len = seq_len
 
     # Create datasets
     console.print("[bold]Preparing training data (streaming from FineWeb-Edu)...[/bold]")
@@ -312,24 +346,18 @@ def run_tournament(
     console.print("\n[bold yellow]CONTESTANTS:[/bold yellow]")
     table = Table(title="Architecture Variants")
     table.add_column("Name", style="cyan")
-    table.add_column("Params (est)", style="green")
-    table.add_column("Attention", style="magenta")
-    table.add_column("MLP", style="blue")
-    table.add_column("Layers", style="yellow")
-    table.add_column("Hidden", style="white")
+    table.add_column("Architecture", style="magenta")
+    table.add_column("Description", style="white")
 
-    for name, config in variants.items():
-        est = config.total_params_estimate()
-        attn = "DiffAttn" if config.use_differential_attention else "Standard"
-        mlp = f"MoE-{config.num_experts}" if config.is_moe else "Dense"
-        table.add_row(name, f"{est:,}", attn, mlp, str(config.num_layers), str(config.hidden_size))
+    for name, variant in variants.items():
+        table.add_row(name, variant.config.architecture, variant.description)
     console.print(table)
 
     results_log = []
 
     # ==================== ROUND 1 ====================
     console.print(f"\n[bold red]{'='*70}[/bold red]")
-    console.print(f"[bold red]  ROUND 1: All 10 variants x {round1_steps} steps[/bold red]")
+    console.print(f"[bold red]  ROUND 1: All {len(variants)} variants x {round1_steps} steps[/bold red]")
     console.print(f"[bold red]{'='*70}[/bold red]\n")
 
     round1_results = {}
@@ -337,13 +365,15 @@ def run_tournament(
     optimizers = {}
     steps = {}
 
-    for name, config in variants.items():
-        console.print(f"\n[bold cyan]Training {name}...[/bold cyan]")
+    for name, variant in variants.items():
+        console.print(f"\n[bold cyan]Training {name} [{variant.config.architecture}]...[/bold cyan]")
         try:
             model, opt, avg_loss, final_step = train_variant(
-                name, config, train_dataset,
-                num_steps=round1_steps, batch_size=batch_size, lr=lr,
+                name, variant, train_dataset,
+                num_steps=round1_steps, seq_len=seq_len,
+                batch_size=batch_size, lr=lr,
                 checkpoint_dir=os.path.join(checkpoint_dir, "round1"),
+                vocab_size=vocab_size,
                 device=device,
             )
             round1_results[name] = avg_loss
@@ -351,12 +381,14 @@ def run_tournament(
             optimizers[name] = opt
             steps[name] = final_step
 
-            # Move model to CPU to save GPU memory
+            # Move model + optimizer state to CPU to save GPU memory
             model.cpu()
+            _move_optimizer(opt, "cpu")
             torch.cuda.empty_cache()
 
         except Exception as e:
             console.print(f"  [red]FAILED: {e}[/red]")
+            console.print(f"  [dim]{traceback.format_exc()}[/dim]")
             round1_results[name] = float("inf")
 
     # Show Round 1 results
@@ -365,6 +397,7 @@ def run_tournament(
     r1_table = Table(title="Round 1 Rankings")
     r1_table.add_column("Rank", style="bold")
     r1_table.add_column("Variant", style="cyan")
+    r1_table.add_column("Arch", style="magenta")
     r1_table.add_column("Avg Loss", style="green")
     r1_table.add_column("Status", style="magenta")
 
@@ -372,7 +405,9 @@ def run_tournament(
     for i, (name, loss) in enumerate(sorted_r1):
         status = "ADVANCES" if name in top5_names else "ELIMINATED"
         style = "green" if status == "ADVANCES" else "red"
-        r1_table.add_row(str(i+1), name, f"{loss:.4f}", f"[{style}]{status}[/{style}]")
+        arch = variants[name].config.architecture
+        loss_str = f"{loss:.4f}" if loss != float("inf") else "FAILED"
+        r1_table.add_row(str(i+1), name, arch, loss_str, f"[{style}]{status}[/{style}]")
     console.print(r1_table)
 
     results_log.append({"round": 1, "results": dict(sorted_r1), "advanced": top5_names})
@@ -392,27 +427,34 @@ def run_tournament(
 
     round2_results = {}
     for name in top5_names:
-        config = variants[name]
-        config.max_seq_len = seq_len
-        console.print(f"\n[bold cyan]Continuing {name}...[/bold cyan]")
+        if name not in models:
+            round2_results[name] = float("inf")
+            continue
+        variant = variants[name]
+        console.print(f"\n[bold cyan]Continuing {name} [{variant.config.architecture}]...[/bold cyan]")
         try:
             models[name] = models[name].to(device)
+            _move_optimizer(optimizers[name], device)
             model, opt, avg_loss, final_step = train_variant(
-                name, config, train_dataset,
-                num_steps=round2_steps, batch_size=batch_size, lr=lr * 0.5,
+                name, variant, train_dataset,
+                num_steps=round2_steps, seq_len=seq_len,
+                batch_size=batch_size, lr=lr * 0.5,
                 checkpoint_dir=os.path.join(checkpoint_dir, "round2"),
                 existing_model=models[name],
                 existing_optimizer=optimizers[name],
                 existing_step=steps[name],
+                vocab_size=vocab_size,
                 device=device,
             )
             round2_results[name] = avg_loss
             models[name] = model.cpu()
+            _move_optimizer(opt, "cpu")
             optimizers[name] = opt
             steps[name] = final_step
             torch.cuda.empty_cache()
         except Exception as e:
             console.print(f"  [red]FAILED: {e}[/red]")
+            console.print(f"  [dim]{traceback.format_exc()}[/dim]")
             round2_results[name] = float("inf")
 
     sorted_r2 = sorted(round2_results.items(), key=lambda x: x[1])
@@ -422,12 +464,15 @@ def run_tournament(
     r2_table = Table(title="Round 2 Rankings")
     r2_table.add_column("Rank", style="bold")
     r2_table.add_column("Variant", style="cyan")
+    r2_table.add_column("Arch", style="magenta")
     r2_table.add_column("Avg Loss", style="green")
     r2_table.add_column("Status", style="magenta")
     for i, (name, loss) in enumerate(sorted_r2):
         status = "ADVANCES" if name in top3_names else "ELIMINATED"
         style = "green" if status == "ADVANCES" else "red"
-        r2_table.add_row(str(i+1), name, f"{loss:.4f}", f"[{style}]{status}[/{style}]")
+        arch = variants[name].config.architecture
+        loss_str = f"{loss:.4f}" if loss != float("inf") else "FAILED"
+        r2_table.add_row(str(i+1), name, arch, loss_str, f"[{style}]{status}[/{style}]")
     console.print(r2_table)
 
     results_log.append({"round": 2, "results": dict(sorted_r2), "advanced": top3_names})
@@ -446,27 +491,34 @@ def run_tournament(
 
     round3_results = {}
     for name in top3_names:
-        config = variants[name]
-        config.max_seq_len = seq_len
-        console.print(f"\n[bold cyan]Continuing {name}...[/bold cyan]")
+        if name not in models:
+            round3_results[name] = float("inf")
+            continue
+        variant = variants[name]
+        console.print(f"\n[bold cyan]Continuing {name} [{variant.config.architecture}]...[/bold cyan]")
         try:
             models[name] = models[name].to(device)
+            _move_optimizer(optimizers[name], device)
             model, opt, avg_loss, final_step = train_variant(
-                name, config, train_dataset,
-                num_steps=round3_steps, batch_size=batch_size, lr=lr * 0.25,
+                name, variant, train_dataset,
+                num_steps=round3_steps, seq_len=seq_len,
+                batch_size=batch_size, lr=lr * 0.25,
                 checkpoint_dir=os.path.join(checkpoint_dir, "round3"),
                 existing_model=models[name],
                 existing_optimizer=optimizers[name],
                 existing_step=steps[name],
+                vocab_size=vocab_size,
                 device=device,
             )
             round3_results[name] = avg_loss
             models[name] = model.cpu()
+            _move_optimizer(opt, "cpu")
             optimizers[name] = opt
             steps[name] = final_step
             torch.cuda.empty_cache()
         except Exception as e:
             console.print(f"  [red]FAILED: {e}[/red]")
+            console.print(f"  [dim]{traceback.format_exc()}[/dim]")
             round3_results[name] = float("inf")
 
     sorted_r3 = sorted(round3_results.items(), key=lambda x: x[1])
@@ -476,12 +528,15 @@ def run_tournament(
     r3_table = Table(title="Round 3 Rankings")
     r3_table.add_column("Rank", style="bold")
     r3_table.add_column("Variant", style="cyan")
+    r3_table.add_column("Arch", style="magenta")
     r3_table.add_column("Avg Loss", style="green")
     r3_table.add_column("Status", style="magenta")
     for i, (name, loss) in enumerate(sorted_r3):
         status = "WINNER!" if name == winner_name else "Runner-up"
         style = "bold green" if status == "WINNER!" else "yellow"
-        r3_table.add_row(str(i+1), name, f"{loss:.4f}", f"[{style}]{status}[/{style}]")
+        arch = variants[name].config.architecture
+        loss_str = f"{loss:.4f}" if loss != float("inf") else "FAILED"
+        r3_table.add_row(str(i+1), name, arch, loss_str, f"[{style}]{status}[/{style}]")
     console.print(r3_table)
 
     results_log.append({"round": 3, "results": dict(sorted_r3), "winner": winner_name})
@@ -494,39 +549,49 @@ def run_tournament(
     # ==================== FINAL: Extended training for winner ====================
     console.print(f"\n[bold magenta]{'='*70}[/bold magenta]")
     console.print(f"[bold magenta]  CHAMPION: {winner_name}[/bold magenta]")
-    console.print(f"[bold magenta]  Starting extended training...[/bold magenta]")
+    console.print(f"[bold magenta]  {variants[winner_name].description}[/bold magenta]")
+    console.print(f"[bold magenta]  Starting extended training at seq_len=1024...[/bold magenta]")
     console.print(f"[bold magenta]{'='*70}[/bold magenta]\n")
 
-    winner_config = variants[winner_name]
-    # Scale up for final training
-    winner_config.max_seq_len = 1024  # longer sequences now
+    winner_variant = variants[winner_name]
 
-    # Rebuild model with longer seq len (need to update RoPE)
-    winner_model = HamnerModel(winner_config).to(device)
-    # Load weights from tournament (seq_len agnostic except RoPE buffer which is re-created)
-    # We need to be careful - the old model had shorter RoPE. The new one has longer.
-    # Since RoPE is a buffer (not parameter), the state_dict loading handles it.
-    old_state = models[winner_name].state_dict()
-    # Filter out RoPE buffers as they'll be different size
-    new_state = {k: v for k, v in old_state.items() if "rope_" not in k}
-    winner_model.load_state_dict(new_state, strict=False)
+    # Create fresh model with longer seq_len for final training
+    final_seq_len = 1024
+    winner_config = winner_variant.config
+    winner_config.vocab_size = vocab_size
+    winner_config.max_seq_len = final_seq_len
+    winner_model = create_model(winner_config).to(device)
+
+    # Load weights from tournament model (strip compile prefix, filter mismatches)
+    old_state = _strip_prefix(models[winner_name].state_dict())
+    new_state_dict = winner_model.state_dict()
+    compatible_state = {
+        k: v for k, v in old_state.items()
+        if k in new_state_dict and v.shape == new_state_dict[k].shape
+    }
+    winner_model.load_state_dict(compatible_state, strict=False)
 
     total_p, _ = winner_model.count_parameters()
     console.print(f"[bold green]Winner: {winner_name} ({total_p:,} params)[/bold green]")
-    console.print(f"[bold green]{describe_variant(winner_name, winner_config)}[/bold green]")
+    console.print(f"[bold green]{describe_variant(winner_name, winner_variant)}[/bold green]")
 
     # Create new dataset with longer sequences
     final_dataset = StreamingTextDataset(
-        tokenizer, seq_len=1024, num_samples=500000,
+        tokenizer, seq_len=final_seq_len, num_samples=500000,
         dataset_name="HuggingFaceFW/fineweb-edu",
         dataset_config="sample-10BT",
     )
 
-    # Train continuously with checkpoints
-    final_optimizer = torch.optim.AdamW(
-        winner_model.parameters(), lr=lr * 0.1,
-        betas=(0.9, 0.95), weight_decay=0.1
-    )
+    # Create optimizer (with custom param groups if needed)
+    if winner_variant.param_group_fn is not None:
+        param_groups = winner_variant.param_group_fn(winner_model, lr * 0.1)
+        final_optimizer = torch.optim.AdamW(param_groups, betas=(0.9, 0.95), weight_decay=0.1)
+    else:
+        final_optimizer = torch.optim.AdamW(
+            winner_model.parameters(), lr=lr * 0.1,
+            betas=(0.9, 0.95), weight_decay=0.1
+        )
+
     scaler = torch.amp.GradScaler("cuda")
     winner_model.train()
 
@@ -572,7 +637,7 @@ def run_tournament(
                 if step % 100 == 0:
                     elapsed = time.time() - start_time
                     avg = sum(losses[-100:]) / len(losses[-100:])
-                    tps = step * batch_size * 1024 / elapsed
+                    tps = step * batch_size * final_seq_len / elapsed
                     hours = elapsed / 3600
                     console.print(
                         f"[{winner_name}] step {step} | loss={avg:.4f} | "
@@ -583,9 +648,8 @@ def run_tournament(
                     # Save checkpoint
                     ckpt = os.path.join(final_dir, f"checkpoint_step{step}.pt")
                     torch.save({
-                        "model_state_dict": winner_model.state_dict(),
+                        "model_state_dict": _strip_prefix(winner_model.state_dict()),
                         "optimizer_state_dict": final_optimizer.state_dict(),
-                        "config": winner_config.__dict__,
                         "step": step,
                         "avg_loss": sum(losses[-100:]) / len(losses[-100:]),
                         "variant_name": winner_name,
@@ -595,9 +659,8 @@ def run_tournament(
                     # Also save as "latest"
                     latest = os.path.join(final_dir, "latest.pt")
                     torch.save({
-                        "model_state_dict": winner_model.state_dict(),
+                        "model_state_dict": _strip_prefix(winner_model.state_dict()),
                         "optimizer_state_dict": final_optimizer.state_dict(),
-                        "config": winner_config.__dict__,
                         "step": step,
                         "avg_loss": sum(losses[-100:]) / len(losses[-100:]),
                         "variant_name": winner_name,
@@ -611,9 +674,8 @@ def run_tournament(
         # Final save
         final_ckpt = os.path.join(final_dir, f"final_step{step}.pt")
         torch.save({
-            "model_state_dict": winner_model.state_dict(),
+            "model_state_dict": _strip_prefix(winner_model.state_dict()),
             "optimizer_state_dict": final_optimizer.state_dict(),
-            "config": winner_config.__dict__,
             "step": step,
             "avg_loss": sum(losses[-100:]) / len(losses[-100:]) if losses else float("inf"),
             "variant_name": winner_name,
@@ -624,7 +686,7 @@ def run_tournament(
     elapsed_total = time.time() - start_time
     console.print(f"\n[bold magenta]{'='*70}[/bold magenta]")
     console.print(f"[bold magenta]  TRAINING COMPLETE[/bold magenta]")
-    console.print(f"[bold magenta]  Winner: {winner_name}[/bold magenta]")
+    console.print(f"[bold magenta]  Winner: {winner_name} ({variants[winner_name].config.architecture})[/bold magenta]")
     console.print(f"[bold magenta]  Total steps: {step}[/bold magenta]")
     console.print(f"[bold magenta]  Final loss: {sum(losses[-100:])/len(losses[-100:]) if losses else 'N/A'}[/bold magenta]")
     console.print(f"[bold magenta]  Time: {elapsed_total/3600:.1f} hours[/bold magenta]")
@@ -636,7 +698,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Hamner Architecture Tournament")
     parser.add_argument("--checkpoint-dir", default="checkpoints", help="Where to save checkpoints")
     parser.add_argument("--seq-len", type=int, default=512, help="Sequence length for tournament rounds")
-    parser.add_argument("--batch-size", type=int, default=16, help="Batch size")
+    parser.add_argument("--batch-size", type=int, default=4, help="Batch size")
     parser.add_argument("--lr", type=float, default=3e-4, help="Learning rate")
     parser.add_argument("--round1-steps", type=int, default=500, help="Steps per variant in round 1")
     parser.add_argument("--round2-steps", type=int, default=1000, help="Additional steps in round 2")
