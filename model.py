@@ -344,7 +344,10 @@ class HamnerModel(nn.Module):
         ).unsqueeze(0).unsqueeze(0)
 
         if attention_mask is not None:
-            pad_mask = (1.0 - attention_mask.float()).unsqueeze(1).unsqueeze(2) * float("-inf")
+            # Build pad mask: 0 for valid tokens, -inf for padding
+            # Note: can't use (1-mask)*-inf because 0*-inf = NaN in IEEE 754
+            pad_mask = torch.zeros(bsz, 1, 1, seq_len, device=device, dtype=x.dtype)
+            pad_mask.masked_fill_(attention_mask[:, None, None, :] == 0, float("-inf"))
             causal_mask = causal_mask + pad_mask
 
         total_aux_loss = torch.tensor(0.0, device=device, dtype=x.dtype)
