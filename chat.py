@@ -16,7 +16,7 @@ import readline  # enables arrow keys + history in input()
 from model import HamnerModel, HamnerConfig
 
 # Defaults
-DEFAULT_CHECKPOINT = "checkpoints/sft/latest.pt"
+DEFAULT_CHECKPOINT = "checkpoints/sft/best.pt"
 FALLBACK_CHECKPOINT = "checkpoints/pretrain_v2/latest.pt"
 DEFAULT_SYSTEM_PROMPT = (
     "You are Al Hamner, a sharp-witted AI made by David Hamner. "

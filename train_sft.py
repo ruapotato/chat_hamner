@@ -29,26 +29,26 @@ from model import HamnerModel, HamnerConfig
 # Config
 # ---------------------------------------------------------------------------
 
-BASE_CHECKPOINT = "checkpoints/pretrain_v2/latest.pt"
+BASE_CHECKPOINT = "checkpoints/chat_pretrain/step_0020000.pt"
 SFT_CHECKPOINT_DIR = "checkpoints/sft"
-SFT_DATA = "data/personal/sft_conversations.jsonl"
+SFT_DATA = "data/personal/sft_diverse_v2.jsonl"
 VOICE_SAMPLES_FILE = "data/personal/voice_sample.txt"
 LOG_FILE = "logs/sft.log"
 METRICS_FILE = "logs/sft_metrics.csv"
 SAMPLES_FILE = "logs/sft_samples.jsonl"
 
 # Training hyperparameters
-NUM_EPOCHS = 15
-BATCH_SIZE = 24
+NUM_EPOCHS = 5
+BATCH_SIZE = 8
 SEQ_LEN = 1024
-LR = 2e-5
-WARMUP_STEPS = 100
+LR = 5e-5
+WARMUP_STEPS = 50
 WEIGHT_DECAY = 0.1
 GRAD_CLIP = 1.0
 
 # Logging / checkpointing
-CHECKPOINT_EVERY = 500
-SAMPLE_EVERY = 200
+CHECKPOINT_EVERY = 250
+SAMPLE_EVERY = 100
 LOG_EVERY = 10
 
 # Fallback system prompt (used if voice_sample.txt not found)
@@ -61,8 +61,10 @@ SYSTEM_PROMPT = (
 # Test prompts for tracking personality emergence
 SAMPLE_USER_MESSAGES = [
     "hello!",
-    "what's the best programming language?",
+    "who made you?",
     "tell me about yourself",
+    "what is 15 + 23?",
+    "what's the best programming language?",
     "what do you think about AI taking over the world?",
 ]
 
@@ -267,7 +269,7 @@ def save_checkpoint(model, optimizer, scaler, config, step, epoch, loss,
 
     # Cleanup: keep last 5 step checkpoints
     all_ckpts = sorted(Path(checkpoint_dir).glob("step_*.pt"))
-    to_keep = set(all_ckpts[-5:])
+    to_keep = set(all_ckpts[-10:])
     for c in all_ckpts:
         if c not in to_keep:
             c.unlink()
@@ -543,7 +545,7 @@ def train(base_checkpoint=None, resume=False):
             # Generate samples
             if global_step % SAMPLE_EVERY == 0:
                 log("--- SAMPLE GENERATIONS ---")
-                samples = generate_samples(model, tokenizer, voice_prompts[:4], device)
+                samples = generate_samples(model, tokenizer, voice_prompts[:6], device)
                 for user_msg, response in samples.items():
                     log(f"  User: {user_msg}")
                     log(f"  Al:   {response[:300]}")
@@ -597,6 +599,19 @@ if __name__ == "__main__":
                         help="Path to pretrained base checkpoint (default: pretrain_v2/latest.pt)")
     parser.add_argument("--resume", action="store_true",
                         help="Resume from latest SFT checkpoint")
+    parser.add_argument("--epochs", type=int, default=None,
+                        help="Override number of epochs (default: NUM_EPOCHS)")
+    parser.add_argument("--data", type=str, default=None,
+                        help="Override SFT data file")
+    parser.add_argument("--lr", type=float, default=None,
+                        help="Override learning rate")
     args = parser.parse_args()
+
+    if args.epochs is not None:
+        NUM_EPOCHS = args.epochs
+    if args.data is not None:
+        SFT_DATA = args.data
+    if args.lr is not None:
+        LR = args.lr
 
     train(base_checkpoint=args.checkpoint, resume=args.resume)
