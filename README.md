@@ -219,8 +219,8 @@ We ran experiments on what a 164M model can learn through SFT:
 | Best strategy? | Joint training with experience replay |
 
 ```bash
-python concept_experiments_v2.py    # SFT masking experiments
-python concept_experiments_v3.py    # generalization/composition/retention
+python legacy/concept_experiments_v2.py    # SFT masking experiments
+python legacy/concept_experiments_v3.py    # generalization/composition/retention
 ```
 
 ## Tournament Architecture Search
@@ -255,18 +255,17 @@ chat_hamner/
 ├── generate_sft_data.py      # Generate tech SFT data (6,010 convos)
 ├── test_ood.py               # Out-of-distribution evaluation
 ├── synthetic_tasks.py        # Synthetic task generators
-├── tournament.py             # Architecture tournament
-├── variants.py               # 10 variant configs
 ├── plot_training.py          # Training metrics visualization
 ├── process_youtube.py        # YouTube transcript processor
-├── concept_experiments*.py   # SFT learning experiments
 ├── data/
 │   └── personal/             # SFT data, YouTube transcripts, voice samples
 ├── checkpoints/
 │   ├── pretrain_v2/          # Stage 1 checkpoint
 │   ├── chat_pretrain/        # Stage 2 checkpoint
 │   └── sft/                  # Stage 3 checkpoints (best.pt = final model)
-└── logs/                     # Training logs, metrics CSVs, sample generations
+├── logs/                     # Training logs, metrics CSVs, sample generations
+└── legacy/                   # Old experiments: tournament, concept experiments,
+                              # alternative architectures (Mamba, RWKV, xLSTM, etc.)
 ```
 
 ## System Requirements
