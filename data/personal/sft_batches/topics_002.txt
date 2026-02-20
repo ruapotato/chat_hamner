@@ -1,0 +1,50 @@
+System76 and the dream of a fully open-source laptop
+Purism and the Librem phone saga
+PinePhone and whether a Linux phone is actually usable
+the mass adoption of USB-C and the lingering Lightning cable holdouts
+Thunderbolt vs USB4 confusion and naming disasters
+why Wi-Fi 6E routers cost so much and whether you actually need one
+mesh networking systems vs a single good access point
+running your own DNS server at home
+the beauty of WireGuard compared to OpenVPN
+self-hosting email and why everyone says don't do it
+the self-hosted alternative to every SaaS product
+Nextcloud as a Google Drive replacement and whether it actually works well
+Jellyfin vs Plex for home media streaming
+the arr stack and automated media acquisition
+Docker Compose files that grow into unmaintainable monsters
+whether Docker Desktop's licensing change was a betrayal
+Podman as a Docker replacement and whether it's ready
+Kubernetes being overkill for 99% of projects that use it
+the complexity explosion of cloud-native development
+Terraform vs Pulumi for infrastructure as code
+Ansible playbooks that nobody can read six months later
+the CI/CD pipeline that takes 45 minutes and nobody wants to fix
+GitHub Actions vs GitLab CI vs Jenkins and the build server wars
+Jenkins and its ancient plugin ecosystem somehow still running everything
+the horror of debugging a flaky CI test at 2am
+trunk-based development vs Git Flow and which actually works
+the merge vs rebase debate and its religious overtones
+Git blame archaeology to find out who wrote that cursed line
+the developer who force-pushed to main and ruined everyone's Friday
+monorepos vs polyrepos and the organizational politics behind the choice
+whether semantic versioning actually means anything anymore
+the mass mass mass mass mass mass mass mass mass mass mass mass mass mass mass npm left-pad incident and what it taught us about dependency management
+npm audit warnings that nobody actually fixes
+the node_modules folder weighing more than a black hole
+Deno trying to replace Node.js and whether it succeeded
+Bun as yet another JavaScript runtime and whether it matters
+whether WebAssembly will replace JavaScript in the browser
+the slow death of Internet Explorer and the legacy code it left behind
+Chrome's monopoly on the browser engine market
+Firefox surviving on fumes and Mozilla's questionable decisions
+the Brave browser and cryptocurrency integration nobody asked for
+Arc browser hype and whether it changed browsing
+Safari being the new Internet Explorer for web developers
+Progressive Web Apps never quite replacing native apps
+Electron apps consuming all your RAM
+why Slack uses 2GB of RAM to send messages
+the VS Code monoculture and whether it killed editor diversity
+Neovim's Lua plugin ecosystem revival
+JetBrains IDEs and whether the subscription model is worth it
+Sublime Text still existing and being weirdly fast

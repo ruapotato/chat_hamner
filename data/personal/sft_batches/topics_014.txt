@@ -1,0 +1,50 @@
+the acqui-hire and what happens to the product after
+corporate open-source and the community edition vs enterprise split
+MongoDB's license change to SSPL and the backlash
+the ElasticSearch fork to OpenSearch by AWS
+the MySQL fork ecosystem and MariaDB's independence
+database forks and the fracturing of communities
+the Linux kernel development process and Linus's management style
+Linus Torvalds's famous rants and whether they helped or hurt
+the Code of Conduct debates in open-source communities
+the meritocracy myth in tech and open source
+diversity in tech and the pipeline problem narrative
+women in STEM initiatives and whether they're working
+the bro culture in Silicon Valley and efforts to change it
+tech ethics courses and whether they make a difference
+the trolley problem applied to autonomous vehicles
+algorithmic bias in hiring tools and criminal justice
+facial recognition accuracy disparities across demographics
+predictive policing algorithms and their feedback loops
+content moderation at scale and the impossible task
+Section 230 and the future of platform liability
+the EU AI Act and its impact on development
+the AI regulation debate and who should be in charge
+OpenAI's transition from nonprofit to capped-profit to whatever it is now
+Anthropic's Constitutional AI approach
+Google DeepMind's research priorities and safety focus
+Meta open-sourcing Llama and the motivations behind it
+Mistral and the European AI challenger narrative
+the Chinese AI labs and the US-China tech competition
+export controls on AI chips and their geopolitical implications
+the CHIPS Act and reshoring semiconductor manufacturing
+TSMC's importance to the global tech supply chain
+the semiconductor fab construction boom
+EUV lithography and the insane complexity of modern chip manufacturing
+Moore's Law being dead or just slowing down depending on who you ask
+the end of Dennard scaling and its impact on processor design
+chiplet architectures and the future of CPU design
+RISC-V and the open-source processor revolution
+the ARM licensing model and its dominance in mobile
+Apple designing its own chips and vertical integration benefits
+Qualcomm's Snapdragon X Elite and Windows on ARM
+the x86 emulation overhead and compatibility concerns
+NVIDIA CUDA's lock-in and alternatives like ROCm and oneAPI
+AMD ROCm still not matching CUDA's ecosystem
+the GPU computing paradigm and how it changed everything
+tensor cores and specialized hardware for AI workloads
+TPUs and Google's custom AI hardware approach
+the neuromorphic computing research and Intel Loihi
+quantum computing hype vs reality
+IBM's quantum roadmap and whether it's achievable
+the quantum supremacy claims and rebuttals

@@ -1,0 +1,50 @@
+CockroachDB and NewSQL trying to have it all
+time-series databases and the InfluxDB vs TimescaleDB choice
+graph databases and whether anyone uses Neo4j in production
+the data lakehouse buzzword and what it actually means
+Apache Kafka becoming the backbone of modern data pipelines
+the Kafka consumer lag that slowly ate all the disk space
+event sourcing and CQRS sounding great until you implement them
+data engineering becoming a separate discipline from software engineering
+dbt transforming how data teams work
+the modern data stack and its absurd tool count
+Snowflake's IPO and the cloud data warehouse gold rush
+BigQuery vs Redshift vs Snowflake for analytics
+data governance and the nightmare of data lineage
+the ETL vs ELT debate and why the order matters
+Airflow DAGs that look like spaghetti
+Dagster and Prefect trying to replace Airflow
+real-time data processing and whether anyone actually needs it
+the data mesh concept and whether it's just organizational politics
+data quality issues being the #1 complaint at every company
+Excel still being the most popular database in the world
+the JSON column in PostgreSQL and whether it defeats the purpose
+ORMs making simple queries complicated and complex queries impossible
+N+1 query problems that tank production performance
+database migrations that lock tables for hours
+the terror of running ALTER TABLE on a massive production database
+connection pooling and why your app is running out of connections
+database replication lag and the eventual consistency headache
+sharding a database and the regret that follows
+the CAP theorem and why people still argue about it
+choosing eventual consistency and the bugs that appear six months later
+the iPhone vs Android debate among tech workers
+Apple's walled garden approach and developer frustration
+sideloading on iOS and the EU forcing Apple's hand
+Android fragmentation and testing on 47 different screen sizes
+whether flagship phones have reached peak performance
+the folding phone experiment and whether it's the future
+smartphone cameras replacing professional cameras for most people
+computational photography and Night Sight changing phone photography
+the headphone jack removal and the wireless audio compromise
+USB-C on everything and the end of proprietary chargers
+right-to-repair legislation and its effect on phone design
+planned obsolescence in tech and the evidence for it
+the e-waste crisis and what happens to old electronics
+refurbished tech and whether it's worth buying
+phone cases that are uglier than the phone
+wireless charging being slower and less efficient but somehow winning
+MagSafe and the return of magnetic accessories
+iPad Pro being more powerful than most laptops and having worse software
+Apple Vision Pro and whether spatial computing is the future
+Meta Quest headsets and standalone VR's potential

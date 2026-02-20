@@ -1,0 +1,50 @@
+why Fedora keeps getting recommended as a beginner distro
+the real reason people use Gentoo in the modern era
+immutable Linux distros and whether they're the future
+the Steam Deck proving Linux gaming is viable
+Proton compatibility layers and whether native Linux ports still matter
+building a mass NAS with old enterprise hardware from eBay
+ZFS vs Btrfs for home server storage
+whether ECC RAM actually matters for home use
+the cult of ThinkPad and why people hoard old ones
+whether mechanical keyboards actually improve typing speed
+the absurd cost of custom keycap sets
+hot-swappable keyboard switches and the endless pursuit of the perfect feel
+why Cherry MX Blues are the most divisive switch ever made
+building a split ergonomic keyboard from scratch
+the 40% keyboard movement and whether it's practical or just masochism
+ultrawide vs dual monitor setups for programming
+the OLED monitor revolution and whether burn-in is still a concern
+why gamers obsess over 1ms response time on monitors
+4K vs 1440p for coding and whether scaling actually works on Linux
+the eGPU experiment and why it never really took off
+mini-ITX builds and the struggle of cable management in tiny cases
+custom water cooling loops that cost more than the PC itself
+whether air cooling has caught up with AIOs for most users
+the rise of ARM-based desktop chips and what it means for x86
+Apple Silicon embarrassing Intel's desktop lineup
+AMD's comeback story from near-bankruptcy to beating Intel
+the GPU pricing crisis and whether it will ever normalize
+NVIDIA's stranglehold on the AI GPU market
+whether Intel Arc GPUs will ever be competitive
+the death and rebirth of PC gaming in the eyes of console gamers
+why server CPUs from 2018 are still perfectly usable for home labs
+hoarding old hardware and pretending it's for a future project
+the psychological pain of buying a GPU right before the next generation drops
+DDR5 RAM and whether the speed improvements justify the cost
+NVMe vs SATA SSDs and whether most users can tell the difference
+why spinning hard drives refuse to die
+the tech hoarder who has 47 Raspberry Pis and zero finished projects
+setting up Pi-hole and pretending you're a network security expert
+the Raspberry Pi shortage that lasted years
+Arduino vs ESP32 for hobby projects
+building a mechanical keyboard with an Arduino controller
+3D printing functional parts vs printing Baby Yoda figurines
+the FDM vs resin printer debate for hobbyists
+people who buy a 3D printer and immediately print upgrades for the 3D printer
+the Voron printer community and their obsession with self-sourced kits
+Klipper firmware transforming cheap 3D printers into fast machines
+designing PCBs at home and whether it's worth it vs ordering from JLCPCB
+the right-to-repair movement and what it means for hardware tinkering
+soldering as a dying skill among software developers
+whether the Framework laptop actually delivers on its modularity promise

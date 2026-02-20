@@ -1,0 +1,50 @@
+programming language design as a creative pursuit
+creating your own programming language as a learning exercise
+the transpiler trend and languages that compile to JavaScript
+CoffeeScript's rise and fall and what TypeScript learned from it
+Elm's influence on frontend architecture despite low adoption
+Haskell's reputation as a language everyone admires but nobody uses
+functional programming evangelists and the monad tutorial curse
+the "monad is just a monoid in the category of endofunctors" meme
+category theory in programming and whether it's useful
+dependent types and languages like Idris and Agda
+formal verification and Coq/Lean for proving software correctness
+the TLA+ specification language and Amazon's use of it
+property-based testing with QuickCheck and its descendants
+fuzzing and its effectiveness at finding security vulnerabilities
+AFL and libFuzzer finding thousands of bugs automatically
+the sanitizer tools and their role in C/C++ safety
+Valgrind and the memory debugging experience
+the undefined behavior dragon in C and C++
+the Rust borrow checker and the learning curve frustration
+Rust lifetimes being the concept that breaks most newcomers
+unsafe Rust and when you actually need it
+the Rust Foundation trademark policy controversy
+Rust in the Linux kernel and the cultural clash
+C++ committee drama and the language's growing complexity
+the C++ successor language debate and Carbon
+Carbon language's Google backing and community skepticism
+Mojo combining Python syntax with systems performance
+the Julia language for scientific computing and its niche
+R vs Python for data science and the statistical community divide
+MATLAB's licensing cost pushing academics to Python
+Jupyter notebooks and their role in reproducibility problems
+the notebook vs IDE workflow debate for data science
+Google Colab giving free GPU access and its limitations
+Kaggle competitions and whether they translate to real data science
+the data scientist vs ML engineer role confusion
+MLOps and the operationalization of machine learning models
+model serving infrastructure and the latency requirements
+ML model monitoring and detecting drift in production
+the feature store concept and its adoption
+experiment tracking with MLflow and Weights & Biases
+hyperparameter tuning and the computational cost
+AutoML and whether it's replacing data scientists
+the neural architecture search approach and its energy cost
+transfer learning making AI accessible to smaller teams
+few-shot learning and in-context learning in LLMs
+chain-of-thought prompting and reasoning in language models
+the emergence debate and whether LLMs truly reason
+the Chinese Room argument applied to modern AI systems
+consciousness in AI and whether it's even a meaningful question
+the hard problem of consciousness and AI

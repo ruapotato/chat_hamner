@@ -1,0 +1,50 @@
+chip decapping and the extreme lengths of hardware analysis
+side-channel attacks and power analysis vulnerabilities
+Spectre and Meltdown changing CPU architecture security
+the speculative execution vulnerability family and ongoing discoveries
+Rowhammer and the physical limits of memory security
+the Hertzbleed attack and frequency-based side channels
+hardware security modules and their role in key management
+the Trusted Platform Module and secure boot chain
+UEFI Secure Boot and its relationship with Linux
+the boot process and its attack surface
+firmware security and the BIOS-level implant threat
+Intel Management Engine and the black box in your CPU
+the AMD Platform Security Processor and similar concerns
+the backdoor concern in hardware from any country
+open-source hardware and the RISC-V transparency advantage
+the verification problem for hardware supply chains
+anti-tamper technology and hardware integrity
+trusted execution environments and Intel SGX
+confidential computing and encrypted virtual machines
+AMD SEV and its memory encryption approach
+the homomorphic encryption performance overhead
+lattice-based cryptography and the post-quantum transition
+the NIST post-quantum cryptography standardization
+hybrid cryptographic approaches during the transition period
+the Signal protocol and its widespread adoption
+the Matrix protocol and its federation model
+ActivityPub and the protocol powering the fediverse
+AT Protocol and Bluesky's approach to decentralized social media
+the protocol vs platform debate for social media
+email being the original federated protocol
+XMPP's decline and what it means for open protocols
+the interoperability mandate in the EU Digital Markets Act
+the DMA's impact on Apple and Google's ecosystems
+antitrust action against big tech and its effectiveness
+the tech regulation landscape across different jurisdictions
+Section 230 reform proposals and their potential consequences
+the EU Digital Services Act and content moderation requirements
+the AI liability directive and its implications for developers
+the California Consumer Privacy Act and state-level privacy laws
+the patchwork of privacy regulations and compliance complexity
+privacy engineering as a discipline and career path
+privacy by design principles in software development
+data minimization and its tension with machine learning needs
+the right to explanation for algorithmic decisions
+algorithmic auditing and transparency requirements
+the AI transparency paradox and trade secret protection
+model interpretability vs performance tradeoff
+explainable AI and the black box problem
+SHAP values and LIME for model explanations
+the fairness metrics debate in machine learning

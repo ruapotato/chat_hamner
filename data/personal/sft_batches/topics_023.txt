@@ -1,0 +1,50 @@
+neuro-symbolic AI and combining reasoning with learning
+the scaling laws debate and whether bigger is always better
+the Chinchilla scaling laws and their implications
+training compute costs doubling and the environmental impact
+the energy consumption of training large AI models
+carbon footprint of AI and the sustainability conversation
+green computing and sustainable software engineering
+the software carbon intensity specification
+energy-efficient coding practices and their actual impact
+the rebound effect in technology efficiency gains
+planned obsolescence vs sustainable technology design
+the circular economy for electronics
+modular phone concepts that keep failing
+the Fairphone as the sustainable smartphone option
+conflict minerals in electronics and the supply chain ethics
+cobalt mining conditions and the EV battery connection
+lithium extraction environmental concerns
+the battery technology race and solid-state promises
+sodium-ion batteries as a lithium alternative
+nuclear fusion progress and the perpetual 30-years-away joke
+small modular reactors and the tech industry's nuclear interest
+the data center energy demand driving nuclear power interest
+Microsoft's Three Mile Island power deal for AI
+Google's geothermal energy investments for data centers
+the hyperscaler energy consumption rivaling small countries
+water usage in data center cooling and the drought concern
+the environmental impact of Bitcoin mining specifically
+proof-of-stake reducing crypto's carbon footprint
+carbon offset credits and the tech industry greenwashing
+the sustainability report as a marketing document
+ESG metrics in tech and whether they mean anything
+the right to repair and Apple's self-service repair program
+the DMCA and its chilling effect on security research
+reverse engineering legality and the DMCA exemptions
+jailbreaking and rooting devices and the legal landscape
+the iPhone jailbreak community and its decline
+Android rooting becoming less necessary with each version
+custom ROMs like LineageOS and GrapheneOS
+GrapheneOS and the privacy-focused Android experience
+CalyxOS as a user-friendly private phone option
+the de-Googled Android movement and microG
+alternative app stores and F-Droid for open-source Android apps
+sideloading on Android and the upcoming restrictions
+Progressive Web Apps as an alternative to native apps on mobile
+the mobile browser engine restriction and EU's Digital Markets Act
+Apple being forced to allow alternative browser engines on iOS
+the WebKit monoculture on iOS and its impact on web standards
+web standards and the W3C process for new specifications
+the HTML Living Standard and the WHATWG vs W3C history
+CSS Houdini and extending CSS through JavaScript

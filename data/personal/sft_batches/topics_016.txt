@@ -1,0 +1,50 @@
+BGP route leaks causing regional internet outages
+undersea cable cuts and internet resilience
+the physical infrastructure of the internet and its vulnerability
+data center PUE efficiency and the environmental impact
+liquid cooling in data centers and the immersion cooling trend
+the Microsoft underwater data center experiment
+data center locations and the cheap electricity factor
+renewable energy for data centers and the greenwashing concerns
+Bitcoin mining energy consumption and the environmental debate
+proof of work vs proof of stake and the Ethereum merge
+the crypto crash and its impact on GPU availability
+NFTs being declared dead and the remaining true believers
+Web3 and the decentralized web that never materialized
+smart contracts and the code-is-law philosophy until the code has bugs
+the DAO hack and Ethereum's controversial hard fork
+DeFi exploits and the billions lost to smart contract bugs
+the blockchain trilemma and why you can't have everything
+centralized exchanges pretending to be decentralized
+the FTX collapse and the lack of regulation in crypto
+stablecoins and the Tether transparency questions
+CBDCs and the government digital currency debate
+the Lightning Network and Bitcoin's scalability problem
+blockchain use cases that don't actually need a blockchain
+supply chain tracking on blockchain and whether it solves anything
+the environmental cost of proof-of-work mining
+ASIC mining centralization defeating the decentralization promise
+the halving events and Bitcoin price speculation culture
+crypto bros invading tech conferences with blockchain pitches
+Solana's outages and the reliability of alternative L1s
+Ethereum gas fees making small transactions impractical
+the bridge hack that drained hundreds of millions
+zero-knowledge proofs and their applications beyond crypto
+homomorphic encryption and computing on encrypted data
+secure multi-party computation and its practical limitations
+differential privacy and Apple's implementation claims
+federated learning and training AI without centralizing data
+the tension between AI progress and data privacy
+synthetic data generation for training AI models
+data labeling and the hidden workforce behind AI
+Mechanical Turk and the ethics of crowdsourced AI labor
+AI training data and the copyright lawsuits
+the New York Times vs OpenAI lawsuit implications
+fair use in the age of machine learning
+Creative Commons licenses and AI training opt-out
+the opt-in vs opt-out debate for AI data collection
+robots.txt and AI crawlers ignoring it
+the common crawl dataset and its contents
+web archiving and the Internet Archive's legal battles
+the Wayback Machine as the internet's memory
+link rot and the decay of web content

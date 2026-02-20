@@ -1,0 +1,50 @@
+the CSS container queries finally shipping after years of requests
+CSS nesting going native and reducing preprocessor dependence
+Sass and Less becoming less necessary with modern CSS
+PostCSS and the modular CSS toolchain approach
+the utility-first CSS debate and Tailwind's polarizing effect
+design systems and component libraries for consistency
+Storybook and the component-driven development approach
+design tokens and the bridge between design and development
+Figma's acquisition by Adobe and the antitrust intervention
+the design tool landscape and Figma's dominance
+the Sketch to Figma migration story
+design handoff tools and the developer-designer collaboration
+the design engineer role and its growing importance
+frontend development specialization into design engineering
+the full-stack developer myth and whether anyone is truly full-stack
+T-shaped developers vs specialists and career strategy
+the principal engineer track vs management track
+staff engineering and the individual contributor leadership path
+the engineering manager pendulum and switching between IC and management
+the CTO role and whether it should be technical or strategic
+VP of Engineering vs CTO and the organizational structure
+the tech lead role ambiguity and its challenges
+architecture review boards and whether they slow down development
+the platform team and its relationship with product teams
+team topologies and the four team types
+Conway's Law and how organization structure shapes software
+inverse Conway maneuver and structuring teams around desired architecture
+microservices team ownership and the single team per service ideal
+the two-pizza team rule and Amazon's organizational experiment
+Bezos's API mandate and its impact on Amazon's architecture
+the Jeff Bezos question mark email and its organizational terror
+Amazon's leadership principles and the tech industry reaction
+Google's 20% time and whether it still exists
+the Google graveyard of killed products
+Google Reader's shutdown still making people angry
+the product liability of depending on Google services
+the sunset policy and communicating product end-of-life
+API deprecation strategies and the version lifecycle
+the semver promise and breaking change definitions
+changelog maintenance and the keep-a-changelog standard
+release notes that nobody reads
+the deployment Friday superstition in engineering culture
+the not-invented-here syndrome in tech organizations
+the build trap and focusing on output over outcomes
+product-led growth and the PLG motion in SaaS
+developer experience as a product differentiator
+developer relations and the DevRel career path
+the conference talk circuit and the conference-industrial complex
+tech conferences post-pandemic and the virtual event fatigue
+hackathons that are actually just free labor for sponsors

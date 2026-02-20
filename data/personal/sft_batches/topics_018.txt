@@ -1,0 +1,50 @@
+mRNA vaccine technology and its rapid development platform
+the open-source vaccine movement and patent debates
+contact tracing apps and the privacy tradeoffs
+the COVID-era acceleration of digital transformation
+the toilet paper algorithm that optimized supply chains during the pandemic
+supply chain visibility technology and its limitations
+the just-in-time manufacturing vulnerability exposed by COVID
+digital twin technology for manufacturing and logistics
+the Industry 4.0 buzzword and smart factory reality
+SCADA systems and industrial control system security
+the Stuxnet story and cyberwarfare targeting infrastructure
+critical infrastructure protection and the OT/IT convergence
+the Colonial Pipeline ransomware attack and its wake-up call
+water treatment facility hacking incidents
+power grid modernization and smart grid security
+the Volt Typhoon threat to US infrastructure
+election infrastructure security and voting machine concerns
+the paper ballot vs electronic voting debate
+the cybersecurity of critical democratic processes
+disinformation campaigns and bot networks on social media
+the troll farm industry and its technical sophistication
+fake review generation and the trust economy
+astroturfing detection and the arms race
+content authenticity and the C2PA standard
+digital watermarking for AI-generated content
+the provenance problem for digital media
+the information ecosystem pollution and potential solutions
+fact-checking technology and its scalability challenges
+the filter bubble and algorithmic echo chambers
+recommendation algorithms and radicalization pathways
+YouTube's algorithm and its influence on tech opinions
+the Netflix recommendation engine and its famous prize
+Spotify's Discover Weekly and music recommendation technology
+the TikTok algorithm's uncanny ability to understand users
+Instagram's shift from photos to video and creator backlash
+the attention economy and notification design psychology
+dark patterns in UX design and the regulatory response
+the cookie banner dark pattern epidemic
+deceptive design patterns in subscription cancellation flows
+the California auto-renewal law and its impact on SaaS
+app store review manipulation and fake downloads
+the Google Play Store malware problem
+sideloading security risks vs user freedom
+the Epic Games Store exclusivity controversy
+Steam's dominance in PC game distribution
+GOG and DRM-free gaming advocacy
+digital game preservation and the right to play old games
+the emulation legal gray area and the gaming community
+ROM hacking communities and their creative output
+speedrunning culture and the technical exploits they discover

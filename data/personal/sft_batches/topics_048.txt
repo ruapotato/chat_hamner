@@ -1,0 +1,50 @@
+What Fermat's last theorem took 358 years to prove
+Why exponential growth is so hard for humans to grasp
+How Euler's identity connects the five most important numbers in one equation
+What the traveling salesman problem means for logistics and delivery routes
+Why Simpson's paradox makes trends reverse when you combine data
+How cryptography relies on the difficulty of factoring large prime numbers
+What the Fibonacci sequence reveals about rabbit populations and pine cones
+Why regression to the mean explains why sick people get better after trying anything
+How Zeno's paradoxes challenged ancient understanding of motion and infinity
+What the St. Petersburg paradox reveals about expected value being useless sometimes
+Why correlation doesn't mean causation and real examples where people got confused
+How the central limit theorem makes the bell curve show up everywhere
+What surreal numbers are and how they extend the number system beyond infinity
+Why we can't trisect an angle with just a compass and straightedge
+How queueing theory explains why your grocery line is always the slowest
+What the Königsberg bridge problem started and how it created graph theory
+Why there are exactly five Platonic solids and no more
+How statistics behind election polling works and why it sometimes fails
+What the halting problem proves about the limits of computation
+Why imaginary numbers are actually real and useful
+How the law of large numbers works and when it doesn't apply
+What Ramsey theory says about finding order in chaos
+Why mathematical proofs by contradiction feel like magic tricks
+How the normal distribution explains human height but not wealth
+What the ham sandwich theorem guarantees about cutting objects fairly
+Why the unreasonable effectiveness of mathematics in physics is a mystery
+How survivorship bias distorts our understanding of success
+What the Monty Hall problem teaches about updating beliefs with new information
+Why we can't square the circle and the proof took over two thousand years
+How Markov chains predict text and weather
+What the Lorenz attractor reveals about deterministic chaos
+Why the three-body problem has no general solution
+How Simpson's paradox appears in real medical data and reverses conclusions
+What the seven millennium prize problems are and which ones remain unsolved
+Why your COVID test result doesn't mean what you think it means
+How the Basel problem connects prime numbers to pi
+What the Poincaré conjecture says about the shape of the universe
+Why most published research findings are false according to statistics
+How the Mandelbrot set creates infinite complexity from a simple equation
+What the Kelly criterion says about optimal betting strategy
+Why gerrymandering is essentially a geometry problem
+How we know climate change is caused by humans and not natural cycles
+Whether nuclear energy is the answer to climate change
+What would happen if all ice on Earth melted at once
+How carbon capture technology works and whether it's enough
+Why renewable energy is getting cheaper faster than anyone predicted
+What the tipping points are that could make climate change irreversible
+How ocean acidification threatens marine ecosystems
+Whether geoengineering could save us or make things worse
+What the Green New Deal actually proposes

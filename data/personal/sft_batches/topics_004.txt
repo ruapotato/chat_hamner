@@ -1,0 +1,50 @@
+Home Assistant and the self-hosted smart home dream
+Matter protocol and whether it will unify smart home devices
+Apple HomeKit's walled garden approach to smart homes
+ring doorbell footage being shared with police without consent
+facial recognition in public spaces and the privacy implications
+the VPN industry and its misleading marketing
+whether a VPN actually protects you from anything meaningful
+Tor and the dark web's role in online privacy
+the Let's Encrypt revolution and free HTTPS for everyone
+password managers and why people still reuse passwords
+the passkey future and whether passwords are actually dying
+two-factor authentication fatigue and SIM swap attacks
+the SolarWinds hack and supply chain security
+Log4Shell and the open-source maintenance burden
+one maintainer holding critical infrastructure together with duct tape
+the xz backdoor attempt and open-source trust
+hackers who get caught because they forgot to use a VPN
+bug bounty programs that pay less than minimum wage
+the cybersecurity skills gap and whether bootcamps can fill it
+penetration testing as a career and the misconceptions around it
+CTF competitions and whether they translate to real-world skills
+the ransomware epidemic and whether paying the ransom ever works
+hospital systems getting ransomwared and the human cost
+nation-state hacking groups and attribution challenges
+zero-day exploits and the market that trades in them
+the NSA's relationship with the tech industry
+Edward Snowden's revelations and what changed since then
+encryption backdoors and why they're mathematically impossible to do safely
+the ongoing war between encryption and law enforcement
+GDPR and whether it actually protects anyone's privacy
+cookie consent banners that nobody reads
+targeted advertising and the creepy accuracy of ad algorithms
+the data broker industry and how much they know about you
+social media algorithms and their effect on mental health
+TikTok's data collection and the geopolitical implications
+whether deleting your Facebook account actually deletes your data
+digital minimalism and the people who quit all social media
+RSS feeds making a comeback among tech-savvy users
+the fediverse and whether decentralized social media can work
+Mastodon's usability problems keeping mainstream users away
+Lemmy as a Reddit alternative after the API pricing revolt
+the Reddit API pricing fiasco and the death of third-party apps
+Discord becoming the new forum and why that's terrible for searchability
+IRC still existing and being used by open-source projects
+Matrix protocol vs Signal for private messaging
+why nobody uses PGP email encryption in practice
+the dot-com bubble and whether we're in a tech bubble now
+startup culture and the mythologizing of working 80 hours a week
+the cult of the founder and Silicon Valley hero worship
+whether remote work is permanent or if offices are coming back

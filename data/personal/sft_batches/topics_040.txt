@@ -1,0 +1,50 @@
+the race condition that appears once a week under specific load
+the heisenbug that disappears when you add logging to investigate it
+the floating point comparison bug that drives you insane
+the null pointer exception that shouldn't be possible according to the types
+the stack overflow error from a recursive function missing its base case
+the infinite loop deployed to production on a Friday afternoon
+the regular expression that takes exponential time on certain inputs
+the CSS z-index value of 99999 and the arms race that follows
+the div soup that passes accessibility audits but is semantically meaningless
+the loading spinner that spins forever because nobody handled the error state
+the modal dialog that traps keyboard focus incorrectly
+the form validation that only runs on submit and not on blur
+the autocomplete dropdown that fights with the browser's native autocomplete
+the date picker component that every team builds from scratch
+the table component that becomes a spreadsheet over time
+the design system that nobody follows because it's too rigid
+the component library that's always one version behind the design
+the Figma to code handoff gap that never fully closes
+pixel-perfect implementation demands from designers
+the responsive breakpoint that breaks at exactly your QA person's screen size
+the print stylesheet that nobody tests until a client prints the page
+the email HTML template with nested tables like it's 1999
+the browser compatibility issue that only affects Safari on iOS
+the Android WebView rendering differently than Chrome on the same device
+the Service Worker cache that serves stale content and nobody knows how to bust it
+Whether we'd survive falling into a supermassive black hole
+Why time moves slower near heavy objects and how weird that is
+What would happen if you could travel at 99.9% the speed of light
+How quantum entanglement works and why Einstein called it spooky
+Whether Schrödinger's cat is actually alive and dead at the same time
+Why we can't find dark matter even though it makes up most of the universe
+What string theory actually proposes and why it needs extra dimensions
+How the double-slit experiment proves particles can be in two places at once
+Whether the many-worlds interpretation means there are infinite versions of you
+Why antimatter and matter didn't completely annihilate each other after the Big Bang
+How the Heisenberg uncertainty principle limits what we can ever know
+Whether quantum computers will actually break all encryption
+What happens to information that falls into a black hole
+Why the speed of light is the universal speed limit
+How gravity bends light and lets us see behind galaxies
+Whether wormholes could actually exist and be traversable
+Why the universe is expanding faster than it should be
+How the Casimir effect proves empty space isn't really empty
+What the holographic principle says about our universe being a 2D projection
+Whether pilot wave theory is a better explanation than Copenhagen interpretation
+How quantum tunneling lets particles teleport through barriers
+Why we haven't found a theory of everything yet
+What would happen if the Higgs field suddenly turned off
+How neutrinos pass through your body by the trillions every second
+Whether time crystals are actually a new state of matter

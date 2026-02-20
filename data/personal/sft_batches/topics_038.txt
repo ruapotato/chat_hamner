@@ -1,0 +1,50 @@
+tech conference talks that actually changed how people code
+the Gary Bernhardt WAT talk and its enduring comedy
+the Bret Victor Inventing on Principle talk that inspired a generation
+Rich Hickey talks and the Clojure philosophy of simplicity
+the Destroy All Software screencasts and their cult following
+the egghead.io and Frontend Masters learning platform comparison
+Pluralsight vs Udemy quality variance
+the YouTube tech education ecosystem and free learning
+Fireship's 100-second video format for tech concepts
+the Primeagen's streaming career and Neovim advocacy
+ThePrimeTime reaction content and developer entertainment
+George Hotz streaming autonomous driving development
+the live coding stream format and its educational value
+Advent of Code and the annual December coding challenge
+Project Euler and mathematical programming challenges
+the competitive programming community and Codeforces ratings
+Google Code Jam shutting down and the competitive programming shifts
+the International Collegiate Programming Contest traditions
+LeetCode premium and whether it's worth paying for
+NeetCode roadmap and structured algorithm study plans
+the Blind app and anonymous tech worker salary discussions
+levels.fyi becoming the salary transparency standard
+the total compensation calculator and equity valuation confusion
+the refresher grant cycle at big tech companies
+the performance review calibration process and its politics
+the stack ranking system and its toxic effects on teams
+OKRs and whether they actually align team efforts
+the sprint velocity metric being weaponized by management
+story points being meaningless numbers that everyone argues about
+the no-estimates movement in agile development
+Basecamp's Shape Up as an alternative to Scrum
+the Kanban board workflow and WIP limit enforcement
+the retrospective meeting format and whether it drives real change
+psychological safety in engineering teams
+the blameless postmortem culture and its idealistic goals
+chaos monkey in production and the organizational buy-in challenge
+the gameday exercise for incident preparedness
+runbooks that are outdated the moment they're written
+the incident commander role and structured incident response
+status pages and the art of communicating during outages
+the Statuspage.io service and whether "partial outage" means anything
+the Twitter outage commentary tradition among developers
+the Hacker News front page as a lagging indicator of tech trends
+Show HN posts and the brutally honest feedback
+the Orange Site commenters who have an opinion on everything
+the Reddit programming subreddits and their moderation challenges
+the r/programminghumor content that's the same five jokes recycled
+the tech meme ecosystem and the isometric Twitter accounts
+the "is it down" websites and their ironic uptime requirements
+the website speed test obsession and GTmetrix scores

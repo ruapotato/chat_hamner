@@ -1,0 +1,50 @@
+the FTX documentary and the collapse of crypto trust
+tech scandals that could have been prevented by engineers speaking up
+the whistleblower protection for tech workers
+the ethics of working on controversial technology
+the military technology development debate in tech
+Project Maven and Google employees' protest
+tech worker activism and its effectiveness
+the Palestine filtering controversy at tech companies
+political speech in the workplace policies
+the Basecamp no-politics-at-work policy controversy
+remote work culture and maintaining team cohesion
+virtual team building activities that actually work
+the watercooler conversation replacement in remote teams
+building trust in distributed teams without face-to-face interaction
+the pair programming remote screen-sharing lag problem
+the Gather.Town and virtual office concept for remote teams
+the ergonomic home office setup and the standing desk debate
+the Herman Miller Aeron chair cult among developers
+ultrawide curved monitors for immersive coding sessions
+the dark mode vs light mode IDE preference war
+the mechanical keyboard sound test YouTube subculture
+the artisan keycap collecting hobby and its absurd prices
+group buy culture in the keyboard community and the yearlong waits
+the Topre switch devotees and their electrostatic capacitive superiority claims
+Cherry profile vs SA profile keycap height preferences
+the custom coiled cable aesthetic in keyboard setups
+desk mat designs and the deskpad accessory market
+the battlestation subreddit and desk setup aesthetics
+cable management obsession and the velcro tie solution
+KVM switches for multi-computer setups and their USB quirks
+the trackball mouse comeback and ergonomic pointing devices
+vertical mice and RSI prevention in developers
+the ergonomic split keyboard learning curve and productivity dip
+wrist rest debate and whether they help or hurt
+blue light filtering glasses and whether the science supports them
+the 20-20-20 rule for eye strain and developer eye health
+programmer posture and the inevitable back pain conversation
+the treadmill desk experiment and coding while walking
+focus music playlists and the lo-fi hip hop coding stream phenomenon
+the brown noise productivity hack that went viral on TikTok
+whether listening to music while coding helps or hurts focus
+the open office plan destroying developer concentration
+noise-canceling headphones as a survival tool in open offices
+the Sony WH-1000XM series vs AirPods Max debate
+spatial audio for coding and whether it's useful or gimmicky
+podcast recommendations for software engineers
+the Changelog podcast and its role in the developer community
+the Syntax.fm podcast and the Wes Bos teaching empire
+the Ship It podcast and deployment war stories
+the software engineering daily podcast and its encyclopedic archive

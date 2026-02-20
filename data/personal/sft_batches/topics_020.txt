@@ -1,0 +1,50 @@
+Vulkan vs DirectX and the graphics API competition
+the Vulkan adoption rate and driver quality variations
+Mesa drivers and the open-source GPU driver revolution
+NVIDIA's proprietary Linux driver history and the open-source shift
+AMD's open-source driver strategy paying off on Linux
+Wayland gaming support and the remaining rough edges
+game controller support on Linux and the kernel HID drivers
+the Steam Controller's innovative design and discontinuation
+the DualSense controller haptics and adaptive triggers on PC
+sim racing hardware and the iRacing ecosystem
+flight simulation hardware and the Microsoft Flight Simulator community
+VR gaming hardware requirements and the refresh rate demands
+haptic feedback suits and full-body VR immersion
+the motion sickness problem in VR and solutions
+eye tracking in VR headsets and foveated rendering
+the weight and comfort problem of current VR headsets
+mixed reality pass-through and its gaming applications
+the PlayStation VR2 PC adapter and cross-platform VR
+WebXR and VR experiences in the browser
+the social VR platforms and virtual worlds
+VRChat as a social phenomenon and its unique culture
+digital fashion and virtual goods economics
+the virtual real estate speculation collapse
+generative AI in game development for assets and dialogue
+AI NPCs and dynamic storytelling in games
+procedural narrative generation and its current limitations
+the Dwarf Fortress succession and its legendary complexity
+factorio and the optimization addiction it creates
+the city builder genre and its dedicated community
+the survival crafting game saturation problem
+farming simulation games and their unexpected popularity
+Stardew Valley's solo development inspiring indie creators
+the cozy game genre emerging as a distinct category
+game accessibility features and the Xbox Adaptive Controller
+difficulty settings debate and the FromSoftware discussion
+games as art and the Roger Ebert debate that never dies
+walking simulators and the definition of what constitutes a game
+the narrative game vs gameplay-first design philosophy
+photo modes in games and virtual photography communities
+game photography as an art form
+the demoscene and the art of programming within constraints
+creative coding with Processing and p5.js
+generative art and the intersection of code and creativity
+the plotter art revival and pen plotters as creative tools
+LED art installations powered by microcontrollers
+the pixel art renaissance in modern games
+ASCII art generators and terminal art
+code golf and the esoteric programming language community
+Brainfuck and other deliberately difficult programming languages
+the International Obfuscated C Code Contest

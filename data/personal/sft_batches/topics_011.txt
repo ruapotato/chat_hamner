@@ -1,0 +1,50 @@
+CQRS and whether the complexity is ever justified
+the saga pattern for distributed transactions
+eventual consistency and the user experience implications
+the distributed systems fallacies that bite every new engineer
+consistent hashing and why it matters for scaling
+the Raft consensus algorithm and its elegance
+gRPC streaming and bidirectional communication
+protocol buffers vs JSON for internal APIs
+API versioning strategies and breaking changes
+the OpenAPI specification and code generation
+rate limiting strategies and the leaky bucket vs token bucket debate
+API gateways and the overhead they introduce
+the BFF pattern for frontend-specific APIs
+pagination strategies and cursor-based vs offset pagination
+the N+1 API call problem in frontend applications
+batching and data loading with DataLoader pattern
+caching strategies and the two hardest problems in computer science
+cache invalidation bugs that haunt you for weeks
+Redis cache stampede and thundering herd problems
+the CDN cache hit ratio obsession
+HTTP caching headers and why nobody gets them right
+the stale-while-revalidate pattern for web performance
+service workers and the offline-first web
+the Web Storage API and its 5MB limit
+IndexedDB and why it's the most confusing browser API
+the Cookie vs localStorage vs sessionStorage decision tree
+JWT tokens and the stateless authentication debate
+OAuth 2.0 flows and why they're so confusing
+the OAuth vs API key decision for developer APIs
+SAML being ancient but still required by enterprises
+the SSO tax and B2B pricing for authentication
+Auth0 and the managed authentication service market
+building your own auth and why everyone says not to
+the bcrypt vs Argon2 password hashing debate
+session management and the shopping cart problem
+CORS errors and the developer rage they cause
+the same-origin policy and why it exists
+Content Security Policy headers and the learning curve
+CSRF protection in the age of SameSite cookies
+XSS attacks that still work despite decades of awareness
+SQL injection in 2026 and how it still happens
+the OWASP Top 10 and whether anyone actually follows it
+dependency scanning and the alert fatigue it creates
+software supply chain attacks becoming the new normal
+container image scanning and finding vulnerabilities in base images
+the shift-left security movement and developer resistance
+DevSecOps as a buzzword vs an actual practice
+secrets management and the .env file that got committed to Git
+HashiCorp Vault and the complexity of secrets management
+the principle of least privilege and why nobody follows it

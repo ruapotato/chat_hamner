@@ -1,0 +1,50 @@
+post-quantum cryptography and the migration timeline
+the Y2Q problem and preparing for quantum attacks on encryption
+quantum key distribution and whether it's practical
+the quantum computing winter prediction
+photonic computing as an alternative paradigm
+DNA data storage research and its mind-boggling density
+the memristor and persistent memory technologies
+Intel Optane being discontinued and what it meant
+CXL memory and the future of disaggregated computing
+the memory wall problem in modern computing
+NVMe over Fabrics and composable infrastructure
+software-defined everything and the abstraction explosion
+the infrastructure abstraction layers and their overhead
+bare metal vs virtualized and when raw performance matters
+Type 1 vs Type 2 hypervisors and the KVM dominance
+Proxmox as a free alternative to VMware ESXi
+the Broadcom acquisition of VMware and licensing chaos
+VMware licensing changes destroying home lab budgets
+the home lab community and its obsession with enterprise gear
+running a Kubernetes cluster at home for learning
+the power bill of a home lab and whether it's worth it
+UPS systems for home servers and the battery maintenance
+quiet server builds and the acoustic optimization rabbit hole
+the 10 gigabit home network upgrade journey
+fiber optics to the home and the ISP monopoly problem
+Starlink and whether satellite internet is a real solution
+the digital divide and rural internet access issues
+municipal broadband and the telecom lobbying against it
+net neutrality and its ongoing political battle
+the FCC's revolving door with the telecom industry
+bandwidth caps and the ISP throttling games
+the bufferbloat problem and fq_codel solving it
+quality of service settings and the home network optimization rabbit hole
+OpenWrt on cheap routers and the custom firmware scene
+pfSense vs OPNsense for home firewalls
+VLANs at home and whether you need network segmentation
+the UniFi ecosystem and Ubiquiti's cloud dependency controversy
+MikroTik routers and their powerful but confusing interface
+the prosumer networking market and its growth
+Power over Ethernet and running cables through your walls
+the home automation wiring project that took six months
+cat6 vs cat6a and whether the extra shielding matters
+Wi-Fi channel congestion in apartment buildings
+the 6GHz band and Wi-Fi 6E availability
+Li-Fi research and whether visible light communication has a future
+mesh WiFi vs access points and the cost-performance tradeoff
+the Ubiquiti data breach and the cover-up allegations
+IoT devices with hardcoded passwords being botnets
+the Mirai botnet and the DDoS attack that broke the internet
+DDoS protection and the Cloudflare mitigation at scale

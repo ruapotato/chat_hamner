@@ -1,0 +1,50 @@
+the squash merge vs merge commit debate
+cherry-picking across branches and its maintenance cost
+git bisect for finding the commit that introduced a bug
+the git reflog saving developers from disasters
+git hooks for enforcing code quality before commits
+pre-commit framework and its growing hook ecosystem
+the husky and lint-staged setup for JavaScript projects
+the monorepo tooling landscape with Nx and Turborepo
+Bazel build system and its learning curve vs benefits
+the build system fragmentation across language ecosystems
+Make still being used despite being ancient
+CMake and the C++ build system pain
+the Cargo package manager setting the standard for developer experience
+npm vs yarn vs pnpm and the JavaScript package manager wars
+the package-lock.json merge conflict that ruins your day
+dependency hell and version resolution algorithms
+the left-pad incident permanently changing how people think about dependencies
+the colors.js sabotage and maintainer burnout statements
+the faker.js incident and open-source sustainability discussion
+the unfunded open-source infrastructure supporting billions in commerce
+the Heartbleed vulnerability and OpenSSL funding wake-up call
+the core infrastructure initiative and its funding model
+GitHub Sponsors and whether it helps maintainers sustainably
+the open-source sustainability models that actually work
+dual licensing as a business model for open-source
+the open-core model and community edition limitations
+source-available licenses and the open-source definition debate
+the Business Source License and MariaDB's approach
+the Server Side Public License and MongoDB's strategy
+license compatibility nightmares in complex dependency trees
+the GPL enforcement and the Software Freedom Conservancy
+copyleft compliance challenges for embedded Linux devices
+the Yocto Project and embedded Linux distribution building
+embedded Rust and its growing adoption in safety-critical systems
+real-time operating systems and their niche applications
+FreeRTOS and Amazon's acquisition of it
+Zephyr RTOS and its growing ecosystem
+the automotive grade Linux platform
+Android Automotive vs Android Auto confusion
+CarPlay and the in-vehicle infotainment takeover
+vehicle-to-everything communication and connected car security
+the OTA update mechanism for vehicles and its risks
+Tesla's over-the-air update model changing automotive expectations
+the right to repair for vehicles and the John Deere controversy
+farmer hackers bypassing tractor DRM
+the intersection of agriculture and technology
+precision agriculture and drone crop monitoring
+vertical farming technology and its energy economics
+lab-grown meat technology and its scaling challenges
+food technology and the impossible burger engineering

@@ -1,0 +1,50 @@
+the death of Atom and what it says about open-source sustainability
+Copilot changing how developers write code and whether that's good
+the ethics of training AI on open-source code without consent
+whether AI-generated code belongs to anyone
+Stack Overflow traffic dropping because of ChatGPT
+the mass exodus from Stack Overflow to AI chatbots
+whether junior developers can still learn if AI writes their code
+pair programming with an AI and whether it counts
+the vibe coding phenomenon and whether it produces maintainable code
+whether prompt engineering is a real skill or just talking to computers
+LLM hallucinations in code suggestions and the bugs they create
+the transformer architecture and why attention is all you need
+GPT-4 vs Claude vs Gemini and the model comparison Olympics
+open-source LLMs catching up to proprietary ones
+running LLMs locally on consumer hardware
+llama.cpp and the quantization revolution
+the GGUF format wars for local model deployment
+fine-tuning LLMs on your own data and whether it's worth the GPU time
+RAG systems that are just glorified search engines
+vector databases and whether they're a fad
+the AI startup that's just a wrapper around an API call
+whether AGI is five years away or fifty
+the AI alignment problem explained to a five-year-old
+Eliezer Yudkowsky's doom predictions and the rationalist response
+Sam Altman's firing and rehiring at OpenAI in 48 hours
+the AI hype cycle and where we are on the Gartner curve
+deepfakes and the erosion of trust in digital media
+AI-generated art and the furious response from artists
+Stable Diffusion drama and model training ethics
+whether AI will replace programmers or just make them 10x
+the absurdity of AI-powered toothbrushes and other unnecessary AI products
+machine learning engineers who can't explain backpropagation
+the GPU compute shortage and its effect on AI research
+NVIDIA H100s being treated like gold bars
+training a neural network from scratch vs using a pre-trained model
+the batch size vs learning rate relationship and why it matters
+gradient descent stuck in a local minimum at 3am
+the curse of dimensionality explained with pizza toppings
+overfitting a model and convincing yourself it's just really good
+the reproducibility crisis in machine learning research
+benchmark gaming in AI and why leaderboards lie
+ChatGPT confidently making up academic citations
+whether autonomous vehicles will ever work in rain
+Boston Dynamics robots and whether they're cool or terrifying
+the uncanny valley in humanoid robots
+drone delivery and whether it's actually practical
+smart home devices that stop working when the cloud goes down
+the Internet of Things security nightmare
+your smart fridge sending data to a server in China
+why Zigbee and Z-Wave can't just agree on one standard

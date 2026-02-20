@@ -1,0 +1,50 @@
+the tech meetup culture and community building
+coding dojos and deliberate practice in programming
+the Software Craftsmanship movement and its ideals
+clean code debate and whether Uncle Bob's rules still apply
+the clean code vs performance optimization tension
+premature optimization being the root of all evil quote context
+when optimization actually matters and the profile-first approach
+algorithmic complexity in real-world applications
+the practical difference between O(n) and O(n log n) at scale
+data structures nobody uses in practice but learn in school
+the binary search tree that's actually useful: the B-tree
+bloom filters and their practical applications
+consistent hashing in distributed systems
+the skip list as an alternative to balanced trees
+the trie data structure and autocomplete implementations
+HyperLogLog for approximate counting at scale
+count-min sketch for frequency estimation in streaming data
+the streaming algorithm paradigm and its constraints
+approximation algorithms and when good enough is good enough
+the P vs NP problem and its practical implications
+NP-hard problems hiding in everyday software
+the traveling salesman problem in delivery route optimization
+constraint satisfaction problems in scheduling software
+SAT solvers and their surprising practical applications
+the integer programming approach to optimization problems
+linear programming in resource allocation
+operations research techniques borrowed by tech companies
+simulation modeling for capacity planning
+Monte Carlo methods in everyday software
+random number generation and the crypto-safe PRNG requirement
+the random seed reproducibility problem in ML experiments
+deterministic builds and reproducible software environments
+Nix and Guix for reproducible development environments
+development environment setup taking a full day at new jobs
+the devcontainer standard and its adoption
+Codespaces and cloud development environments
+the remote development server approach with SSH
+tmux vs screen for terminal multiplexing
+the Zellij terminal multiplexer as the modern alternative
+terminal emulators and the Alacritty vs Kitty vs Wezterm race
+the GPU-accelerated terminal trend and whether it matters
+font rendering in terminals and programming font choices
+ligatures in coding fonts and whether they help or hinder
+the JetBrains Mono font and its popularity
+Fira Code and the programming ligature revolution
+Nerd Fonts and the terminal icon customization scene
+Starship prompt and the shell prompt customization obsession
+the Oh My Zsh vs Prezto vs manual configuration debate
+dotfile management and version-controlling your config
+chezmoi and other dotfile managers for multi-machine setups

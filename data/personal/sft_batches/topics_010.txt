@@ -1,0 +1,50 @@
+the pull request size debate and whether small PRs are always better
+pair programming enthusiasm vs the introverts who dread it
+mob programming and whether it's pair programming taken too far
+the test pyramid and why most companies have an ice cream cone
+unit tests that test implementation details and break with every refactor
+integration tests that take forever and nobody wants to maintain
+end-to-end tests with Cypress or Playwright and the flakiness problem
+test-driven development purists vs pragmatists
+the testing trophy vs the testing pyramid
+mutation testing and whether it catches real bugs
+property-based testing and why it's underused
+code coverage metrics and the false sense of security they provide
+mocking everything vs testing nothing real
+the test that passes locally but fails in CI every single time
+snapshot testing and the giant diff files nobody reviews
+visual regression testing for frontend applications
+load testing and discovering your app can't handle 100 concurrent users
+performance budgets that nobody enforces
+the Core Web Vitals obsession and its impact on web development
+Lighthouse scores and gaming them without actual improvements
+SEO as a dark art practiced by developers who hate marketing
+the AMP project's rise and fall
+Google's search quality declining and the SEO spam problem
+the enshittification of platforms and what it means for tech
+subscription fatigue across software services
+the SaaS pricing page with the hidden enterprise tier
+freemium models and the conversion funnel optimization game
+developer tools charging per seat and why it hurts small teams
+the free tier honeypot that locks you into a platform
+vendor lock-in and the switching cost calculation
+the JSON resume standard that nobody adopted
+the LinkedIn recruiter spam epidemic
+tech recruiters who don't know the difference between Java and JavaScript
+the salary transparency movement in tech
+stock options and RSUs and the golden handcuffs conversation
+the cost of living adjustment debate for remote workers
+digital nomad developers working from Bali
+the timezone challenge of globally distributed teams
+async standups replacing synchronous meetings
+the documentation culture at remote-first companies
+writing as a skill for software engineers
+architecture decision records and organizational memory
+RFCs and design documents that nobody reads
+the whiteboard architecture diagram that becomes the actual documentation
+diagrams as code with Mermaid and PlantUML
+the C4 model for software architecture visualization
+clean architecture vs pragmatic architecture
+domain-driven design and bounded contexts
+the hexagonal architecture hype cycle
+event-driven architecture and the debugging nightmare

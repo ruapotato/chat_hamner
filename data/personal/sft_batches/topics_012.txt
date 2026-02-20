@@ -1,0 +1,50 @@
+zero trust architecture and whether it's achievable
+the network perimeter being dead and what replaced it
+mTLS between services and the certificate management nightmare
+certificate expiration causing outages and the automation gap
+the Symantec certificate distrust drama
+why HTTPS certificates used to cost hundreds of dollars
+the CA system being fundamentally broken
+certificate transparency logs and their role in security
+the BGP hijacking threat and internet routing security
+the Fastly outage that took down half the internet
+the AWS us-east-1 dependency and single-region risks
+chaos engineering for discovering these dependencies
+the cascading failure that starts with one microservice
+circuit breakers and bulkheads in distributed systems
+the retry storm that makes an outage worse
+exponential backoff with jitter and why jitter matters
+health checks and readiness probes in Kubernetes
+blue-green deployments vs canary releases
+feature flags enabling trunk-based development
+the LaunchDarkly pricing model for feature flag management
+progressive delivery and gradual rollouts
+rollback strategies and the database migration problem
+database schema changes in zero-downtime deployments
+the expand and contract pattern for schema migrations
+event schema evolution and backward compatibility
+Avro vs Protobuf for schema evolution
+the schema registry and its role in Kafka ecosystems
+data serialization formats and the MessagePack alternative
+the binary vs text protocol debate
+gzip vs Brotli vs zstd for HTTP compression
+image optimization and the WebP vs AVIF format war
+responsive images and the srcset attribute complexity
+lazy loading images and the Intersection Observer API
+the performance cost of third-party scripts
+Google Tag Manager bloating every website
+the surveillance advertising ecosystem and its technical infrastructure
+real-time bidding and the millisecond auction happening on every page load
+the consent management platform industry
+GDPR compliance as a technical challenge
+data residency requirements and multi-region architectures
+the right to be forgotten and the technical implementation nightmare
+PII detection in logs and the compliance risk
+audit logging and the immutable append-only log pattern
+HIPAA compliance for health tech startups
+SOC 2 certification and the security theater around it
+the compliance-as-code movement
+policy engines and Open Policy Agent
+infrastructure compliance scanning with tools like Checkov
+the CIS benchmarks and hardening Linux servers
+SELinux being disabled on every production server

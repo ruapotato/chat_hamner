@@ -1,0 +1,50 @@
+return-to-office mandates and developer productivity
+the four-day work week experiments in tech companies
+tech layoffs and the end of infinite growth mentality
+golden handcuffs at FAANG and developers afraid to leave
+the software engineering interview process being completely broken
+LeetCode grinding culture and whether it tests real skills
+whiteboard coding interviews that prove nothing
+take-home assignments that take 40 hours and ghost you after
+the myth of the 10x developer
+imposter syndrome in senior engineers
+burnout in tech and the silence around mental health
+tech workers unionizing and whether it helps
+the age discrimination problem in tech hiring
+whether a CS degree is necessary in 2026
+coding bootcamps that promise six-figure salaries
+self-taught developers and the gaps in their knowledge
+the portfolio vs resume debate for junior developers
+contributing to open source as a career strategy
+the GitHub green squares obsession and performative coding
+open-source maintainer burnout and the funding problem
+companies profiting from open source without contributing back
+the MIT vs GPL license debate and what it means politically
+Copyleft dying as permissive licenses take over
+the JSON license and its bizarre no-evil clause
+the Elastic vs AWS open-source licensing battle
+HashiCorp switching from open source and the community fallout
+Redis changing its license and the fork that followed
+the WordPress vs WP Engine legal drama
+whether open source is sustainable as a business model
+tech YouTubers who review products they got for free
+Linus Tech Tips and the trust pilot ratings controversy
+MKBHD's influence on tech purchasing decisions
+tech podcasts that are just thinly veiled ads
+the Lex Fridman podcast format of three-hour interviews
+Changelog and the developer podcast ecosystem
+tech Twitter drama cycles and main character syndrome
+Hacker News comment culture and its peculiar norms
+the orange site as a barometer for tech sentiment
+Product Hunt launches that are just landing pages
+the indie hacker movement and building in public
+SaaS founders sharing their revenue numbers publicly
+the passion economy and developers becoming content creators
+Twitch programming streams and whether anyone watches them
+live coding on YouTube and the pressure of performing
+dev.to and Medium fighting for developer blog traffic
+personal tech blogs dying because nobody wants to maintain them
+the documentation-as-code movement
+whether README-driven development actually works
+API documentation that's never up to date
+Swagger UI and the promise of self-documenting APIs

@@ -1,0 +1,50 @@
+GraphQL vs REST and the holy war that ensued
+gRPC and whether it's just for microservices
+microservices being a distributed monolith in disguise
+the microservices tax and when a monolith is better
+serverless functions and their bizarre cold start times
+AWS Lambda pricing surprises that bankrupt side projects
+the multi-cloud dream vs the single-vendor reality
+AWS having 300 services and nobody knowing what half of them do
+the cloud bill shock when you forget to turn off an EC2 instance
+reserved instances vs spot instances and the pricing game
+cloud cost optimization becoming its own job title
+FinOps and whether anyone actually practices it
+S3 buckets left publicly accessible leaking data
+the CloudFormation template that takes 45 minutes to deploy
+CDK vs Terraform vs CloudFormation and which is least painful
+GitOps and whether it's just Git plus a deploy script
+ArgoCD vs Flux for Kubernetes deployments
+the Kubernetes YAML hell and attempts to escape it
+Helm charts that nobody understands but everyone uses
+service mesh complexity and whether Istio is worth it
+the Kubernetes operator pattern and its explosion of custom resources
+etcd and the terrifying single point of failure in Kubernetes
+the container runtime wars and Docker's diminishing relevance
+containerd vs CRI-O and runtime choices
+eBPF changing Linux observability and security
+the observability vs monitoring distinction and whether it matters
+Prometheus and Grafana as the default monitoring stack
+Datadog's pricing being the butt of every DevOps joke
+the three pillars of observability and whether anyone achieves all three
+OpenTelemetry trying to standardize telemetry collection
+structured logging vs unstructured logging
+the ELK stack and its memory consumption issues
+incident management and the blameless postmortem ideal
+on-call rotations destroying work-life balance
+PagerDuty alerts at 3am for a non-critical service
+the SRE role and whether it's just DevOps rebranded
+chaos engineering and deliberately breaking production
+the Netflix chaos monkey and engineering for failure
+feature flags and the technical debt they create
+A/B testing culture and the obsession with metrics
+vanity metrics vs actionable metrics in product development
+the build vs buy decision for internal tools
+internal platform teams and the developer experience movement
+PostgreSQL being the answer to every database question
+MySQL vs PostgreSQL and whether the debate is settled
+MongoDB's journey from hype to cautionary tale
+the NoSQL movement and how SQL came back
+SQLite being the most deployed database in the world
+Redis being used for everything it wasn't designed for
+DynamoDB's pricing model and the read/write capacity trap

@@ -1,0 +1,50 @@
+AppArmor vs SELinux and which is less painful
+Linux capabilities and dropping root privileges
+container security and the risks of running as root
+rootless containers and the user namespace mapping
+seccomp profiles for restricting system calls
+the container escape vulnerability and its implications
+Kubernetes RBAC and the complexity of role management
+network policies in Kubernetes and the default allow-all
+pod security standards replacing pod security policies
+the supply chain security for Helm charts
+Sigstore and software artifact signing
+SBOM requirements and the executive order on cybersecurity
+the Log4Shell patch urgency and organizational response
+vulnerability disclosure ethics and responsible disclosure timelines
+the full disclosure vs coordinated disclosure debate
+CVE numbering and the backlog of vulnerabilities
+the National Vulnerability Database and its limitations
+CVSS scores and whether they accurately reflect risk
+the exploitability of a vulnerability vs its theoretical severity
+threat modeling and the STRIDE framework
+the attack tree methodology for security analysis
+red team vs blue team exercises and their value
+purple team operations and collaborative security testing
+social engineering being the most effective attack vector
+phishing simulations that just make employees anxious
+security awareness training that nobody pays attention to
+the USB drop attack and physical security testing
+tailgating into secure facilities and the human factor
+the insider threat problem and monitoring employee behavior
+the ethics of employee surveillance software
+bossware proliferation during remote work
+keystroke logging and productivity monitoring tools
+time theft panic and the management trust deficit
+developer productivity metrics and the DORA framework
+SPACE framework for developer productivity
+measuring developer output and the perverse incentives
+lines of code as a metric and why it's laughably bad
+the GitHub contribution graph and its misuse in hiring
+coding challenges during interviews and their poor predictive value
+the system design interview and how to prepare for it
+behavioral interviews for engineering roles
+negotiating tech salaries and the power of competing offers
+the total compensation conversation and equity vesting schedules
+the IPO lockup period and paper millionaire frustration
+tech company stock performance and employee morale
+the ZIRP era ending and its impact on tech valuations
+the venture capital funding winter and startup survival
+bootstrapped vs VC-funded companies and the growth expectations
+the indie SaaS movement and lifestyle businesses
+selling a SaaS for a life-changing exit on MicroAcquire

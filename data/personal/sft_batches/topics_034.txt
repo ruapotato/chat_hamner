@@ -1,0 +1,50 @@
+the meal kit delivery optimization problem
+last-mile logistics technology and route optimization
+warehouse robotics and the Amazon fulfillment center
+the Amazon warehouse worker surveillance technology
+gig economy platforms and the algorithm as boss
+algorithmic management and the transparency demands
+the Uber surge pricing algorithm and its controversies
+ride-sharing platform economics and the profitability question
+the autonomous taxi business model and Waymo's approach
+micromobility scooters and the city infrastructure challenge
+electric vehicle charging infrastructure and the standards war
+the CCS vs NACS charging standard resolution
+vehicle-to-grid technology and bidirectional charging
+the smart grid and demand response technology
+energy storage technology and the grid battery revolution
+the duck curve and solar energy integration challenges
+home battery systems and the Tesla Powerwall ecosystem
+solar panel technology improvements and efficiency records
+the perovskite solar cell promise and its stability challenge
+wind turbine technology and offshore wind engineering
+the energy monitoring and smart meter privacy debate
+the smart thermostat and Nest's data collection
+Ecobee vs Nest and the smart thermostat market
+the connected home energy management system
+home energy auditing with thermal cameras
+the infrared camera as a diagnostic tool for electronics
+thermal throttling in laptops and the performance compromise
+the laptop cooling pad industry and whether they work
+laptop docking station compatibility nightmares
+the Thunderbolt dock and its driver issues on Linux
+USB-C hub quality variance and the certification problem
+cable quality affecting charging speed and data transfer
+the counterfeit cable problem and how to identify fakes
+electronics counterfeiting and its safety implications
+the grey market for enterprise networking equipment
+refurbished enterprise servers for home labs
+the eBay server deal hunting community
+r/homelab and the self-hosting enthusiasm
+Proxmox VE as the go-to home lab hypervisor
+TrueNAS for home network attached storage
+the Synology vs QNAP NAS debate
+building a NAS from scratch vs buying a prebuilt
+the ZFS pool expansion limitation and its workarounds
+RAID is not a backup and the lesson learned the hard way
+the 3-2-1 backup strategy and its modern interpretation
+Borg backup and its deduplication efficiency
+Restic as a cross-platform backup solution
+Backblaze B2 as affordable cloud backup storage
+the Backblaze hard drive reliability statistics
+SMART monitoring and predicting drive failures

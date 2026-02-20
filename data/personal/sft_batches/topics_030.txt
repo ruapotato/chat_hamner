@@ -1,0 +1,50 @@
+disparate impact analysis for AI systems
+the impossibility theorem in algorithmic fairness
+synthetic data for fairness and bias testing
+the demographic data collection dilemma for bias measurement
+intersectionality in algorithmic bias analysis
+the feedback loop problem in predictive systems
+recidivism prediction algorithms and their controversies
+credit scoring algorithms and financial inclusion
+insurance pricing algorithms and discrimination concerns
+hiring algorithms that filter out qualified candidates
+resume screening AI that penalizes employment gaps
+the automated decision-making and human oversight requirement
+human-in-the-loop systems and their practical limitations
+the automation paradox and skill degradation
+the deskilling effect of automated systems
+the Ironies of Automation paper still being relevant
+autonomous systems and the accountability gap
+the trolley problem as applied to self-driving car decisions
+Level 5 autonomy and whether it's achievable
+Waymo's progress vs Tesla's Full Self-Driving promises
+lidar vs camera-only approaches for autonomous driving
+the sensor fusion challenge in self-driving vehicles
+HD maps vs real-time perception for autonomous navigation
+the edge case problem in autonomous driving
+simulation environments for testing autonomous systems
+digital twin technology for vehicle testing
+the regulatory framework for autonomous vehicles
+the insurance model for self-driving cars
+the last-mile delivery robot and sidewalk navigation
+drone regulation and the FAA's approach to airspace management
+the urban air mobility concept and eVTOL aircraft
+commercial space technology and the SpaceX effect
+satellite internet constellations and space debris concerns
+the Kessler syndrome and the satellite collision cascade risk
+space debris tracking and removal technology
+CubeSats and the democratization of space access
+the open-source satellite and amateur radio satellite community
+software-defined radio and the RTL-SDR hobby
+the ham radio community and its tech-savvy subset
+LoRa and LoRaWAN for long-range IoT communication
+the Meshtastic project and off-grid mesh networking
+disaster communication technology and resilient networks
+emergency alert systems and their technical infrastructure
+the AMBER Alert technology and its effectiveness
+911 system modernization and the NG911 transition
+location accuracy in emergency calls from mobile phones
+indoor positioning systems and Bluetooth beacons
+ultra-wideband technology and precision location tracking
+the AirTag stalking problem and Apple's response
+Tile vs AirTag and the tracking device market

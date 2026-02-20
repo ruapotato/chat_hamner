@@ -1,0 +1,50 @@
+How the ER equals EPR conjecture connects wormholes to entanglement
+What the Ryu-Takayanagi formula says about entropy and geometry
+How holographic entanglement entropy relates spacetime to quantum information
+What the swampland conjectures constrain about possible theories of quantum gravity
+How asymptotic safety might make gravity renormalizable
+What causal dynamical triangulations build spacetime from
+How spin foam models construct spacetime from quantum interactions
+What the amplituhedron revealed about simplifying particle physics calculations
+How the cosmological bootstrap constrains correlation functions
+What the weak gravity conjecture says about forces and gravity
+How the species problem in biology makes defining species harder than it seems
+What ring species demonstrate about gradual speciation
+How polyploidy creates new species instantly in plants
+What the molecular phylogenetics revolution changed about the tree of life
+How lateral gene transfer complicates phylogenetic trees
+What metagenomics reveals about unculturable microorganisms
+How the deep biosphere contains more life than the surface
+What chemolithoautotrophs do by living on rock and mineral energy
+How thermophilic bacteria inspired the PCR technique that revolutionized genetics
+What LUCA the last universal common ancestor might have been like
+How the endosymbiotic origin of chloroplasts parallels mitochondria
+What secondary and tertiary endosymbiosis did for algal diversity
+How synthetic minimal genomes reveal the essential genes for life
+What xenobiology aims to do by creating organisms with non-natural biochemistry
+How directed evolution won the Nobel Prize for engineering enzymes
+What the origin of the genetic code reveals about early biochemistry
+How prions replicate without nucleic acids and challenge the central dogma
+What the RNA interference pathway does for gene regulation
+How long non-coding RNAs regulate gene expression in unexpected ways
+What transposable elements do as selfish genetic parasites
+How horizontal gene transfer spreads antibiotic resistance between bacterial species
+What the ENCODE project revealed about non-coding DNA function
+How single-cell sequencing reveals cellular heterogeneity within tissues
+What spatial transcriptomics adds by preserving location information
+How organoid technology creates miniature organs in dishes
+What induced pluripotent stem cells do for personalized medicine
+How chimeric antigen receptor T-cells fight cancer
+What liquid biopsies detect from circulating tumor DNA
+How the microbiome varies between individuals more than the genome does
+What fecal microbiota transplantation treats and the science behind it
+How phage therapy uses viruses to kill antibiotic-resistant bacteria
+What the resistome is and why it exists even in pristine environments
+How biofilm formation makes bacteria a thousand times more resistant
+What quorum sensing allows bacteria to coordinate group behavior
+How two-component signal transduction systems let bacteria sense their environment
+What the Type VI secretion system does as a bacterial weapon
+How magnetotactic bacteria use internal magnets to navigate
+What the nitrogen cycle's microbial players do at each step
+How cyanobacterial blooms threaten freshwater systems worldwide
+What endophytic fungi do living inside plants

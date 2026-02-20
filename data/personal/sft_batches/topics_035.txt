@@ -1,0 +1,50 @@
+the bathtub curve of hardware failure rates
+data recovery services and their astronomical pricing
+the clean room hard drive recovery process
+SSD wear leveling and the write endurance concern
+the TRIM command and SSD garbage collection
+NVMe controller quality and the Phison vs Samsung battle
+the QLC vs TLC NAND debate for consumer drives
+storage class memory and the performance hierarchy
+the memory hierarchy and its impact on software performance
+cache-friendly data structures and their performance benefits
+SIMD instructions and vectorization for performance
+profile-guided optimization and its real-world impact
+link-time optimization and whole-program analysis
+the compiler optimization levels and their tradeoffs
+the LLVM project and its influence on compiler technology
+GCC vs Clang and the compiler choice for C/C++
+the Cranelift compiler backend and its role in WebAssembly
+JIT compilation and its performance advantages
+the V8 engine and JavaScript performance evolution
+the SpiderMonkey engine and Firefox's JavaScript performance
+the browser engine rendering pipeline and its complexity
+the CSS layout engine and its computational challenges
+the compositor thread and smooth scrolling implementation
+browser extension APIs and the Manifest V3 controversy
+ad blocker effectiveness under Manifest V3 restrictions
+the uBlock Origin fork drama due to Manifest V3
+browser fingerprinting techniques and counter-measures
+the Tor Browser's approach to preventing fingerprinting
+privacy-preserving analytics alternatives to Google Analytics
+Plausible and Umami as privacy-respecting analytics tools
+Matomo self-hosted analytics and its capabilities
+the server-side analytics approach and its privacy benefits
+the cookie-less analytics movement
+user tracking in mobile apps and the ATT framework impact
+Apple's App Tracking Transparency decimating ad targeting
+the privacy label requirements on app stores
+app permission models and the granularity debate
+Android's scoped storage and its impact on file management apps
+the clipboard access notification and privacy awareness
+background app refresh and battery life optimization
+the background process restrictions on mobile platforms
+push notification fatigue and the mute-all movement
+notification channels and priority management on Android
+Focus modes and Do Not Disturb intelligence on iOS
+digital wellbeing features built into mobile operating systems
+the parental control technology debate and child privacy
+age verification technology and its privacy implications
+the children's online privacy protection act and its enforcement
+COPPA compliance challenges for app developers
+the Kids Online Safety Act debate and free speech concerns

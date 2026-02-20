@@ -1,0 +1,50 @@
+VR gaming still not being mainstream after a decade
+the metaverse hype collapsing and what remains
+AR glasses and the Google Glass lesson nobody learned
+gaming on a phone and whether mobile gaming is real gaming
+gacha mechanics and predatory monetization in mobile games
+indie mobile games that deserve more attention
+app store monopolies and the Epic vs Apple lawsuit
+cross-platform mobile development with Flutter vs React Native
+native mobile development dying or just evolving
+SwiftUI vs UIKit and Apple's push toward declarative UI
+Jetpack Compose modernizing Android development
+Kotlin replacing Java for Android development
+the mobile web being second-class to native apps
+PWAs on mobile and Apple's resistance to them
+responsive design in 2026 and the device fragmentation problem
+mobile-first design and whether it's still the right approach
+dark mode everything and whether it actually saves battery on OLED
+accessibility in software and why most apps fail at it
+color blindness accommodation in UI design
+screen reader compatibility being an afterthought
+the WebAIM Million report and how badly the web fails at accessibility
+semantic HTML and why developers skip it
+CSS Grid vs Flexbox and when to use which
+Tailwind CSS polarizing the web development community
+CSS-in-JS and why some developers hate it passionately
+the return of server-side rendering and why SPAs were a mistake
+htmx and the hypermedia movement
+React Server Components and whether they solve real problems
+Next.js vs Remix vs SvelteKit for full-stack web development
+Svelte's compilation approach vs React's virtual DOM
+Vue.js being the quiet middle child of frontend frameworks
+Angular surviving despite everyone mocking it
+the jQuery era and developers who still use it unironically
+WordPress powering 40% of the web and the security implications
+Webflow and no-code tools threatening frontend developer jobs
+the Jamstack hype cycle and where it landed
+static site generators and the return to simple websites
+the personal website revival among developers
+web components never quite catching on
+Shadow DOM and why it causes more problems than it solves
+the Web Platform API surface area growing uncontrollably
+WebRTC for peer-to-peer communication and its complexity
+WebSocket vs Server-Sent Events for real-time features
+the HTTP/3 and QUIC adoption story
+why everyone is still on HTTP/1.1 for most internal services
+TLS 1.3 and the death of older cipher suites
+DNS over HTTPS and the controversy around centralized DNS
+Cloudflare becoming a single point of failure for the internet
+the CDN market and whether you need one for your blog
+edge computing and running code at the CDN level

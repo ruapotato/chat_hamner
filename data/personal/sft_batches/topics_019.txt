@@ -1,0 +1,50 @@
+TAS (tool-assisted speedrun) and the human achievement question
+esports salaries and the sustainability of competitive gaming
+the Overwatch League collapse and esports organization failures
+Counter-Strike's enduring competitive scene
+Valorant's anti-cheat running at kernel level and security concerns
+game anti-cheat technology and the privacy implications
+cheating in online games and the detection arms race
+the modding community and game longevity
+Bethesda games being held together by community mods
+the Minecraft modding ecosystem and Forge vs Fabric
+Roblox and the child labor concerns in its creator economy
+Unity's pricing debacle and the game developer revolt
+the Unreal Engine vs Unity market dynamics
+Godot gaining momentum as an open-source game engine
+indie game development tools lowering the barrier to entry
+game jams and their role in creative experimentation
+the crunch culture in game development studios
+unionization efforts in the gaming industry
+Activision Blizzard workplace culture controversies
+Microsoft's acquisition of Activision Blizzard and market consolidation
+the consolidation of the gaming industry under three publishers
+Sony's PC port strategy and the end of console exclusivity
+Nintendo's unique position and the Switch successor anticipation
+the retro gaming market and prices for vintage cartridges
+FPGA-based retro gaming hardware like the Analogue systems
+the MiSTer FPGA project and accurate hardware emulation
+CRT vs flat panel for retro gaming authenticity
+the upscaling technology for old games and AI enhancement
+DLSS vs FSR vs XeSS and the AI upscaling wars
+ray tracing becoming mainstream and the visual fidelity leap
+path tracing in games and the computational cost
+Lumen and Nanite in Unreal Engine 5 changing game development
+procedural generation in games and its endless possibilities
+the roguelike genre explosion and its appeal
+early access games and the development model controversy
+live service games and the battle pass fatigue
+loot boxes and gambling mechanics in games
+the gacha game economy and whale exploitation
+pay-to-win vs cosmetic-only monetization debates
+the indie game discoverability problem on Steam
+wishlisting campaigns and the Steam algorithm
+game demos making a comeback at Steam Next Fest
+the cloud gaming promise and the latency reality
+Xbox Cloud Gaming and the xCloud experience
+GeForce Now and the publisher opt-in controversy
+Google Stadia's failure and what it taught the industry
+game streaming technology and the bandwidth requirements
+the Steam Deck and handheld PC gaming explosion
+the ROG Ally and Lenovo Legion Go competing for the handheld market
+Linux gaming compatibility through Proton and its rapid progress

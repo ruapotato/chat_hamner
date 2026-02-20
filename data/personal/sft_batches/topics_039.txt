@@ -1,0 +1,50 @@
+PageSpeed Insights recommendations that contradict each other
+the web performance optimization rabbit hole
+fonts loading slowly and the FOUT vs FOIT debate
+the system font stack and avoiding web font loading entirely
+variable fonts and their potential for reducing font file sizes
+icon fonts vs SVG icons and the accessibility implications
+the favicon.ico and its evolution to multiple sizes and formats
+the Open Graph meta tags and social media preview optimization
+the Twitter card validator and debugging social media embeds
+schema.org structured data and its SEO impact
+the robots meta tag and noindex directive
+sitemap generation and its diminishing relevance
+the web almanac and its annual snapshot of the web
+the HTTP Archive tracking web technology trends
+web technology archaeology and finding sites from the 90s
+the GeoCities nostalgia and the old web aesthetic revival
+Neocities and the indie web revival movement
+the IndieWeb movement and owning your own content
+POSSE (Publish on Own Site, Syndicate Elsewhere) strategy
+the webring comeback and community site directories
+the personal homepage as a creative expression
+the portfolio site obsession among junior developers
+the GitHub profile README customization trend
+the LinkedIn cringe post phenomenon in tech
+influencer culture infiltrating developer communities
+the DevRel influencer pipeline and its authenticity questions
+the tech thought leader hot take cycle on social media
+the contrarian tech opinion that gets engagement
+the "X is dead" headline pattern for every technology
+the "you're using X wrong" blog post template
+the "we migrated from X to Y" case study format
+rage-driven development and fixing bugs out of pure spite
+the rubber band effect of productivity after a vacation
+the Sunday scaries about Monday's deployment
+naming a variable and spending 30 minutes on it
+the git commit message at 11pm that just says "fix stuff"
+the TODO comment that's been in the codebase for seven years
+the commented-out code block that nobody dares to delete
+dead code accumulation and the fear of removing it
+the feature flag that was supposed to be temporary three years ago
+the database migration that worked in staging but not in production
+the environment variable that was different between staging and prod
+the "it works on my machine" Docker meme becoming Docker's actual marketing
+the localhost works but production doesn't debugging session
+the off-by-one error that only manifests on the last day of the month
+the timezone bug that only appears during daylight saving time transitions
+the unicode bug that appears when someone pastes from Microsoft Word
+the emoji in a database column that crashes the application
+the SQL query that runs fine until the table has a million rows
+the memory leak that only shows up after 72 hours in production

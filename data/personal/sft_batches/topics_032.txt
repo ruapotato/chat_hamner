@@ -1,0 +1,50 @@
+addiction by design in social media platforms
+the Time Well Spent movement and digital wellbeing features
+screen time limits and whether they actually help
+the dopamine detox trend and its scientific basis
+the attention restoration theory and nature exposure
+tech-free zones and digital sabbath practices
+the right to disconnect legislation in various countries
+always-on work culture and the Slack notification anxiety
+email after hours and the expectation of instant response
+asynchronous communication tools and their proper use
+the meeting-free day experiment and its productivity results
+deep work and the focus time scheduling approach
+the Pomodoro technique and its tech tool implementations
+productivity apps that become their own time sinks
+the personal productivity system optimization trap
+second brain tools and the note-taking app switching cycle
+Roam Research and the bidirectional linking revolution
+Logseq as the open-source Roam alternative
+the Zettelkasten method adapted for digital tools
+knowledge management in organizations and its failures
+the institutional knowledge loss when employees leave
+onboarding documentation that's always out of date
+the internal wiki that nobody maintains
+Confluence being where documentation goes to die
+the docs-as-code approach and its benefits
+MkDocs and Docusaurus for documentation sites
+the API documentation tooling landscape
+Postman vs Insomnia vs Bruno for API testing
+the HTTPie command-line tool for API interaction
+curl being the universal API debugging tool
+wget vs curl and when to use which
+the command-line renaissance and TUI applications
+rich terminal output with libraries like Rich and Textual
+the charm.sh toolkit and beautiful CLI tools
+terminal file managers like ranger and lf
+the fzf fuzzy finder changing command-line workflows
+ripgrep replacing grep for most developers
+fd replacing find for file discovery
+bat replacing cat with syntax highlighting
+the modern Unix tool replacement movement
+eza replacing ls with color and icons
+zoxide replacing cd with smart directory jumping
+the Rust rewrite of every Unix tool trend
+delta as a better git diff viewer
+lazygit and the terminal Git UI revolution
+git worktrees for working on multiple branches simultaneously
+the git stash workflow and its pitfalls
+interactive git rebase for cleaning up commit history
+conventional commits and automated changelog generation
+the Commitizen tool for standardized commit messages

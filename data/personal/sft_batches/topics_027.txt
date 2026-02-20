@@ -1,0 +1,50 @@
+the tRPC approach to end-to-end type safety
+full-stack TypeScript and the shared type advantage
+Zod validation and the runtime type checking movement
+the TypeScript strict mode and convincing teams to enable it
+type-driven development and designing types first
+branded types in TypeScript for domain modeling
+the nominal vs structural typing debate
+algebraic data types and discriminated unions in TypeScript
+pattern matching proposals for JavaScript
+the TC39 process and JavaScript feature proposals
+the decorator proposal's long journey through TC39
+optional chaining and nullish coalescing changing JavaScript patterns
+top-level await and its impact on module loading
+import maps and the future of JavaScript module loading
+bundler wars and whether we still need Webpack
+Vite replacing Webpack and the developer experience improvement
+Turbopack and Vercel's next-generation bundler
+esbuild's speed changing expectations for build tools
+the build tool fatigue in the JavaScript ecosystem
+Rome/Biome trying to be the one tool to rule them all
+linter configuration wars and the Prettier debate
+whether auto-formatters have ended code style debates
+the semicolons in JavaScript debate that never actually dies
+naming things being the hardest problem in computer science
+variable naming conventions across different languages
+the Hungarian notation legacy and modern naming approaches
+comment quality and whether code should be self-documenting
+documentation-driven development and writing docs first
+the Diátaxis framework for technical documentation
+the technical writing skills gap in software engineering
+rubber duck debugging and its surprising effectiveness
+the printf debugging approach vs proper debugger usage
+time-travel debugging and its practical applications
+the print statement that accidentally went to production
+logging levels and the art of useful log messages
+the observability bill that's more than your infrastructure cost
+the three pillars of observability and their interconnection
+distributed tracing and the complexity of trace propagation
+the OpenTelemetry collector and its configuration complexity
+Jaeger vs Zipkin for distributed tracing
+Grafana becoming the universal dashboard tool
+the dashboard that nobody looks at but everybody requests
+alert fatigue and the boy who cried wolf problem in monitoring
+SLOs and error budgets as an engineering management tool
+the nines of availability and what each level actually means
+the cost curve of going from three nines to four nines
+high availability architectures and their complexity tax
+active-active vs active-passive database replication
+the split-brain problem in distributed systems
+leader election algorithms and their failure modes

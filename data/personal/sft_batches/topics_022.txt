@@ -1,0 +1,50 @@
+the Turing test being obsolete in the age of ChatGPT
+AI benchmarks becoming saturated and what comes next
+the MMLU benchmark and its flaws
+AI safety research and the alignment tax
+reinforcement learning from human feedback and its limitations
+constitutional AI and self-supervised alignment
+the reward hacking problem in RLHF
+AI red teaming and adversarial testing
+jailbreaking LLMs and the cat-and-mouse game
+prompt injection attacks and their severity
+the AI agent paradigm and autonomous systems
+AutoGPT and the recursive self-improvement attempt
+AI coding assistants and their impact on software quality
+Cursor IDE and the AI-native development environment
+GitHub Copilot Workspace and the future of code generation
+Claude Artifacts and interactive AI outputs
+multimodal AI and the vision-language model convergence
+text-to-video generation and the Sora announcement
+AI voice cloning and the identity theft implications
+the AI girlfriend industry and its societal implications
+AI companions and the loneliness epidemic
+the emotional attachment to AI chatbots and its psychology
+character.ai and the teenage user safety concerns
+AI tutoring and the personalized education promise
+Khan Academy's AI integration and the education sector response
+Duolingo using AI and the tutor replacement debate
+AI in hiring and the resume screening bias problem
+AI writing detection tools and their false positive rates
+students using AI for essays and the academic integrity crisis
+the plagiarism detection arms race in education
+Turnitin's AI detection controversy and false accusations
+AI art tools and the copyright ownership question
+Midjourney's training data controversy
+the Stability AI funding and organizational chaos
+RunwayML and creative AI tools for video production
+Adobe Firefly and the commercially safe AI art approach
+the AI watermark detection technology and its limitations
+deepfake detection and the adversarial improvement cycle
+voice deepfakes in political campaigns
+the Taylor Swift deepfake incident and the legislative response
+AI-generated spam flooding the internet
+the dead internet theory and AI-generated content
+search engines struggling with AI-generated content
+Google's search quality decline and the Reddit append trick
+Perplexity AI and the AI-powered search paradigm
+the future of search in an AI-generated content world
+knowledge graphs and their role in AI systems
+the Semantic Web vision finally realized through LLMs maybe
+ontologies and knowledge representation in AI
+symbolic AI vs connectionist AI and the hybrid approach

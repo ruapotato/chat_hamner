@@ -1,0 +1,50 @@
+digital preservation and the formats that become unreadable
+the floppy disk as a save icon and other skeuomorphic relics
+legacy systems running on technology from the 1960s
+COBOL programmers being pulled out of retirement for emergencies
+the mainframe still running critical banking infrastructure
+the Y2K preparation and whether it was overblown or not
+technical debt accumulating over decades in financial systems
+the banking API modernization challenge
+fintech disrupting traditional banking infrastructure
+the payment processing stack and its complexity
+Stripe's developer experience setting the standard for APIs
+the PCI DSS compliance burden for handling credit cards
+the ACH system being stuck in the 1970s
+real-time payments and the FedNow launch
+open banking APIs and the PSD2 regulation in Europe
+the SWIFT system and geopolitical weaponization
+cryptocurrency exchanges vs traditional finance infrastructure
+the RegTech industry and automating compliance
+the InsurTech and PropTech buzzwords and their substance
+the HealthTech boom and electronic health records
+FHIR standards for health data interoperability
+telemedicine technology and its post-pandemic adoption
+the EHR vendor lock-in problem in healthcare
+Epic Systems dominating the electronic health records market
+the interoperability problem across healthcare systems
+wearable health devices and the data they generate
+Apple Watch detecting heart conditions and saving lives
+Fitbit data being used in court cases
+the quantified self movement and data obsession
+sleep tracking accuracy and whether it helps or just causes anxiety
+continuous glucose monitors for non-diabetics and the biohacking trend
+brain-computer interfaces and Neuralink's promises
+the ethics of cognitive enhancement technology
+cochlear implants and the deaf community's complex relationship with them
+prosthetic limb technology and the 3D printing revolution
+medical device cybersecurity and the pacemaker hacking concern
+surgical robots and the Da Vinci system's dominance
+AI in medical imaging and the radiologist replacement debate
+drug discovery with AI and the accelerated timelines
+protein folding prediction with AlphaFold and its impact
+the CRISPR revolution and gene editing ethics
+synthetic biology and the iGEM competition
+bioinformatics as a career at the intersection of bio and CS
+the computational biology demand and skill shortage
+DNA sequencing costs dropping faster than Moore's Law
+personalized medicine and the genomics data challenge
+the 23andMe privacy concerns and the DNA database implications
+genetic data and insurance discrimination fears
+the bioethics of designer babies
+pandemic preparedness technology and the lessons from COVID-19

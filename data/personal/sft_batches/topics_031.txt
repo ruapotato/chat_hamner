@@ -1,0 +1,50 @@
+the Find My network and its crowdsourced design
+Bluetooth Low Energy and its ubiquitous applications
+the Bluetooth naming convention and its Viking origins
+NFC technology and tap-to-pay implementation
+QR codes surviving their declared death multiple times
+the QR code renaissance during COVID and its persistence
+digital payment systems and the cashless society debate
+the unbanked population and fintech inclusion efforts
+mobile money in developing countries and M-Pesa's success
+the digital identity problem and self-sovereign identity
+decentralized identity and verifiable credentials
+the W3C DID specification and its adoption
+the identity federation problem across organizations
+single sign-on fatigue and the password manager alternative
+the authenticator app vs hardware key debate
+YubiKey and FIDO2 hardware authentication
+the WebAuthn standard and passwordless authentication
+biometric authentication and the template storage concern
+Face ID and Touch ID and the biometric data protection
+the deepfake threat to biometric authentication
+liveness detection and anti-spoofing in biometrics
+behavioral biometrics and continuous authentication
+the typing pattern analysis for user identification
+mouse movement analysis for bot detection
+CAPTCHA alternatives and the proof of humanity challenge
+the Worldcoin iris scanning controversy
+proof of personhood and the Sybil attack problem
+the digital commons and shared resources on the internet
+Wikipedia's sustainability model and editor community
+the Wikimedia Foundation's fundraising emails
+open educational resources and free textbook movements
+the MOOCs promise and what actually happened
+coding education for kids and the Scratch programming language
+the CS education pipeline and earlier exposure initiatives
+computational thinking as a fundamental skill
+the digital literacy gap across generations
+teaching seniors to use technology and the UX challenges
+the accessibility of technology for people with disabilities
+screen magnification and low-vision accommodation in software
+voice control interfaces and their reliability
+the natural language interface dream and its current reality
+conversational AI for customer service and the frustration
+chatbot design patterns and the escalation to human agent
+the uncanny valley in conversational AI
+emotional AI and sentiment analysis accuracy
+affective computing and the ethics of emotion detection
+the workplace emotion monitoring technology concerns
+neurotechnology and the brain data privacy frontier
+the right to cognitive liberty and mental privacy
+the ethics of persuasive technology design

@@ -1,0 +1,50 @@
+the GNU Stow approach to dotfile management
+the XDG Base Directory specification and apps that ignore it
+the Linux filesystem hierarchy and the /opt vs /usr debate
+systemd's controversial takeover of Linux init systems
+the systemd love-hate relationship in the Linux community
+cgroups and namespaces being the foundation of containers
+the container vs VM debate for isolation and security
+Firecracker microVMs and the serverless infrastructure
+the Lambda cold start optimization game
+edge functions and the distributed compute model
+Deno Deploy and Cloudflare Workers competing at the edge
+the WebAssembly runtime outside the browser
+WASI and the WebAssembly system interface standardization
+WebAssembly as the universal binary format dream
+the portability promise of WebAssembly vs the reality
+Emscripten and compiling C/C++ to WebAssembly
+Blazor and running .NET in the browser via WebAssembly
+the .NET ecosystem and its cross-platform evolution
+C# becoming surprisingly cool and modern
+the F# functional programming community and its enthusiasm
+the JVM ecosystem and whether Java is still boring but reliable
+Kotlin's adoption beyond Android development
+the Spring Boot vs Quarkus debate for Java microservices
+GraalVM native image and the startup time revolution for Java
+the Jakarta EE renaming confusion
+Java records and pattern matching making Java more expressive
+the virtual threads in Java and Project Loom
+the Panama project and Java's foreign function interface
+Go modules and the dependency management journey
+the Go generics addition and whether it was worth the wait
+Go's simplicity philosophy and the features it deliberately lacks
+error handling in Go and the if err != nil repetition
+the Go playground and its role in teaching the language
+PHP's actual modern state vs its reputation from 2005
+Laravel being a genuinely good framework despite the PHP stigma
+the WordPress to headless CMS migration trend
+Strapi and the open-source headless CMS options
+the CMS landscape and Contentful vs Sanity vs everything else
+static site generators and the Hugo vs Jekyll vs 11ty choice
+Astro and the island architecture for web performance
+the resumability concept in Qwik framework
+signals in frontend frameworks and the reactive revolution
+SolidJS and fine-grained reactivity without a virtual DOM
+the React useEffect footgun and component lifecycle confusion
+React hooks and the mental model shift from classes
+the React concurrent mode saga and Suspense
+Redux being overkill for most applications
+Zustand and Jotai simplifying React state management
+the state management library explosion in React
+server state management with TanStack Query

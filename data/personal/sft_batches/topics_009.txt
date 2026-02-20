@@ -1,0 +1,50 @@
+Vercel and Netlify competing for the frontend deployment market
+the Vercel pricing shock when your hobby project goes viral
+Heroku killing its free tier and the scramble for alternatives
+Railway and Render as the new Heroku alternatives
+fly.io and deploying containers at the edge
+PaaS vs IaaS and the level of abstraction developers want
+the localhost tunnel obsession with ngrok and Cloudflare Tunnel
+reverse proxy setup with Nginx vs Caddy vs Traefik
+Let's Encrypt and Caddy making HTTPS trivially easy
+the Apache vs Nginx debate that quietly ended
+web server configuration as a lost art
+the WAF and rate limiting arms race against bots
+bot traffic being half of all internet traffic
+web scraping ethics and the legal gray areas
+the robots.txt honor system and who actually follows it
+CAPTCHA arms race and whether reCAPTCHA just trains Google's AI
+the death of third-party cookies and what replaces them
+first-party data collection becoming the new surveillance capitalism
+Google's Privacy Sandbox and the ad industry's response
+ad blockers and the ethical debate around content monetization
+the creator economy and Patreon supporting tech content
+tech newsletters and the Substack phenomenon
+email being the cockroach of the internet that refuses to die
+the email protocol being held together by decades of patches
+SMTP being designed with zero security and still working somehow
+the spam filter arms race and legitimate emails going to junk
+calendar invites and the iCalendar format nightmare
+Zoom fatigue and the meeting overload in remote work
+the async communication movement and whether Slack killed it
+Notion becoming the everything tool and the note-taking app wars
+Obsidian and the personal knowledge management obsession
+the second brain concept and whether anyone actually builds one
+org-mode users and their impenetrable Emacs configurations
+the plain text productivity movement
+Markdown flavors and the lack of a true standard
+the todo app graveyard on every developer's phone
+time tracking software and the trust issues it creates
+Jira being universally hated yet universally used
+the agile industrial complex and certifications that mean nothing
+scrum masters who've never written a line of code
+standups that take 45 minutes and accomplish nothing
+sprint planning theater and the points estimation game
+kanban boards vs scrum and the hybrid approaches
+the shape up methodology and whether Basecamp was onto something
+project management tools multiplying while productivity stays flat
+technical debt discussions that never result in time to fix it
+the rewrite-from-scratch temptation and why it usually fails
+legacy code and the fear of touching something that works
+the bus factor of one developer knowing the entire system
+code reviews that are too nitpicky vs code reviews that rubber-stamp
