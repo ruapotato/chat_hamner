@@ -255,14 +255,32 @@ class MultiSourceStreamer:
         if self.personal_samples and random.random() < self.personal_mix_ratio:
             return random.choice(self.personal_samples)
 
+        max_retries = 10
+        retry_delay = 5  # seconds, doubles each retry
+        retries = 0
+
         while True:
             try:
                 sample = next(self.streams[source])
                 text = sample.get("text", sample.get("content", ""))
                 if len(text.strip()) < 50:
                     continue
+                retries = 0  # reset on success
                 return text
             except StopIteration:
+                self._restart_stream(source)
+            except Exception as e:
+                retries += 1
+                if retries > max_retries:
+                    log(f"FATAL: {source} stream failed {max_retries} times, "
+                        f"last error: {e}")
+                    raise
+                wait = retry_delay * (2 ** (retries - 1))
+                log(f"WARNING: {source} stream error (attempt {retries}/"
+                    f"{max_retries}): {e}")
+                log(f"  Restarting stream in {wait}s...")
+                import time
+                time.sleep(wait)
                 self._restart_stream(source)
 
     def _choose_source(self):
