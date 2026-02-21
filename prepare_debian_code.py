@@ -7,8 +7,24 @@ extracts code files across all languages, and outputs a training corpus.
 Every package in Debian main is DFSG-vetted, making this suitable for
 inclusion in Debian main repos without license concerns.
 
+Prerequisites (checked automatically on startup):
+  - Debian-based system (Debian, Ubuntu, etc.)
+  - deb-src lines enabled in /etc/apt/sources.list (for apt-get source)
+  - dpkg-dev package installed (provides dpkg-source)
+
+To enable deb-src on Debian:
+    sudo sed -i 's/^Types: deb$/Types: deb deb-src/' /etc/apt/sources.list.d/debian.sources
+    sudo apt-get update
+
+To enable deb-src on Ubuntu:
+    sudo sed -i '/^#\\s*deb-src/s/^#\\s*//' /etc/apt/sources.list
+    sudo apt-get update
+
+Install dpkg-dev if missing:
+    sudo apt-get install dpkg-dev
+
 Output:
-  - data/debian_code.jsonl      (~3GB code corpus)
+  - data/debian_code.jsonl      (~2-3GB code corpus, ~300k+ source files)
 
 Usage:
     python prepare_debian_code.py
@@ -401,6 +417,70 @@ def extract_code_files(pkg_dir, package_name):
 
 
 # ---------------------------------------------------------------------------
+# Prerequisites check
+# ---------------------------------------------------------------------------
+
+def check_prerequisites():
+    """Verify system can download and extract Debian source packages."""
+    errors = []
+
+    # Check for dpkg-source
+    if shutil.which('dpkg-source') is None:
+        errors.append(
+            "dpkg-source not found. Install with:\n"
+            "    sudo apt-get install dpkg-dev"
+        )
+
+    # Check for apt-get
+    if shutil.which('apt-get') is None:
+        errors.append(
+            "apt-get not found. This script requires a Debian-based system."
+        )
+
+    # Check for deb-src in sources
+    has_deb_src = False
+    sources_paths = ['/etc/apt/sources.list']
+    src_d = Path('/etc/apt/sources.list.d/')
+    if src_d.exists():
+        sources_paths.extend(src_d.glob('*.list'))
+        sources_paths.extend(src_d.glob('*.sources'))
+    for src_path in sources_paths:
+        try:
+            content = Path(src_path).read_text()
+            if 'deb-src' in content or 'Types: deb deb-src' in content:
+                has_deb_src = True
+                break
+        except (OSError, IOError):
+            continue
+
+    if not has_deb_src:
+        # Try a real test — some systems use modern DEB822 format
+        result = subprocess.run(
+            ['apt-get', 'source', '--download-only', '--dry-run', 'coreutils'],
+            capture_output=True, text=True, timeout=15,
+        )
+        if result.returncode == 0:
+            has_deb_src = True
+
+    if not has_deb_src:
+        errors.append(
+            "No deb-src sources found. Enable with:\n"
+            "  Debian:  sudo sed -i 's/^Types: deb$/Types: deb deb-src/' "
+            "/etc/apt/sources.list.d/debian.sources && sudo apt-get update\n"
+            "  Ubuntu:  sudo sed -i '/^#\\s*deb-src/s/^#\\s*//' "
+            "/etc/apt/sources.list && sudo apt-get update"
+        )
+
+    if errors:
+        log("PREREQUISITES CHECK FAILED:")
+        for e in errors:
+            log(f"  {e}")
+        sys.exit(1)
+
+    log("Prerequisites OK: dpkg-source found, deb-src enabled")
+
+
+# ---------------------------------------------------------------------------
 # Main processing
 # ---------------------------------------------------------------------------
 
@@ -423,6 +503,10 @@ def main():
     log("=" * 70)
     log("PREPARE DEBIAN CODE CORPUS")
     log("=" * 70)
+
+    if not args.skip_download:
+        check_prerequisites()
+
     log(f"Packages: {len(packages_to_process)}")
     log(f"Target size: {args.target_gb:.1f} GB")
     log(f"Output: {args.output}")
