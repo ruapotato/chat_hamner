@@ -328,9 +328,15 @@ def download_source(package, work_dir):
 def find_and_extract_dsc(work_dir):
     """Find .dsc files and extract them with dpkg-source."""
     extracted_dirs = []
+    # Record existing directories before extraction
+    existing_dirs = set(
+        e for e in os.listdir(work_dir)
+        if os.path.isdir(os.path.join(work_dir, e))
+    )
     for fname in os.listdir(work_dir):
         if fname.endswith('.dsc'):
-            dsc_path = os.path.join(work_dir, fname)
+            # Use absolute path for dpkg-source
+            dsc_path = os.path.abspath(os.path.join(work_dir, fname))
             try:
                 result = subprocess.run(
                     ['dpkg-source', '-x', '--no-check', dsc_path],
@@ -339,10 +345,11 @@ def find_and_extract_dsc(work_dir):
                     timeout=EXTRACT_TIMEOUT,
                 )
                 if result.returncode == 0:
-                    # dpkg-source extracts into a directory named after the package
+                    # Find newly created directories
                     for entry in os.listdir(work_dir):
                         entry_path = os.path.join(work_dir, entry)
-                        if os.path.isdir(entry_path) and entry not in ('.', '..'):
+                        if (os.path.isdir(entry_path)
+                                and entry not in existing_dirs):
                             extracted_dirs.append(entry_path)
             except (subprocess.TimeoutExpired, Exception):
                 pass
