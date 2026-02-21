@@ -61,9 +61,9 @@ The architecture was selected through a [tournament of 10 competing designs](#to
 
 ## Training Pipeline (V4)
 
-Inspired by [SmolLM2](https://huggingface.co/HuggingFaceTB/SmolLM2-135M): massive overtraining on diverse data with a multi-stage curriculum. 5 stages, ~4.5 days on a single RTX 3090.
+Inspired by [SmolLM2](https://huggingface.co/HuggingFaceTB/SmolLM2-135M): massive overtraining on diverse data with a multi-stage curriculum. 5 stages, ~7 days on a single RTX 3090.
 
-### Stage 1: Base Pretraining (~2.5 days)
+### Stage 1: Base Pretraining (~4.5 days)
 
 Train the base language model on diverse web text from two high-quality sources.
 
@@ -77,7 +77,7 @@ python train_pretrain.py --fresh
 - **Batch size**: 24 x 1024 tokens
 - **Output**: `checkpoints/pretrain_v4/latest.pt`
 
-### Stage 2: Code + Math Annealing (~18 hours)
+### Stage 2: Code + Math Annealing (~32 hours)
 
 Anneal with code and math data mixed in, linearly decaying LR to zero.
 
@@ -90,7 +90,7 @@ python train_pretrain.py --stage anneal
 - **Steps**: 122,000 (~3B tokens)
 - **Output**: `checkpoints/pretrain_v4_anneal/latest.pt`
 
-### Stage 3: Chat Pretraining (~6 hours)
+### Stage 3: Chat Pretraining (~11 hours)
 
 Continue on a dialogue-heavy mix so the model learns conversational format as natural language.
 
@@ -103,7 +103,7 @@ python train_chat_pretrain.py
 - **Steps**: 40,000 (~1B tokens)
 - **Output**: `checkpoints/chat_pretrain/latest.pt`
 
-### Stage 4: Supervised Fine-Tuning (~1 hour)
+### Stage 4: Supervised Fine-Tuning (~3 hours)
 
 Fine-tune on ~104k conversations with loss computed only on assistant response tokens. Custom data upweighted 2x.
 
@@ -118,7 +118,7 @@ python train_sft.py
 - **LR**: 1e-4 with linear warmup
 - **Output**: `checkpoints/sft/best.pt`
 
-### Stage 5: DPO Alignment (~30 min)
+### Stage 5: DPO Alignment (~1-2 hours)
 
 Direct Preference Optimization using human preference data.
 
@@ -160,19 +160,19 @@ python process_youtube.py
 # 3. Prepare SFT data (downloads SmolTalk, combines with custom data)
 python prepare_sft_data.py
 
-# 4. Stage 1: Base pretrain (~2.5 days on RTX 3090)
+# 4. Stage 1: Base pretrain (~4.5 days on RTX 3090)
 python train_pretrain.py --fresh
 
-# 5. Stage 2: Code + Math anneal (~18 hours)
+# 5. Stage 2: Code + Math anneal (~32 hours)
 python train_pretrain.py --stage anneal
 
-# 6. Stage 3: Chat pretrain (~6 hours)
+# 6. Stage 3: Chat pretrain (~11 hours)
 python train_chat_pretrain.py
 
-# 7. Stage 4: SFT (~1 hour)
+# 7. Stage 4: SFT (~3 hours)
 python train_sft.py
 
-# 8. Stage 5: DPO alignment (~30 minutes)
+# 8. Stage 5: DPO alignment (~1-2 hours)
 python train_dpo.py
 
 # 9. Chat!
