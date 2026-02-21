@@ -1,13 +1,17 @@
 """
-Hamner SFT (Supervised Fine-Tuning) Script
-==========================================
-Fine-tunes the pretrained Hamner base model on conversation data.
+Hamner SFT (Supervised Fine-Tuning) Script — V4
+================================================
+Fine-tunes the pretrained Hamner model on conversation data.
 Only computes loss on assistant response tokens.
 
+V4: Supports ~104k conversations from SmolTalk + custom data,
+    weighted sampling for custom data, validation split, early stopping.
+
 Usage:
-    python train_sft.py                                    # start from pretrained base
+    python train_sft.py                                    # start from chat pretrain
     python train_sft.py --checkpoint path/to/base.pt       # use specific pretrained base
     python train_sft.py --resume                           # resume SFT training
+    python train_sft.py --data path/to/data.jsonl          # override data file
 """
 
 import os
@@ -29,27 +33,37 @@ from model import HamnerModel, HamnerConfig
 # Config
 # ---------------------------------------------------------------------------
 
-BASE_CHECKPOINT = "checkpoints/chat_pretrain/step_0020000.pt"
+BASE_CHECKPOINT = "checkpoints/chat_pretrain/latest.pt"
+BASE_CHECKPOINT_FALLBACKS = [
+    "checkpoints/pretrain_v4_anneal/latest.pt",
+    "checkpoints/pretrain_v4/latest.pt",
+    "checkpoints/pretrain_v2/latest.pt",
+]
 SFT_CHECKPOINT_DIR = "checkpoints/sft"
-SFT_DATA = "data/personal/sft_diverse_v2.jsonl"
+SFT_DATA = "data/sft_combined.jsonl"
+SFT_DATA_FALLBACK = "data/personal/sft_diverse_only.jsonl"
 VOICE_SAMPLES_FILE = "data/personal/voice_sample.txt"
-LOG_FILE = "logs/sft.log"
-METRICS_FILE = "logs/sft_metrics.csv"
-SAMPLES_FILE = "logs/sft_samples.jsonl"
+LOG_FILE = "logs/sft_v4.log"
+METRICS_FILE = "logs/sft_v4_metrics.csv"
+SAMPLES_FILE = "logs/sft_v4_samples.jsonl"
 
-# Training hyperparameters
-NUM_EPOCHS = 5
+# Training hyperparameters — V4: more data, fewer epochs
+NUM_EPOCHS = 3
 BATCH_SIZE = 8
 SEQ_LEN = 1024
-LR = 5e-5
-WARMUP_STEPS = 50
+LR = 1e-4            # SmolLM2 uses higher LR for small model SFT
+WARMUP_STEPS = 100
 WEIGHT_DECAY = 0.1
 GRAD_CLIP = 1.0
+VAL_SPLIT = 0.05     # 5% held out for validation
+EARLY_STOP_PATIENCE = 3  # stop after N val checks without improvement
+CUSTOM_WEIGHT = 2.0  # 2x weight for our custom data (identity, personality)
 
 # Logging / checkpointing
-CHECKPOINT_EVERY = 250
-SAMPLE_EVERY = 100
+CHECKPOINT_EVERY = 500
+SAMPLE_EVERY = 200
 LOG_EVERY = 10
+VAL_EVERY = 500
 
 # Fallback system prompt (used if voice_sample.txt not found)
 SYSTEM_PROMPT = (
@@ -133,34 +147,44 @@ def parse_conversation(text):
 
 
 class SFTDataset(Dataset):
-    """SFT dataset that masks everything except assistant responses."""
+    """SFT dataset that masks everything except assistant responses.
 
-    def __init__(self, data_path, tokenizer, max_len=1024):
+    Supports weighted sampling: custom data gets higher weight.
+    """
+
+    def __init__(self, data_path, tokenizer, max_len=1024, custom_weight=1.0):
         self.tokenizer = tokenizer
         self.max_len = max_len
         self.pad_id = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else 0
         self.eos_id = tokenizer.eos_token_id if tokenizer.eos_token_id is not None else 0
 
-        # Load conversations
+        # Load conversations with source tracking
         conversations = []
+        sources = []
         with open(data_path) as f:
             for line in f:
                 line = line.strip()
                 if line:
                     entry = json.loads(line)
                     conversations.append(entry["text"])
+                    sources.append(entry.get("source", "unknown"))
         log(f"Loaded {len(conversations)} conversations from {data_path}")
 
         # Pre-tokenize all conversations
         self.samples = []
+        self.weights = []
         total_tokens = 0
         total_labeled = 0
         skipped = 0
 
-        for text in conversations:
+        for i, text in enumerate(conversations):
             result = self._tokenize(text)
             if result is not None:
                 self.samples.append(result)
+                # Higher weight for custom data
+                source = sources[i] if i < len(sources) else "unknown"
+                is_custom = source in ("custom_diverse", "custom_tech")
+                self.weights.append(custom_weight if is_custom else 1.0)
                 mask = result["labels"] != -100
                 total_tokens += result["attention_mask"].sum().item()
                 total_labeled += mask.sum().item()
@@ -170,6 +194,8 @@ class SFTDataset(Dataset):
         pct = total_labeled / max(total_tokens, 1) * 100
         log(f"Prepared {len(self.samples)} samples ({skipped} skipped)")
         log(f"Token stats: {total_labeled:,} labeled / {total_tokens:,} total ({pct:.1f}% trained on)")
+        n_custom = sum(1 for w in self.weights if w > 1.0)
+        log(f"Custom data: {n_custom} samples with {custom_weight}x weight")
 
     def _tokenize(self, text):
         """Tokenize a conversation and create SFT labels.
@@ -425,6 +451,15 @@ def train(base_checkpoint=None, resume=False):
 
     if not resume:
         ckpt_path = base_checkpoint or BASE_CHECKPOINT
+        if not os.path.exists(ckpt_path):
+            for fallback in BASE_CHECKPOINT_FALLBACKS:
+                if os.path.exists(fallback):
+                    ckpt_path = fallback
+                    log(f"Using fallback checkpoint: {ckpt_path}")
+                    break
+            else:
+                log("ERROR: No base checkpoint found. Run train_chat_pretrain.py first.")
+                sys.exit(1)
         model, config = load_base_model(ckpt_path, device)
         config.vocab_size = tokenizer.vocab_size
 
@@ -438,20 +473,60 @@ def train(base_checkpoint=None, resume=False):
         log("Compiling model with torch.compile (first step will be slow)...")
         model = torch.compile(model)
 
-    # Load SFT data
-    dataset = SFTDataset(SFT_DATA, tokenizer, max_len=SEQ_LEN)
+    # Load SFT data — try combined, fallback to custom-only
+    sft_data_path = SFT_DATA
+    if not os.path.exists(sft_data_path):
+        if os.path.exists(SFT_DATA_FALLBACK):
+            sft_data_path = SFT_DATA_FALLBACK
+            log(f"Combined SFT data not found, using fallback: {sft_data_path}")
+        else:
+            log(f"ERROR: No SFT data found at {SFT_DATA} or {SFT_DATA_FALLBACK}")
+            log("Run prepare_sft_data.py first.")
+            sys.exit(1)
+
+    full_dataset = SFTDataset(sft_data_path, tokenizer, max_len=SEQ_LEN,
+                              custom_weight=CUSTOM_WEIGHT)
+
+    # Validation split
+    n_total = len(full_dataset)
+    n_val = max(1, int(n_total * VAL_SPLIT))
+    n_train = n_total - n_val
+
+    from torch.utils.data import Subset, WeightedRandomSampler
+    indices = list(range(n_total))
+    random.seed(42)
+    random.shuffle(indices)
+    train_indices = indices[:n_train]
+    val_indices = indices[n_train:]
+
+    train_dataset = Subset(full_dataset, train_indices)
+    val_dataset = Subset(full_dataset, val_indices)
+
+    # Weighted sampler for training (upweight custom data)
+    train_weights = [full_dataset.weights[i] for i in train_indices]
+    sampler = WeightedRandomSampler(train_weights, len(train_weights), replacement=True)
+
     dataloader = DataLoader(
-        dataset,
+        train_dataset,
         batch_size=BATCH_SIZE,
-        shuffle=True,
+        sampler=sampler,
         num_workers=0,
         pin_memory=True,
         drop_last=True,
     )
 
+    val_dataloader = DataLoader(
+        val_dataset,
+        batch_size=BATCH_SIZE,
+        shuffle=False,
+        num_workers=0,
+        pin_memory=True,
+        drop_last=False,
+    )
+
     steps_per_epoch = len(dataloader)
     total_steps = steps_per_epoch * NUM_EPOCHS
-    log(f"Data: {len(dataset)} samples | {steps_per_epoch} steps/epoch | "
+    log(f"Data: {n_train} train / {n_val} val | {steps_per_epoch} steps/epoch | "
         f"{total_steps} total steps over {NUM_EPOCHS} epochs")
 
     # Load voice sample prompts for generation
@@ -470,6 +545,8 @@ def train(base_checkpoint=None, resume=False):
     global_step = start_step
     start_time = time.time()
     tokens_total = 0
+    best_val_loss = float("inf")
+    patience_counter = 0
 
     # Graceful shutdown
     shutdown_requested = False
@@ -484,6 +561,8 @@ def train(base_checkpoint=None, resume=False):
     log(f"  Epochs: {NUM_EPOCHS} | Batch: {BATCH_SIZE} | Seq len: {SEQ_LEN}")
     log(f"  LR: {LR} | Warmup: {WARMUP_STEPS} steps | Weight decay: {WEIGHT_DECAY}")
     log(f"  Grad clip: {GRAD_CLIP} | Mixed precision: fp16")
+    log(f"  Custom data weight: {CUSTOM_WEIGHT}x")
+    log(f"  Validation: {n_val} samples | Early stop patience: {EARLY_STOP_PATIENCE}")
     log(f"  Checkpoints every {CHECKPOINT_EVERY} steps | Samples every {SAMPLE_EVERY} steps")
     log(f"  Starting from step {start_step}, epoch {start_epoch}")
     log("-" * 70)
@@ -553,7 +632,7 @@ def train(base_checkpoint=None, resume=False):
                 log("-" * 40)
                 log_samples(global_step, epoch + 1, samples)
 
-            # Checkpoint
+            # Checkpoint + validation
             if global_step % CHECKPOINT_EVERY == 0:
                 avg_loss = sum(losses[-50:]) / len(losses[-50:])
                 save_checkpoint(
@@ -561,6 +640,49 @@ def train(base_checkpoint=None, resume=False):
                     global_step, epoch + 1, avg_loss,
                     SFT_CHECKPOINT_DIR, tokens_total=tokens_total,
                 )
+
+            # Validation
+            if global_step % VAL_EVERY == 0 and len(val_dataloader) > 0:
+                model.eval()
+                val_losses = []
+                with torch.no_grad():
+                    for val_batch in val_dataloader:
+                        v_ids = val_batch["input_ids"].to(device)
+                        v_labels = val_batch["labels"].to(device)
+                        v_mask = val_batch["attention_mask"].to(device)
+                        with torch.amp.autocast("cuda", dtype=torch.float16):
+                            v_out = model(v_ids, labels=v_labels, attention_mask=v_mask)
+                            val_losses.append(v_out["loss"].item())
+                model.train()
+
+                val_loss = sum(val_losses) / len(val_losses)
+                improved = ""
+                if val_loss < best_val_loss:
+                    best_val_loss = val_loss
+                    patience_counter = 0
+                    improved = " *BEST*"
+                    # Save best checkpoint
+                    best_path = os.path.join(SFT_CHECKPOINT_DIR, "best.pt")
+                    raw_state = model.state_dict()
+                    clean_state = {k.replace("_orig_mod.", ""): v
+                                   for k, v in raw_state.items()}
+                    torch.save({
+                        "model_state_dict": clean_state,
+                        "config": config.__dict__,
+                        "step": global_step,
+                        "epoch": epoch + 1,
+                        "avg_loss": val_loss,
+                        "training_type": "sft",
+                    }, best_path)
+                else:
+                    patience_counter += 1
+
+                log(f"  VAL loss {val_loss:.4f} | best {best_val_loss:.4f}"
+                    f" | patience {patience_counter}/{EARLY_STOP_PATIENCE}{improved}")
+
+                if patience_counter >= EARLY_STOP_PATIENCE:
+                    log(f"Early stopping: no improvement for {EARLY_STOP_PATIENCE} checks")
+                    shutdown_requested = True
 
         # End of epoch
         if epoch_losses and not shutdown_requested:

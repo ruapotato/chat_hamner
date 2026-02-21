@@ -2,14 +2,15 @@
 """
 Plot training metrics for Hamner.
 
-Supports V3 (50M staged), V2 (164M pretrain), and legacy tournament data.
-Auto-detects which training run has data, or use --v3 / --v2 to force.
+Supports V4 (5-stage pipeline), V3 (50M staged), V2 (164M pretrain), and legacy.
+Auto-detects which training run has data.
 
 Usage:
     python plot_training.py                    # auto-detect, show all plots
     python plot_training.py --save             # save to logs/plots/
     python plot_training.py --dashboard        # single dashboard image
     python plot_training.py --live             # auto-refresh every 60s
+    python plot_training.py --v4               # force V4 metrics
     python plot_training.py --v3               # force V3 metrics
     python plot_training.py --v2               # force V2 metrics
     python plot_training.py --tournament       # include legacy tournament data
@@ -33,6 +34,14 @@ except ImportError:
     sys.exit(1)
 
 
+# V4 files (5-stage pipeline)
+V4_PRETRAIN_BASE_METRICS = "logs/pretrain_v4_base_metrics.csv"
+V4_PRETRAIN_ANNEAL_METRICS = "logs/pretrain_v4_anneal_metrics.csv"
+V4_CHAT_PRETRAIN_METRICS = "logs/chat_pretrain_v4_metrics.csv"
+V4_SFT_METRICS = "logs/sft_v4_metrics.csv"
+V4_DPO_METRICS = "logs/dpo_metrics.csv"
+V4_PRETRAIN_BASE_SAMPLES = "logs/pretrain_v4_base_samples.jsonl"
+
 V3_METRICS_FILE = "logs/v3_metrics.csv"
 V3_SAMPLES_FILE = "logs/v3_samples.jsonl"
 
@@ -40,6 +49,16 @@ V2_METRICS_FILE = "logs/pretrain_v2_metrics.csv"
 V2_SAMPLES_FILE = "logs/pretrain_v2_samples.jsonl"
 
 PLOT_DIR = "logs/plots"
+
+# V4 stage definitions
+V4_STAGES = [
+    ("pretrain_base",   "#2196F3", V4_PRETRAIN_BASE_METRICS),    # blue
+    ("pretrain_anneal", "#00BCD4", V4_PRETRAIN_ANNEAL_METRICS),  # teal
+    ("chat_pretrain",   "#4CAF50", V4_CHAT_PRETRAIN_METRICS),    # green
+    ("sft",             "#FF9800", V4_SFT_METRICS),              # orange
+    ("dpo",             "#9C27B0", V4_DPO_METRICS),              # purple
+]
+V4_STAGE_COLORS = {s[0]: s[1] for s in V4_STAGES}
 
 # Legacy files (v1 pretraining + curriculum + tournament)
 LEGACY_METRICS_FILE = "logs/metrics.csv"
@@ -1212,30 +1231,244 @@ def plot_full_journey(pretrain_metrics, curriculum_metrics, curriculum_samples, 
     plt.close()
 
 
+# ---------------------------------------------------------------------------
+# V4: 5-stage pipeline dashboard
+# ---------------------------------------------------------------------------
+
+def load_v4_metrics():
+    """Load all V4 stage metrics, adding a 'stage' column."""
+    all_metrics = {}
+    for stage_name, color, path in V4_STAGES:
+        raw = load_metrics(path)
+        if raw:
+            for m in raw:
+                m["stage"] = stage_name
+                # Ensure tokens_billions exists
+                if "tokens_billions" not in m and "tokens_total" in m:
+                    m["tokens_billions"] = m["tokens_total"] / 1e9
+            all_metrics[stage_name] = raw
+    return all_metrics
+
+
+def plot_v4_dashboard(save_dir=None):
+    """V4 dashboard: all 5 training stages on one figure."""
+    stage_data = load_v4_metrics()
+    if not stage_data:
+        print("No V4 metrics found.")
+        return
+
+    fig = plt.figure(figsize=(18, 12))
+
+    # ── 1. Loss vs Steps (all stages) ──
+    ax1 = fig.add_subplot(2, 3, 1)
+    for stage_name, color, _ in V4_STAGES:
+        metrics = stage_data.get(stage_name, [])
+        if not metrics:
+            continue
+        steps = [m["step"] for m in metrics]
+        losses = [m["loss"] for m in metrics]
+        ax1.plot(steps, losses, color=color, linewidth=0.5, alpha=0.3)
+        if len(losses) > 15:
+            ax1.plot(steps, smooth(losses, min(30, len(losses) // 4)),
+                     color=color, linewidth=2.5, label=stage_name)
+        else:
+            ax1.plot(steps, losses, color=color, linewidth=2, label=stage_name)
+    ax1.set_xlabel("Step")
+    ax1.set_ylabel("Loss")
+    ax1.set_title("Training Loss — All Stages")
+    ax1.legend(fontsize=8, loc="upper right")
+    ax1.grid(True, alpha=0.3)
+    ax1.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f"{x/1000:.0f}k"))
+
+    # ── 2. Loss vs Tokens (pretrain stages concatenated) ──
+    ax2 = fig.add_subplot(2, 3, 2)
+    for stage_name, color, _ in V4_STAGES[:2]:  # pretrain_base + anneal
+        metrics = stage_data.get(stage_name, [])
+        if not metrics:
+            continue
+        tokens_b = [m.get("tokens_billions", 0) for m in metrics]
+        losses = [m["loss"] for m in metrics]
+        if not any(t > 0 for t in tokens_b):
+            continue
+        ax2.plot(tokens_b, losses, color=color, linewidth=0.5, alpha=0.3)
+        if len(losses) > 15:
+            ax2.plot(tokens_b, smooth(losses, min(30, len(losses) // 4)),
+                     color=color, linewidth=2.5, label=stage_name)
+        else:
+            ax2.plot(tokens_b, losses, color=color, linewidth=2, label=stage_name)
+    ax2.set_xlabel("Tokens (Billions)")
+    ax2.set_ylabel("Loss")
+    ax2.set_title("Pretrain Loss vs Tokens")
+    ax2.legend(fontsize=8)
+    ax2.grid(True, alpha=0.3)
+
+    # ── 3. Val Loss (if available) ──
+    ax3 = fig.add_subplot(2, 3, 3)
+    has_val = False
+    for stage_name, color, _ in V4_STAGES:
+        metrics = stage_data.get(stage_name, [])
+        val_points = [(m["step"], float(m["val_loss"]))
+                      for m in metrics
+                      if m.get("val_loss") and m["val_loss"] != ""]
+        if val_points:
+            has_val = True
+            vs, vl = zip(*val_points)
+            ax3.plot(vs, vl, color=color, linewidth=2, marker="o",
+                     markersize=3, label=f"{stage_name} val")
+    if has_val:
+        ax3.set_xlabel("Step")
+        ax3.set_ylabel("Validation Loss")
+        ax3.set_title("Validation Loss")
+        ax3.legend(fontsize=8)
+        ax3.grid(True, alpha=0.3)
+        ax3.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f"{x/1000:.0f}k"))
+    else:
+        ax3.text(0.5, 0.5, "No validation data yet", ha="center", va="center",
+                 transform=ax3.transAxes, fontsize=12, color="gray")
+        ax3.set_title("Validation Loss")
+
+    # ── 4. Learning Rate ──
+    ax4 = fig.add_subplot(2, 3, 4)
+    for stage_name, color, _ in V4_STAGES:
+        metrics = stage_data.get(stage_name, [])
+        if not metrics:
+            continue
+        steps = [m["step"] for m in metrics]
+        lrs = [m.get("learning_rate", 0) for m in metrics]
+        if any(lr > 0 for lr in lrs):
+            ax4.plot(steps, lrs, color=color, linewidth=2, label=stage_name)
+    ax4.set_xlabel("Step")
+    ax4.set_ylabel("Learning Rate")
+    ax4.set_title("LR Schedule")
+    ax4.legend(fontsize=8)
+    ax4.grid(True, alpha=0.3)
+    ax4.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f"{x/1000:.0f}k"))
+
+    # ── 5. Throughput ──
+    ax5 = fig.add_subplot(2, 3, 5)
+    for stage_name, color, _ in V4_STAGES:
+        metrics = stage_data.get(stage_name, [])
+        if not metrics:
+            continue
+        steps = [m["step"] for m in metrics]
+        tps = [m.get("tokens_per_sec", 0) for m in metrics]
+        if any(t > 0 for t in tps):
+            ax5.plot(steps, tps, color=color, linewidth=0.5, alpha=0.3)
+            if len(tps) > 15:
+                ax5.plot(steps, smooth(tps, min(30, len(tps) // 4)),
+                         color=color, linewidth=2, label=stage_name)
+    ax5.set_xlabel("Step")
+    ax5.set_ylabel("Tokens/sec")
+    ax5.set_title("Throughput")
+    ax5.legend(fontsize=8)
+    ax5.grid(True, alpha=0.3)
+    ax5.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f"{x/1000:.0f}k"))
+
+    # ── 6. Stats Panel ──
+    ax6 = fig.add_subplot(2, 3, 6)
+    ax6.axis("off")
+
+    stats = "Hamner V4 — 5-Stage Pipeline\n"
+    stats += "=" * 44 + "\n"
+    stats += f"{'Stage':<18s} {'Steps':>7s} {'Loss':>8s} {'Tokens':>8s}\n"
+    stats += "-" * 44 + "\n"
+
+    total_tokens = 0
+    for stage_name, color, _ in V4_STAGES:
+        metrics = stage_data.get(stage_name, [])
+        if not metrics:
+            stats += f"  {stage_name:<16s} {'—':>7s} {'—':>8s} {'—':>8s}\n"
+            continue
+        cur = metrics[-1]
+        n_steps = cur["step"]
+        loss = cur["loss"]
+        tb = cur.get("tokens_billions", cur.get("tokens_total", 0) / 1e9)
+        if stage_name in ("pretrain_base", "pretrain_anneal"):
+            total_tokens = max(total_tokens, tb)
+        stats += f"> {stage_name:<16s} {n_steps:>7,} {loss:>8.4f} {tb:>7.2f}B\n"
+
+    stats += "-" * 44 + "\n"
+
+    # DPO-specific stats
+    dpo_data = stage_data.get("dpo", [])
+    if dpo_data:
+        cur = dpo_data[-1]
+        acc = cur.get("accuracy", "?")
+        stats += f"DPO accuracy: {acc}\n"
+
+    # Samples
+    samples = load_samples(V4_PRETRAIN_BASE_SAMPLES)
+    if samples:
+        latest = samples[-1]
+        stats += f"\nLatest sample (step {latest.get('step', '?')}):\n"
+        for prompt, output in latest.get("samples", {}).items():
+            stats += f'  "{output[:150]}..."\n'
+            break
+
+    ax6.text(0.02, 0.98, stats, transform=ax6.transAxes,
+             fontsize=9, verticalalignment="top", fontfamily="monospace",
+             bbox=dict(boxstyle="round,pad=0.5", facecolor="#F5F5F5", edgecolor="#BDBDBD"))
+
+    plt.suptitle("Hamner V4 Training Dashboard", fontsize=16, fontweight="bold", y=1.02)
+    plt.tight_layout()
+
+    if save_dir:
+        os.makedirs(save_dir, exist_ok=True)
+        plt.savefig(os.path.join(save_dir, "v4_dashboard.png"), dpi=150, bbox_inches="tight")
+        print(f"Saved: {save_dir}/v4_dashboard.png")
+    else:
+        plt.show()
+    plt.close()
+
+
 def main():
     parser = argparse.ArgumentParser(description="Plot Hamner training metrics")
     parser.add_argument("--save", action="store_true", help="Save plots to logs/plots/")
     parser.add_argument("--tournament", action="store_true", help="Include legacy tournament plots")
     parser.add_argument("--live", action="store_true", help="Auto-refresh every 60s")
     parser.add_argument("--dashboard", action="store_true", help="Single dashboard image only")
+    parser.add_argument("--v4", action="store_true", help="Force V4 metrics")
     parser.add_argument("--v3", action="store_true", help="Force V3 metrics")
     parser.add_argument("--v2", action="store_true", help="Force V2 metrics")
     args = parser.parse_args()
 
     save_dir = PLOT_DIR if args.save or args.dashboard else None
 
-    # Auto-detect which run to plot
-    if args.v3:
+    # Auto-detect which run to plot (prefer newest)
+    if args.v4:
+        mode = "v4"
+    elif args.v3:
         mode = "v3"
     elif args.v2:
         mode = "v2"
+    elif os.path.exists(V4_PRETRAIN_BASE_METRICS) and os.path.getsize(V4_PRETRAIN_BASE_METRICS) > 0:
+        mode = "v4"
     elif os.path.exists(V3_METRICS_FILE) and os.path.getsize(V3_METRICS_FILE) > 0:
         mode = "v3"
     else:
         mode = "v2"
 
     while True:
-        if mode == "v3":
+        if mode == "v4":
+            # ── V4 plotting ──
+            print("Plotting V4 (5-stage pipeline)...")
+            stage_data = load_v4_metrics()
+            for name, data in stage_data.items():
+                if data:
+                    cur = data[-1]
+                    print(f"  {name}: {len(data)} points, "
+                          f"step {cur['step']:,}, loss {cur['loss']:.4f}")
+
+            plot_v4_dashboard(save_dir or PLOT_DIR)
+
+            # Also plot individual pretrain curves if data exists
+            base_metrics = stage_data.get("pretrain_base", [])
+            if base_metrics and not args.dashboard:
+                projection = fit_projection(clean_metrics(base_metrics))
+                plot_training_loss(clean_metrics(base_metrics), save_dir, projection)
+                plot_perplexity(clean_metrics(base_metrics), save_dir, projection)
+
+        elif mode == "v3":
             # ── V3 plotting ──
             raw_metrics = load_metrics(V3_METRICS_FILE)
             samples_data = load_samples(V3_SAMPLES_FILE)

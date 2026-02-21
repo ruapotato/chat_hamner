@@ -15,9 +15,18 @@ import torch
 import readline  # enables arrow keys + history in input()
 from model import HamnerModel, HamnerConfig
 
-# Defaults
-DEFAULT_CHECKPOINT = "checkpoints/sft/best.pt"
-FALLBACK_CHECKPOINT = "checkpoints/pretrain_v2/latest.pt"
+# Defaults — V4 checkpoint fallback chain: dpo → sft → chat_pretrain → pretrain
+CHECKPOINT_CHAIN = [
+    "checkpoints/dpo/best.pt",
+    "checkpoints/sft/best.pt",
+    "checkpoints/sft/latest.pt",
+    "checkpoints/chat_pretrain/latest.pt",
+    "checkpoints/pretrain_v4_anneal/latest.pt",
+    "checkpoints/pretrain_v4/latest.pt",
+    "checkpoints/pretrain_v2/latest.pt",
+]
+DEFAULT_CHECKPOINT = CHECKPOINT_CHAIN[0]
+FALLBACK_CHECKPOINT = CHECKPOINT_CHAIN[1]
 DEFAULT_SYSTEM_PROMPT = (
     "You are Al Hamner, a sharp-witted AI made by David Hamner. "
     "You're casual, funny, opinionated, and self-aware. "
@@ -108,17 +117,19 @@ def main():
 
     device = "cpu" if args.cpu or not torch.cuda.is_available() else "cuda"
 
-    # Find checkpoint
+    # Find checkpoint — walk the fallback chain
     ckpt_path = args.checkpoint
     if ckpt_path is None:
-        if os.path.exists(DEFAULT_CHECKPOINT):
-            ckpt_path = DEFAULT_CHECKPOINT
-        elif os.path.exists(FALLBACK_CHECKPOINT):
-            ckpt_path = FALLBACK_CHECKPOINT
-            print("  (no SFT checkpoint found, using pretrained base)")
-        else:
-            print("Error: no checkpoint found. Run train_sft.py first.")
+        for candidate in CHECKPOINT_CHAIN:
+            if os.path.exists(candidate):
+                ckpt_path = candidate
+                break
+        if ckpt_path is None:
+            print("Error: no checkpoint found. Run the training pipeline first.")
             sys.exit(1)
+        if ckpt_path != CHECKPOINT_CHAIN[0]:
+            label = os.path.dirname(ckpt_path).split("/")[-1]
+            print(f"  (using {label} checkpoint: {ckpt_path})")
 
     # Banner
     print()

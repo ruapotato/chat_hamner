@@ -14,6 +14,8 @@ venv/
 # Training data (too large for git)
 data/youtube/*.vtt
 data/youtube/video_list.txt
+data/sft_smoltalk.jsonl
+data/sft_combined.jsonl
 
 # Checkpoints (too large for git)
 checkpoints/

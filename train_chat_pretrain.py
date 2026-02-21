@@ -1,13 +1,11 @@
 """
-Chat Pretraining: Continue V2 base on dialogue-heavy data mix
-==============================================================
-The V2 base (164M) was only trained on FineWeb-Edu, so it only knows
-how to produce educational articles. This script continues pretraining
-on a mix that includes dialogue data so the model learns chat format
-as natural language before doing targeted SFT.
+Chat Pretraining: Continue pretrained base on dialogue-heavy data mix
+=====================================================================
+V4: Updated data mix with SmolTalk, FineWeb-Edu, DCLM, personal voice,
+and synthetic tasks. Continues from anneal or base pretrain checkpoint.
 
 Usage:
-    python train_chat_pretrain.py                    # start from V2 base
+    python train_chat_pretrain.py                    # start from anneal/base checkpoint
     python train_chat_pretrain.py --resume           # resume from checkpoint
     python train_chat_pretrain.py --checkpoint X     # start from specific base
 """
@@ -32,35 +30,40 @@ from synthetic_tasks import SyntheticTaskGenerator
 # Config
 # ---------------------------------------------------------------------------
 
-BASE_CHECKPOINT = "checkpoints/pretrain_v2/latest.pt"
+BASE_CHECKPOINT = "checkpoints/pretrain_v4_anneal/latest.pt"
+BASE_CHECKPOINT_FALLBACKS = [
+    "checkpoints/pretrain_v4/latest.pt",
+    "checkpoints/pretrain_v2/latest.pt",
+]
 CHECKPOINT_DIR = "checkpoints/chat_pretrain"
-LOG_FILE = "logs/chat_pretrain.log"
-METRICS_FILE = "logs/chat_pretrain_metrics.csv"
-SAMPLES_FILE = "logs/chat_pretrain_samples.jsonl"
+LOG_FILE = "logs/chat_pretrain_v4.log"
+METRICS_FILE = "logs/chat_pretrain_v4_metrics.csv"
+SAMPLES_FILE = "logs/chat_pretrain_v4_samples.jsonl"
 
-# Data mix — more dialogue + personal voice for chat capability
+# V4 Data mix — SmolTalk-heavy with diverse knowledge sources
 DATA_RATIOS = {
-    "fineweb": 0.35,      # maintain general knowledge
-    "sft": 0.35,          # learn dialogue format (as raw text, no masking)
-    "personal": 0.15,     # learn personal voice
-    "tinystories": 0.10,  # simple English structure
-    "synthetic": 0.05,    # reasoning tasks
+    "smoltalk": 0.40,     # high-quality dialogue (SmolTalk as raw text, no masking)
+    "fineweb": 0.25,      # maintain general knowledge
+    "dclm": 0.15,         # general web text diversity
+    "personal": 0.10,     # learn personal voice
+    "synthetic": 0.10,    # reasoning tasks
 }
 
 # Training hyperparameters
 BATCH_SIZE = 24
 SEQ_LEN = 1024
-LR = 5e-5           # moderate — don't destroy FineWeb knowledge
+LR = 5e-5           # moderate — don't destroy pretrain knowledge
 LR_MIN = 5e-6       # cosine floor
 WARMUP_STEPS = 500
 WEIGHT_DECAY = 0.1
 GRAD_CLIP = 1.0
-MAX_STEPS = 50000    # ~1.2B tokens, ~2.3h at 5k tok/s
+MAX_STEPS = 40000    # ~1B tokens
 
 # Logging / checkpointing
 CHECKPOINT_EVERY = 5000
 SAMPLE_EVERY = 1000
 LOG_EVERY = 50
+VAL_EVERY = 500
 
 SAMPLE_PROMPTS = [
     # Chat format
@@ -107,23 +110,17 @@ class DataMixer:
 
     def __init__(self, tokenizer, seq_len=1024,
                  personal_data_path="data/personal/training_samples.jsonl",
-                 sft_data_path="data/personal/sft_conversations.jsonl"):
+                 smoltalk_path="data/sft_smoltalk.jsonl"):
         self.tokenizer = tokenizer
         self.seq_len = seq_len
         self.synthetic_gen = SyntheticTaskGenerator(seed=42)
         self.synthetic_gen.set_difficulty(3)  # moderate difficulty
 
-        self.token_buffers = {
-            "synthetic": [],
-            "tinystories": [],
-            "fineweb": [],
-            "personal": [],
-            "sft": [],
-        }
+        self.token_buffers = {name: [] for name in DATA_RATIOS}
         self.ratios = DATA_RATIOS
 
         self._load_local_data(personal_data_path, "personal")
-        self._load_local_data(sft_data_path, "sft")
+        self._load_local_data(smoltalk_path, "smoltalk")
         self._init_streams()
 
     def _load_local_data(self, path, name):
@@ -140,13 +137,14 @@ class DataMixer:
 
     def _init_streams(self):
         from datasets import load_dataset
-        log("Initializing TinyStories stream...")
-        self.tinystories_stream = iter(load_dataset(
-            "roneneldan/TinyStories", split="train", streaming=True,
-        ))
         log("Initializing FineWeb-Edu stream...")
         self.fineweb_stream = iter(load_dataset(
             "HuggingFaceFW/fineweb-edu", name="sample-10BT",
+            split="train", streaming=True,
+        ))
+        log("Initializing DCLM stream...")
+        self.dclm_stream = iter(load_dataset(
+            "mlfoundations/dclm-baseline-1.0",
             split="train", streaming=True,
         ))
         log("Data streams ready")
@@ -154,28 +152,20 @@ class DataMixer:
     def _restart_stream(self, name):
         from datasets import load_dataset
         log(f"{name} exhausted, restarting...")
-        if name == "tinystories":
-            self.tinystories_stream = iter(load_dataset(
-                "roneneldan/TinyStories", split="train", streaming=True,
-            ))
-        elif name == "fineweb":
+        if name == "fineweb":
             self.fineweb_stream = iter(load_dataset(
                 "HuggingFaceFW/fineweb-edu", name="sample-10BT",
+                split="train", streaming=True,
+            ))
+        elif name == "dclm":
+            self.dclm_stream = iter(load_dataset(
+                "mlfoundations/dclm-baseline-1.0",
                 split="train", streaming=True,
             ))
 
     def _get_text(self, source):
         if source == "synthetic":
             return self.synthetic_gen.get_random_task()
-        elif source == "tinystories":
-            while True:
-                try:
-                    sample = next(self.tinystories_stream)
-                    text = sample.get("text", "")
-                    if len(text.strip()) >= 30:
-                        return text
-                except StopIteration:
-                    self._restart_stream("tinystories")
         elif source == "fineweb":
             while True:
                 try:
@@ -185,14 +175,23 @@ class DataMixer:
                         return text
                 except StopIteration:
                     self._restart_stream("fineweb")
+        elif source == "dclm":
+            while True:
+                try:
+                    sample = next(self.dclm_stream)
+                    text = sample.get("text", "")
+                    if len(text.strip()) >= 50:
+                        return text
+                except StopIteration:
+                    self._restart_stream("dclm")
         elif source == "personal":
             if self.personal_samples:
                 return random.choice(self.personal_samples)
-            return self._get_text("tinystories")
-        elif source == "sft":
-            if self.sft_samples:
-                return random.choice(self.sft_samples)
-            return self._get_text("tinystories")
+            return self._get_text("fineweb")
+        elif source == "smoltalk":
+            if self.smoltalk_samples:
+                return random.choice(self.smoltalk_samples)
+            return self._get_text("fineweb")
         return ""
 
     def _choose_source(self):
@@ -311,7 +310,7 @@ def train(base_checkpoint=None, resume=False):
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     log("=" * 70)
-    log("CHAT PRETRAINING — Continue V2 base on dialogue-heavy mix")
+    log("CHAT PRETRAINING V4 — Continue pretrained base on dialogue-heavy mix")
     log("=" * 70)
 
     # Load tokenizer
@@ -354,6 +353,15 @@ def train(base_checkpoint=None, resume=False):
 
     if not resume:
         ckpt_path = base_checkpoint or BASE_CHECKPOINT
+        if not os.path.exists(ckpt_path):
+            for fallback in BASE_CHECKPOINT_FALLBACKS:
+                if os.path.exists(fallback):
+                    ckpt_path = fallback
+                    log(f"Using fallback checkpoint: {ckpt_path}")
+                    break
+            else:
+                log("ERROR: No base checkpoint found. Run train_pretrain.py first.")
+                sys.exit(1)
         log(f"Loading base model from {ckpt_path}...")
         ckpt = torch.load(ckpt_path, map_location="cpu", weights_only=False)
         config = HamnerConfig(**ckpt["config"])
@@ -377,7 +385,8 @@ def train(base_checkpoint=None, resume=False):
         model = torch.compile(model)
 
     # Data mixer
-    mixer = DataMixer(tokenizer, seq_len=SEQ_LEN)
+    mixer = DataMixer(tokenizer, seq_len=SEQ_LEN,
+                      smoltalk_path="data/sft_smoltalk.jsonl")
 
     log(f"\nData ratios: {DATA_RATIOS}")
     log(f"Training: {MAX_STEPS} steps | Batch {BATCH_SIZE} | Seq {SEQ_LEN}")

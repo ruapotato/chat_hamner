@@ -59,92 +59,88 @@ Key components:
 
 The architecture was selected through a [tournament of 10 competing designs](#tournament-architecture-search).
 
-## Training Pipeline
+## Training Pipeline (V4)
 
-Al Hamner is trained in 3 stages. Total training time: ~20 hours on a single RTX 3090.
+Inspired by [SmolLM2](https://huggingface.co/HuggingFaceTB/SmolLM2-135M): massive overtraining on diverse data with a multi-stage curriculum. 5 stages, ~4.5 days on a single RTX 3090.
 
-### Stage 1: Base Pretraining (164M, ~16 hours)
+### Stage 1: Base Pretraining (~2.5 days)
 
-Train the base language model on FineWeb-Edu (educational web text).
+Train the base language model on diverse web text from two high-quality sources.
 
 ```bash
-python train.py --fresh
+python train_pretrain.py --fresh
 ```
 
-- **Data**: [FineWeb-Edu](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu) 10B token dataset (streamed)
-- **Steps**: 106,000 (~2.6B tokens)
-- **Final loss**: 3.08
-- **LR**: 6e-4 with cosine decay
+- **Data**: [FineWeb-Edu](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu) 60% + [DCLM](https://huggingface.co/datasets/mlfoundations/dclm-baseline-1.0) 40% (streamed)
+- **Steps**: 400,000 (~10B tokens)
+- **LR**: 2e-4 with Warmup-Stable-Decay (WSD) schedule
 - **Batch size**: 24 x 1024 tokens
-- **Output**: `checkpoints/pretrain_v2/latest.pt`
+- **Output**: `checkpoints/pretrain_v4/latest.pt`
 
-After this stage the model produces coherent English paragraphs but has no dialogue ability.
+### Stage 2: Code + Math Annealing (~18 hours)
 
-### Stage 2: Chat Pretraining (~3 hours)
+Anneal with code and math data mixed in, linearly decaying LR to zero.
 
-Continue the base model on a dialogue-heavy data mix so it learns conversational format as natural language (no loss masking — raw next-token prediction on everything).
+```bash
+python train_pretrain.py --stage anneal
+```
+
+- **Base**: Stage 1 checkpoint
+- **Data**: FineWeb-Edu 40% + DCLM 20% + [StarCoder](https://huggingface.co/datasets/bigcode/starcoderdata) 25% + [FineMath](https://huggingface.co/datasets/HuggingFaceTB/finemath) 15%
+- **Steps**: 122,000 (~3B tokens)
+- **Output**: `checkpoints/pretrain_v4_anneal/latest.pt`
+
+### Stage 3: Chat Pretraining (~6 hours)
+
+Continue on a dialogue-heavy mix so the model learns conversational format as natural language.
 
 ```bash
 python train_chat_pretrain.py
 ```
 
-- **Base**: `checkpoints/pretrain_v2/latest.pt`
-- **Data mix**: 35% FineWeb + 35% SFT conversations + 15% personal voice + 10% TinyStories + 5% synthetic tasks
-- **Steps**: ~20,000 (~0.5B tokens)
-- **Final loss**: ~1.42
-- **LR**: 5e-5 with cosine decay
-- **Batch size**: 24 x 1024 tokens
+- **Base**: Stage 2 checkpoint
+- **Data mix**: [SmolTalk](https://huggingface.co/datasets/HuggingFaceTB/smoltalk) 40% + FineWeb 25% + DCLM 15% + personal voice 10% + synthetic tasks 10%
+- **Steps**: 40,000 (~1B tokens)
 - **Output**: `checkpoints/chat_pretrain/latest.pt`
 
-After this stage the model can generate conversational text but can't condition responses on specific questions.
+### Stage 4: Supervised Fine-Tuning (~1 hour)
 
-### Stage 3: Supervised Fine-Tuning (~10 minutes)
-
-Fine-tune on 2,129 diverse conversations with loss computed only on assistant response tokens.
+Fine-tune on ~104k conversations with loss computed only on assistant response tokens. Custom data upweighted 2x.
 
 ```bash
-# Generate the SFT data
-python generate_sft_v3.py
-
-# Train (uses chat_pretrain checkpoint as base)
-python train_sft.py --checkpoint checkpoints/chat_pretrain/latest.pt \
-                    --data data/personal/sft_diverse_only.jsonl \
-                    --epochs 5 --lr 3e-5
+python prepare_sft_data.py   # downloads SmolTalk, combines with custom data
+python train_sft.py
 ```
 
-- **Base**: `checkpoints/chat_pretrain/latest.pt`
-- **Data**: 2,129 conversations covering greetings, identity, math (all times tables 2-12), factual Q&A, opinions, reasoning, chitchat, follow-ups, edge cases
-- **Epochs**: 5 (best checkpoint typically at epoch 2-3)
-- **LR**: 3e-5 with linear warmup
-- **Batch size**: 8
+- **Base**: Stage 3 checkpoint
+- **Data**: ~104k conversations (100k SmolTalk + 2,129 custom diverse + 2,000 custom tech)
+- **Epochs**: 3 with early stopping (patience=3)
+- **LR**: 1e-4 with linear warmup
 - **Output**: `checkpoints/sft/best.pt`
 
-### SFT Data Breakdown
+### Stage 5: DPO Alignment (~30 min)
 
-The diverse SFT data (`generate_sft_v3.py`) covers:
+Direct Preference Optimization using human preference data.
 
-| Category | Base Count | Description |
-|----------|-----------|-------------|
-| Greetings | 59 | Hello, hey, hi, good morning, etc. |
-| Identity | 23 | Who are you, who made you, what can you do |
-| Math | 233 | ALL multiplication tables 2-12, addition, subtraction, division |
-| Factual Q&A | 50 | Capital of France, speed of light, who wrote X |
-| Opinions | 30 | Best language, AI ethics, tech takes |
-| Chitchat | 28 | Weather, hobbies, jokes, small talk |
-| Reasoning | 22 | Logic puzzles, cause/effect |
-| Tech | 25 | Programming concepts, tools |
-| Edge cases | 12 | Empty input, gibberish, adversarial |
-| Follow-ups | 30 | "Tell me more", "I disagree", "thanks" |
-| Multi-turn | 8 | Full conversations with context |
+```bash
+python train_dpo.py
+```
 
-Data is augmented with rephrasing (2x all categories, extra 3x for greetings/identity/follow-ups, extra 1x for math) to reach 2,129 total conversations.
+- **Base**: Stage 4 checkpoint
+- **Data**: [UltraFeedback](https://huggingface.co/datasets/HuggingFaceH4/ultrafeedback_binarized) (~60k preference pairs)
+- **Epochs**: 2, beta=0.1, LR=1e-6
+- **Output**: `checkpoints/dpo/best.pt`
 
 ## Training Data
 
-- **[FineWeb-Edu](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu)** — 10B token educational web text (base pretraining)
-- **[TinyStories](https://huggingface.co/datasets/roneneldan/TinyStories)** — Simple narrative English (chat pretraining mix)
-- **SFT conversations** — 6,010 tech-focused chat conversations (chat pretraining mix)
-- **Diverse SFT** — 2,129 conversations covering all interaction types (SFT stage)
+- **[FineWeb-Edu](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu)** — Educational web text (base pretraining, chat pretrain)
+- **[DCLM](https://huggingface.co/datasets/mlfoundations/dclm-baseline-1.0)** — General web text (base pretraining, annealing, chat pretrain)
+- **[StarCoder](https://huggingface.co/datasets/bigcode/starcoderdata)** — Code (annealing stage)
+- **[FineMath](https://huggingface.co/datasets/HuggingFaceTB/finemath)** — Math reasoning (annealing stage)
+- **[SmolTalk](https://huggingface.co/datasets/HuggingFaceTB/smoltalk)** — 100k high-quality conversations (chat pretrain + SFT)
+- **[UltraFeedback](https://huggingface.co/datasets/HuggingFaceH4/ultrafeedback_binarized)** — Preference pairs (DPO alignment)
+- **Custom diverse SFT** — 2,129 conversations: greetings, identity, math, opinions, reasoning
+- **Custom tech SFT** — 6,010 tech-focused conversations (2,000 sampled for SFT)
 - **Synthetic tasks** — Arithmetic, counting, sorting, brackets, listops, copy/repeat
 - **Personal voice** — YouTube transcriptions from [@davidhamner](https://www.youtube.com/@davidhamner)
 
@@ -161,22 +157,25 @@ yt-dlp --write-auto-sub --sub-lang en --skip-download \
     -o "data/youtube/%(id)s_%(title)s" "https://www.youtube.com/@davidhamner"
 python process_youtube.py
 
-# 3. Generate SFT data
-python generate_sft_data.py      # generates 6,010 tech conversations
-python generate_sft_v3.py        # generates 2,129 diverse conversations
+# 3. Prepare SFT data (downloads SmolTalk, combines with custom data)
+python prepare_sft_data.py
 
-# 4. Stage 1: Base pretrain (~16 hours on RTX 3090)
-python train.py --fresh
+# 4. Stage 1: Base pretrain (~2.5 days on RTX 3090)
+python train_pretrain.py --fresh
 
-# 5. Stage 2: Chat pretrain (~3 hours)
+# 5. Stage 2: Code + Math anneal (~18 hours)
+python train_pretrain.py --stage anneal
+
+# 6. Stage 3: Chat pretrain (~6 hours)
 python train_chat_pretrain.py
 
-# 6. Stage 3: SFT (~10 minutes)
-python train_sft.py --checkpoint checkpoints/chat_pretrain/latest.pt \
-                    --data data/personal/sft_diverse_only.jsonl \
-                    --epochs 5 --lr 3e-5
+# 7. Stage 4: SFT (~1 hour)
+python train_sft.py
 
-# 7. Chat!
+# 8. Stage 5: DPO alignment (~30 minutes)
+python train_dpo.py
+
+# 9. Chat!
 python chat.py
 ```
 
@@ -248,21 +247,25 @@ We trained **10 different architectures** in a 3-round elimination tournament to
 chat_hamner/
 ├── model.py                  # Core transformer architecture (164M)
 ├── chat.py                   # Interactive CLI chat
-├── train.py                  # Stage 1: Base pretraining (FineWeb-Edu)
-├── train_chat_pretrain.py    # Stage 2: Chat pretraining (dialogue mix)
-├── train_sft.py              # Stage 3: Supervised fine-tuning
+├── train_pretrain.py         # Stages 1-2: Base pretraining + annealing
+├── train_chat_pretrain.py    # Stage 3: Chat pretraining (dialogue mix)
+├── train_sft.py              # Stage 4: Supervised fine-tuning
+├── train_dpo.py              # Stage 5: DPO alignment
+├── prepare_sft_data.py       # Download/prepare SFT data (~104k convos)
 ├── generate_sft_v3.py        # Generate diverse SFT data (2,129 convos)
 ├── generate_sft_data.py      # Generate tech SFT data (6,010 convos)
 ├── test_ood.py               # Out-of-distribution evaluation
 ├── synthetic_tasks.py        # Synthetic task generators
-├── plot_training.py          # Training metrics visualization
+├── plot_training.py          # Training metrics visualization (--v4 for dashboard)
 ├── process_youtube.py        # YouTube transcript processor
 ├── data/
 │   └── personal/             # SFT data, YouTube transcripts, voice samples
 ├── checkpoints/
-│   ├── pretrain_v2/          # Stage 1 checkpoint
-│   ├── chat_pretrain/        # Stage 2 checkpoint
-│   └── sft/                  # Stage 3 checkpoints (best.pt = final model)
+│   ├── pretrain_v4/          # Stage 1 checkpoint
+│   ├── pretrain_v4_anneal/   # Stage 2 checkpoint
+│   ├── chat_pretrain/        # Stage 3 checkpoint
+│   ├── sft/                  # Stage 4 checkpoints (best.pt)
+│   └── dpo/                  # Stage 5 checkpoints (best.pt = final model)
 ├── logs/                     # Training logs, metrics CSVs, sample generations
 └── legacy/                   # Old experiments: tournament, concept experiments,
                               # alternative architectures (Mamba, RWKV, xLSTM, etc.)
