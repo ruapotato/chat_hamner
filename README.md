@@ -88,7 +88,7 @@ python train_pretrain.py --stage anneal
 ```
 
 - **Base**: Stage 1 checkpoint
-- **Data**: FineWeb-Edu 40% + DCLM 20% + [StarCoder](https://huggingface.co/datasets/bigcode/starcoderdata) 25% + [FineMath](https://huggingface.co/datasets/HuggingFaceTB/finemath) 15%
+- **Data**: FineWeb-Edu 40% + DCLM 20% + Debian Source Code 25% + [FineMath](https://huggingface.co/datasets/HuggingFaceTB/finemath) 15%
 - **Steps**: 122,000 (~3B tokens)
 - **Output**: `checkpoints/pretrain_v4_anneal/latest.pt`
 
@@ -129,22 +129,25 @@ python train_dpo.py
 ```
 
 - **Base**: Stage 4 checkpoint
-- **Data**: [UltraFeedback](https://huggingface.co/datasets/HuggingFaceH4/ultrafeedback_binarized) (~60k preference pairs)
-- **Epochs**: 2, beta=0.1, LR=1e-6
+- **Data**: [HelpSteer2](https://huggingface.co/datasets/nvidia/HelpSteer2) (~7-10k preference pairs, CC-BY-4.0)
+- **Epochs**: 3, beta=0.1, LR=5e-7
 - **Output**: `checkpoints/dpo/best.pt`
 
 ## Training Data
 
-- **[FineWeb-Edu](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu)** — Educational web text (base pretraining, chat pretrain)
-- **[DCLM](https://huggingface.co/datasets/mlfoundations/dclm-baseline-1.0)** — General web text (base pretraining, annealing, chat pretrain)
-- **[StarCoder](https://huggingface.co/datasets/bigcode/starcoderdata)** — Code (annealing stage)
-- **[FineMath](https://huggingface.co/datasets/HuggingFaceTB/finemath)** — Math reasoning (annealing stage)
-- **[SmolTalk](https://huggingface.co/datasets/HuggingFaceTB/smoltalk)** — 100k high-quality conversations (chat pretrain + SFT)
-- **[UltraFeedback](https://huggingface.co/datasets/HuggingFaceH4/ultrafeedback_binarized)** — Preference pairs (DPO alignment)
-- **Custom diverse SFT** — 2,129 conversations: greetings, identity, math, opinions, reasoning
-- **Custom tech SFT** — 6,010 tech-focused conversations (2,000 sampled for SFT)
-- **Synthetic tasks** — Arithmetic, counting, sorting, brackets, listops, copy/repeat
-- **Personal voice** — YouTube transcriptions from [@davidhamner](https://www.youtube.com/@davidhamner)
+All training data is DFSG-compatible for inclusion in Debian main.
+
+| Dataset | License | Stage | Description |
+|---------|---------|-------|-------------|
+| [FineWeb-Edu](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu) | ODC-BY | 1, 2, 3 | Educational web text |
+| [DCLM](https://huggingface.co/datasets/mlfoundations/dclm-baseline-1.0) | ODC-BY | 1, 2, 3 | General web text |
+| Debian Source Code | Various (all DFSG-free) | 2 | Code from `apt-get source` |
+| [FineMath](https://huggingface.co/datasets/HuggingFaceTB/finemath) | ODC-BY | 2 | Math reasoning |
+| [SmolTalk](https://huggingface.co/datasets/HuggingFaceTB/smoltalk) | Apache-2.0 | 3, 4 | 100k high-quality conversations |
+| [HelpSteer2](https://huggingface.co/datasets/nvidia/HelpSteer2) | CC-BY-4.0 | 5 | Human-annotated preference pairs |
+| Custom SFT data | GPL-3.0 | 3, 4 | Greetings, identity, math, opinions |
+| Synthetic tasks | GPL-3.0 | 3 | Arithmetic, sorting, brackets, etc. |
+| Personal voice | GPL-3.0 | 3 | YouTube transcriptions from [@davidhamner](https://www.youtube.com/@davidhamner) |
 
 ## Reproduce from Scratch
 
@@ -159,13 +162,15 @@ yt-dlp --write-auto-sub --sub-lang en --skip-download \
     -o "data/youtube/%(id)s_%(title)s" "https://www.youtube.com/@davidhamner"
 python process_youtube.py
 
-# 3. Prepare SFT data (downloads SmolTalk, combines with custom data)
-python prepare_sft_data.py
+# 3. Prepare training data
+python prepare_sft_data.py          # downloads SmolTalk, combines with custom data
+python prepare_debian_code.py       # downloads Debian source packages (~3GB corpus)
+python prepare_dpo_data.py          # downloads HelpSteer2, constructs DPO pairs
 
 # 4. Stage 1: Base pretrain (~4.5 days on RTX 3090)
 python train_pretrain.py --fresh
 
-# 5. Stage 2: Code + Math anneal (~32 hours)
+# 5. Stage 2: Code + Math anneal (~32 hours, uses Debian code corpus)
 python train_pretrain.py --stage anneal
 
 # 6. Stage 3: Chat pretrain (~11 hours)
@@ -254,6 +259,8 @@ chat_hamner/
 ├── train_sft.py              # Stage 4: Supervised fine-tuning
 ├── train_dpo.py              # Stage 5: DPO alignment
 ├── prepare_sft_data.py       # Download/prepare SFT data (~104k convos)
+├── prepare_debian_code.py    # Download/prepare Debian source code corpus
+├── prepare_dpo_data.py       # Download/prepare HelpSteer2 DPO pairs
 ├── generate_sft_v3.py        # Generate diverse SFT data (2,129 convos)
 ├── generate_sft_data.py      # Generate tech SFT data (6,010 convos)
 ├── test_ood.py               # Out-of-distribution evaluation

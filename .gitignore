@@ -16,6 +16,9 @@ data/youtube/*.vtt
 data/youtube/video_list.txt
 data/sft_smoltalk.jsonl
 data/sft_combined.jsonl
+data/debian_code.jsonl
+data/debian_code_work/
+data/dpo_helpsteer2.jsonl
 
 # Checkpoints (too large for git)
 checkpoints/

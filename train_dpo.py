@@ -1,7 +1,7 @@
 """
 Hamner DPO (Direct Preference Optimization) Training
 =====================================================
-Aligns the SFT model using preference data from UltraFeedback.
+Aligns the SFT model using preference data from HelpSteer2 (CC-BY-4.0).
 
 DPO loss avoids training a separate reward model by directly optimizing:
   L = -log σ(β * (log π(chosen)/π_ref(chosen) - log π(rejected)/π_ref(rejected)))
@@ -36,14 +36,15 @@ from model import HamnerModel, HamnerConfig
 
 SFT_CHECKPOINT = "checkpoints/sft/latest.pt"
 DPO_CHECKPOINT_DIR = "checkpoints/dpo"
+DPO_DATA_PATH = "data/dpo_helpsteer2.jsonl"
 LOG_FILE = "logs/dpo.log"
 METRICS_FILE = "logs/dpo_metrics.csv"
 SAMPLES_FILE = "logs/dpo_samples.jsonl"
 
-# DPO hyperparameters (SmolLM2 recipe)
+# DPO hyperparameters
 BETA = 0.1           # KL penalty coefficient
-LR = 1e-6            # very low LR for alignment
-NUM_EPOCHS = 2
+LR = 5e-7            # very low LR — smaller dataset needs gentler updates
+NUM_EPOCHS = 3       # more epochs to compensate for ~7-10k pairs (vs 60k)
 BATCH_SIZE = 4        # smaller batch — need 2x memory (model + ref_model)
 SEQ_LEN = 1024
 WARMUP_STEPS = 100
@@ -97,29 +98,24 @@ def log_metrics(step, epoch, loss, chosen_reward, rejected_reward, accuracy, lr,
 
 
 # ---------------------------------------------------------------------------
-# UltraFeedback dataset
+# HelpSteer2 dataset (CC-BY-4.0, DFSG-compatible)
 # ---------------------------------------------------------------------------
 
-def convert_ultrafeedback_to_hamner(sample):
-    """Convert UltraFeedback binarized format to our chat format.
+def convert_helpsteer_to_hamner(sample):
+    """Validate a pre-formatted HelpSteer2 DPO pair.
 
-    UltraFeedback format:
-        chosen: [{"role": "user", "content": "..."}, {"role": "assistant", "content": "..."}]
-        rejected: [{"role": "user", "content": "..."}, {"role": "assistant", "content": "..."}]
+    Input format (from prepare_dpo_data.py):
+        {"chosen": "<|user|>\\n...\\n<|assistant|>\\n...",
+         "rejected": "<|user|>\\n...\\n<|assistant|>\\n..."}
     """
-    def messages_to_text(messages):
-        parts = []
-        for msg in messages:
-            role = msg.get("role", "")
-            content = msg.get("content", "").strip()
-            if role in ("system", "user", "assistant") and content:
-                parts.append(f"<|{role}|>\n{content}")
-        return "\n".join(parts) if parts else None
+    chosen_text = sample.get("chosen", "").strip()
+    rejected_text = sample.get("rejected", "").strip()
 
-    chosen_text = messages_to_text(sample["chosen"])
-    rejected_text = messages_to_text(sample["rejected"])
-
-    if chosen_text is None or rejected_text is None:
+    if not chosen_text or not rejected_text:
+        return None
+    if "<|user|>" not in chosen_text or "<|assistant|>" not in chosen_text:
+        return None
+    if "<|user|>" not in rejected_text or "<|assistant|>" not in rejected_text:
         return None
 
     return chosen_text, rejected_text
@@ -128,33 +124,38 @@ def convert_ultrafeedback_to_hamner(sample):
 class DPODataset(Dataset):
     """DPO dataset with chosen/rejected pairs."""
 
-    def __init__(self, tokenizer, max_len=1024, max_samples=60000):
-        from datasets import load_dataset
+    def __init__(self, tokenizer, max_len=1024, max_samples=60000,
+                 data_path=DPO_DATA_PATH):
         self.tokenizer = tokenizer
         self.max_len = max_len
         self.pad_id = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else 0
         self.eos_id = tokenizer.eos_token_id if tokenizer.eos_token_id is not None else 0
 
-        log("Loading UltraFeedback binarized dataset...")
-        dataset = load_dataset(
-            "HuggingFaceH4/ultrafeedback_binarized",
-            split="train_prefs",
-        )
-        log(f"Raw dataset: {len(dataset)} preference pairs")
+        log(f"Loading DPO data from {data_path}...")
+        if not os.path.exists(data_path):
+            log(f"ERROR: DPO data not found at {data_path}")
+            log("Run: python prepare_dpo_data.py")
+            sys.exit(1)
+
+        raw_samples = []
+        with open(data_path) as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    raw_samples.append(json.loads(line))
+        log(f"Raw dataset: {len(raw_samples)} preference pairs")
 
         self.samples = []
         skipped = 0
 
-        indices = list(range(len(dataset)))
         random.seed(42)
-        random.shuffle(indices)
+        random.shuffle(raw_samples)
 
-        for idx in indices:
+        for sample in raw_samples:
             if len(self.samples) >= max_samples:
                 break
 
-            sample = dataset[idx]
-            result = convert_ultrafeedback_to_hamner(sample)
+            result = convert_helpsteer_to_hamner(sample)
             if result is None:
                 skipped += 1
                 continue
@@ -593,12 +594,16 @@ if __name__ == "__main__":
                         help="Path to SFT checkpoint")
     parser.add_argument("--resume", action="store_true",
                         help="Resume from latest DPO checkpoint")
+    parser.add_argument("--data", type=str, default=None,
+                        help="Path to DPO data JSONL file")
     parser.add_argument("--epochs", type=int, default=None,
                         help="Override number of epochs")
     parser.add_argument("--beta", type=float, default=None,
                         help="Override DPO beta")
     args = parser.parse_args()
 
+    if args.data is not None:
+        DPO_DATA_PATH = args.data
     if args.epochs is not None:
         NUM_EPOCHS = args.epochs
     if args.beta is not None:

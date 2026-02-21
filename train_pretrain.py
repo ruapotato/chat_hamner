@@ -39,6 +39,9 @@ CHECKPOINT_DIR_BASE = "checkpoints/pretrain_v4"
 CHECKPOINT_DIR_ANNEAL = "checkpoints/pretrain_v4_anneal"
 LOG_DIR = "logs"
 
+# Local code corpus (Debian source packages, DFSG-free)
+DEBIAN_CODE_PATH = "data/debian_code.jsonl"
+
 MODEL_CONFIG = dict(
     hidden_size=768,
     num_layers=20,
@@ -190,16 +193,34 @@ class MultiSourceStreamer:
                     self.personal_samples.append(sample["text"])
             log(f"Loaded {len(self.personal_samples)} personal training samples")
 
+    def _local_jsonl_stream(self, path):
+        """Yield samples from a local JSONL file, looping indefinitely."""
+        while True:
+            with open(path) as f:
+                for line in f:
+                    line = line.strip()
+                    if line:
+                        yield json.loads(line)
+            log(f"Local file {path} exhausted, restarting...")
+
     def _init_streams(self):
         from datasets import load_dataset
         source_configs = {
             "fineweb": ("HuggingFaceFW/fineweb-edu", "sample-10BT", "train"),
             "dclm": ("mlfoundations/dclm-baseline-1.0", None, "train"),
-            "code": ("bigcode/starcoderdata", "python", "train"),
             "math": ("HuggingFaceTB/finemath", "finemath-4plus", "train"),
         }
 
         for name in self.ratios:
+            if name == "code":
+                # Load from local Debian code corpus (DFSG-free)
+                if not os.path.exists(DEBIAN_CODE_PATH):
+                    log(f"ERROR: Code corpus not found at {DEBIAN_CODE_PATH}")
+                    log("Run: python prepare_debian_code.py")
+                    sys.exit(1)
+                self.streams["code"] = self._local_jsonl_stream(DEBIAN_CODE_PATH)
+                log(f"Initialized code stream from local file: {DEBIAN_CODE_PATH}")
+                continue
             if name not in source_configs:
                 continue
             dataset_name, config_name, split = source_configs[name]
@@ -212,11 +233,14 @@ class MultiSourceStreamer:
         log("All data streams ready")
 
     def _restart_stream(self, name):
+        if name == "code":
+            log("code stream restarted from local file")
+            self.streams["code"] = self._local_jsonl_stream(DEBIAN_CODE_PATH)
+            return
         from datasets import load_dataset
         source_configs = {
             "fineweb": ("HuggingFaceFW/fineweb-edu", "sample-10BT", "train"),
             "dclm": ("mlfoundations/dclm-baseline-1.0", None, "train"),
-            "code": ("bigcode/starcoderdata", "python", "train"),
             "math": ("HuggingFaceTB/finemath", "finemath-4plus", "train"),
         }
         log(f"{name} stream exhausted, restarting...")
