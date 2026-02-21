@@ -6,6 +6,8 @@ Not a coding assistant. Not a knowledge oracle. Just **Al Hamner** — sharp-wit
 
 ## Sample Conversation
 
+From an earlier V2 model trained on only 2.6B tokens in ~1 day. V4 (currently training on 14B tokens over ~7 days) should be significantly better.
+
 ```
 You: hello!
 Al:  What's up! Ready when you are.
